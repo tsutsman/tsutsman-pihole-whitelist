@@ -8,3 +8,61 @@ microsoft.com
 apple.com
 wikipedia.org
 cloudflare.com
+
+# Microsoft OneDrive
+# Основні
+onedrive.com
+*.onedrive.com
+onedrive.live.com
+*.files.1drv.com
+storage.live.com
+*.storage.live.com
+# Аутентифікація
+login.live.com
+login.microsoftonline.com
+login.windows.net
+g.live.com
+# Microsoft & Office
+*.microsoft.com
+*.office.com
+*.officeapps.live.com
+*.aria.microsoft.com
+# Live-додатки
+api.live.net
+apis.live.net
+docs.live.net
+*.docs.live.net
+settings.live.net
+policies.live.net
+*.settings.live.net
+*.policies.live.net
+skyapi.live.net
+snapi.live.net
+favorites.live.com
+oauth.live.com
+photos.live.com
+skydrive.live.com
+*.groups.office.live.com
+*.groups.photos.live.com
+# CDN / телеметрія
+spoprod-a.akamaihd.net
+*.mesh.com
+p.sfx.ms
+oneclient.sfx.ms
+fabric.io
+*.crashlytics.com
+vortex.data.microsoft.com
+# Сервіси
+posarprodcssservice.accesscontrol.windows.net
+redemptionservices.accesscontrol.windows.net
+token.cp.microsoft.com
+tokensit.cp.microsoft-tst.com
+*.servicebus.windows.net
+vas.samsungapps.com
+odc.officeapps.live.com
+# Старі / додаткові
+*.livefilestore.com
+skydrive.com
+*.demdex.net
+*.omtrdc.net
+*.gfx.ms
