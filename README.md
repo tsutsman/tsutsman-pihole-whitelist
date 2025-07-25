@@ -13,6 +13,9 @@
 1. Скопіюйте файл `whitelist.txt` на сервер з pihole.
 2. У веб-інтерфейсі pihole відкрийте розділ **Whitelist** та імпортуйте домени з цього файлу.
 3. Для автоматичного додавання можна скористатися API pihole.
+4. У розділі **Adlists** можна додати посилання на сирий файл:
+   https://raw.githubusercontent.com/tsutsman/tsutsman-pihole-whitelist/main/whitelist.txt
+   Це дозволить pihole автоматично завантажувати оновлення білого списку.
 
 ## Перевірка списку
 
