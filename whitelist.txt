@@ -182,3 +182,16 @@ mega.nz                         # основний домен MEGA
 *.mega.nz                       # піддомени MEGA
 mega.co.nz                      # старий домен MEGA
 *.mega.co.nz                    # піддомени старого домену
+# Synology
+synology.com              # головний сайт Synology
+www.synology.com          # веб-інтерфейс
+update.synology.com       # оновлення DSM
+global.download.synology.com # завантаження пакетів
+
+# Сервери точного часу (NTP)
+time.google.com           # точний час Google
+time.cloudflare.com       # точний час Cloudflare
+time.windows.com          # сервіс часу Microsoft
+pool.ntp.org              # глобальний пул NTP
+ua.pool.ntp.org           # український пул NTP
+time.nist.gov             # сервер точного часу NIST
