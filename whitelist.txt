@@ -1,0 +1,10 @@
+# Базовий список дозволених доменів
+# Додайте сюди домени, які не повинні блокуватись pihole
+
+google.com
+youtube.com
+github.com
+microsoft.com
+apple.com
+wikipedia.org
+cloudflare.com
