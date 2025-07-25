@@ -66,3 +66,11 @@ skydrive.com
 *.demdex.net
 *.omtrdc.net
 *.gfx.ms
+# Українські сервіси
+rozetka.com.ua
+prom.ua
+olx.ua
+privatbank.ua
+monobank.ua
+novaposhta.ua
+liqpay.ua
