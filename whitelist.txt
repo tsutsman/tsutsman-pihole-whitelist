@@ -82,3 +82,14 @@ privatbank.ua    # інтернет-банкінг ПриватБанку
 monobank.ua      # онлайн-банк Monobank
 novaposhta.ua    # логістична компанія Нова пошта
 liqpay.ua        # платіжна система LiqPay
+# Файлові сховища
+# Google Drive
+drive.google.com                # доступ до Google Drive
+docs.google.com                 # документи Google Docs
+drive.googleusercontent.com     # файли Drive
+lh3.googleusercontent.com       # зображення Drive
+# MEGA
+mega.nz                         # основний домен MEGA
+*.mega.nz                       # піддомени MEGA
+mega.co.nz                      # старий домен MEGA
+*.mega.co.nz                    # піддомени старого домену
