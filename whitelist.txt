@@ -171,6 +171,9 @@ privatbank.ua    # інтернет-банкінг ПриватБанку
 monobank.ua      # онлайн-банк Monobank
 novaposhta.ua    # логістична компанія Нова пошта
 liqpay.ua        # платіжна система LiqPay
+ukr.net          # популярний поштовий сервіс
+oschadbank.ua    # інтернет-банкінг Ощадбанку
+pumb.ua          # онлайн-банк ПУМБ
 # Файлові сховища
 # Google Drive
 drive.google.com                # доступ до Google Drive
@@ -188,6 +191,17 @@ www.synology.com          # веб-інтерфейс
 update.synology.com       # оновлення DSM
 global.download.synology.com # завантаження пакетів
 
+# Додаткові хмарні сховища
+dropbox.com              # сервіс Dropbox
+*.dropbox.com            # піддомени Dropbox
+box.com                  # сервіс Box
+
+# Месенджери
+telegram.org            # месенджер Telegram
+cdn.telegram.org        # CDN Telegram
+whatsapp.com            # месенджер WhatsApp
+discord.com             # чат Discord
+
 # Сервери точного часу (NTP)
 time.google.com           # точний час Google
 time.cloudflare.com       # точний час Cloudflare
@@ -195,3 +209,5 @@ time.windows.com          # сервіс часу Microsoft
 pool.ntp.org              # глобальний пул NTP
 ua.pool.ntp.org           # український пул NTP
 time.nist.gov             # сервер точного часу NIST
+time.facebook.com        # сервер часу Facebook
+time.is                  # сервіс перевірки часу
