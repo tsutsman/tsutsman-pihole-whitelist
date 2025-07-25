@@ -1,0 +1,22 @@
+# Файлові сховища
+# Google Drive
+drive.google.com                # доступ до Google Drive
+docs.google.com                 # документи Google Docs
+drive.googleusercontent.com     # файли Drive
+lh3.googleusercontent.com       # зображення Drive
+# MEGA
+mega.nz                         # основний домен MEGA
+*.mega.nz                       # піддомени MEGA
+mega.co.nz                      # старий домен MEGA
+*.mega.co.nz                    # піддомени старого домену
+# Synology
+synology.com              # головний сайт Synology
+www.synology.com          # веб-інтерфейс
+update.synology.com       # оновлення DSM
+global.download.synology.com # завантаження пакетів
+
+# Додаткові хмарні сховища
+dropbox.com              # сервіс Dropbox
+*.dropbox.com            # піддомени Dropbox
+box.com                  # сервіс Box
+

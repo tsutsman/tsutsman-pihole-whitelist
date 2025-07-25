@@ -1,0 +1,57 @@
+# Microsoft OneDrive
+# Основні
+onedrive.com
+*.onedrive.com
+onedrive.live.com
+*.files.1drv.com
+storage.live.com
+*.storage.live.com
+# Аутентифікація
+login.live.com
+login.microsoftonline.com
+login.windows.net
+g.live.com
+# Microsoft & Office
+*.microsoft.com
+*.office.com
+*.officeapps.live.com
+*.aria.microsoft.com
+# Live-додатки
+api.live.net
+apis.live.net
+docs.live.net
+*.docs.live.net
+settings.live.net
+policies.live.net
+*.settings.live.net
+*.policies.live.net
+skyapi.live.net
+snapi.live.net
+favorites.live.com
+oauth.live.com
+photos.live.com
+skydrive.live.com
+*.groups.office.live.com
+*.groups.photos.live.com
+# CDN / телеметрія
+spoprod-a.akamaihd.net
+*.mesh.com
+p.sfx.ms
+oneclient.sfx.ms
+fabric.io
+*.crashlytics.com       # Crashlytics API
+vortex.data.microsoft.com # телеметрія Windows
+# Сервіси
+posarprodcssservice.accesscontrol.windows.net # автентифікація Office
+redemptionservices.accesscontrol.windows.net  # сервіси ліцензування Microsoft
+token.cp.microsoft.com                       # видача токенів Microsoft
+tokensit.cp.microsoft-tst.com                # тестова видача токенів
+*.servicebus.windows.net                     # черги Service Bus
+vas.samsungapps.com                          # магазин Samsung
+odc.officeapps.live.com                      # Office Online
+# Старі / додаткові
+*.livefilestore.com  # старий сервіс зберігання Microsoft
+skydrive.com         # попередня назва OneDrive
+*.demdex.net         # аналітика Adobe
+*.omtrdc.net         # аналітика Adobe
+*.gfx.ms             # ресурси Microsoft

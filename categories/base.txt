@@ -1,0 +1,10 @@
+# Базовий список дозволених доменів
+# Додайте сюди домени, які не повинні блокуватись pihole
+
+google.com        # пошукова система
+youtube.com       # відеохостинг
+github.com        # платформа розробників
+microsoft.com     # основний домен сервісів Microsoft
+apple.com         # необхідно для App Store та iCloud
+wikipedia.org     # енциклопедія
+cloudflare.com    # CDN та DNS від Cloudflare

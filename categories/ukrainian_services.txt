@@ -1,0 +1,11 @@
+# Українські сервіси
+rozetka.com.ua   # маркетплейс Rozetka
+prom.ua          # торговий майданчик Prom
+olx.ua           # сервіс оголошень
+privatbank.ua    # інтернет-банкінг ПриватБанку
+monobank.ua      # онлайн-банк Monobank
+novaposhta.ua    # логістична компанія Нова пошта
+liqpay.ua        # платіжна система LiqPay
+ukr.net          # популярний поштовий сервіс
+oschadbank.ua    # інтернет-банкінг Ощадбанку
+pumb.ua          # онлайн-банк ПУМБ

@@ -8,6 +8,22 @@
 Додано хости Synology та популярні сервери точного часу (NTP) для коректної синхронізації часу.
 Також додано домени популярних месенджерів, додаткових хмарних сховищ та українських банків.
 
+## Списки за категоріями
+
+Окрім комбінованого файлу `whitelist.txt`, у каталозі `categories/`
+розміщено окремі списки за темами. Їх можна імпортувати вибірково,
+якщо потрібен лише певний набір доменів.
+
+Доступні такі файли:
+
+- `base.txt` — базові домени, що найчастіше використовуються;
+- `apple.txt` — адреси сервісів Apple;
+- `microsoft_onedrive.txt` — домени Microsoft і OneDrive;
+- `ukrainian_services.txt` — популярні українські сервіси та банки;
+- `cloud_storage.txt` — хмарні сховища (Google Drive, MEGA, Synology тощо);
+- `messengers.txt` — домени Telegram, WhatsApp, Discord;
+- `ntp_servers.txt` — сервери точного часу (NTP).
+
 ## Використання
 
 1. Скопіюйте файл `whitelist.txt` на сервер з pihole.
@@ -19,13 +35,15 @@
 
 ## Перевірка списку
 
-Перед створенням Pull Request запустіть скрипт `check_duplicates.sh`:
+Перед створенням Pull Request запустіть скрипт `check_duplicates.sh`
+для кожного списку, який змінювали:
 
 ```bash
-./check_duplicates.sh
+./check_duplicates.sh categories/ukrainian_services.txt
+./check_duplicates.sh whitelist.txt
 ```
 
-Скрипт повідомить, якщо у файлі є дублікати рядків.
+Скрипт повідомить, якщо у вибраному файлі є дублікати рядків.
 
 ## Як зробити внесок
 
