@@ -1,13 +1,13 @@
 # Базовий список дозволених доменів
 # Додайте сюди домени, які не повинні блокуватись pihole
 
-google.com
-youtube.com
-github.com
-microsoft.com
-apple.com
-wikipedia.org
-cloudflare.com
+google.com        # пошукова система
+youtube.com       # відеохостинг
+github.com        # платформа розробників
+microsoft.com     # основний домен сервісів Microsoft
+apple.com         # необхідно для App Store та iCloud
+wikipedia.org     # енциклопедія
+cloudflare.com    # CDN та DNS від Cloudflare
 # Сервіси Apple
 icloud.com
 *.icloud.com
@@ -58,27 +58,27 @@ spoprod-a.akamaihd.net
 p.sfx.ms
 oneclient.sfx.ms
 fabric.io
-*.crashlytics.com
-vortex.data.microsoft.com
+*.crashlytics.com       # Crashlytics API
+vortex.data.microsoft.com # телеметрія Windows
 # Сервіси
-posarprodcssservice.accesscontrol.windows.net
-redemptionservices.accesscontrol.windows.net
-token.cp.microsoft.com
-tokensit.cp.microsoft-tst.com
-*.servicebus.windows.net
-vas.samsungapps.com
-odc.officeapps.live.com
+posarprodcssservice.accesscontrol.windows.net # автентифікація Office
+redemptionservices.accesscontrol.windows.net  # сервіси ліцензування Microsoft
+token.cp.microsoft.com                       # видача токенів Microsoft
+tokensit.cp.microsoft-tst.com                # тестова видача токенів
+*.servicebus.windows.net                     # черги Service Bus
+vas.samsungapps.com                          # магазин Samsung
+odc.officeapps.live.com                      # Office Online
 # Старі / додаткові
-*.livefilestore.com
-skydrive.com
-*.demdex.net
-*.omtrdc.net
-*.gfx.ms
+*.livefilestore.com  # старий сервіс зберігання Microsoft
+skydrive.com         # попередня назва OneDrive
+*.demdex.net         # аналітика Adobe
+*.omtrdc.net         # аналітика Adobe
+*.gfx.ms             # ресурси Microsoft
 # Українські сервіси
-rozetka.com.ua
-prom.ua
-olx.ua
-privatbank.ua
-monobank.ua
-novaposhta.ua
-liqpay.ua
+rozetka.com.ua   # маркетплейс Rozetka
+prom.ua          # торговий майданчик Prom
+olx.ua           # сервіс оголошень
+privatbank.ua    # інтернет-банкінг ПриватБанку
+monobank.ua      # онлайн-банк Monobank
+novaposhta.ua    # логістична компанія Нова пошта
+liqpay.ua        # платіжна система LiqPay
