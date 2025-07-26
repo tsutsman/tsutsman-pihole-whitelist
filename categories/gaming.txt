@@ -12,3 +12,24 @@ login.p4.worldoftanks.eu
 eu.wargaming.net
 wg.gcdn.wargaming.net
 wgus.wargaming.net
+# Сервіси Steam та Valve
+steampowered.com       # головний домен Steam
+store.steampowered.com # магазин Steam
+steamcommunity.com     # спільнота Steam
+steamcontent.com       # завантаження ігор
+steamstatic.com        # статичні ресурси Steam
+steam-chat.com         # чат Steam
+
+# Ігрові платформи та видавці
+epicgames.com          # магазин Epic Games
+riotgames.com          # офіційний сайт Riot Games
+valorant.com           # сайт гри VALORANT
+playvalorant.com       # сторінка завантажень VALORANT
+leagueoflegends.com    # сайт гри League of Legends
+blizzard.com           # платформа Blizzard
+battle.net             # сервіс Battle.net
+playstation.com        # офіційний сайт PlayStation
+xbox.com               # офіційний сайт Xbox
+gog.com                # магазин GOG
+rockstargames.com      # ігри Rockstar (GTA тощо)
+hoyoverse.com          # ігри HoYoverse (Genshin Impact)
