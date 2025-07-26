@@ -1,0 +1,6 @@
+# Освітні ресурси
+edx.org          # 2025-07-26 платформа онлайн-курсів edX
+coursera.org     # 2025-07-26 платформа Coursera
+khanacademy.org  # 2025-07-26 безкоштовні уроки Khan Academy
+prometheus.org.ua # 2025-07-26 українські онлайн-курси Prometheus
+naurok.ua        # 2025-07-26 освітня платформа На Урок

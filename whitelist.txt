@@ -25,6 +25,7 @@
 *.slack.com          # піддомени Slack
 *.storage.live.com
 *.zoom.us            # піддомени Zoom
+24tv.ua          # 2025-07-26 телеканал 24
 account.apple.com
 account.mycrealitycloud.com
 accounts.google.com
@@ -69,6 +70,7 @@ axm-adm-scep.apple.com
 axm-app.apple.com
 axm-servicediscovery.apple.com
 battle.net             # сервіс Battle.net
+bbc.com          # 2025-07-26 міжнародна служба BBC
 bestbuy.com
 bitdefender.com
 blizzard.com           # платформа Blizzard
@@ -103,6 +105,7 @@ configuration.apple.com
 connectivity.cloudflareclient.com
 connectivitycheck.gstatic.com
 core.telegram.org          # документація Telegram
+coursera.org     # 2025-07-26 платформа Coursera
 creality.com
 crl.apple.com
 crl3.digicert.com
@@ -134,8 +137,10 @@ dropbox.com              # сервіс Dropbox
 e-data.gov.ua
 eauction.gov.ua
 ebay.com
+edx.org          # 2025-07-26 платформа онлайн-курсів edX
 engage.cloudflareclient.com
 epicgames.com          # магазин Epic Games
+espreso.tv       # 2025-07-26 телеканал Еспресо
 etsy.com
 eu.wargaming.net
 fabric.io
@@ -180,6 +185,7 @@ iot.mycrealitycloud.com
 iphonesubmissions.apple.com
 iprofiles.apple.com
 itunes.apple.com
+khanacademy.org  # 2025-07-26 безкоштовні уроки Khan Academy
 lcdn-locator.apple.com
 lcdn-registration.apple.com
 leagueoflegends.com    # сайт гри League of Legends
@@ -212,6 +218,7 @@ microsoftteams.com   # Teams від Microsoft
 monobank.ua      # онлайн-банк Monobank
 mqtt.mycrealitycloud.com
 msn.com
+naurok.ua        # 2025-07-26 освітня платформа На Урок
 netflix.com
 norton.com
 novaposhta.ua    # логістична компанія Нова пошта
@@ -244,6 +251,8 @@ p.sfx.ms
 pandasecurity.com
 pay.monobank.ua
 payhub.privatbank.ua
+payoneer.com     # 2025-07-26 сервіс Payoneer
+paypal.com       # 2025-07-26 платіжна система PayPal
 pb.ua
 perplexity.ai            # пошук з AI
 pg-bootstrap.itunes.apple.com
@@ -262,11 +271,13 @@ portal.pfu.gov.ua
 pos-device.apple.com
 posarprodcssservice.accesscontrol.windows.net # автентифікація Office
 ppq.apple.com
+pravda.com.ua    # 2025-07-26 Українська правда
 primevideo.com
 privat24.ua
 privatbank.ua    # інтернет-банкінг ПриватБанку
 products.office.com
 prom.ua          # торговий майданчик Prom
+prometheus.org.ua # 2025-07-26 українські онлайн-курси Prometheus
 pumb.ua          # онлайн-банк ПУМБ
 push.apple.com
 push.services.mozilla.com
@@ -274,6 +285,7 @@ raw.githubusercontent.com
 redemptionservices.accesscontrol.windows.net  # сервіси ліцензування Microsoft
 replicate.com            # запуск AI-моделей
 repository.eset.com
+revolut.com      # 2025-07-26 онлайн-банк Revolut
 riotgames.com          # офіційний сайт Riot Games
 rockstargames.com      # ігри Rockstar (GTA тощо)
 rozetka.com.ua   # маркетплейс Rozetka
@@ -313,9 +325,11 @@ steamstatic.com        # статичні ресурси Steam
 storage.live.com
 store.steampowered.com # магазин Steam
 storeedgefd.dsx.mp.microsoft.com
+stripe.com       # 2025-07-26 платіжний процесор Stripe
 suconfig.apple.com
 support.apple.com
 supportmetrics.apple.com
+suspilne.media   # 2025-07-26 новини Суспільне
 swcdn.apple.com
 swdist.apple.com
 swdownload.apple.com
@@ -372,6 +386,7 @@ wgus.wargaming.net
 whatsapp.com            # месенджер WhatsApp
 wikipedia.org     # енциклопедія
 windowsupdate.microsoft.com
+wise.com         # 2025-07-26 перекази Wise
 wkms-public.apple.com
 wotblitz.com          # офіційний сайт WOT Blitz
 wotblitz.eu           # європейський портал
