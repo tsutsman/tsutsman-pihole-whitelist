@@ -57,11 +57,13 @@ assets.adobe.com          # хмарні ресурси Adobe
 assets.onestore.ms
 audiocontentdownload.apple.com
 avast.com
+avira.com
 axm-adm-enroll.apple.com
 axm-adm-mdm.apple.com
 axm-adm-scep.apple.com
 axm-app.apple.com
 axm-servicediscovery.apple.com
+bitdefender.com
 box.com                  # сервіс Box
 bpapi.apple.com
 ca.tax.gov.ua
@@ -76,6 +78,7 @@ cdnjs.cloudflare.com
 cdnjs.cloudflare.com    # популярний CDN з бібліотеками JS
 certs.apple.com
 cf-v4.cloudflare.com
+clamav.net
 clients3.google.com
 clients4.google.com
 clients5.google.com
@@ -111,6 +114,8 @@ docs.live.net
 doh.dns.apple.com
 download.developer.apple.com
 download.windowsupdate.com
+downloads.malwarebytes.com
+downloads.sophos.com
 drive.google.com                # доступ до Google Drive
 drive.googleusercontent.com     # файли Drive
 dropbox.com              # сервіс Dropbox
@@ -168,6 +173,8 @@ login.p3.worldoftanks.eu
 login.p4.worldoftanks.eu
 login.wargaming.net   # авторизація
 login.windows.net
+malwarebytes.com
+mcafee.com
 mdmenrollment.apple.com
 mega.co.nz                      # старий домен MEGA
 mega.nz                         # основний домен MEGA
@@ -207,6 +214,7 @@ ota.mycrealitycloud.com
 outlook.com
 outlook.office365.com
 p.sfx.ms
+pandasecurity.com
 pay.monobank.ua
 payhub.privatbank.ua
 pb.ua
@@ -247,6 +255,7 @@ skydrive.live.com
 slack.com            # робочі чати Slack
 smp-device-content.apple.com
 snapi.live.net
+sophosupd.com
 spending.gov.ua
 spoprod-a.akamaihd.net
 sq-device.apple.com
@@ -287,12 +296,16 @@ ua.pool.ntp.org           # український пул NTP
 ukr.net          # популярний поштовий сервіс
 unpkg.com               # CDN npm-пакунків
 update.argotunnel.com
+update.avira.com
 update.creality.com
 update.eset.com
 update.microsoft.com
+update.pandasecurity.com
 update.synology.com       # оновлення DSM
 updates-http.cdn-apple.com
+updates.bitdefender.com
 updates.cdn-apple.com
+updates.mcafee.com
 us-west-2.aws.crealitycloud.com
 use.fontawesome.com       # іконки FontAwesome
 valid.apple.com
