@@ -6,3 +6,6 @@ code.jquery.com         # CDN jQuery
 cdnjs.cloudflare.com    # популярний CDN з бібліотеками JS
 cdn.jsdelivr.net        # CDN jsDelivr для скриптів та стилів
 unpkg.com               # CDN npm-пакунків
+assets.adobe.com          # хмарні ресурси Adobe
+use.fontawesome.com       # іконки FontAwesome
+static.cloudflareinsights.com # аналітика Cloudflare Insights
