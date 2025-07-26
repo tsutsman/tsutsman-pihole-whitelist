@@ -8,3 +8,6 @@ microsoft.com     # основний домен сервісів Microsoft
 apple.com         # необхідно для App Store та iCloud
 wikipedia.org     # енциклопедія
 cloudflare.com    # CDN та DNS від Cloudflare
+status.github.com
+raw.githubusercontent.com
+api.github.com

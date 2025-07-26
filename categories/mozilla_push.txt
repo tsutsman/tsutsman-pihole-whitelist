@@ -1,0 +1,2 @@
+# Mozilla Push
+push.services.mozilla.com

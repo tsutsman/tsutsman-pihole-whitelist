@@ -1,0 +1,8 @@
+# Антивірусні сервіси
+update.eset.com
+livegrid.eset.com
+repository.eset.com
+avast.com
+defs.symantec.com
+norton.com
+liveupdate.symantecliveupdate.com

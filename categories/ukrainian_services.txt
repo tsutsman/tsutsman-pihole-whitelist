@@ -9,3 +9,25 @@ liqpay.ua        # платіжна система LiqPay
 ukr.net          # популярний поштовий сервіс
 oschadbank.ua    # інтернет-банкінг Ощадбанку
 pumb.ua          # онлайн-банк ПУМБ
+# Урядові сервіси
+cabinet.tax.gov.ua
+ca.tax.gov.ua
+acskidd.gov.ua
+portal.pfu.gov.ua
+diia.gov.ua
+login.diia.gov.ua
+id.gov.ua
+e-data.gov.ua
+spending.gov.ua
+trembita.gov.ua
+
+# Банківські сервіси
+api.privatbank.ua
+payhub.privatbank.ua
+pb.ua
+privat24.ua
+api.monobank.ua
+api.paymonobank.ua
+static.monobank.ua
+web.monobank.ua
+pay.monobank.ua

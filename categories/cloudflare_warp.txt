@@ -1,0 +1,14 @@
+# Cloudflare WARP та DNS
+warp.cloudflare.com
+engage.cloudflareclient.com
+connectivity.cloudflareclient.com
+security.cloudflare-dns.com
+cloudflare-dns.com
+www.cloudflare.com
+cf-v4.cloudflare.com
+teams.cloudflare.com
+cdnjs.cloudflare.com
+cloudflarewarp.com
+warp.cloudflareclient.com
+api.cloudflareclient.com
+update.argotunnel.com

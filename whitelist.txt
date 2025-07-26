@@ -1,90 +1,254 @@
-# Базовий список дозволених доменів
-# Додайте сюди домени, які не повинні блокуватись pihole
-
-google.com        # пошукова система
-youtube.com       # відеохостинг
-github.com        # платформа розробників
-microsoft.com     # основний домен сервісів Microsoft
-apple.com         # необхідно для App Store та iCloud
-wikipedia.org     # енциклопедія
-cloudflare.com    # CDN та DNS від Cloudflare
-# Сервіси Apple
-icloud.com
+# Автоматично згенеровано скриптом generate_whitelist.sh
+*.aria.microsoft.com
+*.crashlytics.com       # Crashlytics API
+*.demdex.net         # аналітика Adobe
+*.docs.live.net
+*.dropbox.com            # піддомени Dropbox
+*.files.1drv.com
+*.gfx.ms             # ресурси Microsoft
+*.groups.office.live.com
+*.groups.photos.live.com
 *.icloud.com
-appleid.apple.com
-apps.apple.com
-itunes.apple.com
-api.apple-cloudkit.com
-push.apple.com
-# Додаткові домени Apple з документації HT210060
-# Потрібні для оновлень та активації пристроїв
-
+*.livefilestore.com  # старий сервіс зберігання Microsoft
+*.mega.co.nz                    # піддомени старого домену
+*.mega.nz                       # піддомени MEGA
+*.mesh.com
+*.microsoft.com
+*.office.com
+*.officeapps.live.com
+*.omtrdc.net         # аналітика Adobe
+*.onedrive.com
+*.policies.live.net
+*.servicebus.windows.net                     # черги Service Bus
+*.settings.live.net
+*.storage.live.com
 account.apple.com
+account.mycrealitycloud.com
+accounts.google.com
+acme-v02.api.letsencrypt.org
+acskidd.gov.ua
+ajax.googleapis.com     # бібліотеки jQuery та інші
 albert.apple.com
+android.clients.google.com
+api.apple-cloudkit.com
+api.cloudflareclient.com
 api.edu.apple.com
 api.ent.apple.com
+api.github.com
+api.live.net
+api.monobank.ua
+api.mycrealitycloud.com
+api.paymonobank.ua
+api.privatbank.ua
+api.push.apple.com
+api.telegram.org            # API Telegram
+apis.live.net
 app-site-association.cdn-apple.com
 appldnld.apple.com
 apple-relay.apple.com
+apple.com         # необхідно для App Store та iCloud
+appleid.apple.com
 appleid.cdn-apple.com
+apps.apple.com
+assets.onestore.ms
 audiocontentdownload.apple.com
+avast.com
 axm-adm-enroll.apple.com
 axm-adm-mdm.apple.com
 axm-adm-scep.apple.com
 axm-app.apple.com
 axm-servicediscovery.apple.com
+box.com                  # сервіс Box
 bpapi.apple.com
+ca.tax.gov.ua
+cabinet.tax.gov.ua
 captive.apple.com
+cdn.creality.com
+cdn.jsdelivr.net        # CDN jsDelivr для скриптів та стилів
+cdn.office.net
+cdn.telegram.org        # CDN Telegram
+cdn.wargaming.net     # CDN з оновленнями
+cdnjs.cloudflare.com
+cdnjs.cloudflare.com    # популярний CDN з бібліотеками JS
 certs.apple.com
+cf-v4.cloudflare.com
+clients3.google.com
+clients4.google.com
+clients5.google.com
+cloud.mycrealitycloud.com
+cloudflare-dns.com
+cloudflare.com    # CDN та DNS від Cloudflare
+cloudflarewarp.com
 cls-ingest.itunes.apple.com
 cls-iosclient.itunes.apple.com
+code.jquery.com         # CDN jQuery
 configuration.apple.com
+connectivity.cloudflareclient.com
+connectivitycheck.gstatic.com
+core.telegram.org          # документація Telegram
+creality.com
 crl.apple.com
+crl3.digicert.com
 cssubmissions.apple.com
+ctldl.windowsupdate.com
+defs.symantec.com
+device.mycrealitycloud.com
 deviceenrollment.apple.com
 deviceservices-external.apple.com
 devimages-cdn.apple.com
 diagassets.apple.com
+diia.gov.ua
+discord.com             # чат Discord
+dl.delivery.mp.microsoft.com
+dns.google
+dns.msftncsi.com
+docs.google.com                 # документи Google Docs
+docs.live.net
 doh.dns.apple.com
 download.developer.apple.com
+download.windowsupdate.com
+drive.google.com                # доступ до Google Drive
+drive.googleusercontent.com     # файли Drive
+dropbox.com              # сервіс Dropbox
+e-data.gov.ua
+engage.cloudflareclient.com
+eu.wargaming.net
+fabric.io
+favorites.live.com
 fba.apple.com
 fcs-keys-pub-prod.cdn-apple.com
+fonts.googleapis.com
+fonts.googleapis.com    # стилі Google Fonts
+fonts.gstatic.com
+fonts.gstatic.com       # шрифти Google Fonts
+g.live.com
 gdmf-ados.apple.com
 gdmf.apple.com
 gg.apple.com
+github.com        # платформа розробників
+global.download.synology.com # завантаження пакетів
+google.com        # пошукова система
+graph.microsoft.com
 gs.apple.com
 gsa.apple.com
 gsra.apple.com
 guzzoni.apple.com
 humb.apple.com
+icloud.com
 icons.axm-usercontent-apple.com
+id.gov.ua
 identity.apple.com
 idmsa.apple.com
 idv-prod1.apple.com
 idv.cdn-apple.com
 ig.apple.com
+init-p01st.push.apple.com
+iot.mycrealitycloud.com
 iphonesubmissions.apple.com
 iprofiles.apple.com
+itunes.apple.com
 lcdn-locator.apple.com
 lcdn-registration.apple.com
+lh3.googleusercontent.com       # зображення Drive
+liqpay.ua        # платіжна система LiqPay
+live.com
+livegrid.eset.com
+liveupdate.symantecliveupdate.com
+login.diia.gov.ua
+login.live.com
+login.microsoftonline.com
+login.p1.worldoftanks.eu
+login.p2.worldoftanks.eu
+login.p3.worldoftanks.eu
+login.p4.worldoftanks.eu
+login.wargaming.net   # авторизація
+login.windows.net
 mdmenrollment.apple.com
+mega.co.nz                      # старий домен MEGA
+mega.nz                         # основний домен MEGA
 mesu.apple.com
+microsoft.com
+microsoft.com     # основний домен сервісів Microsoft
+microsoft365.com
+microsoftonline.com
+monobank.ua      # онлайн-банк Monobank
+mqtt.mycrealitycloud.com
+msn.com
+norton.com
+novaposhta.ua    # логістична компанія Нова пошта
 ns.itunes.apple.com
+ntp.org
+ntservicepack.microsoft.com
+oauth.live.com
 ocsp.apple.com
+ocsp.digicert.com
+ocsp.pki.goog
+ocsp.usertrust.com
 ocsp2.apple.com
+odc.officeapps.live.com                      # Office Online
+office.com
+office365.com
+officecdn.microsoft.com
+officeclient.microsoft.com
+olx.ua           # сервіс оголошень
+oneclient.sfx.ms
+onedrive.com
+onedrive.live.com
 oscdn.apple.com
+oschadbank.ua    # інтернет-банкінг Ощадбанку
 osrecovery.apple.com
+ota.mycrealitycloud.com
+outlook.com
+outlook.office365.com
+p.sfx.ms
+pay.monobank.ua
+payhub.privatbank.ua
+pb.ua
 pg-bootstrap.itunes.apple.com
+photos.live.com
+play.googleapis.com
 play.itunes.apple.com
 playgrounds-assets-cdn.apple.com
 playgrounds-cdn.apple.com
+policies.live.net
+pool.ntp.org              # глобальний пул NTP
+portal.pfu.gov.ua
 pos-device.apple.com
+posarprodcssservice.accesscontrol.windows.net # автентифікація Office
 ppq.apple.com
+privat24.ua
+privatbank.ua    # інтернет-банкінг ПриватБанку
+products.office.com
+prom.ua          # торговий майданчик Prom
+pumb.ua          # онлайн-банк ПУМБ
+push.apple.com
+push.services.mozilla.com
+raw.githubusercontent.com
+redemptionservices.accesscontrol.windows.net  # сервіси ліцензування Microsoft
+repository.eset.com
+rozetka.com.ua   # маркетплейс Rozetka
+s3.creality.com
+safebrowsing.google.com
+safebrowsing.googleapis.com
+security.cloudflare-dns.com
 serverstatus.apple.com
+settings-win.data.microsoft.com
+settings.live.net
 skl.apple.com
+skyapi.live.net
+skydrive.com         # попередня назва OneDrive
+skydrive.live.com
 smp-device-content.apple.com
+snapi.live.net
+spending.gov.ua
+spoprod-a.akamaihd.net
 sq-device.apple.com
+static.creality.com
 static.ips.apple.com
+static.monobank.ua
+status.github.com
+storage.live.com
+storeedgefd.dsx.mp.microsoft.com
 suconfig.apple.com
 support.apple.com
 supportmetrics.apple.com
@@ -93,151 +257,61 @@ swdist.apple.com
 swdownload.apple.com
 swscan.apple.com
 sylvan.apple.com
+synology.com              # головний сайт Synology
 tbsc.apple.com
+teams.cloudflare.com
+teams.microsoft.com
+telegram.org            # месенджер Telegram
 time-ios.apple.com
 time-macos.apple.com
 time.apple.com
-updates-http.cdn-apple.com
-updates.cdn-apple.com
-valid.apple.com
-vpp.itunes.apple.com
-wkms-public.apple.com
-ws.school.apple.com
-www.apple.com
-xp-cdn.apple.com
-xp.apple.com
-# Microsoft OneDrive
-# Основні
-onedrive.com
-*.onedrive.com
-onedrive.live.com
-*.files.1drv.com
-storage.live.com
-*.storage.live.com
-# Аутентифікація
-login.live.com
-login.microsoftonline.com
-login.windows.net
-g.live.com
-# Microsoft & Office
-*.microsoft.com
-*.office.com
-*.officeapps.live.com
-*.aria.microsoft.com
-# Live-додатки
-api.live.net
-apis.live.net
-docs.live.net
-*.docs.live.net
-settings.live.net
-policies.live.net
-*.settings.live.net
-*.policies.live.net
-skyapi.live.net
-snapi.live.net
-favorites.live.com
-oauth.live.com
-photos.live.com
-skydrive.live.com
-*.groups.office.live.com
-*.groups.photos.live.com
-# CDN / телеметрія
-spoprod-a.akamaihd.net
-*.mesh.com
-p.sfx.ms
-oneclient.sfx.ms
-fabric.io
-*.crashlytics.com       # Crashlytics API
-vortex.data.microsoft.com # телеметрія Windows
-# Сервіси
-posarprodcssservice.accesscontrol.windows.net # автентифікація Office
-redemptionservices.accesscontrol.windows.net  # сервіси ліцензування Microsoft
+time.cloudflare.com       # точний час Cloudflare
+time.facebook.com        # сервер часу Facebook
+time.google.com
+time.google.com           # точний час Google
+time.is                  # сервіс перевірки часу
+time.nist.gov             # сервер точного часу NIST
+time.windows.com          # сервіс часу Microsoft
 token.cp.microsoft.com                       # видача токенів Microsoft
 tokensit.cp.microsoft-tst.com                # тестова видача токенів
-*.servicebus.windows.net                     # черги Service Bus
-vas.samsungapps.com                          # магазин Samsung
-odc.officeapps.live.com                      # Office Online
-# Старі / додаткові
-*.livefilestore.com  # старий сервіс зберігання Microsoft
-skydrive.com         # попередня назва OneDrive
-*.demdex.net         # аналітика Adobe
-*.omtrdc.net         # аналітика Adobe
-*.gfx.ms             # ресурси Microsoft
-# Українські сервіси
-rozetka.com.ua   # маркетплейс Rozetka
-prom.ua          # торговий майданчик Prom
-olx.ua           # сервіс оголошень
-privatbank.ua    # інтернет-банкінг ПриватБанку
-monobank.ua      # онлайн-банк Monobank
-novaposhta.ua    # логістична компанія Нова пошта
-liqpay.ua        # платіжна система LiqPay
-ukr.net          # популярний поштовий сервіс
-oschadbank.ua    # інтернет-банкінг Ощадбанку
-pumb.ua          # онлайн-банк ПУМБ
-# Державні ресурси України
-kmu.gov.ua             # Кабінет Міністрів України
-rada.gov.ua            # Верховна Рада України
-president.gov.ua       # Офіційне представництво Президента
-diia.gov.ua            # портал Дія
-tax.gov.ua             # Податкова служба
-customs.gov.ua         # Митна служба
-mvs.gov.ua             # Міністерство внутрішніх справ
-minjust.gov.ua         # Міністерство юстиції
-mon.gov.ua             # Міністерство освіти і науки
-moz.gov.ua             # Міністерство охорони здоров'я
-dsns.gov.ua            # Державна служба з надзвичайних ситуацій
-# Файлові сховища
-# Google Drive
-drive.google.com                # доступ до Google Drive
-docs.google.com                 # документи Google Docs
-drive.googleusercontent.com     # файли Drive
-lh3.googleusercontent.com       # зображення Drive
-# MEGA
-mega.nz                         # основний домен MEGA
-*.mega.nz                       # піддомени MEGA
-mega.co.nz                      # старий домен MEGA
-*.mega.co.nz                    # піддомени старого домену
-# Synology
-synology.com              # головний сайт Synology
-www.synology.com          # веб-інтерфейс
-update.synology.com       # оновлення DSM
-global.download.synology.com # завантаження пакетів
-
-# Додаткові хмарні сховища
-dropbox.com              # сервіс Dropbox
-*.dropbox.com            # піддомени Dropbox
-box.com                  # сервіс Box
-
-# Месенджери
-telegram.org            # месенджер Telegram
-cdn.telegram.org        # CDN Telegram
-whatsapp.com            # месенджер WhatsApp
-discord.com             # чат Discord
-
-# Сервери точного часу (NTP)
-time.google.com           # точний час Google
-time.cloudflare.com       # точний час Cloudflare
-time.windows.com          # сервіс часу Microsoft
-pool.ntp.org              # глобальний пул NTP
+trembita.gov.ua
 ua.pool.ntp.org           # український пул NTP
-time.nist.gov             # сервер точного часу NIST
-time.facebook.com        # сервер часу Facebook
-time.is                  # сервіс перевірки часу
-
-# World of Tanks Blitz
-wotblitz.com          # офіційний сайт гри
-wotblitz.eu           # європейський портал
-wargaming.net         # головний домен компанії
-login.wargaming.net   # авторизація
-cdn.wargaming.net     # CDN з оновленнями
-wgcdn.co              # додатковий CDN
-
-
-# Веб-ресурси для скриптів та стилів
-fonts.googleapis.com    # стилі Google Fonts
-fonts.gstatic.com       # шрифти Google Fonts
-ajax.googleapis.com     # бібліотеки jQuery та інші
-code.jquery.com         # CDN jQuery
-cdnjs.cloudflare.com    # популярний CDN з бібліотеками JS
-cdn.jsdelivr.net        # CDN jsDelivr для скриптів та стилів
+ukr.net          # популярний поштовий сервіс
 unpkg.com               # CDN npm-пакунків
+update.argotunnel.com
+update.creality.com
+update.eset.com
+update.microsoft.com
+update.synology.com       # оновлення DSM
+updates-http.cdn-apple.com
+updates.cdn-apple.com
+us-west-2.aws.crealitycloud.com
+valid.apple.com
+vas.samsungapps.com                          # магазин Samsung
+vortex.data.microsoft.com # телеметрія Windows
+vpp.itunes.apple.com
+wargaming.net         # головний домен компанії
+warp.cloudflare.com
+warp.cloudflareclient.com
+web.monobank.ua
+wg.gcdn.wargaming.net
+wgcdn.co              # додатковий CDN
+wgus.wargaming.net
+whatsapp.com            # месенджер WhatsApp
+wikipedia.org     # енциклопедія
+windowsupdate.microsoft.com
+wkms-public.apple.com
+wotblitz.com          # офіційний сайт WOT Blitz
+wotblitz.eu           # європейський портал
+ws.school.apple.com
+www.apple.com
+www.cloudflare.com
+www.creality.com
+www.google.com
+www.gstatic.com
+www.msftconnecttest.com
+www.msftncsi.com
+www.synology.com          # веб-інтерфейс
+xp-cdn.apple.com
+xp.apple.com
+youtube.com       # відеохостинг

@@ -3,3 +3,5 @@ telegram.org            # месенджер Telegram
 cdn.telegram.org        # CDN Telegram
 whatsapp.com            # месенджер WhatsApp
 discord.com             # чат Discord
+api.telegram.org            # API Telegram
+core.telegram.org          # документація Telegram
