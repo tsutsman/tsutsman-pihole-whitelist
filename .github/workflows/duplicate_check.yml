@@ -1,0 +1,20 @@
+name: Перевірка дублювань
+
+on:
+  pull_request:
+    paths:
+      - '**.txt'
+      - 'check_duplicates.sh'
+      - '.github/workflows/duplicate_check.yml'
+
+jobs:
+  duplicates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Виконати перевірку
+        run: |
+          chmod +x ./check_duplicates.sh
+          for file in whitelist.txt categories/*.txt; do
+            ./check_duplicates.sh "$file"
+          done
