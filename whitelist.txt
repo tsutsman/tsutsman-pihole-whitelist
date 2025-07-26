@@ -32,6 +32,9 @@ acme-v02.api.letsencrypt.org
 acskidd.gov.ua
 ajax.googleapis.com     # бібліотеки jQuery та інші
 albert.apple.com
+alibaba.com
+aliexpress.com
+amazon.com
 android.clients.google.com
 anthropic.com            # інформація та документація Anthropic
 api.apple-cloudkit.com
@@ -66,6 +69,7 @@ axm-adm-scep.apple.com
 axm-app.apple.com
 axm-servicediscovery.apple.com
 battle.net             # сервіс Battle.net
+bestbuy.com
 bitdefender.com
 blizzard.com           # платформа Blizzard
 box.com                  # сервіс Box
@@ -104,6 +108,7 @@ crl.apple.com
 crl3.digicert.com
 cssubmissions.apple.com
 ctldl.windowsupdate.com
+deezer.com
 defs.symantec.com
 device.mycrealitycloud.com
 deviceenrollment.apple.com
@@ -112,6 +117,7 @@ devimages-cdn.apple.com
 diagassets.apple.com
 diia.gov.ua
 discord.com             # чат Discord
+disneyplus.com
 dl.delivery.mp.microsoft.com
 dns.google
 dns.msftncsi.com
@@ -127,10 +133,13 @@ drive.googleusercontent.com     # файли Drive
 dropbox.com              # сервіс Dropbox
 e-data.gov.ua
 eauction.gov.ua
+ebay.com
 engage.cloudflareclient.com
 epicgames.com          # магазин Epic Games
+etsy.com
 eu.wargaming.net
 fabric.io
+facebook.com
 favorites.live.com
 fba.apple.com
 fcs-keys-pub-prod.cdn-apple.com
@@ -152,8 +161,10 @@ gs.apple.com
 gsa.apple.com
 gsra.apple.com
 guzzoni.apple.com
+hbomax.com
 hoyoverse.com          # ігри HoYoverse (Genshin Impact)
 huggingface.co           # платформа HuggingFace
+hulu.com
 humb.apple.com
 icloud.com
 icons.axm-usercontent-apple.com
@@ -164,6 +175,7 @@ idv-prod1.apple.com
 idv.cdn-apple.com
 ig.apple.com
 init-p01st.push.apple.com
+instagram.com
 iot.mycrealitycloud.com
 iphonesubmissions.apple.com
 iprofiles.apple.com
@@ -172,6 +184,7 @@ lcdn-locator.apple.com
 lcdn-registration.apple.com
 leagueoflegends.com    # сайт гри League of Legends
 lh3.googleusercontent.com       # зображення Drive
+linkedin.com
 liqpay.ua        # платіжна система LiqPay
 live.com
 livegrid.eset.com
@@ -199,6 +212,7 @@ microsoftteams.com   # Teams від Microsoft
 monobank.ua      # онлайн-банк Monobank
 mqtt.mycrealitycloud.com
 msn.com
+netflix.com
 norton.com
 novaposhta.ua    # логістична компанія Нова пошта
 ns.itunes.apple.com
@@ -234,6 +248,7 @@ pb.ua
 perplexity.ai            # пошук з AI
 pg-bootstrap.itunes.apple.com
 photos.live.com
+pinterest.com
 platform.openai.com      # веб-інтерфейс OpenAI
 play.googleapis.com
 play.itunes.apple.com
@@ -247,6 +262,7 @@ portal.pfu.gov.ua
 pos-device.apple.com
 posarprodcssservice.accesscontrol.windows.net # автентифікація Office
 ppq.apple.com
+primevideo.com
 privat24.ua
 privatbank.ua    # інтернет-банкінг ПриватБанку
 products.office.com
@@ -268,16 +284,20 @@ security.cloudflare-dns.com
 serverstatus.apple.com
 settings-win.data.microsoft.com
 settings.live.net
+shopify.com
 skl.apple.com
 skyapi.live.net
 skydrive.com         # попередня назва OneDrive
 skydrive.live.com
 slack.com            # робочі чати Slack
 smp-device-content.apple.com
+snapchat.com
 snapi.live.net
 sophosupd.com
+soundcloud.com
 spending.gov.ua
 spoprod-a.akamaihd.net
+spotify.com
 sq-device.apple.com
 stability.ai             # розробник Stable Diffusion
 static.cloudflareinsights.com # аналітика Cloudflare Insights
@@ -306,6 +326,7 @@ tbsc.apple.com
 teams.cloudflare.com
 teams.microsoft.com
 telegram.org            # месенджер Telegram
+tiktok.com
 time-ios.apple.com
 time-macos.apple.com
 time.apple.com
@@ -319,6 +340,7 @@ time.windows.com          # сервіс часу Microsoft
 token.cp.microsoft.com                       # видача токенів Microsoft
 tokensit.cp.microsoft-tst.com                # тестова видача токенів
 trembita.gov.ua
+twitter.com
 ua.pool.ntp.org           # український пул NTP
 ukr.net          # популярний поштовий сервіс
 unpkg.com               # CDN npm-пакунків
