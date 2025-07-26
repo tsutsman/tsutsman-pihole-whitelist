@@ -27,6 +27,9 @@ Available files include:
 - `web_resources.txt` — CDNs and hosts for website scripts and styles;
 - `office_collaboration.txt` — Zoom, Slack and Microsoft Teams;
 - `ai_services.txt` — popular AI services.
+- `social_networks.txt` — major social networks.
+- `streaming_services.txt` — video and music streaming platforms.
+- `ecommerce.txt` — global e-commerce sites.
 
 ## Generating the full list
 

@@ -1,0 +1,9 @@
+# Відео- та музичні стрімінгові сервіси
+netflix.com
+disneyplus.com
+hulu.com
+primevideo.com
+hbomax.com
+spotify.com
+soundcloud.com
+deezer.com

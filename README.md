@@ -30,6 +30,9 @@
 - `web_resources.txt` — CDN та хости скриптів і стилів для вигляду сайтів.
 - `office_collaboration.txt` — Zoom, Slack та Microsoft Teams.
 - `ai_services.txt` — популярні AI-сервіси.
+- `social_networks.txt` — домени популярних соцмереж.
+- `streaming_services.txt` — відео- та музичні стрімінги.
+- `ecommerce.txt` — міжнародні майданчики електронної торгівлі.
 
 ## Генерація загального списку
 
