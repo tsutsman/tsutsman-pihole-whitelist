@@ -5,3 +5,10 @@ wargaming.net         # головний домен компанії
 login.wargaming.net   # авторизація
 cdn.wargaming.net     # CDN з оновленнями
 wgcdn.co              # додатковий CDN
+login.p1.worldoftanks.eu
+login.p2.worldoftanks.eu
+login.p3.worldoftanks.eu
+login.p4.worldoftanks.eu
+eu.wargaming.net
+wg.gcdn.wargaming.net
+wgus.wargaming.net

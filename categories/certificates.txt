@@ -1,0 +1,5 @@
+# OCSP та сертифікати
+ocsp.digicert.com
+acme-v02.api.letsencrypt.org
+ocsp.usertrust.com
+crl3.digicert.com

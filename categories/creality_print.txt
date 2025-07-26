@@ -1,0 +1,15 @@
+# Сервіси CrealityPrint
+account.mycrealitycloud.com
+api.mycrealitycloud.com
+cloud.mycrealitycloud.com
+device.mycrealitycloud.com
+iot.mycrealitycloud.com
+cdn.creality.com
+creality.com
+www.creality.com
+update.creality.com
+s3.creality.com
+static.creality.com
+us-west-2.aws.crealitycloud.com
+mqtt.mycrealitycloud.com
+ota.mycrealitycloud.com

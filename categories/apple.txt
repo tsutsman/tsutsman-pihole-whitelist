@@ -96,3 +96,5 @@ ws.school.apple.com
 www.apple.com
 xp-cdn.apple.com
 xp.apple.com
+init-p01st.push.apple.com
+api.push.apple.com
