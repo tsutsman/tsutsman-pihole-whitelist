@@ -27,6 +27,7 @@
 - `gaming.txt` — домени для ігор, зокрема World of Tanks Blitz.
 - `web_resources.txt` — CDN та хости скриптів і стилів для вигляду сайтів.
 - `office_collaboration.txt` — Zoom, Slack та Microsoft Teams.
+- `ai_services.txt` — популярні AI-сервіси.
 
 ## Генерація загального списку
 

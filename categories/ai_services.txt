@@ -1,0 +1,12 @@
+# Популярні AI-сервіси
+openai.com               # офіційний сайт OpenAI
+api.openai.com           # API ChatGPT
+platform.openai.com      # веб-інтерфейс OpenAI
+claude.ai                # сервіс Claude від Anthropic
+anthropic.com            # інформація та документація Anthropic
+huggingface.co           # платформа HuggingFace
+replicate.com            # запуск AI-моделей
+perplexity.ai            # пошук з AI
+cohere.ai                # сервіс Cohere API
+stability.ai             # розробник Stable Diffusion
+gemini.google.com        # Google Gemini (раніше Bard)
