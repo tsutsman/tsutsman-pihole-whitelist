@@ -24,6 +24,7 @@
 - `cloud_storage.txt` — хмарні сховища (Google Drive, MEGA, Synology тощо);
 - `messengers.txt` — домени Telegram, WhatsApp, Discord;
 - `ntp_servers.txt` — сервери точного часу (NTP).
+- `gaming.txt` — домени для ігор, зокрема World of Tanks Blitz.
 
 ## Генерація загального списку
 

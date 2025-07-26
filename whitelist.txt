@@ -223,3 +223,12 @@ ua.pool.ntp.org           # український пул NTP
 time.nist.gov             # сервер точного часу NIST
 time.facebook.com        # сервер часу Facebook
 time.is                  # сервіс перевірки часу
+
+# World of Tanks Blitz
+wotblitz.com          # офіційний сайт гри
+wotblitz.eu           # європейський портал
+wargaming.net         # головний домен компанії
+login.wargaming.net   # авторизація
+cdn.wargaming.net     # CDN з оновленнями
+wgcdn.co              # додатковий CDN
+

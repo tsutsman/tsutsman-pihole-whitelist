@@ -1,0 +1,7 @@
+# Ігри та онлайн-сервіси
+wotblitz.com          # офіційний сайт WOT Blitz
+wotblitz.eu           # європейський портал
+wargaming.net         # головний домен компанії
+login.wargaming.net   # авторизація
+cdn.wargaming.net     # CDN з оновленнями
+wgcdn.co              # додатковий CDN
