@@ -20,6 +20,8 @@ id.gov.ua
 e-data.gov.ua
 spending.gov.ua
 trembita.gov.ua
+zakupki.prom.ua
+eauction.gov.ua
 
 # Банківські сервіси
 api.privatbank.ua

@@ -1,0 +1,7 @@
+# Хмарні та офісні сервіси для спільної роботи
+zoom.us              # відеоконференції Zoom
+*.zoom.us            # піддомени Zoom
+slack.com            # робочі чати Slack
+*.slack.com          # піддомени Slack
+microsoftteams.com   # Teams від Microsoft
+*.microsoftteams.com # піддомени Teams

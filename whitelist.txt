@@ -14,6 +14,7 @@
 *.mega.nz                       # піддомени MEGA
 *.mesh.com
 *.microsoft.com
+*.microsoftteams.com # піддомени Teams
 *.office.com
 *.officeapps.live.com
 *.omtrdc.net         # аналітика Adobe
@@ -21,7 +22,9 @@
 *.policies.live.net
 *.servicebus.windows.net                     # черги Service Bus
 *.settings.live.net
+*.slack.com          # піддомени Slack
 *.storage.live.com
+*.zoom.us            # піддомени Zoom
 account.apple.com
 account.mycrealitycloud.com
 accounts.google.com
@@ -50,6 +53,7 @@ apple.com         # необхідно для App Store та iCloud
 appleid.apple.com
 appleid.cdn-apple.com
 apps.apple.com
+assets.adobe.com          # хмарні ресурси Adobe
 assets.onestore.ms
 audiocontentdownload.apple.com
 avast.com
@@ -111,6 +115,7 @@ drive.google.com                # доступ до Google Drive
 drive.googleusercontent.com     # файли Drive
 dropbox.com              # сервіс Dropbox
 e-data.gov.ua
+eauction.gov.ua
 engage.cloudflareclient.com
 eu.wargaming.net
 fabric.io
@@ -171,6 +176,7 @@ microsoft.com
 microsoft.com     # основний домен сервісів Microsoft
 microsoft365.com
 microsoftonline.com
+microsoftteams.com   # Teams від Microsoft
 monobank.ua      # онлайн-банк Monobank
 mqtt.mycrealitycloud.com
 msn.com
@@ -238,11 +244,13 @@ skl.apple.com
 skyapi.live.net
 skydrive.com         # попередня назва OneDrive
 skydrive.live.com
+slack.com            # робочі чати Slack
 smp-device-content.apple.com
 snapi.live.net
 spending.gov.ua
 spoprod-a.akamaihd.net
 sq-device.apple.com
+static.cloudflareinsights.com # аналітика Cloudflare Insights
 static.creality.com
 static.ips.apple.com
 static.monobank.ua
@@ -286,6 +294,7 @@ update.synology.com       # оновлення DSM
 updates-http.cdn-apple.com
 updates.cdn-apple.com
 us-west-2.aws.crealitycloud.com
+use.fontawesome.com       # іконки FontAwesome
 valid.apple.com
 vas.samsungapps.com                          # магазин Samsung
 vortex.data.microsoft.com # телеметрія Windows
@@ -315,3 +324,5 @@ www.synology.com          # веб-інтерфейс
 xp-cdn.apple.com
 xp.apple.com
 youtube.com       # відеохостинг
+zakupki.prom.ua
+zoom.us              # відеоконференції Zoom
