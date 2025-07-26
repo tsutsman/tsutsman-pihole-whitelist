@@ -1,0 +1,15 @@
+name: Щотижнева перевірка
+
+on:
+  schedule:
+    - cron: '0 3 * * 0'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Запустити перевірку списків
+        run: |
+          chmod +x ./check_duplicates.sh
+          ./check_duplicates.sh
