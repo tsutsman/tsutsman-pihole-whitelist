@@ -6,3 +6,17 @@ avast.com
 defs.symantec.com
 norton.com
 liveupdate.symantecliveupdate.com
+# Популярні антивіруси
+bitdefender.com
+updates.bitdefender.com
+avira.com
+update.avira.com
+malwarebytes.com
+downloads.malwarebytes.com
+pandasecurity.com
+update.pandasecurity.com
+sophosupd.com
+downloads.sophos.com
+clamav.net
+mcafee.com
+updates.mcafee.com
