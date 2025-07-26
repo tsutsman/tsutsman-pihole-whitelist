@@ -33,6 +33,7 @@ acskidd.gov.ua
 ajax.googleapis.com     # бібліотеки jQuery та інші
 albert.apple.com
 android.clients.google.com
+anthropic.com            # інформація та документація Anthropic
 api.apple-cloudkit.com
 api.cloudflareclient.com
 api.edu.apple.com
@@ -41,6 +42,7 @@ api.github.com
 api.live.net
 api.monobank.ua
 api.mycrealitycloud.com
+api.openai.com           # API ChatGPT
 api.paymonobank.ua
 api.privatbank.ua
 api.push.apple.com
@@ -79,6 +81,7 @@ cdnjs.cloudflare.com    # популярний CDN з бібліотеками J
 certs.apple.com
 cf-v4.cloudflare.com
 clamav.net
+claude.ai                # сервіс Claude від Anthropic
 clients3.google.com
 clients4.google.com
 clients5.google.com
@@ -89,6 +92,7 @@ cloudflarewarp.com
 cls-ingest.itunes.apple.com
 cls-iosclient.itunes.apple.com
 code.jquery.com         # CDN jQuery
+cohere.ai                # сервіс Cohere API
 configuration.apple.com
 connectivity.cloudflareclient.com
 connectivitycheck.gstatic.com
@@ -134,6 +138,7 @@ fonts.gstatic.com       # шрифти Google Fonts
 g.live.com
 gdmf-ados.apple.com
 gdmf.apple.com
+gemini.google.com        # Google Gemini (раніше Bard)
 gg.apple.com
 github.com        # платформа розробників
 global.download.synology.com # завантаження пакетів
@@ -143,6 +148,7 @@ gs.apple.com
 gsa.apple.com
 gsra.apple.com
 guzzoni.apple.com
+huggingface.co           # платформа HuggingFace
 humb.apple.com
 icloud.com
 icons.axm-usercontent-apple.com
@@ -207,6 +213,7 @@ olx.ua           # сервіс оголошень
 oneclient.sfx.ms
 onedrive.com
 onedrive.live.com
+openai.com               # офіційний сайт OpenAI
 oscdn.apple.com
 oschadbank.ua    # інтернет-банкінг Ощадбанку
 osrecovery.apple.com
@@ -218,8 +225,10 @@ pandasecurity.com
 pay.monobank.ua
 payhub.privatbank.ua
 pb.ua
+perplexity.ai            # пошук з AI
 pg-bootstrap.itunes.apple.com
 photos.live.com
+platform.openai.com      # веб-інтерфейс OpenAI
 play.googleapis.com
 play.itunes.apple.com
 playgrounds-assets-cdn.apple.com
@@ -239,6 +248,7 @@ push.apple.com
 push.services.mozilla.com
 raw.githubusercontent.com
 redemptionservices.accesscontrol.windows.net  # сервіси ліцензування Microsoft
+replicate.com            # запуск AI-моделей
 repository.eset.com
 rozetka.com.ua   # маркетплейс Rozetka
 s3.creality.com
@@ -259,6 +269,7 @@ sophosupd.com
 spending.gov.ua
 spoprod-a.akamaihd.net
 sq-device.apple.com
+stability.ai             # розробник Stable Diffusion
 static.cloudflareinsights.com # аналітика Cloudflare Insights
 static.creality.com
 static.ips.apple.com
