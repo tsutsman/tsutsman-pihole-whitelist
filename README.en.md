@@ -30,6 +30,9 @@ Available files include:
 - `social_networks.txt` — major social networks.
 - `streaming_services.txt` — video and music streaming platforms.
 - `ecommerce.txt` — global e-commerce sites.
+- `educational_resources.txt` — useful learning portals.
+- `news_media.txt` — popular news websites.
+- `international_banks.txt` — international payment services.
 
 ## Generating the full list
 
@@ -47,6 +50,11 @@ The resulting file is ready for import into pihole.
 1. Copy `whitelist.txt` to your pihole server.
 2. In the web interface, open **Whitelist** and import the domains from this file.
 3. For automatic addition you can use pihole's API.
+   Example request:
+   ```bash
+   curl -X POST "http://pi.hole/admin/scripts/pi-hole/php/whitelist.php" \
+     -d "addfqdn=example.com" -d "token=YOUR_TOKEN"
+   ```
 4. Under **Adlists** you may add the raw file URL:
    https://raw.githubusercontent.com/tsutsman/tsutsman-pihole-whitelist/main/whitelist.txt
    so pihole can automatically fetch updates.
@@ -62,10 +70,15 @@ Before submitting a Pull Request, run `check_duplicates.sh` on any list you chan
 
 The script reports any duplicate lines it finds.
 GitHub Actions runs the same check on each Pull Request, so duplicates will cause a failure.
+A weekly workflow also checks the lists and reports potential issues.
 
 ## Contributing
 
-Please comment each new domain in `whitelist.txt` and open a Pull Request with explanations.
+1. Fork the repository and create a dedicated branch.
+2. Add domains to the appropriate file under `categories/` with a comment containing the date and reason.
+3. Run `./check_duplicates.sh` with no parameters to ensure there are no duplicates or unreachable hosts.
+4. Regenerate `whitelist.txt` via `./generate_whitelist.sh`.
+5. Open a Pull Request summarizing your changes.
 
 ## License
 
