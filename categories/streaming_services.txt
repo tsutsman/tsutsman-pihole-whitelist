@@ -3,7 +3,8 @@ netflix.com
 disneyplus.com
 hulu.com
 primevideo.com
-hbomax.com
+hbomax.com            # старий домен HBO Max
+max.com               # сервіс Max (раніше HBO Max)
 spotify.com
 soundcloud.com
 deezer.com
