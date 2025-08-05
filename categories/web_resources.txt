@@ -8,4 +8,5 @@ cdn.jsdelivr.net        # CDN jsDelivr для скриптів та стилів
 unpkg.com               # CDN npm-пакунків
 assets.adobe.com          # хмарні ресурси Adobe
 use.fontawesome.com       # іконки FontAwesome
+googletagmanager.com       # менеджер тегів Google
 static.cloudflareinsights.com # аналітика Cloudflare Insights

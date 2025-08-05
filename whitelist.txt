@@ -223,6 +223,7 @@ go.microsoft.com
 gog.com                # магазин GOG
 google.com        # пошукова система
 googleapis.l.google.com
+googletagmanager.com       # менеджер тегів Google
 graph.facebook.com
 graph.microsoft.com
 gs.apple.com
