@@ -5,13 +5,13 @@ wargaming.net         # головний домен компанії
 login.wargaming.net   # авторизація
 cdn.wargaming.net     # CDN з оновленнями
 wgcdn.co              # додатковий CDN
-login.p1.worldoftanks.eu
-login.p2.worldoftanks.eu
-login.p3.worldoftanks.eu
-login.p4.worldoftanks.eu
-eu.wargaming.net
-wg.gcdn.wargaming.net
-wgus.wargaming.net
+login.p1.worldoftanks.eu   # авторизація WOT EU, сервер 1
+login.p2.worldoftanks.eu   # авторизація WOT EU, сервер 2
+login.p3.worldoftanks.eu   # авторизація WOT EU, сервер 3
+login.p4.worldoftanks.eu   # авторизація WOT EU, сервер 4
+eu.wargaming.net          # головний портал Wargaming EU
+wg.gcdn.wargaming.net     # CDN Wargaming
+wgus.wargaming.net        # CDN Wargaming (US)
 # Сервіси Steam та Valve
 steampowered.com       # головний домен Steam
 store.steampowered.com # магазин Steam
