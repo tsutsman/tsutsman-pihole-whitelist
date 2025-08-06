@@ -182,7 +182,7 @@ engage.cloudflareclient.com
 epicgames.com          # магазин Epic Games
 espreso.tv       # 2025-07-26 телеканал Еспресо
 etsy.com
-eu.wargaming.net
+eu.wargaming.net          # головний портал Wargaming EU
 external-lhr0-1.xx.fbcdn.net
 external-lhr1-1.xx.fbcdn.net
 external-lhr10-1.xx.fbcdn.net
@@ -272,10 +272,10 @@ liveupdate.symantecliveupdate.com
 login.diia.gov.ua
 login.live.com
 login.microsoftonline.com
-login.p1.worldoftanks.eu
-login.p2.worldoftanks.eu
-login.p3.worldoftanks.eu
-login.p4.worldoftanks.eu
+login.p1.worldoftanks.eu   # авторизація WOT EU, сервер 1
+login.p2.worldoftanks.eu   # авторизація WOT EU, сервер 2
+login.p3.worldoftanks.eu   # авторизація WOT EU, сервер 3
+login.p4.worldoftanks.eu   # авторизація WOT EU, сервер 4
 login.wargaming.net   # авторизація
 login.windows.net
 m.hotmail.com
@@ -518,9 +518,9 @@ warp.cloudflare.com
 warp.cloudflareclient.com
 web.facebook.com
 web.monobank.ua
-wg.gcdn.wargaming.net
+wg.gcdn.wargaming.net     # CDN Wargaming
 wgcdn.co              # додатковий CDN
-wgus.wargaming.net
+wgus.wargaming.net        # CDN Wargaming (US)
 whatsapp.com            # месенджер WhatsApp
 whispersystems-textsecure-attachments.s3-accelerate.amazonaws.com
 wikipedia.org     # енциклопедія

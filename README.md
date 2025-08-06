@@ -63,6 +63,17 @@
    https://raw.githubusercontent.com/tsutsman/tsutsman-pihole-whitelist/main/whitelist.txt
    Це дозволить pihole автоматично завантажувати оновлення білого списку.
 
+### Приклади для Pi-hole v5 та v6
+
+- **Pi-hole v5**:
+  ```bash
+  xargs -a whitelist.txt -L1 sudo pihole -w
+  ```
+- **Pi-hole v6**:
+  ```bash
+  sudo pihole-FTL whitelist add $(cat whitelist.txt)
+  ```
+
 ## Перевірка списку
 
 Перед створенням Pull Request запустіть скрипт `check_duplicates.sh`
