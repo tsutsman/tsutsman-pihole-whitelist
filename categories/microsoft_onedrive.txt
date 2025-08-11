@@ -1,57 +1,64 @@
-# Microsoft OneDrive
+# Microsoft OneDrive — домени хмарного сховища Microsoft
+
 # Основні
+*.files.1drv.com
 onedrive.com
 *.onedrive.com
 onedrive.live.com
-*.files.1drv.com
 storage.live.com
 *.storage.live.com
+
 # Аутентифікація
+g.live.com
 login.live.com
 login.microsoftonline.com
 login.windows.net
-g.live.com
+
 # Microsoft & Office
+*.aria.microsoft.com
 *.microsoft.com
 *.office.com
 *.officeapps.live.com
-*.aria.microsoft.com
+
 # Live-додатки
 api.live.net
 apis.live.net
 docs.live.net
 *.docs.live.net
-settings.live.net
-policies.live.net
-*.settings.live.net
-*.policies.live.net
-skyapi.live.net
-snapi.live.net
 favorites.live.com
-oauth.live.com
-photos.live.com
-skydrive.live.com
 *.groups.office.live.com
 *.groups.photos.live.com
+oauth.live.com
+photos.live.com
+policies.live.net
+*.policies.live.net
+settings.live.net
+*.settings.live.net
+skyapi.live.net
+skydrive.live.com
+snapi.live.net
+
 # CDN / телеметрія
-spoprod-a.akamaihd.net
-*.mesh.com
-p.sfx.ms
-oneclient.sfx.ms
-fabric.io
 *.crashlytics.com       # Crashlytics API
+fabric.io
+*.mesh.com
+oneclient.sfx.ms
+p.sfx.ms
+spoprod-a.akamaihd.net
 vortex.data.microsoft.com # телеметрія Windows
+
 # Сервіси
+odc.officeapps.live.com                      # Office Online
 posarprodcssservice.accesscontrol.windows.net # автентифікація Office
 redemptionservices.accesscontrol.windows.net  # сервіси ліцензування Microsoft
+*.servicebus.windows.net                     # черги Service Bus
 token.cp.microsoft.com                       # видача токенів Microsoft
 tokensit.cp.microsoft-tst.com                # тестова видача токенів
-*.servicebus.windows.net                     # черги Service Bus
 vas.samsungapps.com                          # магазин Samsung
-odc.officeapps.live.com                      # Office Online
+
 # Старі / додаткові
-*.livefilestore.com  # старий сервіс зберігання Microsoft
-skydrive.com         # попередня назва OneDrive
 *.demdex.net         # аналітика Adobe
-*.omtrdc.net         # аналітика Adobe
 *.gfx.ms             # ресурси Microsoft
+*.livefilestore.com  # старий сервіс зберігання Microsoft
+*.omtrdc.net         # аналітика Adobe
+skydrive.com         # попередня назва OneDrive

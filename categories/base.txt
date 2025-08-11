@@ -1,13 +1,13 @@
-# Базовий список дозволених доменів
+# Базовий список дозволених доменів — основні ресурси для коректної роботи
 # Додайте сюди домени, які не повинні блокуватись pihole
 
-google.com        # пошукова система
-youtube.com       # відеохостинг
-github.com        # платформа розробників
-microsoft.com     # основний домен сервісів Microsoft
-apple.com         # необхідно для App Store та iCloud
-wikipedia.org     # енциклопедія
-cloudflare.com    # CDN та DNS від Cloudflare
-status.github.com
-raw.githubusercontent.com
 api.github.com
+apple.com         # необхідно для App Store та iCloud
+cloudflare.com    # CDN та DNS від Cloudflare
+github.com        # платформа розробників
+google.com        # пошукова система
+microsoft.com     # основний домен сервісів Microsoft
+raw.githubusercontent.com
+status.github.com
+wikipedia.org     # енциклопедія
+youtube.com       # відеохостинг

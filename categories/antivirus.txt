@@ -1,22 +1,23 @@
-# Антивірусні сервіси
-update.eset.com
-livegrid.eset.com
-repository.eset.com
+# Антивірусні сервіси — домени для оновлень та перевірки безпеки
 avast.com
 defs.symantec.com
-norton.com
+livegrid.eset.com
 liveupdate.symantecliveupdate.com
+norton.com
+repository.eset.com
+update.eset.com
+
 # Популярні антивіруси
-bitdefender.com
-updates.bitdefender.com
 avira.com
-update.avira.com
-malwarebytes.com
-downloads.malwarebytes.com
-pandasecurity.com
-update.pandasecurity.com
-sophosupd.com
-downloads.sophos.com
+bitdefender.com
 clamav.net
+downloads.malwarebytes.com
+downloads.sophos.com
+malwarebytes.com
 mcafee.com
+pandasecurity.com
+sophosupd.com
+update.avira.com
+update.pandasecurity.com
+updates.bitdefender.com
 updates.mcafee.com

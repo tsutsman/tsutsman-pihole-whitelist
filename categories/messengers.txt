@@ -1,7 +1,7 @@
-# Месенджери
-telegram.org            # месенджер Telegram
-cdn.telegram.org        # CDN Telegram
-whatsapp.com            # месенджер WhatsApp
-discord.com             # чат Discord
+# Месенджери — сервіси для обміну повідомленнями
 api.telegram.org            # API Telegram
+cdn.telegram.org        # CDN Telegram
 core.telegram.org          # документація Telegram
+discord.com             # чат Discord
+telegram.org            # месенджер Telegram
+whatsapp.com            # месенджер WhatsApp

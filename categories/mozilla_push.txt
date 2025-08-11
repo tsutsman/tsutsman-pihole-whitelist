@@ -1,2 +1,2 @@
-# Mozilla Push
+# Mozilla Push — сервіс сповіщень Mozilla
 push.services.mozilla.com
