@@ -16,3 +16,11 @@ jobs:
         run: |
           chmod +x ./check_duplicates.sh
           ./check_duplicates.sh
+      - name: Перевірити актуальність whitelist.txt
+        run: |
+          chmod +x ./generate_whitelist.sh
+          ./generate_whitelist.sh
+          if ! git diff --quiet --exit-code whitelist.txt; then
+            echo 'whitelist.txt не актуальний, запустіть generate_whitelist.sh' >&2
+            exit 1
+          fi
