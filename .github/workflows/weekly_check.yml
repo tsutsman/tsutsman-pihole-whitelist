@@ -10,6 +10,25 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Запустити перевірку списків
+        id: duplicates
         run: |
           chmod +x ./check_duplicates.sh
-          ./check_duplicates.sh
+          output=$(./check_duplicates.sh 2>&1)
+          echo "$output"
+          echo "result<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$output" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+      - name: Створити або оновити issue для недоступних доменів
+        if: contains(steps.duplicates.outputs.result, 'Недоступний домен:')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          domains=$(echo "${{ steps.duplicates.outputs.result }}" | grep 'Недоступний домен:' | sed 's/.*Недоступний домен: //')
+          body=$(printf '%s\n' "$domains")
+          existing_issue=$(curl -s -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/${{ github.repository }}/issues?state=open&per_page=100" | jq -r '[.[] | select(.title | startswith("Недоступні домени"))][0].number')
+          if [ -n "$existing_issue" ]; then
+            curl -s -H "Authorization: Bearer $GH_TOKEN" -X POST -d "$(jq -nc --arg body "$body" '{body:$body}')" "https://api.github.com/repos/${{ github.repository }}/issues/$existing_issue/comments"
+          else
+            title="Недоступні домени $(date +'%Y-%m-%d')"
+            curl -s -H "Authorization: Bearer $GH_TOKEN" -X POST -d "$(jq -nc --arg title "$title" --arg body "$body" '{title:$title, body:$body}')" "https://api.github.com/repos/${{ github.repository }}/issues"
+          fi
