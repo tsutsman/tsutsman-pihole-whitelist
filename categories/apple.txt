@@ -1,11 +1,12 @@
-# Сервіси Apple
-icloud.com
-*.icloud.com
+# Сервіси Apple — домени для iCloud та інфраструктури Apple
+api.apple-cloudkit.com
 appleid.apple.com
 apps.apple.com
+icloud.com
+*.icloud.com
 itunes.apple.com
-api.apple-cloudkit.com
 push.apple.com
+
 # Додаткові домени Apple з документації HT210060
 # Потрібні для оновлень та активації пристроїв
 
@@ -13,6 +14,7 @@ account.apple.com
 albert.apple.com
 api.edu.apple.com
 api.ent.apple.com
+api.push.apple.com
 app-site-association.cdn-apple.com
 appldnld.apple.com
 apple-relay.apple.com
@@ -53,6 +55,7 @@ idmsa.apple.com
 idv-prod1.apple.com
 idv.cdn-apple.com
 ig.apple.com
+init-p01st.push.apple.com
 iphonesubmissions.apple.com
 iprofiles.apple.com
 lcdn-locator.apple.com
@@ -96,5 +99,3 @@ ws.school.apple.com
 www.apple.com
 xp-cdn.apple.com
 xp.apple.com
-init-p01st.push.apple.com
-api.push.apple.com

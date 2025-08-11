@@ -1,10 +1,10 @@
-# Відео- та музичні стрімінгові сервіси
-netflix.com
-disneyplus.com
-hulu.com
-primevideo.com
-hbomax.com            # старий домен HBO Max
-max.com               # сервіс Max (раніше HBO Max)
-spotify.com
-soundcloud.com
+# Відео- та музичні стрімінгові сервіси — платформи для перегляду та прослуховування
 deezer.com
+disneyplus.com
+hbomax.com            # старий домен HBO Max
+hulu.com
+max.com               # сервіс Max (раніше HBO Max)
+netflix.com
+primevideo.com
+soundcloud.com
+spotify.com

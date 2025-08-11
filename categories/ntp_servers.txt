@@ -1,10 +1,10 @@
-# Сервери точного часу (NTP)
-time.google.com           # точний час Google
-time.cloudflare.com       # точний час Cloudflare
-time.windows.com          # сервіс часу Microsoft
-pool.ntp.org              # глобальний пул NTP
-ua.pool.ntp.org           # український пул NTP
-time.nist.gov             # сервер точного часу NIST
-time.facebook.com        # сервер часу Facebook
-time.is                  # сервіс перевірки часу
+# Сервери точного часу (NTP) — синхронізація системного часу
 ntp.org
+pool.ntp.org              # глобальний пул NTP
+time.cloudflare.com       # точний час Cloudflare
+time.facebook.com        # сервер часу Facebook
+time.google.com           # точний час Google
+time.is                  # сервіс перевірки часу
+time.nist.gov             # сервер точного часу NIST
+time.windows.com          # сервіс часу Microsoft
+ua.pool.ntp.org           # український пул NTP

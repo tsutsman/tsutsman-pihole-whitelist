@@ -1,12 +1,12 @@
-# Веб-ресурси для скриптів та стилів
+# Веб-ресурси для скриптів та стилів — зовнішні бібліотеки та стилі
+ajax.googleapis.com     # бібліотеки jQuery та інші
+assets.adobe.com          # хмарні ресурси Adobe
+cdn.jsdelivr.net        # CDN jsDelivr для скриптів та стилів
+cdnjs.cloudflare.com    # популярний CDN з бібліотеками JS
+code.jquery.com         # CDN jQuery
 fonts.googleapis.com    # стилі Google Fonts
 fonts.gstatic.com       # шрифти Google Fonts
-ajax.googleapis.com     # бібліотеки jQuery та інші
-code.jquery.com         # CDN jQuery
-cdnjs.cloudflare.com    # популярний CDN з бібліотеками JS
-cdn.jsdelivr.net        # CDN jsDelivr для скриптів та стилів
-unpkg.com               # CDN npm-пакунків
-assets.adobe.com          # хмарні ресурси Adobe
-use.fontawesome.com       # іконки FontAwesome
 googletagmanager.com       # менеджер тегів Google
 static.cloudflareinsights.com # аналітика Cloudflare Insights
+unpkg.com               # CDN npm-пакунків
+use.fontawesome.com       # іконки FontAwesome

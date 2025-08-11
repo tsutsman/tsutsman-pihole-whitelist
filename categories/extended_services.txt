@@ -1,3 +1,4 @@
+# Розширені сервіси — додаткові домени для різних платформ
 activity.windows.com
 android.clients.google.com
 api-tv.spotify.com

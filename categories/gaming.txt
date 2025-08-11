@@ -1,35 +1,38 @@
-# Ігри та онлайн-сервіси
-wotblitz.com          # офіційний сайт WOT Blitz
-wotblitz.eu           # європейський портал
-wargaming.net         # головний домен компанії
-login.wargaming.net   # авторизація
+# Ігри та онлайн-сервіси — домени ігрових платформ
+
+# Сервіси Wargaming
 cdn.wargaming.net     # CDN з оновленнями
-wgcdn.co              # додатковий CDN
+eu.wargaming.net          # головний портал Wargaming EU
 login.p1.worldoftanks.eu   # авторизація WOT EU, сервер 1
 login.p2.worldoftanks.eu   # авторизація WOT EU, сервер 2
 login.p3.worldoftanks.eu   # авторизація WOT EU, сервер 3
 login.p4.worldoftanks.eu   # авторизація WOT EU, сервер 4
-eu.wargaming.net          # головний портал Wargaming EU
+login.wargaming.net   # авторизація
+wargaming.net         # головний домен компанії
 wg.gcdn.wargaming.net     # CDN Wargaming
+wgcdn.co              # додатковий CDN
 wgus.wargaming.net        # CDN Wargaming (US)
+wotblitz.com          # офіційний сайт WOT Blitz
+wotblitz.eu           # європейський портал
+
 # Сервіси Steam та Valve
-steampowered.com       # головний домен Steam
-store.steampowered.com # магазин Steam
+steam-chat.com         # чат Steam
 steamcommunity.com     # спільнота Steam
 steamcontent.com       # завантаження ігор
+steampowered.com       # головний домен Steam
 steamstatic.com        # статичні ресурси Steam
-steam-chat.com         # чат Steam
+store.steampowered.com # магазин Steam
 
 # Ігрові платформи та видавці
-epicgames.com          # магазин Epic Games
-riotgames.com          # офіційний сайт Riot Games
-valorant.com           # сайт гри VALORANT
-playvalorant.com       # сторінка завантажень VALORANT
-leagueoflegends.com    # сайт гри League of Legends
-blizzard.com           # платформа Blizzard
 battle.net             # сервіс Battle.net
-playstation.com        # офіційний сайт PlayStation
-xbox.com               # офіційний сайт Xbox
+blizzard.com           # платформа Blizzard
+epicgames.com          # магазин Epic Games
 gog.com                # магазин GOG
-rockstargames.com      # ігри Rockstar (GTA тощо)
 hoyoverse.com          # ігри HoYoverse (Genshin Impact)
+leagueoflegends.com    # сайт гри League of Legends
+playstation.com        # офіційний сайт PlayStation
+playvalorant.com       # сторінка завантажень VALORANT
+riotgames.com          # офіційний сайт Riot Games
+rockstargames.com      # ігри Rockstar (GTA тощо)
+valorant.com           # сайт гри VALORANT
+xbox.com               # офіційний сайт Xbox

@@ -1,15 +1,15 @@
-# Сервіси CrealityPrint
+# Сервіси CrealityPrint — домени для 3D-друку Creality
 account.mycrealitycloud.com
 api.mycrealitycloud.com
+cdn.creality.com
 cloud.mycrealitycloud.com
+creality.com
 device.mycrealitycloud.com
 iot.mycrealitycloud.com
-cdn.creality.com
-creality.com
-www.creality.com
-update.creality.com
-s3.creality.com
-static.creality.com
-us-west-2.aws.crealitycloud.com
 mqtt.mycrealitycloud.com
 ota.mycrealitycloud.com
+s3.creality.com
+static.creality.com
+update.creality.com
+us-west-2.aws.crealitycloud.com
+www.creality.com

@@ -1,9 +1,9 @@
-# Популярні соціальні мережі
+# Популярні соціальні мережі — доступ до основних платформ спілкування
 facebook.com
 instagram.com
+linkedin.com
+pinterest.com
+snapchat.com
+tiktok.com
 twitter.com
 x.com               # X (колишній Twitter)
-linkedin.com
-tiktok.com
-snapchat.com
-pinterest.com

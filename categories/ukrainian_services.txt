@@ -1,35 +1,36 @@
-# Українські сервіси
-rozetka.com.ua   # маркетплейс Rozetka
-prom.ua          # торговий майданчик Prom
-olx.ua           # сервіс оголошень
-privatbank.ua    # інтернет-банкінг ПриватБанку
+# Українські сервіси — місцеві платформи та державні ресурси
+liqpay.ua        # платіжна система LiqPay
 monobank.ua      # онлайн-банк Monobank
 novaposhta.ua    # логістична компанія Нова пошта
-liqpay.ua        # платіжна система LiqPay
-ukr.net          # популярний поштовий сервіс
+olx.ua           # сервіс оголошень
 oschadbank.ua    # інтернет-банкінг Ощадбанку
+privatbank.ua    # інтернет-банкінг ПриватБанку
+prom.ua          # торговий майданчик Prom
 pumb.ua          # онлайн-банк ПУМБ
+rozetka.com.ua   # маркетплейс Rozetka
+ukr.net          # популярний поштовий сервіс
+
 # Урядові сервіси
-cabinet.tax.gov.ua
-ca.tax.gov.ua
 acskidd.gov.ua
-portal.pfu.gov.ua
+ca.tax.gov.ua
+cabinet.tax.gov.ua
 diia.gov.ua
-login.diia.gov.ua
-id.gov.ua
 e-data.gov.ua
+eauction.gov.ua
+id.gov.ua
+login.diia.gov.ua
+portal.pfu.gov.ua
 spending.gov.ua
 trembita.gov.ua
 zakupki.prom.ua
-eauction.gov.ua
 
 # Банківські сервіси
+api.monobank.ua
+api.paymonobank.ua
 api.privatbank.ua
+pay.monobank.ua
 payhub.privatbank.ua
 pb.ua
 privat24.ua
-api.monobank.ua
-api.paymonobank.ua
 static.monobank.ua
 web.monobank.ua
-pay.monobank.ua

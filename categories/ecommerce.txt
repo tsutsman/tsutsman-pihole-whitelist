@@ -1,8 +1,8 @@
-# Міжнародні торгові майданчики
-amazon.com
-ebay.com
-aliexpress.com
+# Міжнародні торгові майданчики — глобальні платформи електронної комерції
 alibaba.com
-etsy.com
+aliexpress.com
+amazon.com
 bestbuy.com
+ebay.com
+etsy.com
 shopify.com
