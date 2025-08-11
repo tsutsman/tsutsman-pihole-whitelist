@@ -1,5 +1,7 @@
 # tsutsman-pihole-whitelist
 
+> The Ukrainian version of this description is available in [README.md](README.md).
+
 This repository contains a basic list of domains you can whitelist in pihole.
 The main list is stored in `whitelist.txt`, including addresses necessary for Microsoft OneDrive to work correctly.
 Recently we added popular Ukrainian services so local sites and banks function without issues.
@@ -8,6 +10,8 @@ The list includes domains for Google Drive and MEGA to avoid blocking these clou
 Synology hosts and common NTP servers are present for proper time synchronization.
 Messaging platforms, additional cloud storages and Ukrainian banks are also covered.
 A separate section lists Ukrainian government portals.
+
+Each domain is accompanied by a comment with the date and reason for whitelisting for full transparency.
 
 ## Lists by category
 
@@ -34,13 +38,36 @@ Available files include:
 - `news_media.txt` — popular news websites.
 - `international_banks.txt` — international payment services.
 
-## Generating the full list
+### Selective import and generation
 
-Run `generate_whitelist.sh` to create `whitelist.txt` from all files in `categories/`.
-It removes comments and blank lines, then deduplicates entries.
+Each file in `categories/` can be applied separately.
+
+- **Through the web interface:** open **Whitelist**, choose **Import**, and upload the desired file, e.g. `categories/apple.txt`.
+- **From the Linux command line:**
+  - Pi-hole v5:
+    ```bash
+    xargs -a categories/apple.txt -L1 sudo pihole -w
+    ```
+  - Pi-hole v6:
+    ```bash
+    sudo pihole-FTL whitelist add $(cat categories/apple.txt)
+    ```
+
+To create a custom `whitelist.txt` from selected files or directories, pass them to the script. Comments and duplicates are removed automatically:
 
 ```bash
-./generate_whitelist.sh
+./generate_whitelist.sh categories/base.txt categories/apple.txt
+```
+
+The generated file can be imported by any of the methods above. If you prefer not to use the command line, download the needed files or the generated `whitelist.txt` and add them via the web interface.
+
+## Generating the full list
+
+The `generate_whitelist.sh` script creates `whitelist.txt` from all files in `categories/` or from provided arguments. It removes comments and blank lines, then deduplicates entries.
+
+```bash
+./generate_whitelist.sh              # all categories
+./generate_whitelist.sh categories/cloud_storage.txt extra_dir/  # specific files or folders
 ```
 
 The resulting file is ready for import into pihole.
@@ -49,28 +76,71 @@ The resulting file is ready for import into pihole.
 
 1. Copy `whitelist.txt` to your pihole server.
 2. In the web interface, open **Whitelist** and import the domains from this file.
-3. For automatic addition you can use pihole's API.
+3. Or use the `apply_whitelist.sh` script, which reads a file (default `whitelist.txt`) and adds its domains to the whitelist:
+   ```bash
+   ./apply_whitelist.sh
+   ./apply_whitelist.sh custom.txt  # another file
+   ```
+4. For automatic addition you can use pihole's API.
    Example request:
    ```bash
    curl -X POST "http://pi.hole/admin/scripts/pi-hole/php/whitelist.php" \
      -d "addfqdn=example.com" -d "token=YOUR_TOKEN"
    ```
-4. Under **Adlists** you may add the raw file URL:
+5. Under **Adlists** you may add the raw file URL:
    https://raw.githubusercontent.com/tsutsman/tsutsman-pihole-whitelist/main/whitelist.txt
    so pihole can automatically fetch updates.
 
+## Automatic whitelist updates
+
+The list can stay up to date in two ways.
+
+1. **Add the URL to Adlists**
+   Add the raw `whitelist.txt` URL in the **Adlists** section of the web interface or run:
+   ```bash
+   sudo pihole -a adlist add https://raw.githubusercontent.com/tsutsman/tsutsman-pihole-whitelist/main/whitelist.txt "tsutsman whitelist"
+   sudo pihole updateGravity
+   ```
+   Each `pihole updateGravity` run (usually via cron) will fetch the latest list.
+
+2. **Custom cron job**
+   If needed, schedule `update_and_apply.sh` to run periodically:
+   ```bash
+   # daily at 03:00
+   0 3 * * * /srv/pihole-whitelist/update_and_apply.sh >> /var/log/pihole-whitelist.log 2>&1
+   ```
+   The script downloads the latest `whitelist.txt`, applies it to Pi-hole, and logs the event. Adjust the source URL with `REPO_URL` and the log path with `LOG_FILE`.
+
 ## Checking the list
 
-Before submitting a Pull Request, run `check_duplicates.sh` on any list you changed:
+Before submitting a Pull Request, run `check_duplicates.sh`.
+It checks for duplicates and verifies domain availability using `host` or `nslookup`.
+You may pass specific files or directories, or nothing to process all lists.
 
 ```bash
 ./check_duplicates.sh categories/ukrainian_services.txt
 ./check_duplicates.sh whitelist.txt
+./check_duplicates.sh                   # check everything
 ```
 
-The script reports any duplicate lines it finds.
-GitHub Actions runs the same check on each Pull Request, so duplicates will cause a failure.
-A weekly workflow also checks the lists and reports potential issues.
+The script reports duplicates and unreachable domains.
+GitHub Actions performs the same check on each Pull Request, so failures will block the merge.
+A weekly workflow also scans the lists and reports potential issues.
+
+## Cleaning unreachable domains
+
+The `cleanup_whitelist.sh` script periodically checks domains in the `categories` directory.
+If a domain remains unreachable for several runs, it is moved to `categories/deprecated.txt` for review.
+Behavior can be adjusted with environment variables:
+
+- `CATEGORIES_DIR` — directory with lists (default `categories`);
+- `STATE_FILE` — file storing the count of failed checks (default `cleanup_state.txt`);
+- `THRESHOLD` — how many consecutive failures trigger removal to `deprecated.txt` (default `3`);
+- `DEPRECATED_FILE` — file that collects removed domains (default `categories/deprecated.txt`).
+
+```bash
+THRESHOLD=2 ./cleanup_whitelist.sh
+```
 
 ## Contributing
 
