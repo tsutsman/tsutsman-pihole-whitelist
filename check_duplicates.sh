@@ -3,6 +3,15 @@
 # Використання: ./check_duplicates.sh [файли або каталоги]
 set -euo pipefail
 
+if command -v host >/dev/null 2>&1; then
+  lookup_cmd=(host -W1)
+elif command -v nslookup >/dev/null 2>&1; then
+  lookup_cmd=(nslookup -timeout=1)
+else
+  echo "Не знайдено утиліт host або nslookup" >&2
+  exit 1
+fi
+
 check_file() {
   local file="$1"
   if [ ! -f "$file" ]; then
@@ -27,7 +36,8 @@ check_file() {
   fi
 
   grep -v '^\s*#' "$file" | sed '/^\s*$/d' | awk '{print $1}' | sed 's/^\*\.//' | while read -r host; do
-    if ! ping -c1 -W1 "$host" >/dev/null 2>&1; then
+    if ! "${lookup_cmd[@]}" "$host" 2>&1 | \
+      grep -Eq '([0-9]{1,3}\.){3}[0-9]{1,3}|([0-9a-fA-F]{1,4}:){1,7}[0-9a-fA-F]{1,4}'; then
       echo "Недоступний домен: $host" >&2
     fi
   done
