@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+# Скрипт перевіряє домени з каталогу categories та переносить недоступні
+# протягом N останніх перевірок до файлу deprecated.txt.
+# Використовує файл стану з кількістю поспіль невдалих перевірок.
+
+set -euo pipefail
+
+# Шлях до каталогу з категоріями (за замовчуванням 'categories')
+CATEGORIES_DIR=${CATEGORIES_DIR:-categories}
+# Файл для збереження кількості невдалих перевірок
+STATE_FILE=${STATE_FILE:-cleanup_state.txt}
+# Поріг видалення (кількість поспіль невдалих перевірок)
+THRESHOLD=${THRESHOLD:-3}
+# Файл для доменів, що видалено
+DEPRECATED_FILE=${DEPRECATED_FILE:-$CATEGORIES_DIR/deprecated.txt}
+
+# Завантаження наявного стану
+declare -A FAILS
+if [[ -f "$STATE_FILE" ]]; then
+  while read -r domain count; do
+    FAILS[$domain]=$count
+  done < "$STATE_FILE"
+fi
+
+# Очищення файлу стану для подальшого запису
+: > "$STATE_FILE"
+
+# Обробка всіх файлів у каталозі категорій, окрім deprecated.txt
+while IFS= read -r -d '' file; do
+  tmp=$(mktemp)
+  while IFS= read -r line; do
+    # Зберігаємо коментарі та порожні рядки без змін
+    if [[ -z "$line" || "${line:0:1}" == "#" ]]; then
+      echo "$line" >> "$tmp"
+      continue
+    fi
+    domain=$(echo "$line" | tr -d '\r')
+    if nslookup "$domain" >/dev/null 2>&1; then
+      unset 'FAILS[$domain]'
+      echo "$domain" >> "$tmp"
+    else
+      count=${FAILS[$domain]:-0}
+      count=$((count+1))
+      if (( count >= THRESHOLD )); then
+        # Домен додаємо до deprecated.txt та не повертаємо у файл
+        grep -Fxq "$domain" "$DEPRECATED_FILE" 2>/dev/null || echo "$domain" >> "$DEPRECATED_FILE"
+        unset 'FAILS[$domain]'
+      else
+        FAILS[$domain]=$count
+        echo "$domain" >> "$tmp"
+      fi
+    fi
+  done < "$file"
+  mv "$tmp" "$file"
+  rm -f "$tmp"
+  
+  # Після обробки файлу записуємо поточний стан
+  > "$STATE_FILE.tmp"
+  for d in "${!FAILS[@]}"; do
+    echo "$d ${FAILS[$d]}" >> "$STATE_FILE.tmp"
+  done
+  mv "$STATE_FILE.tmp" "$STATE_FILE"
+
+done < <(find "$CATEGORIES_DIR" -type f -name '*.txt' ! -name 'deprecated.txt' -print0)
