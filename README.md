@@ -61,7 +61,7 @@
    ```
 4. У розділі **Adlists** можна додати посилання на сирий файл:
    https://raw.githubusercontent.com/tsutsman/tsutsman-pihole-whitelist/main/whitelist.txt
-   Це дозволить pihole автоматично завантажувати оновлення білого списку.
+   Це дозволить pihole автоматично завантажувати оновлення білого списку (див. розділ [«Автоматичне оновлення білого списку»](#автоматичне-оновлення-білого-списку)).
 
 ### Приклади для Pi-hole v5 та v6
 
@@ -73,6 +73,26 @@
   ```bash
   sudo pihole-FTL whitelist add $(cat whitelist.txt)
   ```
+
+## Автоматичне оновлення білого списку
+
+Список можна підтримувати актуальним двома способами.
+
+1. **Додавання URL до Adlists**  
+   Додайте посилання на сирий `whitelist.txt` у розділ **Adlists** веб-інтерфейсу або виконайте команду:
+   ```bash
+   sudo pihole -a adlist add https://raw.githubusercontent.com/tsutsman/tsutsman-pihole-whitelist/main/whitelist.txt "tsutsman whitelist"
+   sudo pihole updateGravity
+   ```
+   Під час кожного запуску `pihole updateGravity` (зазвичай через вбудований cron) Pi-hole завантажуватиме свіжу версію списку.
+
+2. **Власне cron-завдання**  
+   За потреби можна налаштувати окремий cron, що періодично запускає `update_and_apply.sh`:
+   ```bash
+   # щоденний запуск о 03:00
+   0 3 * * * /srv/pihole-whitelist/update_and_apply.sh >> /var/log/pihole-whitelist.log 2>&1
+   ```
+   Скрипт завантажить актуальний `whitelist.txt`, застосує його до Pi-hole та занотує подію в журнал.
 
 ## Перевірка списку
 
