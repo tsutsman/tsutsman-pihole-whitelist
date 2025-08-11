@@ -1,44 +1,44 @@
 # Автоматично згенеровано скриптом generate_whitelist.sh
 *.aria.microsoft.com
-*.crashlytics.com       # Crashlytics API
-*.demdex.net         # аналітика Adobe
+*.crashlytics.com
+*.demdex.net
 *.docs.live.net
-*.dropbox.com            # піддомени Dropbox
+*.dropbox.com
 *.files.1drv.com
-*.gfx.ms             # ресурси Microsoft
+*.gfx.ms
 *.groups.office.live.com
 *.groups.photos.live.com
 *.icloud.com
-*.livefilestore.com  # старий сервіс зберігання Microsoft
-*.mega.co.nz                    # піддомени старого домену
-*.mega.nz                       # піддомени MEGA
+*.livefilestore.com
+*.mega.co.nz
+*.mega.nz
 *.mesh.com
 *.microsoft.com
-*.microsoftteams.com # піддомени Teams
+*.microsoftteams.com
 *.office.com
 *.officeapps.live.com
-*.omtrdc.net         # аналітика Adobe
+*.omtrdc.net
 *.onedrive.com
 *.policies.live.net
-*.servicebus.windows.net                     # черги Service Bus
+*.servicebus.windows.net
 *.settings.live.net
-*.slack.com          # піддомени Slack
+*.slack.com
 *.storage.live.com
-*.zoom.us            # піддомени Zoom
-24tv.ua          # 2025-07-26 телеканал 24
+*.zoom.us
+24tv.ua
 account.apple.com
 account.mycrealitycloud.com
 accounts.google.com
 acme-v02.api.letsencrypt.org
 acskidd.gov.ua
 activity.windows.com
-ajax.googleapis.com     # бібліотеки jQuery та інші
+ajax.googleapis.com
 albert.apple.com
 alibaba.com
 aliexpress.com
 amazon.com
 android.clients.google.com
-anthropic.com            # інформація та документація Anthropic
+anthropic.com
 api-tv.spotify.com
 api.apple-cloudkit.com
 api.cloudflareclient.com
@@ -50,17 +50,17 @@ api.github.com
 api.live.net
 api.monobank.ua
 api.mycrealitycloud.com
-api.openai.com           # API ChatGPT
+api.openai.com
 api.paymonobank.ua
 api.privatbank.ua
 api.push.apple.com
-api.telegram.org            # API Telegram
+api.telegram.org
 api.twitter.com
 apis.live.net
 app-site-association.cdn-apple.com
 appldnld.apple.com
 apple-relay.apple.com
-apple.com         # необхідно для App Store та iCloud
+apple.com
 appleid.apple.com
 appleid.cdn-apple.com
 apps.apple.com
@@ -68,7 +68,7 @@ apps.skype.com
 appspot-preview.l.google.com
 apresolve.spotify.com
 arc.msn.com
-assets.adobe.com          # хмарні ресурси Adobe
+assets.adobe.com
 assets.onestore.ms
 attestation.xboxlive.com
 audiocontentdownload.apple.com
@@ -81,13 +81,13 @@ axm-app.apple.com
 axm-servicediscovery.apple.com
 b-api.facebook.com
 b-graph.facebook.com
-battle.net             # сервіс Battle.net
-bbc.com          # 2025-07-26 міжнародна служба BBC
+battle.net
+bbc.com
 bestbuy.com
 bigzipfiles.facebook.com
 bitdefender.com
-blizzard.com           # платформа Blizzard
-box.com                  # сервіс Box
+blizzard.com
+box.com
 bpapi.apple.com
 c.s-microsoft.com
 ca.tax.gov.ua
@@ -96,19 +96,18 @@ captive.apple.com
 catalog.gamepass.com
 cdn.creality.com
 cdn.fbsbx.com
-cdn.jsdelivr.net        # CDN jsDelivr для скриптів та стилів
+cdn.jsdelivr.net
 cdn.office.net
 cdn.signal.org
-cdn.telegram.org        # CDN Telegram
-cdn.wargaming.net     # CDN з оновленнями
+cdn.telegram.org
+cdn.wargaming.net
 cdnjs.cloudflare.com
-cdnjs.cloudflare.com    # популярний CDN з бібліотеками JS
 cert.mgt.xboxlive.com
 certs.apple.com
 cf-v4.cloudflare.com
 chat.signal.org
 clamav.net
-claude.ai                # сервіс Claude від Anthropic
+claude.ai
 client-s.gateway.messenger.live.com
 clientconfig.passport.net
 clients2.google.com
@@ -117,21 +116,21 @@ clients4.google.com
 clients5.google.com
 cloud.mycrealitycloud.com
 cloudflare-dns.com
-cloudflare.com    # CDN та DNS від Cloudflare
+cloudflare.com
 cloudflarewarp.com
 cls-ingest.itunes.apple.com
 cls-iosclient.itunes.apple.com
 cms.souqcdn.com
-code.jquery.com         # CDN jQuery
-cohere.ai                # сервіс Cohere API
+code.jquery.com
+cohere.ai
 configuration.apple.com
 connect.facebook.com
 connectivity.cloudflareclient.com
 connectivitycheck.android.com
 connectivitycheck.gstatic.com
 contentproxy.signal.org
-core.telegram.org          # документація Telegram
-coursera.org     # 2025-07-26 платформа Coursera
+core.telegram.org
+coursera.org
 creality.com
 creative.ak.fbcdn.net
 crl.apple.com
@@ -150,7 +149,7 @@ deviceservices-external.apple.com
 devimages-cdn.apple.com
 diagassets.apple.com
 diia.gov.ua
-discord.com             # чат Discord
+discord.com
 disneyplus.com
 displaycatalog.mp.microsoft.com
 dl.delivery.mp.microsoft.com
@@ -159,16 +158,16 @@ dl.google.com
 dmd.metaservices.microsoft.com
 dns.google
 dns.msftncsi.com
-docs.google.com                 # документи Google Docs
+docs.google.com
 docs.live.net
 doh.dns.apple.com
 download.developer.apple.com
 download.windowsupdate.com
 downloads.malwarebytes.com
 downloads.sophos.com
-drive.google.com                # доступ до Google Drive
-drive.googleusercontent.com     # файли Drive
-dropbox.com              # сервіс Dropbox
+drive.google.com
+drive.googleusercontent.com
+dropbox.com
 e-data.gov.ua
 eauction.gov.ua
 ebay.com
@@ -177,12 +176,12 @@ edge-chat.facebook.com
 edge-chat.messenger.com
 edge-mqtt.facebook.com
 eds.xboxlive.com
-edx.org          # 2025-07-26 платформа онлайн-курсів edX
+edx.org
 engage.cloudflareclient.com
-epicgames.com          # магазин Epic Games
-espreso.tv       # 2025-07-26 телеканал Еспресо
+epicgames.com
+espreso.tv
 etsy.com
-eu.wargaming.net          # головний портал Wargaming EU
+eu.wargaming.net
 external-lhr0-1.xx.fbcdn.net
 external-lhr1-1.xx.fbcdn.net
 external-lhr10-1.xx.fbcdn.net
@@ -205,25 +204,23 @@ fcs-keys-pub-prod.cdn-apple.com
 fe3.delivery.dsp.mp.microsoft.com.nsatc.net
 firestore.googleapis.com
 fonts.googleapis.com
-fonts.googleapis.com    # стилі Google Fonts
 fonts.gstatic.com
-fonts.gstatic.com       # шрифти Google Fonts
 g.live.com
 gdlp01.c-wss.com
 gdmf-ados.apple.com
 gdmf.apple.com
-gemini.google.com        # Google Gemini (раніше Bard)
+gemini.google.com
 geo-prod.do.dsp.mp.microsoft.com
 gfwsl.geforce.com
 gg.apple.com
 giphy-proxy-production.whispersystems.org
-github.com        # платформа розробників
-global.download.synology.com # завантаження пакетів
+github.com
+global.download.synology.com
 go.microsoft.com
-gog.com                # магазин GOG
-google.com        # пошукова система
+gog.com
+google.com
 googleapis.l.google.com
-googletagmanager.com       # менеджер тегів Google
+googletagmanager.com
 graph.facebook.com
 graph.microsoft.com
 gs.apple.com
@@ -234,10 +231,10 @@ gsp1.apple.com
 gsra.apple.com
 gstaticadssl.l.google.com
 guzzoni.apple.com
-hbomax.com            # старий домен HBO Max
+hbomax.com
 help.ui.xboxlive.com
-hoyoverse.com          # ігри HoYoverse (Genshin Impact)
-huggingface.co           # платформа HuggingFace
+hoyoverse.com
+huggingface.co
 hulu.com
 humb.apple.com
 i.s-microsoft.com
@@ -256,54 +253,53 @@ iphonesubmissions.apple.com
 iprofiles.apple.com
 ipv6.msftncsi.com
 itunes.apple.com
-khanacademy.org  # 2025-07-26 безкоштовні уроки Khan Academy
+khanacademy.org
 l.facebook.com
 l.messenger.com
 lcdn-locator.apple.com
 lcdn-registration.apple.com
-leagueoflegends.com    # сайт гри League of Legends
-lh3.googleusercontent.com       # зображення Drive
+leagueoflegends.com
+lh3.googleusercontent.com
 licensing.xboxlive.com
 linkedin.com
-liqpay.ua        # платіжна система LiqPay
+liqpay.ua
 live.com
 livegrid.eset.com
 liveupdate.symantecliveupdate.com
 login.diia.gov.ua
 login.live.com
 login.microsoftonline.com
-login.p1.worldoftanks.eu   # авторизація WOT EU, сервер 1
-login.p2.worldoftanks.eu   # авторизація WOT EU, сервер 2
-login.p3.worldoftanks.eu   # авторизація WOT EU, сервер 3
-login.p4.worldoftanks.eu   # авторизація WOT EU, сервер 4
-login.wargaming.net   # авторизація
+login.p1.worldoftanks.eu
+login.p2.worldoftanks.eu
+login.p3.worldoftanks.eu
+login.p4.worldoftanks.eu
+login.wargaming.net
 login.windows.net
 m.hotmail.com
 malwarebytes.com
-max.com               # сервіс Max (раніше HBO Max)
+max.com
 mcafee.com
 mdmenrollment.apple.com
-mega.co.nz                      # старий домен MEGA
-mega.nz                         # основний домен MEGA
+mega.co.nz
+mega.nz
 mesu.apple.com
 microsoft.com
-microsoft.com     # основний домен сервісів Microsoft
 microsoft365.com
 microsoftonline.com
-microsoftteams.com   # Teams від Microsoft
+microsoftteams.com
 mobile.twitter.com
-monobank.ua      # онлайн-банк Monobank
+monobank.ua
 mqtt.c10r.facebook.com
 mqtt.mycrealitycloud.com
 msedge.api.cdp.microsoft.com
 msftncsi.com
 msn.com
 mssdk-va.tiktok.com
-naurok.ua        # 2025-07-26 освітня платформа На Урок
+naurok.ua
 netflix.com
 norton.com
 notify.xboxlive.com
-novaposhta.ua    # логістична компанія Нова пошта
+novaposhta.ua
 ns.itunes.apple.com
 ns1.dropbox.com
 ns2.dropbox.com
@@ -316,18 +312,18 @@ ocsp.digicert.com
 ocsp.pki.goog
 ocsp.usertrust.com
 ocsp2.apple.com
-odc.officeapps.live.com                      # Office Online
+odc.officeapps.live.com
 office.com
 office365.com
 officecdn.microsoft.com
 officeclient.microsoft.com
-olx.ua           # сервіс оголошень
+olx.ua
 oneclient.sfx.ms
 onedrive.com
 onedrive.live.com
-openai.com               # офіційний сайт OpenAI
+openai.com
 oscdn.apple.com
-oschadbank.ua    # інтернет-банкінг Ощадбанку
+oschadbank.ua
 osrecovery.apple.com
 ota.mycrealitycloud.com
 outlook.com
@@ -336,36 +332,36 @@ p.sfx.ms
 pandasecurity.com
 pay.monobank.ua
 payhub.privatbank.ua
-payoneer.com     # 2025-07-26 сервіс Payoneer
-paypal.com       # 2025-07-26 платіжна система PayPal
+payoneer.com
+paypal.com
 pb.ua
-perplexity.ai            # пошук з AI
+perplexity.ai
 pg-bootstrap.itunes.apple.com
 photos.live.com
 pinterest.com
-platform.openai.com      # веб-інтерфейс OpenAI
+platform.openai.com
 play.googleapis.com
 play.itunes.apple.com
 playgrounds-assets-cdn.apple.com
 playgrounds-cdn.apple.com
-playstation.com        # офіційний сайт PlayStation
-playvalorant.com       # сторінка завантажень VALORANT
+playstation.com
+playvalorant.com
 policies.live.net
-pool.ntp.org              # глобальний пул NTP
+pool.ntp.org
 portal.fb.com
 portal.pfu.gov.ua
 pos-device.apple.com
-posarprodcssservice.accesscontrol.windows.net # автентифікація Office
+posarprodcssservice.accesscontrol.windows.net
 ppq.apple.com
-pravda.com.ua    # 2025-07-26 Українська правда
+pravda.com.ua
 pricelist.skype.com
 primevideo.com
 privat24.ua
-privatbank.ua    # інтернет-банкінг ПриватБанку
+privatbank.ua
 products.office.com
-prom.ua          # торговий майданчик Prom
-prometheus.org.ua # 2025-07-26 українські онлайн-курси Prometheus
-pumb.ua          # онлайн-банк ПУМБ
+prom.ua
+prometheus.org.ua
+pumb.ua
 push.apple.com
 push.services.mozilla.com
 raw.githubusercontent.com
@@ -373,15 +369,15 @@ redd.it
 reddit-uploaded-media.s3-accelerate.amazonaws.com
 reddit.com
 reddit.map.fastly.net
-redemptionservices.accesscontrol.windows.net  # сервіси ліцензування Microsoft
+redemptionservices.accesscontrol.windows.net
 redirector.gvt1.com
 reminders-pa.googleapis.com
-replicate.com            # запуск AI-моделей
+replicate.com
 repository.eset.com
-revolut.com      # 2025-07-26 онлайн-банк Revolut
-riotgames.com          # офіційний сайт Riot Games
-rockstargames.com      # ігри Rockstar (GTA тощо)
-rozetka.com.ua   # маркетплейс Rozetka
+revolut.com
+riotgames.com
+rockstargames.com
+rozetka.com.ua
 rupload.facebook.com
 s.gateway.messenger.live.com
 s.mzstatic.com
@@ -404,9 +400,9 @@ shopify.com
 signal.org
 skl.apple.com
 skyapi.live.net
-skydrive.com         # попередня назва OneDrive
+skydrive.com
 skydrive.live.com
-slack.com            # робочі чати Slack
+slack.com
 sls.update.microsoft.com.akadns.net
 smp-device-content.apple.com
 snapchat.com
@@ -419,43 +415,43 @@ spending.gov.ua
 spoprod-a.akamaihd.net
 spotify.com
 sq-device.apple.com
-stability.ai             # розробник Stable Diffusion
+stability.ai
 star-mini.c10r.facebook.com
 star.c10r.facebook.com
-static.cloudflareinsights.com # аналітика Cloudflare Insights
+static.cloudflareinsights.com
 static.creality.com
 static.ips.apple.com
 static.monobank.ua
 static.xx.fbcdn.net
 status.github.com
-steam-chat.com         # чат Steam
-steamcommunity.com     # спільнота Steam
-steamcontent.com       # завантаження ігор
-steampowered.com       # головний домен Steam
-steamstatic.com        # статичні ресурси Steam
+steam-chat.com
+steamcommunity.com
+steamcontent.com
+steampowered.com
+steamstatic.com
 storage.live.com
 storage.signal.org
-store.steampowered.com # магазин Steam
+store.steampowered.com
 storeedgefd.dsx.mp.microsoft.com
-stripe.com       # 2025-07-26 платіжний процесор Stripe
+stripe.com
 styles.redditmedia.com
 suconfig.apple.com
 support.apple.com
 supportmetrics.apple.com
-suspilne.media   # 2025-07-26 новини Суспільне
+suspilne.media
 swcdn.apple.com
 swdist.apple.com
 swdownload.apple.com
 swscan.apple.com
 sylvan.apple.com
-synology.com              # головний сайт Synology
+synology.com
 s{1..5}.symcb.com
 t0.ssl.ak.dynamic.tiles.virtualearth.net
 t0.ssl.ak.tiles.virtualearth.net
 tbsc.apple.com
 teams.cloudflare.com
 teams.microsoft.com
-telegram.org            # месенджер Telegram
+telegram.org
 textsecure-service-whispersystems.org
 thumbs.redditmedia.com
 tiktok.com
@@ -464,35 +460,34 @@ tiktokcdn.com
 time-ios.apple.com
 time-macos.apple.com
 time.apple.com
-time.cloudflare.com       # точний час Cloudflare
-time.facebook.com        # сервер часу Facebook
+time.cloudflare.com
+time.facebook.com
 time.google.com
-time.google.com           # точний час Google
-time.is                  # сервіс перевірки часу
-time.nist.gov             # сервер точного часу NIST
-time.windows.com          # сервіс часу Microsoft
+time.is
+time.nist.gov
+time.windows.com
 title.auth.xboxlive.com
 title.mgt.xboxlive.com
 tlu.dl.delivery.mp.microsoft.com
-token.cp.microsoft.com                       # видача токенів Microsoft
-tokensit.cp.microsoft-tst.com                # тестова видача токенів
+token.cp.microsoft.com
+tokensit.cp.microsoft-tst.com
 tracking-protection.cdn.mozilla.net
 trembita.gov.ua
 turn1.whispersystems.org
 twimg.com
 twitter.com
-ua.pool.ntp.org           # український пул NTP
+ua.pool.ntp.org
 ud-chat.signal.org
 ui.skype.com
-ukr.net          # популярний поштовий сервіс
-unpkg.com               # CDN npm-пакунків
+ukr.net
+unpkg.com
 update.argotunnel.com
 update.avira.com
 update.creality.com
 update.eset.com
 update.microsoft.com
 update.pandasecurity.com
-update.synology.com       # оновлення DSM
+update.synology.com
 updates-http.cdn-apple.com
 updates.bitdefender.com
 updates.cdn-apple.com
@@ -501,34 +496,34 @@ updates2.signal.org
 upload.facebook.com
 upload.twitter.com
 us-west-2.aws.crealitycloud.com
-use.fontawesome.com       # іконки FontAwesome
+use.fontawesome.com
 v10.events.data.microsoft.com
 v10.vortex-win.data.microsoft.com
 v20.events.data.microsoft.com
 valid.apple.com
-valorant.com           # сайт гри VALORANT
-vas.samsungapps.com                          # магазин Samsung
+valorant.com
+vas.samsungapps.com
 video-stats.l.google.com
 video.xx.fbcdn.net
-vortex.data.microsoft.com # телеметрія Windows
+vortex.data.microsoft.com
 vpp.itunes.apple.com
 wa.me
-wargaming.net         # головний домен компанії
+wargaming.net
 warp.cloudflare.com
 warp.cloudflareclient.com
 web.facebook.com
 web.monobank.ua
-wg.gcdn.wargaming.net     # CDN Wargaming
-wgcdn.co              # додатковий CDN
-wgus.wargaming.net        # CDN Wargaming (US)
-whatsapp.com            # месенджер WhatsApp
+wg.gcdn.wargaming.net
+wgcdn.co
+wgus.wargaming.net
+whatsapp.com
 whispersystems-textsecure-attachments.s3-accelerate.amazonaws.com
-wikipedia.org     # енциклопедія
+wikipedia.org
 windowsupdate.microsoft.com
-wise.com         # 2025-07-26 перекази Wise
+wise.com
 wkms-public.apple.com
-wotblitz.com          # офіційний сайт WOT Blitz
-wotblitz.eu           # європейський портал
+wotblitz.com
+wotblitz.eu
 ws.school.apple.com
 www.apple.com
 www.appleiphonecell.com
@@ -543,10 +538,10 @@ www.msftncsi.com
 www.redditmedia.com
 www.redditstatic.com
 www.signal.org
-www.synology.com          # веб-інтерфейс
+www.synology.com
 www.xboxlive.com
-x.com               # X (колишній Twitter)
-xbox.com               # офіційний сайт Xbox
+x.com
+xbox.com
 xbox.ipv6.microsoft.com
 xboxexperiencesprod.experimentation.xboxlive.com
 xflight.xboxlive.com
@@ -554,7 +549,7 @@ xkms.xboxlive.com
 xp-cdn.apple.com
 xp.apple.com
 xsts.auth.xboxlive.com
-youtube.com       # відеохостинг
+youtube.com
 youtubei.googleapis.com
 zakupki.prom.ua
-zoom.us              # відеоконференції Zoom
+zoom.us
