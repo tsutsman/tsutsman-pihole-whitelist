@@ -37,6 +37,29 @@
 - `news_media.txt` — популярні новинні ресурси.
 - `international_banks.txt` — міжнародні платіжні сервіси.
 
+### Вибірковий імпорт та генерація
+
+Кожен файл із каталогу `categories/` можна застосовувати окремо.
+
+- **Через веб-інтерфейс:** у розділі **Whitelist** натисніть **Import** і завантажте потрібний файл, наприклад `categories/apple.txt`.
+- **Через командний рядок Linux:**
+  - Pi-hole v5:
+    ```bash
+    xargs -a categories/apple.txt -L1 sudo pihole -w
+    ```
+  - Pi-hole v6:
+    ```bash
+    sudo pihole-FTL whitelist add $(cat categories/apple.txt)
+    ```
+
+Щоб зібрати власний `whitelist.txt` з кількох категорій, передайте їх до скрипту:
+
+```bash
+./generate_whitelist.sh categories/base.txt categories/apple.txt
+```
+
+Сформований файл можна імпортувати будь-яким із наведених способів. Якщо ви не працюєте з командним рядком, просто скачайте потрібні файли чи згенерований `whitelist.txt` і додайте їх через веб-інтерфейс.
+
 ## Генерація загального списку
 
 Скрипт `generate_whitelist.sh` створює файл `whitelist.txt` з усіх
