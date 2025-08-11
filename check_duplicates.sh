@@ -11,7 +11,13 @@ check_file() {
   fi
 
   local dup
-  dup=$(grep -v '^\s*#' "$file" | sed '/^\s*$/d' | sort | uniq -d)
+  # Видаляємо коментарі, щоб дублікати шукалися лише за доменами
+  dup=$(grep -v '^\s*#' "$file" \
+    | sed '/^\s*$/d' \
+    | cut -d '#' -f1 \
+    | awk '{print $1}' \
+    | sort \
+    | uniq -d)
   if [ -n "$dup" ]; then
     echo "Знайдені дублікати у $file:" >&2
     echo "$dup"
