@@ -455,8 +455,11 @@ telegram.org
 textsecure-service-whispersystems.org
 thumbs.redditmedia.com
 tiktok.com
+tiktokcdn-in.com
 tiktokcdn-us.com
 tiktokcdn.com
+tiktokd.org
+tiktokv.com
 time-ios.apple.com
 time-macos.apple.com
 time.apple.com
@@ -468,11 +471,15 @@ time.nist.gov
 time.windows.com
 title.auth.xboxlive.com
 title.mgt.xboxlive.com
+tlivecdn.com
 tlu.dl.delivery.mp.microsoft.com
 token.cp.microsoft.com
 tokensit.cp.microsoft-tst.com
 tracking-protection.cdn.mozilla.net
 trembita.gov.ua
+ttlivecdn.com
+ttoversea.net
+ttoverseaus.net
 turn1.whispersystems.org
 twimg.com
 twitter.com
