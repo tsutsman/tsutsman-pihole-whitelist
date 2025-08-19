@@ -5,3 +5,5 @@ core.telegram.org          # документація Telegram
 discord.com             # чат Discord
 telegram.org            # месенджер Telegram
 whatsapp.com            # месенджер WhatsApp
+eyecon-app.com         # телефонна книга Eyecon
+www.eyecon-app.com     # вебінтерфейс Eyecon

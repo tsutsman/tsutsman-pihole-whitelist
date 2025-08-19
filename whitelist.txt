@@ -194,6 +194,7 @@ external-lhr7-1.xx.fbcdn.net
 external-lhr8-1.xx.fbcdn.net
 external-lhr9-1.xx.fbcdn.net
 external-ort2-1.xx.fbcdn.net
+eyecon-app.com
 fabric.io
 facebook.com
 favorites.live.com
@@ -536,6 +537,7 @@ www.apple.com
 www.appleiphonecell.com
 www.cloudflare.com
 www.creality.com
+www.eyecon-app.com
 www.facebook.com
 www.google.com
 www.googleapis.com
