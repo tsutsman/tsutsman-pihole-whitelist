@@ -50,6 +50,7 @@ api.github.com
 api.live.net
 api.monobank.ua
 api.mycrealitycloud.com
+api.novaposhta.ua
 api.openai.com
 api.paymonobank.ua
 api.privatbank.ua
@@ -296,10 +297,13 @@ msedge.api.cdp.microsoft.com
 msftncsi.com
 msn.com
 mssdk-va.tiktok.com
+my.novaposhta.ua
 naurok.ua
 netflix.com
 norton.com
 notify.xboxlive.com
+novaposhta.com
+novaposhta.com.ua
 novaposhta.ua
 ns.itunes.apple.com
 ns1.dropbox.com
@@ -477,6 +481,7 @@ tlu.dl.delivery.mp.microsoft.com
 token.cp.microsoft.com
 tokensit.cp.microsoft-tst.com
 tracking-protection.cdn.mozilla.net
+tracking.novaposhta.ua
 trembita.gov.ua
 ttlivecdn.com
 ttoversea.net
