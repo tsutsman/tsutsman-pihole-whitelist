@@ -1,8 +1,13 @@
 # Українські сервіси — місцеві платформи та державні ресурси
-liqpay.ua        # платіжна система LiqPay
-monobank.ua      # онлайн-банк Monobank
-novaposhta.ua    # логістична компанія Нова пошта
-olx.ua           # сервіс оголошень
+liqpay.ua            # платіжна система LiqPay
+monobank.ua          # онлайн-банк Monobank
+novaposhta.com       # логістична компанія Нова пошта
+novaposhta.com.ua    # логістична компанія Нова пошта
+novaposhta.ua        # логістична компанія Нова пошта
+api.novaposhta.ua        # API Нової пошти
+my.novaposhta.ua         # особистий кабінет Нової пошти
+tracking.novaposhta.ua   # відстеження відправлень НП
+olx.ua               # сервіс оголошень
 oschadbank.ua    # інтернет-банкінг Ощадбанку
 privatbank.ua    # інтернет-банкінг ПриватБанку
 prom.ua          # торговий майданчик Prom
