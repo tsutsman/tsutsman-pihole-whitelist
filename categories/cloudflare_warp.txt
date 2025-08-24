@@ -5,8 +5,14 @@ cf-v4.cloudflare.com
 cloudflare-dns.com
 cloudflarewarp.com
 connectivity.cloudflareclient.com
+developers.cloudflare.com
 engage.cloudflareclient.com
+help.cloudflare.com
+one.one.one.one
 security.cloudflare-dns.com
+speed.cloudflare.com
+status.cloudflare.com
+support.cloudflare.com
 teams.cloudflare.com
 update.argotunnel.com
 warp.cloudflare.com

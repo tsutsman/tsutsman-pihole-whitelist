@@ -143,6 +143,7 @@ deezer.com
 def-vef.xboxlive.com
 defs.symantec.com
 dev.virtualearth.net
+developers.cloudflare.com
 device.auth.xboxlive.com
 device.mycrealitycloud.com
 deviceenrollment.apple.com
@@ -234,6 +235,7 @@ gsra.apple.com
 gstaticadssl.l.google.com
 guzzoni.apple.com
 hbomax.com
+help.cloudflare.com
 help.ui.xboxlive.com
 hoyoverse.com
 huggingface.co
@@ -323,6 +325,7 @@ office365.com
 officecdn.microsoft.com
 officeclient.microsoft.com
 olx.ua
+one.one.one.one
 oneclient.sfx.ms
 onedrive.com
 onedrive.live.com
@@ -416,6 +419,7 @@ sophosupd.com
 soundcloud.com
 souqcdn.com
 spclient.wg.spotify.com
+speed.cloudflare.com
 spending.gov.ua
 spoprod-a.akamaihd.net
 spotify.com
@@ -428,6 +432,7 @@ static.creality.com
 static.ips.apple.com
 static.monobank.ua
 static.xx.fbcdn.net
+status.cloudflare.com
 status.github.com
 steam-chat.com
 steamcommunity.com
@@ -442,6 +447,7 @@ stripe.com
 styles.redditmedia.com
 suconfig.apple.com
 support.apple.com
+support.cloudflare.com
 supportmetrics.apple.com
 suspilne.media
 swcdn.apple.com
