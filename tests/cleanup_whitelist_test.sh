@@ -13,6 +13,7 @@ STATE_FILE="$tmpdir/state.txt" \
 CATEGORIES_DIR="$tmpdir/categories" \
 THRESHOLD=2 \
 DEPRECATED_FILE="$tmpdir/categories/deprecated.txt" \
+LOG_FILE="$tmpdir/log.txt" \
 ./cleanup_whitelist.sh >/dev/null || true
 
 # Після першого запуску домен не має бути в deprecated
@@ -25,6 +26,7 @@ STATE_FILE="$tmpdir/state.txt" \
 CATEGORIES_DIR="$tmpdir/categories" \
 THRESHOLD=2 \
 DEPRECATED_FILE="$tmpdir/categories/deprecated.txt" \
+LOG_FILE="$tmpdir/log.txt" \
 ./cleanup_whitelist.sh >/dev/null || true
 
 grep -q 'nonexistent.invalid' "$tmpdir/categories/deprecated.txt"
@@ -32,5 +34,7 @@ grep -q 'nonexistent.invalid' "$tmpdir/categories/deprecated.txt"
 
 grep -q 'example.com' "$tmpdir/categories/test.txt"
 ! grep -q 'example.com' "$tmpdir/categories/deprecated.txt"
+
+grep -q 'nonexistent.invalid' "$tmpdir/log.txt"
 
 echo "Тест cleanup_whitelist.sh пройдено"

@@ -20,6 +20,7 @@ check_file() {
   fi
 
   local dup
+  local invalid=0
   # Видаляємо коментарі, щоб дублікати шукалися лише за доменами
   dup=$(grep -v '^\s*#' "$file" \
     | sed '/^\s*$/d' \
@@ -35,24 +36,32 @@ check_file() {
     echo "Дублікати не виявлені у $file"
   fi
 
-  grep -v '^\s*#' "$file" | sed '/^\s*$/d' | awk '{print $1}' | sed 's/^\*\.//' | while read -r host; do
-    if ! "${lookup_cmd[@]}" "$host" 2>&1 | \
+  while read -r host; do
+    if ! "${lookup_cmd[@]}" "$host" 2>&1 |
       grep -Eq '([0-9]{1,3}\.){3}[0-9]{1,3}|([0-9a-fA-F]{1,4}:){1,7}[0-9a-fA-F]{1,4}'; then
       echo "Недоступний домен: $host" >&2
+      invalid=1
     fi
-  done
+  done < <(grep -v '^\s*#' "$file" | sed '/^\s*$/d' | awk '{print $1}' | sed 's/^\*\.//')
+
+  if (( invalid )); then
+    return 1
+  fi
 }
 
 if [ "$#" -eq 0 ]; then
   set -- whitelist.txt categories/*.txt
 fi
 
+status=0
 for target in "$@"; do
   if [ -d "$target" ]; then
     for f in "$target"/*.txt; do
-      check_file "$f"
+      check_file "$f" || status=1
     done
   else
-    check_file "$target"
+    check_file "$target" || status=1
   fi
 done
+
+exit $status
