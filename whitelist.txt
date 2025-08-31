@@ -330,6 +330,7 @@ oneclient.sfx.ms
 onedrive.com
 onedrive.live.com
 openai.com
+openai.gallerycdn.vsassets.io
 oscdn.apple.com
 oschadbank.ua
 osrecovery.apple.com
