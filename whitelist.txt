@@ -208,6 +208,7 @@ fe3.delivery.dsp.mp.microsoft.com.nsatc.net
 firestore.googleapis.com
 fonts.googleapis.com
 fonts.gstatic.com
+freepik.com
 g.live.com
 gdlp01.c-wss.com
 gdmf-ados.apple.com

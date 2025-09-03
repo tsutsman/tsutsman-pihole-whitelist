@@ -6,6 +6,7 @@ cdnjs.cloudflare.com    # популярний CDN з бібліотеками J
 code.jquery.com         # CDN jQuery
 fonts.googleapis.com    # стилі Google Fonts
 fonts.gstatic.com       # шрифти Google Fonts
+freepik.com         # стокові зображення та векторна графіка
 googletagmanager.com       # менеджер тегів Google
 openai.gallerycdn.vsassets.io # ресурси OpenAI для VS Code
 static.cloudflareinsights.com # аналітика Cloudflare Insights
