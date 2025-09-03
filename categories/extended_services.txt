@@ -4,6 +4,7 @@ android.clients.google.com
 api-tv.spotify.com
 api.directory.signal.org
 api.facebook.com
+api.pinterest.com
 api.twitter.com
 appleid.apple.com
 apps.skype.com
@@ -96,6 +97,7 @@ ns2.dropbox.com
 oauthaccountmanager.googleapis.com
 officeclient.microsoft.com
 outlook.office365.com
+*.pinimg.com
 portal.fb.com
 pricelist.skype.com
 products.office.com
@@ -131,6 +133,7 @@ t0.ssl.ak.dynamic.tiles.virtualearth.net
 t0.ssl.ak.tiles.virtualearth.net
 textsecure-service-whispersystems.org
 thumbs.redditmedia.com
+tiktokapi.com
 tiktokcdn-in.com
 tiktokcdn-us.com
 tiktokcdn.com
@@ -160,6 +163,7 @@ video.xx.fbcdn.net
 wa.me
 web.facebook.com
 whispersystems-textsecure-attachments.s3-accelerate.amazonaws.com
+widgets.pinterest.com
 www.apple.com
 www.appleiphonecell.com
 www.facebook.com
