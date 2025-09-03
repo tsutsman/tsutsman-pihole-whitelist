@@ -19,6 +19,7 @@
 *.officeapps.live.com
 *.omtrdc.net
 *.onedrive.com
+*.pinimg.com
 *.policies.live.net
 *.servicebus.windows.net
 *.settings.live.net
@@ -53,6 +54,7 @@ api.mycrealitycloud.com
 api.novaposhta.ua
 api.openai.com
 api.paymonobank.ua
+api.pinterest.com
 api.privatbank.ua
 api.push.apple.com
 api.telegram.org
@@ -468,6 +470,7 @@ telegram.org
 textsecure-service-whispersystems.org
 thumbs.redditmedia.com
 tiktok.com
+tiktokapi.com
 tiktokcdn-in.com
 tiktokcdn-us.com
 tiktokcdn.com
@@ -539,6 +542,7 @@ wgcdn.co
 wgus.wargaming.net
 whatsapp.com
 whispersystems-textsecure-attachments.s3-accelerate.amazonaws.com
+widgets.pinterest.com
 wikipedia.org
 windowsupdate.microsoft.com
 wise.com
