@@ -39,7 +39,7 @@ grep -Fxq -- "-w example.com" "$PIHOLE_CALLS_LOG"
 grep -Fxq -- "-w test.org" "$PIHOLE_CALLS_LOG"
 
 # Перевірка для v6
-> "$PIHOLE_CALLS_LOG"
+: > "$PIHOLE_CALLS_LOG"
 create_mock 6
 ./apply_whitelist.sh "$tmpdir/whitelist.txt" >/dev/null
 grep -Fxq -- "whitelist add example.com" "$PIHOLE_CALLS_LOG"

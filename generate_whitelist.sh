@@ -36,6 +36,6 @@ cat "${files[@]}" \
   | sed 's/#.*//' \
   | sed 's/^[ \t]*//;s/[ \t]*$//' \
   | sed '/^$/d' \
-  | sort -u >> "$OUTFILE"
+  | LC_ALL=C sort -u >> "$OUTFILE"
 
 echo "Файл $OUTFILE згенеровано"

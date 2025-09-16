@@ -5,6 +5,31 @@
 
 set -euo pipefail
 
+# Обрізання пробілів на початку та в кінці рядка
+trim() {
+  local var="$1"
+  var="${var#"${var%%[![:space:]]*}"}"
+  var="${var%"${var##*[![:space:]]}"}"
+  printf '%s' "$var"
+}
+
+# Виділення домену без коментаря
+extract_domain() {
+  local line="$1"
+  line="${line%%#*}"
+  trim "$line"
+}
+
+# Вибір доступної утиліти для DNS-запитів
+if command -v host >/dev/null 2>&1; then
+  lookup_cmd=(host -W1)
+elif command -v nslookup >/dev/null 2>&1; then
+  lookup_cmd=(nslookup -timeout=1)
+else
+  echo "Не знайдено утиліт host або nslookup" >&2
+  exit 1
+fi
+
 # Шлях до каталогу з категоріями (за замовчуванням 'categories')
 CATEGORIES_DIR=${CATEGORIES_DIR:-categories}
 # Файл для збереження кількості невдалих перевірок
@@ -35,8 +60,10 @@ while IFS= read -r -d '' file; do
   mapfile -t lines < "$file"
   domains=()
   for line in "${lines[@]}"; do
-    if [[ -n "$line" && "${line:0:1}" != "#" ]]; then
-      domains+=("$(echo "$line" | tr -d '\r')")
+    clean_line=${line//$'\r'/}
+    domain="$(extract_domain "$clean_line")"
+    if [[ -n "$domain" ]]; then
+      domains+=("$domain")
     fi
   done
 
@@ -44,7 +71,7 @@ while IFS= read -r -d '' file; do
   pids=()
   for domain in "${domains[@]}"; do
     (
-      if nslookup "$domain" >/dev/null 2>&1; then
+      if "${lookup_cmd[@]}" "$domain" >/dev/null 2>&1; then
         echo "$domain ok" >> "$tmp_checks"
       else
         echo "$domain fail" >> "$tmp_checks"
@@ -65,14 +92,19 @@ while IFS= read -r -d '' file; do
   rm -f "$tmp_checks"
 
   for line in "${lines[@]}"; do
-    if [[ -z "$line" || "${line:0:1}" == "#" ]]; then
-      echo "$line" >> "$tmp"
+    clean_line=${line//$'\r'/}
+    if [[ "$clean_line" =~ ^[[:space:]]*$ || "${clean_line:0:1}" == "#" ]]; then
+      echo "$clean_line" >> "$tmp"
       continue
     fi
-    domain=$(echo "$line" | tr -d '\r')
+    domain="$(extract_domain "$clean_line")"
+    if [[ -z "$domain" ]]; then
+      echo "$clean_line" >> "$tmp"
+      continue
+    fi
     if [[ ${RES[$domain]} == "ok" ]]; then
       unset 'FAILS[$domain]'
-      echo "$domain" >> "$tmp"
+      echo "$clean_line" >> "$tmp"
     else
       count=${FAILS[$domain]:-0}
       count=$((count+1))
@@ -89,7 +121,7 @@ while IFS= read -r -d '' file; do
   mv "$tmp" "$file"
   rm -f "$tmp"
 
-  > "$STATE_FILE.tmp"
+  : > "$STATE_FILE.tmp"
   for d in "${!FAILS[@]}"; do
     echo "$d ${FAILS[$d]}" >> "$STATE_FILE.tmp"
   done
