@@ -6,6 +6,6 @@ if ! command -v shellcheck >/dev/null 2>&1; then
   apt-get install -y shellcheck >/dev/null
 fi
 
-shellcheck *.sh tests/*.sh >/dev/null || true
+shellcheck -S warning *.sh tests/*.sh
 
 echo "Тест shellcheck пройдено"
