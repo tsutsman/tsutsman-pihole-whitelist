@@ -1,5 +1,18 @@
 # Сервіси Apple — домени для iCloud та інфраструктури Apple
+*.appattest.apple.com
+*.apps-marketplace.apple.com
+*.apps.apple.com
+*.business.apple.com
+*.gc.apple.com
+*.icloud.apple.com
+*.itunes.apple.com
+*.iwork.apple.com
+*.push.apple.com
+*.school.apple.com
+*.smoot.apple.com
 api.apple-cloudkit.com
+api-business.apple.com
+api-school.apple.com
 appleid.apple.com
 apps.apple.com
 icloud.com
