@@ -72,6 +72,34 @@ The `generate_whitelist.sh` script creates `whitelist.txt` from all files in `ca
 
 The resulting file is ready for import into pihole.
 
+## External domain sources
+
+To avoid hunting for additional domains manually, use the
+`fetch_sources.sh` script. It reads a list of sources from
+`sources/default_sources.txt` (or another file passed as an
+argument), downloads them, and converts the content into a format
+compatible with Pi-hole.
+
+```bash
+./fetch_sources.sh                     # default sources
+./fetch_sources.sh my_sources.txt      # custom list
+```
+
+Each line in the sources file has the format `name|URL|comment`.
+The name becomes the filename inside `sources/generated/` where the
+processed domains are stored. After a successful run, the script
+also creates `sources/generated/all_sources.txt` with the combined
+output.
+
+`generate_whitelist.sh` automatically picks up this file when
+building the whitelist. To disable external sources or point to a
+custom path, use environment variables:
+
+```bash
+INCLUDE_EXTERNAL_SOURCES=0 ./generate_whitelist.sh
+SOURCES_COMBINED=custom.txt ./generate_whitelist.sh
+```
+
 ## Usage
 
 1. Copy `whitelist.txt` to your pihole server.

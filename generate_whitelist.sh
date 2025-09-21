@@ -5,6 +5,8 @@
 set -euo pipefail
 
 OUTFILE="whitelist.txt"
+SOURCES_COMBINED=${SOURCES_COMBINED:-"sources/generated/all_sources.txt"}
+INCLUDE_EXTERNAL_SOURCES=${INCLUDE_EXTERNAL_SOURCES:-1}
 
 echo "# Автоматично згенеровано скриптом generate_whitelist.sh" > "$OUTFILE"
 
@@ -24,6 +26,10 @@ else
       echo "Пропущено неіснуючий шлях: $item" >&2
     fi
   done
+fi
+
+if [ "$INCLUDE_EXTERNAL_SOURCES" = "1" ] && [ -f "$SOURCES_COMBINED" ]; then
+  files+=("$SOURCES_COMBINED")
 fi
 
 if [ "${#files[@]}" -eq 0 ]; then

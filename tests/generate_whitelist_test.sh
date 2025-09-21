@@ -52,4 +52,18 @@ if tail -n +2 whitelist.txt | grep -q '#'; then
 fi
 rm categories/_tmp_comments.txt
 
+# Перевірка підключення зовнішніх джерел
+mkdir -p sources/generated
+echo "external.example" > sources/generated/all_sources.txt
+rm -f whitelist.txt
+./generate_whitelist.sh >/dev/null
+if ! grep -q '^external.example$' whitelist.txt; then
+  echo "Зовнішні джерела не було додано до whitelist" >&2
+  rm -f sources/generated/all_sources.txt
+  rmdir sources/generated 2>/dev/null || true
+  exit 1
+fi
+rm -f sources/generated/all_sources.txt
+rmdir sources/generated 2>/dev/null || true
+
 echo "Інтеграційний тест успішно пройдено"

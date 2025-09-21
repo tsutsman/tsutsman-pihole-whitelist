@@ -1,0 +1,7 @@
+# Джерела зовнішніх доменів для білого списку
+# Формат: назва|URL|коментар (коментар необов'язковий)
+# Усі рядки, що починаються з #, ігноруються.
+
+anudeep_whitelist|https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt|Базовий whitelist AnudeepND
+anudeep_optional|https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/optional-list.txt|Додаткові домени AnudeepND
+perflyst_whitelist|https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/whitelist.txt|Whitelisted домени Perflyst
