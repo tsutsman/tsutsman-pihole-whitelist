@@ -4,4 +4,4 @@
 
 anudeep_whitelist|https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt|Базовий whitelist AnudeepND
 anudeep_optional|https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/optional-list.txt|Додаткові домени AnudeepND
-perflyst_whitelist|https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/whitelist.txt|Whitelisted домени Perflyst
+# perflyst_whitelist|https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/whitelist.txt|Whitelisted домени Perflyst (вимкнено: джерело більше не доступне)
