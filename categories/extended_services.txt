@@ -133,12 +133,25 @@ t0.ssl.ak.dynamic.tiles.virtualearth.net
 t0.ssl.ak.tiles.virtualearth.net
 textsecure-service-whispersystems.org
 thumbs.redditmedia.com
+# TikTok та пов'язані сервіси ByteDance (оновлено 2025-03-17)
+byteoversea.com
+byteoversea.net
+capcutapi.com
+capcutapi.us
+snssdk.com
+tiktok.in
+tiktok.tv
 tiktokapi.com
 tiktokcdn-in.com
 tiktokcdn-us.com
 tiktokcdn.com
 tiktokd.org
+tiktokv-us.com
 tiktokv.com
+tiktokv.eu
+tiktokv.us
+tiktokw.eu
+tiktokw.us
 title.auth.xboxlive.com
 title.mgt.xboxlive.com
 tlivecdn.com
