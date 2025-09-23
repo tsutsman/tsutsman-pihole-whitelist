@@ -3,7 +3,9 @@ api.telegram.org            # API Telegram
 cdn.telegram.org        # CDN Telegram
 core.telegram.org          # документація Telegram
 discord.com             # чат Discord
+messenger.com           # вебверсія Facebook Messenger
 telegram.org            # месенджер Telegram
 whatsapp.com            # месенджер WhatsApp
 eyecon-app.com         # телефонна книга Eyecon
 www.eyecon-app.com     # вебінтерфейс Eyecon
+www.messenger.com      # редірект на вебверсію Messenger

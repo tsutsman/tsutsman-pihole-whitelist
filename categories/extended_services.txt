@@ -1,9 +1,17 @@
 # Розширені сервіси — додаткові домени для різних платформ
+0-edge-chat.facebook.com
+1-edge-chat.facebook.com
+2-edge-chat.facebook.com
+3-edge-chat.facebook.com
+4-edge-chat.facebook.com
+5-edge-chat.facebook.com
+6-edge-chat.facebook.com
 activity.windows.com
 android.clients.google.com
 api-tv.spotify.com
 api.directory.signal.org
 api.facebook.com
+api.instagram.com
 api.pinterest.com
 api.twitter.com
 appleid.apple.com
@@ -19,6 +27,7 @@ c.s-microsoft.com
 captive.apple.com
 catalog.gamepass.com
 cdn.fbsbx.com
+cdninstagram.com
 cdn.signal.org
 cert.mgt.xboxlive.com
 chat.signal.org
@@ -47,6 +56,7 @@ ecn.dev.virtualearth.net
 edge-chat.facebook.com
 edge-chat.messenger.com
 edge-mqtt.facebook.com
+facebook.net
 eds.xboxlive.com
 external-lhr0-1.xx.fbcdn.net
 external-lhr1-1.xx.fbcdn.net
@@ -62,6 +72,7 @@ external-lhr9-1.xx.fbcdn.net
 external-ort2-1.xx.fbcdn.net
 fb.me
 fbcdn-creative-a.akamaihd.net
+fbcdn.net
 fe3.delivery.dsp.mp.microsoft.com.nsatc.net
 firestore.googleapis.com
 g.live.com
@@ -72,11 +83,14 @@ giphy-proxy-production.whispersystems.org
 go.microsoft.com
 googleapis.l.google.com
 graph.facebook.com
+graph.instagram.com
 gsp-ssl.ls-apple.com.akadns.net
 gsp-ssl.ls.apple.com
 gsp1.apple.com
 gstaticadssl.l.google.com
 help.ui.xboxlive.com
+i.instagram.com
+instagram.c10r.facebook.com
 i.s-microsoft.com
 ipv6.msftncsi.com
 itunes.apple.com
@@ -85,6 +99,8 @@ l.messenger.com
 licensing.xboxlive.com
 login.live.com
 login.microsoftonline.com
+m.facebook.com
+mbasic.facebook.com
 m.hotmail.com
 mobile.twitter.com
 mqtt.c10r.facebook.com
@@ -116,6 +132,7 @@ scontent-atl3-1.xx.fbcdn.net
 scontent-lhr3-1.xx.fbcdn.net
 scontent-mia3-1.xx.fbcdn.net
 scontent-ort2-1.xx.fbcdn.net
+scontent.cdninstagram.com
 scontent.fgdl5-1.fna.fbcdn.net
 scontent.xx.fbcdn.net
 settings-win.data.microsoft.com
@@ -125,6 +142,7 @@ souqcdn.com
 spclient.wg.spotify.com
 star-mini.c10r.facebook.com
 star.c10r.facebook.com
+static.cdninstagram.com
 static.xx.fbcdn.net
 storage.signal.org
 styles.redditmedia.com
@@ -179,6 +197,7 @@ whispersystems-textsecure-attachments.s3-accelerate.amazonaws.com
 widgets.pinterest.com
 www.apple.com
 www.appleiphonecell.com
+www.instagram.com
 www.facebook.com
 www.googleapis.com
 www.msftconnecttest.com
