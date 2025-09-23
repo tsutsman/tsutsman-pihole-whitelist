@@ -114,7 +114,7 @@ while IFS= read -r -d '' file; do
         unset 'FAILS[$domain]'
       else
         FAILS[$domain]=$count
-        echo "$domain" >> "$tmp"
+        echo "$clean_line" >> "$tmp"
       fi
     fi
   done

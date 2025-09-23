@@ -5,7 +5,8 @@ tmpdir=$(mktemp -d)
 trap 'rm -rf "$tmpdir"' EXIT
 
 echo "# коментар" > "$tmpdir/whitelist.txt"
-echo "example.com" >> "$tmpdir/whitelist.txt"
+echo "example.com # пояснення" >> "$tmpdir/whitelist.txt"
+echo "  inline.test   # зайві пробіли" >> "$tmpdir/whitelist.txt"
 echo "test.org" >> "$tmpdir/whitelist.txt"
 
 # Функція створення мок-команд
@@ -36,13 +37,17 @@ export PIHOLE_CALLS_LOG="$tmpdir/calls.log"
 create_mock 5
 ./apply_whitelist.sh "$tmpdir/whitelist.txt" >/dev/null
 grep -Fxq -- "-w example.com" "$PIHOLE_CALLS_LOG"
+grep -Fxq -- "-w inline.test" "$PIHOLE_CALLS_LOG"
 grep -Fxq -- "-w test.org" "$PIHOLE_CALLS_LOG"
+! grep -q '#' "$PIHOLE_CALLS_LOG"
 
 # Перевірка для v6
 : > "$PIHOLE_CALLS_LOG"
 create_mock 6
 ./apply_whitelist.sh "$tmpdir/whitelist.txt" >/dev/null
 grep -Fxq -- "whitelist add example.com" "$PIHOLE_CALLS_LOG"
+grep -Fxq -- "whitelist add inline.test" "$PIHOLE_CALLS_LOG"
 grep -Fxq -- "whitelist add test.org" "$PIHOLE_CALLS_LOG"
+! grep -q '#' "$PIHOLE_CALLS_LOG"
 
 echo "Тест apply_whitelist.sh пройдено"
