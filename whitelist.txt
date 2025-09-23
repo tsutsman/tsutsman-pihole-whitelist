@@ -71,6 +71,7 @@ api.directory.signal.org
 api.edu.apple.com
 api.ent.apple.com
 api.facebook.com
+api.instagram.com
 api.github.com
 api.ipify.org
 api.live.net
@@ -145,6 +146,7 @@ cdn.cloudflare.net
 cdn.creality.com
 cdn.embedly.com
 cdn.fbsbx.com
+cdninstagram.com
 cdn.jsdelivr.net
 cdn.office.net
 cdn.optimizely.com
@@ -352,6 +354,7 @@ huggingface.co
 hulu.com
 humb.apple.com
 i.cdn.turner.com
+i.instagram.com
 i.s-microsoft.com
 i.ytimg.com
 i1.ytimg.com
@@ -409,6 +412,8 @@ login.p4.worldoftanks.eu
 login.wargaming.net
 login.windows.net
 lotustalk.com
+m.facebook.com
+mbasic.facebook.com
 m.hotmail.com
 m.weeklyad.target.com
 malwarebytes.com
@@ -421,6 +426,7 @@ mdmenrollment.apple.com
 media.sbs.com.au
 mega.co.nz
 mega.nz
+messenger.com
 mesu.apple.com
 meta-db-worker02.pop.ric.plex.bz
 meta.plex.bz
@@ -439,6 +445,7 @@ msedge.api.cdp.microsoft.com
 msftncsi.com
 msn.com
 mssdk-va.tiktok.com
+mtalk.google.com
 my.novaposhta.ua
 my.plexapp.com
 naurok.ua
@@ -581,6 +588,7 @@ scontent-atl3-1.xx.fbcdn.net
 scontent-lhr3-1.xx.fbcdn.net
 scontent-mia3-1.xx.fbcdn.net
 scontent-ort2-1.xx.fbcdn.net
+scontent.cdninstagram.com
 scontent.fgdl5-1.fna.fbcdn.net
 scontent.xx.fbcdn.net
 secure.avangate.com
@@ -625,6 +633,7 @@ stability.ai
 staging.plex.tv
 star-mini.c10r.facebook.com
 star.c10r.facebook.com
+static.cdninstagram.com
 static.cloudflareinsights.com
 static.creality.com
 static.ips.apple.com
@@ -795,7 +804,9 @@ www.google-analytics.com
 www.google.com
 www.googleapis.com
 www.gstatic.com
+www.instagram.com
 www.lotustalk.com
+www.messenger.com
 www.msftconnecttest.com
 www.msftncsi.com
 www.no-ip.com
