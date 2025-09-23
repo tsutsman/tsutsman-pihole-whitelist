@@ -6,6 +6,14 @@ set -euo pipefail
 
 FILE="${1:-whitelist.txt}"
 
+# Обрізання пробілів по краях рядка
+trim() {
+  local value="$1"
+  value="${value#"${value%%[![:space:]]*}"}"
+  value="${value%"${value##*[![:space:]]}"}"
+  printf '%s' "$value"
+}
+
 if [ ! -f "$FILE" ]; then
   echo "Файл $FILE не знайдено" >&2
   exit 1
@@ -24,8 +32,16 @@ else
   add_cmd=(pihole -w)
 fi
 
-grep -v '^\s*#' "$FILE" | sed '/^\s*$/d' | while read -r domain; do
+while IFS= read -r line; do
+  if [[ "$line" =~ ^[[:space:]]*# ]]; then
+    continue
+  fi
+  domain="${line%%#*}"
+  domain="$(trim "$domain")"
+  if [[ -z "$domain" ]]; then
+    continue
+  fi
   "${add_cmd[@]}" "$domain"
-done
+done < "$FILE"
 
 echo "Доменів з $FILE додано до білого списку"
