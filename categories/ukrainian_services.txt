@@ -19,6 +19,8 @@ ukr.net          # популярний поштовий сервіс
 acskidd.gov.ua
 ca.tax.gov.ua
 cabinet.tax.gov.ua
+app.diia.gov.ua    # вебверсія застосунку «Дія»
+diia.app          # офіційний сайт застосунку «Дія»
 diia.gov.ua
 e-data.gov.ua
 eauction.gov.ua
