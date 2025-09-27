@@ -91,6 +91,7 @@ api.twitter.com
 apis.live.net
 app-api.ted.com
 app-site-association.cdn-apple.com
+app.diia.gov.ua
 appboot.netflix.com
 appldnld.apple.com
 apple-relay.apple.com
@@ -228,6 +229,7 @@ deviceenrollment.apple.com
 deviceservices-external.apple.com
 devimages-cdn.apple.com
 diagassets.apple.com
+diia.app
 diia.gov.ua
 directvapplications.hb.omtrdc.net
 directvnow.com
