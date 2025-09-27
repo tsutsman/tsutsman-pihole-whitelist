@@ -14,7 +14,7 @@ CATEGORIES_DIR="$tmpdir/categories" \
 THRESHOLD=2 \
 DEPRECATED_FILE="$tmpdir/categories/deprecated.txt" \
 LOG_FILE="$tmpdir/log.txt" \
-./cleanup_whitelist.sh >/dev/null || true
+./cleanup_whitelist.sh >/dev/null
 
 # Перевіряємо, що коментар збережено після першої невдалої перевірки
 grep -Fxq 'nonexistent.invalid # тимчасова проблема' "$tmpdir/categories/test.txt"
@@ -30,13 +30,16 @@ CATEGORIES_DIR="$tmpdir/categories" \
 THRESHOLD=2 \
 DEPRECATED_FILE="$tmpdir/categories/deprecated.txt" \
 LOG_FILE="$tmpdir/log.txt" \
-./cleanup_whitelist.sh >/dev/null || true
+./cleanup_whitelist.sh >/dev/null
 
 grep -q 'nonexistent.invalid' "$tmpdir/categories/deprecated.txt"
 ! grep -q 'nonexistent.invalid # тимчасова проблема' "$tmpdir/categories/test.txt"
 
-grep -q 'example.com # стабільний домен' "$tmpdir/categories/test.txt"
-! grep -q 'example.com' "$tmpdir/categories/deprecated.txt"
+grep -Fxq 'example.com # стабільний домен' "$tmpdir/categories/test.txt"
+if [[ -f "$tmpdir/categories/deprecated.txt" ]] && grep -q '^example.com$' "$tmpdir/categories/deprecated.txt"; then
+  echo "Стабільний домен example.com не повинен потрапляти до deprecated" >&2
+  exit 1
+fi
 
 grep -q 'nonexistent.invalid' "$tmpdir/log.txt"
 

@@ -22,13 +22,31 @@ extract_domain() {
 
 # Вибір доступної утиліти для DNS-запитів
 if command -v host >/dev/null 2>&1; then
-  lookup_cmd=(host -W1)
+  lookup_tool="host"
 elif command -v nslookup >/dev/null 2>&1; then
-  lookup_cmd=(nslookup -timeout=1)
+  lookup_tool="nslookup"
 else
   echo "Не знайдено утиліт host або nslookup" >&2
   exit 1
 fi
+
+# Перевірка доступності домену. Для host явно задаємо типи записів,
+# оскільки запит ANY часто завершується помилкою навіть для існуючих доменів.
+check_domain() {
+  local domain="$1"
+
+  case "$lookup_tool" in
+    host)
+      if host -W1 -t A "$domain" >/dev/null 2>&1; then
+        return 0
+      fi
+      host -W1 -t AAAA "$domain" >/dev/null 2>&1
+      ;;
+    nslookup)
+      nslookup -timeout=1 "$domain" >/dev/null 2>&1
+      ;;
+  esac
+}
 
 # Шлях до каталогу з категоріями (за замовчуванням 'categories')
 CATEGORIES_DIR=${CATEGORIES_DIR:-categories}
@@ -71,7 +89,7 @@ while IFS= read -r -d '' file; do
   pids=()
   for domain in "${domains[@]}"; do
     (
-      if "${lookup_cmd[@]}" "$domain" >/dev/null 2>&1; then
+      if check_domain "$domain"; then
         echo "$domain ok" >> "$tmp_checks"
       else
         echo "$domain fail" >> "$tmp_checks"
