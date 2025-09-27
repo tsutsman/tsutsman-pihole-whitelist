@@ -3,13 +3,22 @@
 # Використання: ./check_duplicates.sh [файли або каталоги]
 set -euo pipefail
 
-if command -v host >/dev/null 2>&1; then
-  lookup_cmd=(host -W1)
-elif command -v nslookup >/dev/null 2>&1; then
-  lookup_cmd=(nslookup -timeout=1)
-else
-  echo "Не знайдено утиліт host або nslookup" >&2
-  exit 1
+skip_dns_check=0
+case "${SKIP_DNS_CHECK:-0}" in
+  1|true|TRUE|yes|YES)
+    skip_dns_check=1
+    ;;
+esac
+
+if (( ! skip_dns_check )); then
+  if command -v host >/dev/null 2>&1; then
+    lookup_cmd=(host -W1)
+  elif command -v nslookup >/dev/null 2>&1; then
+    lookup_cmd=(nslookup -timeout=1)
+  else
+    echo "Не знайдено утиліт host або nslookup" >&2
+    exit 1
+  fi
 fi
 
 check_file() {
@@ -36,13 +45,15 @@ check_file() {
     echo "Дублікати не виявлені у $file"
   fi
 
-  while read -r host; do
-    if ! "${lookup_cmd[@]}" "$host" 2>&1 |
-      grep -Eq '([0-9]{1,3}\.){3}[0-9]{1,3}|([0-9a-fA-F]{1,4}:){1,7}[0-9a-fA-F]{1,4}'; then
-      echo "Недоступний домен: $host" >&2
-      invalid=1
-    fi
-  done < <(grep -v '^\s*#' "$file" | sed '/^\s*$/d' | awk '{print $1}' | sed 's/^\*\.//')
+  if (( ! skip_dns_check )); then
+    while read -r host; do
+      if ! "${lookup_cmd[@]}" "$host" 2>&1 |
+        grep -Eq '([0-9]{1,3}\.){3}[0-9]{1,3}|([0-9a-fA-F]{1,4}:){1,7}[0-9a-fA-F]{1,4}'; then
+        echo "Недоступний домен: $host" >&2
+        invalid=1
+      fi
+    done < <(grep -v '^\s*#' "$file" | sed '/^\s*$/d' | awk '{print $1}' | sed 's/^\*\.//')
+  fi
 
   if (( invalid )); then
     return 1

@@ -28,4 +28,9 @@ if ./check_duplicates.sh "$tmpdir/list.txt" >/dev/null 2>&1; then
   exit 1
 fi
 
+if ! SKIP_DNS_CHECK=1 ./check_duplicates.sh "$tmpdir/list.txt" >/dev/null 2>&1; then
+  echo "Скрипт мав ігнорувати перевірку DNS" >&2
+  exit 1
+fi
+
 echo "Тест check_duplicates.sh пройдено"

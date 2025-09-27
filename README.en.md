@@ -151,7 +151,7 @@ You may pass specific files or directories, or nothing to process all lists.
 ./check_duplicates.sh                   # check everything
 ```
 
-The script reports duplicates and unreachable domains.
+The script reports duplicates and unreachable domains. If you need to skip DNS checks (for example, in an offline environment), set `SKIP_DNS_CHECK=1`.
 GitHub Actions performs the same check on each Pull Request, so failures will block the merge.
 A weekly workflow also scans the lists and reports potential issues.
 
