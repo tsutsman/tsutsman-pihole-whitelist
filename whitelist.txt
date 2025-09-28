@@ -331,9 +331,11 @@ google.com
 googleapis.com
 googleapis.l.google.com
 googletagmanager.com
+gov.ua
 graph.facebook.com
 graph.instagram.com
 graph.microsoft.com
+gromada.gov.ua
 gravatar.com
 gs.apple.com
 gsa.apple.com
@@ -388,6 +390,7 @@ js.maxmind.com
 jsdelivr.net
 keystone.mwbsys.com
 khanacademy.org
+kmu.gov.ua
 l.facebook.com
 l.messenger.com
 lastfm-img2.akamaized.net
@@ -506,6 +509,7 @@ pay.monobank.ua
 payhub.privatbank.ua
 payoneer.com
 paypal.com
+pfu.gov.ua
 pb.ua
 perplexity.ai
 pg-bootstrap.itunes.apple.com
@@ -532,9 +536,11 @@ portal.fb.com
 portal.pfu.gov.ua
 pos-device.apple.com
 posarprodcssservice.accesscontrol.windows.net
+poslugy.gov.ua
 ppq.apple.com
 pravda.com.ua
 pricelist.skype.com
+president.gov.ua
 primevideo.com
 privat24.ua
 privatbank.ua
@@ -542,6 +548,7 @@ prod.telemetry.ros.rockstargames.com
 products.office.com
 prom.ua
 prometheus.org.ua
+prozorro.gov.ua
 proxy.plex.bz
 proxy.plex.tv
 proxy02.pop.ord.plex.bz
@@ -568,6 +575,7 @@ revolut.com
 riotgames.com
 rockstargames.com
 rozetka.com.ua
+rada.gov.ua
 rupload.facebook.com
 s.cdn.turner.com
 s.gateway.messenger.live.com
@@ -674,6 +682,7 @@ t.co
 t.ly
 t0.ssl.ak.dynamic.tiles.virtualearth.net
 t0.ssl.ak.tiles.virtualearth.net
+tax.gov.ua
 tawk.to
 tbsc.apple.com
 teams.cloudflare.com
@@ -836,6 +845,7 @@ youtube.com
 youtubei.googleapis.com
 yt3.ggpht.com
 z.cdn.turner.com
+zakon.rada.gov.ua
 zakupki.prom.ua
 zee.cws.conviva.com
 zeustracker.abuse.ch

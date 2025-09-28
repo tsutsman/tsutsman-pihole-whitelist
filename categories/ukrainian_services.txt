@@ -16,20 +16,29 @@ rozetka.com.ua   # маркетплейс Rozetka
 ukr.net          # популярний поштовий сервіс
 
 # Урядові сервіси
-acskidd.gov.ua
-ca.tax.gov.ua
-cabinet.tax.gov.ua
-app.diia.gov.ua    # вебверсія застосунку «Дія»
-diia.app          # офіційний сайт застосунку «Дія»
-diia.gov.ua
-e-data.gov.ua
-eauction.gov.ua
-id.gov.ua
-login.diia.gov.ua
-portal.pfu.gov.ua
-spending.gov.ua
-trembita.gov.ua
-zakupki.prom.ua
+acskidd.gov.ua       # акредитований центр сертифікації ключів ДПС
+app.diia.gov.ua      # вебверсія застосунку «Дія»
+ca.tax.gov.ua        # сертифікаційний центр ДПС
+cabinet.tax.gov.ua   # електронний кабінет платника податків
+diia.app             # офіційний сайт застосунку «Дія»
+diia.gov.ua          # портал державних послуг «Дія»
+e-data.gov.ua        # відкриті дані про публічні фінанси
+eauction.gov.ua      # електронні аукціони ProZorro.Продажі
+gov.ua               # єдиний державний вебпортал
+gromada.gov.ua       # державний портал громад
+id.gov.ua            # система ідентифікації ID.GOV.UA
+kmu.gov.ua           # Кабінет Міністрів України
+login.diia.gov.ua    # авторизація порталу «Дія»
+pfu.gov.ua           # офіційний сайт Пенсійного фонду України
+portal.pfu.gov.ua    # електронні послуги Пенсійного фонду
+poslugy.gov.ua       # єдиний портал державних послуг
+president.gov.ua     # Офіс Президента України
+prozorro.gov.ua      # публічні закупівлі ProZorro
+rada.gov.ua          # Верховна Рада України
+spending.gov.ua      # портал використання публічних коштів
+tax.gov.ua           # Державна податкова служба України
+trembita.gov.ua      # система взаємодії державних реєстрів
+zakon.rada.gov.ua    # база нормативно-правових актів України
 
 # Банківські сервіси
 api.monobank.ua
