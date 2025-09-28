@@ -1,14 +1,22 @@
 # Автоматично згенеровано скриптом generate_whitelist.sh
+*.appattest.apple.com
+*.apps-marketplace.apple.com
+*.apps.apple.com
 *.aria.microsoft.com
+*.business.apple.com
 *.crashlytics.com
 *.demdex.net
 *.docs.live.net
 *.dropbox.com
 *.files.1drv.com
+*.gc.apple.com
 *.gfx.ms
 *.groups.office.live.com
 *.groups.photos.live.com
+*.icloud.apple.com
 *.icloud.com
+*.itunes.apple.com
+*.iwork.apple.com
 *.livefilestore.com
 *.mega.co.nz
 *.mega.nz
@@ -21,9 +29,12 @@
 *.onedrive.com
 *.pinimg.com
 *.policies.live.net
+*.push.apple.com
+*.school.apple.com
 *.servicebus.windows.net
 *.settings.live.net
 *.slack.com
+*.smoot.apple.com
 *.storage.live.com
 *.zoom.us
 0-edge-chat.facebook.com
@@ -63,7 +74,9 @@ amzn.com
 amzn.to
 android.clients.google.com
 anthropic.com
+api-business.apple.com
 api-global.netflix.com
+api-school.apple.com
 api-tv.spotify.com
 api.apple-cloudkit.com
 api.cloudflareclient.com
@@ -71,8 +84,8 @@ api.directory.signal.org
 api.edu.apple.com
 api.ent.apple.com
 api.facebook.com
-api.instagram.com
 api.github.com
+api.instagram.com
 api.ipify.org
 api.live.net
 api.monobank.ua
@@ -147,7 +160,6 @@ cdn.cloudflare.net
 cdn.creality.com
 cdn.embedly.com
 cdn.fbsbx.com
-cdninstagram.com
 cdn.jsdelivr.net
 cdn.office.net
 cdn.optimizely.com
@@ -160,6 +172,7 @@ cdn.wargaming.net
 cdn1.smartadserver.com
 cdn2.optimizely.com
 cdn3.optimizely.com
+cdninstagram.com
 cdnjs.cloudflare.com
 cdns.gigya.com
 cert.mgt.xboxlive.com
@@ -335,8 +348,8 @@ gov.ua
 graph.facebook.com
 graph.instagram.com
 graph.microsoft.com
-gromada.gov.ua
 gravatar.com
+gromada.gov.ua
 gs.apple.com
 gsa.apple.com
 gsp-ssl.ls-apple.com.akadns.net
@@ -418,7 +431,6 @@ login.wargaming.net
 login.windows.net
 lotustalk.com
 m.facebook.com
-mbasic.facebook.com
 m.hotmail.com
 m.weeklyad.target.com
 malwarebytes.com
@@ -426,6 +438,7 @@ manifest.auditude.com
 manifest.googlevideo.com
 market.spotify.com
 max.com
+mbasic.facebook.com
 mcafee.com
 mdmenrollment.apple.com
 media.sbs.com.au
@@ -509,9 +522,9 @@ pay.monobank.ua
 payhub.privatbank.ua
 payoneer.com
 paypal.com
-pfu.gov.ua
 pb.ua
 perplexity.ai
+pfu.gov.ua
 pg-bootstrap.itunes.apple.com
 pgl.yoyo.org
 photos.live.com
@@ -539,8 +552,8 @@ posarprodcssservice.accesscontrol.windows.net
 poslugy.gov.ua
 ppq.apple.com
 pravda.com.ua
-pricelist.skype.com
 president.gov.ua
+pricelist.skype.com
 primevideo.com
 privat24.ua
 privatbank.ua
@@ -548,15 +561,16 @@ prod.telemetry.ros.rockstargames.com
 products.office.com
 prom.ua
 prometheus.org.ua
-prozorro.gov.ua
 proxy.plex.bz
 proxy.plex.tv
 proxy02.pop.ord.plex.bz
+prozorro.gov.ua
 pubsub.plex.bz
 pubsub.plex.tv
 pumb.ua
 push.apple.com
 push.services.mozilla.com
+rada.gov.ua
 raw.githubusercontent.com
 redd.it
 reddit-uploaded-media.s3-accelerate.amazonaws.com
@@ -575,7 +589,6 @@ revolut.com
 riotgames.com
 rockstargames.com
 rozetka.com.ua
-rada.gov.ua
 rupload.facebook.com
 s.cdn.turner.com
 s.gateway.messenger.live.com
@@ -682,8 +695,8 @@ t.co
 t.ly
 t0.ssl.ak.dynamic.tiles.virtualearth.net
 t0.ssl.ak.tiles.virtualearth.net
-tax.gov.ua
 tawk.to
+tax.gov.ua
 tbsc.apple.com
 teams.cloudflare.com
 teams.microsoft.com
