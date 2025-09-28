@@ -35,6 +35,7 @@ poslugy.gov.ua       # єдиний портал державних послуг
 president.gov.ua     # Офіс Президента України
 prozorro.gov.ua      # публічні закупівлі ProZorro
 rada.gov.ua          # Верховна Рада України
+zakupki.prom.ua      # електронний майданчик ProZorro Market
 spending.gov.ua      # портал використання публічних коштів
 tax.gov.ua           # Державна податкова служба України
 trembita.gov.ua      # система взаємодії державних реєстрів
