@@ -31,6 +31,7 @@
 - `ukrainian_services.txt` — популярні українські сервіси та банки;
 - `cloud_storage.txt` — хмарні сховища (Google Drive, MEGA, Synology тощо);
 - `messengers.txt` — домени Telegram, WhatsApp, Discord;
+- `smart_home_devices.txt` — камери Hikvision, Dahua, Yi Home та платформа Tuya;
 - `ntp_servers.txt` — сервери точного часу (NTP).
 - `gaming.txt` — домени популярних ігор і сервісів (Steam, Epic Games, Riot, Blizzard, Wargaming).
 - `web_resources.txt` — CDN та хости скриптів і стилів для вигляду сайтів.

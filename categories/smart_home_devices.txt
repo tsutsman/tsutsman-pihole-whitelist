@@ -1,0 +1,24 @@
+# Пристрої розумного дому та камери відеоспостереження (оновлено 2025-03-19)
+# Hikvision / Hik-Connect
+hikvision.com           # основний сайт та платформа Hikvision
+hik-connect.com         # хмарний сервіс Hik-Connect
+litedev.ys7.com         # API Hik-Connect для мобільних застосунків
+p2p.ys7.com             # P2P-підключення камер Hikvision
+
+# Dahua / DMSS
+dahuatech.com           # офіційні сервіси Dahua Technology
+dahuasecurity.com       # глобальний портал підтримки Dahua
+dmss.dahuatech.com      # мобільний застосунок Dahua DMSS
+p2p.dahuatech.com       # P2P-мережа Dahua для віддаленого доступу
+
+# Yi Home / Yi Technology
+yitechnology.com        # акаунти та налаштування Yi Technology
+xiaoyi.com              # альтернативний домен Yi (Китай)
+cloudcameraiot.oss-cn-shanghai.aliyuncs.com  # сховище відео Yi Home
+api.xiaoyi.com          # API для застосунків Yi Home
+
+# Tuya Smart
+tuya.com                # Tuya Smart — глобальна платформа IoT
+tuyaus.com              # Tuya — регіональний кластер США
+tuyaeu.com              # Tuya — регіональний кластер ЄС
+ty-iot.com              # службові домени Tuya для пристроїв
