@@ -26,6 +26,7 @@ Available files include:
 - `ukrainian_services.txt` — popular Ukrainian services and banks;
 - `cloud_storage.txt` — cloud platforms (Google Drive, MEGA, Synology etc.);
 - `messengers.txt` — domains for Telegram, WhatsApp, Discord;
+- `smart_home_devices.txt` — Hikvision, Dahua, Yi Home cameras and the Tuya platform;
 - `ntp_servers.txt` — NTP time servers;
 - `gaming.txt` — domains for Steam, Epic Games, Riot, Blizzard and Wargaming;
 - `web_resources.txt` — CDNs and hosts for website scripts and styles;

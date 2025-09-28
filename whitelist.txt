@@ -101,6 +101,7 @@ api.rlje.net
 api.sbs.com.au
 api.telegram.org
 api.twitter.com
+api.xiaoyi.com
 apis.live.net
 app-api.ted.com
 app-site-association.cdn-apple.com
@@ -193,6 +194,7 @@ cloud.mycrealitycloud.com
 cloudflare-dns.com
 cloudflare.com
 cloudflarewarp.com
+cloudcameraiot.oss-cn-shanghai.aliyuncs.com
 cls-ingest.itunes.apple.com
 cls-iosclient.itunes.apple.com
 cms.souqcdn.com
@@ -223,6 +225,9 @@ cwtv-prod-elb.digitalsmiths.net
 d2c8v52ll5s99u.cloudfront.net
 d2gatte9o95jao.cloudfront.net
 d83eunklitikj.cloudfront.net
+dahuasecurity.com
+dahuatech.com
+dmss.dahuatech.com
 dashboard.plex.tv
 dataplicity.com
 dcs-vod.apis.anvato.net
@@ -362,6 +367,8 @@ guzzoni.apple.com
 hbomax.com
 help.cloudflare.com
 help.ui.xboxlive.com
+hik-connect.com
+hikvision.com
 hls.ted.com
 hosts-file.net
 hostsfile.mine.nu
@@ -415,6 +422,7 @@ licensing.xboxlive.com
 link.theplatform.com
 linkedin.com
 liqpay.ua
+litedev.ys7.com
 live.com
 livegrid.eset.com
 livepassdl.conviva.com
@@ -516,6 +524,8 @@ outlook.com
 outlook.live.com
 outlook.office365.com
 ow.ly
+p2p.dahuatech.com
+p2p.ys7.com
 p.sfx.ms
 pandasecurity.com
 pay.monobank.ua
@@ -747,6 +757,10 @@ ttlivecdn.com
 ttoversea.net
 ttoverseaus.net
 turn1.whispersystems.org
+tuya.com
+tuyaeu.com
+tuyaus.com
+ty-iot.com
 tvdb2.plex.tv
 tvthemes.plexapp.com
 twimg.com
@@ -843,6 +857,7 @@ www.signal.org
 www.synology.com
 www.xboxlive.com
 www.youtube-nocookie.com
+xiaoyi.com
 x.com
 xbox.com
 xbox.ipv6.microsoft.com
@@ -852,6 +867,7 @@ xkms.xboxlive.com
 xp-cdn.apple.com
 xp.apple.com
 xsts.auth.xboxlive.com
+yitechnology.com
 youtu.be
 youtube-nocookie.com
 youtube.com
