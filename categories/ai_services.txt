@@ -1,12 +1,15 @@
 # AI-сервіси — платформи для роботи з ШІ
 anthropic.com            # інформація та документація Anthropic
 api.openai.com           # API ChatGPT
+chatgpt.com              # веб-інтерфейс ChatGPT
 claude.ai                # сервіс Claude від Anthropic
 cohere.ai                # сервіс Cohere API
 gemini.google.com        # Google Gemini (раніше Bard)
+grok.com                 # Grok від xAI
 huggingface.co           # платформа HuggingFace
 openai.com               # офіційний сайт OpenAI
 perplexity.ai            # пошук з AI
 platform.openai.com      # веб-інтерфейс OpenAI
 replicate.com            # запуск AI-моделей
 stability.ai             # розробник Stable Diffusion
+x.ai                     # головна сторінка xAI

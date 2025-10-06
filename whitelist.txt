@@ -180,6 +180,7 @@ cert.mgt.xboxlive.com
 certs.apple.com
 cf-v4.cloudflare.com
 chat.signal.org
+chatgpt.com
 clamav.net
 claude.ai
 client-s.gateway.messenger.live.com
@@ -355,6 +356,7 @@ graph.instagram.com
 graph.microsoft.com
 gravatar.com
 gromada.gov.ua
+grok.com
 gs.apple.com
 gsa.apple.com
 gsp-ssl.ls-apple.com.akadns.net
@@ -858,6 +860,7 @@ www.synology.com
 www.xboxlive.com
 www.youtube-nocookie.com
 xiaoyi.com
+x.ai
 x.com
 xbox.com
 xbox.ipv6.microsoft.com
