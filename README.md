@@ -76,9 +76,11 @@
 ```bash
 ./generate_whitelist.sh              # всі категорії
 ./generate_whitelist.sh categories/cloud_storage.txt extra_dir/  # вибіркові файли чи каталоги
+./generate_whitelist.sh -o exports/custom.txt                   # запис у довільний файл
+OUTFILE=exports/custom.txt ./generate_whitelist.sh              # альтернатива через змінну середовища
 ```
 
-Сформований файл одразу готовий до імпорту в pihole.
+Сформований файл одразу готовий до імпорту в pihole. Якщо вказати шлях із підкаталогами, вони будуть створені автоматично.
 
 ## Зовнішні джерела доменів
 
