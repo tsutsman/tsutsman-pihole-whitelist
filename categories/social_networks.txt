@@ -3,6 +3,7 @@ facebook.com
 instagram.com
 linkedin.com
 pinterest.com
+threads.net         # соцмережа Threads від Meta
 snapchat.com
 tiktok.com
 twitter.com

@@ -4,6 +4,7 @@ disneyplus.com
 hbomax.com            # старий домен HBO Max
 hulu.com
 max.com               # сервіс Max (раніше HBO Max)
+music.youtube.com     # музичний сервіс YouTube Music
 netflix.com
 primevideo.com
 soundcloud.com

@@ -1,4 +1,5 @@
 # AI-сервіси — платформи для роботи з ШІ
+aistudio.google.com      # інтерфейс Google AI Studio
 anthropic.com            # інформація та документація Anthropic
 api.openai.com           # API ChatGPT
 chatgpt.com              # веб-інтерфейс ChatGPT
@@ -9,6 +10,7 @@ deepseek.com             # платформа DeepSeek
 gemini.google.com        # Google Gemini (раніше Bard)
 grok.com                 # Grok від xAI
 huggingface.co           # платформа HuggingFace
+mistral.ai               # генеративні моделі Mistral
 openai.com               # офіційний сайт OpenAI
 perplexity.ai            # пошук з AI
 poe.com                  # AI-чатботи від Quora
