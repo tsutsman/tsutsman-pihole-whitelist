@@ -60,6 +60,7 @@ activate.adobe.com
 activity.windows.com
 adf.ly
 ae01.alicdn.com
+aistudio.google.com
 ajax.googleapis.com
 akamaihd.net
 akamaitechnologies.com
@@ -192,17 +193,16 @@ clients4.google.com
 clients5.google.com
 clients6.google.com
 cloud.mycrealitycloud.com
+cloudcameraiot.oss-cn-shanghai.aliyuncs.com
 cloudflare-dns.com
 cloudflare.com
 cloudflarewarp.com
-cloudcameraiot.oss-cn-shanghai.aliyuncs.com
 cls-ingest.itunes.apple.com
 cls-iosclient.itunes.apple.com
 cms.souqcdn.com
 code.jquery.com
 cognito-identity.us-east-1.amazonaws.com
 cohere.ai
-copilot.microsoft.com
 configuration.apple.com
 connect.facebook.com
 connectivity.cloudflareclient.com
@@ -210,6 +210,7 @@ connectivitycheck.android.com
 connectivitycheck.gstatic.com
 contentproxy.signal.org
 continuum.dds.microsoft.com
+copilot.microsoft.com
 core.telegram.org
 coursera.org
 cpms.spop10.ams.plex.bz
@@ -229,7 +230,6 @@ d2gatte9o95jao.cloudfront.net
 d83eunklitikj.cloudfront.net
 dahuasecurity.com
 dahuatech.com
-dmss.dahuatech.com
 dashboard.plex.tv
 dataplicity.com
 dcs-vod.apis.anvato.net
@@ -263,6 +263,7 @@ dl.dropbox.com
 dl.dropboxusercontent.com
 dl.google.com
 dmd.metaservices.microsoft.com
+dmss.dahuatech.com
 dns.google
 dns.msftncsi.com
 docs.google.com
@@ -357,8 +358,8 @@ graph.facebook.com
 graph.instagram.com
 graph.microsoft.com
 gravatar.com
-gromada.gov.ua
 grok.com
+gromada.gov.ua
 gs.apple.com
 gsa.apple.com
 gsp-ssl.ls-apple.com.akadns.net
@@ -465,6 +466,7 @@ microsoft.com
 microsoft365.com
 microsoftonline.com
 microsoftteams.com
+mistral.ai
 mobile-ap.spotify.com
 mobile.twitter.com
 monobank.ua
@@ -476,6 +478,7 @@ msftncsi.com
 msn.com
 mssdk-va.tiktok.com
 mtalk.google.com
+music.youtube.com
 my.novaposhta.ua
 my.plexapp.com
 naurok.ua
@@ -528,9 +531,9 @@ outlook.com
 outlook.live.com
 outlook.office365.com
 ow.ly
+p.sfx.ms
 p2p.dahuatech.com
 p2p.ys7.com
-p.sfx.ms
 pandasecurity.com
 pay.monobank.ua
 payhub.privatbank.ua
@@ -720,6 +723,7 @@ telegram.org
 textsecure-service-whispersystems.org
 themoviedb.com
 thetvdb.com
+threads.net
 thumbs.redditmedia.com
 tiktok.com
 tiktok.in
@@ -765,11 +769,11 @@ turn1.whispersystems.org
 tuya.com
 tuyaeu.com
 tuyaus.com
-ty-iot.com
 tvdb2.plex.tv
 tvthemes.plexapp.com
 twimg.com
 twitter.com
+ty-iot.com
 ua.pool.ntp.org
 ud-chat.signal.org
 ui.skype.com
@@ -862,13 +866,13 @@ www.signal.org
 www.synology.com
 www.xboxlive.com
 www.youtube-nocookie.com
-xiaoyi.com
 x.ai
 x.com
 xbox.com
 xbox.ipv6.microsoft.com
 xboxexperiencesprod.experimentation.xboxlive.com
 xflight.xboxlive.com
+xiaoyi.com
 xkms.xboxlive.com
 xp-cdn.apple.com
 xp.apple.com

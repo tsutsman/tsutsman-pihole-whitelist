@@ -4,6 +4,7 @@ cdn.telegram.org        # CDN Telegram
 core.telegram.org          # документація Telegram
 discord.com             # чат Discord
 messenger.com           # вебверсія Facebook Messenger
+signal.org              # офіційний сайт Signal із завантаженнями клієнтів
 telegram.org            # месенджер Telegram
 whatsapp.com            # месенджер WhatsApp
 eyecon-app.com         # телефонна книга Eyecon
