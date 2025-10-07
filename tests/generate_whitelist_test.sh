@@ -66,4 +66,24 @@ fi
 rm -f sources/generated/all_sources.txt
 rmdir sources/generated 2>/dev/null || true
 
+# Перевірка використання змінної OUTFILE
+rm -f whitelist_custom.txt
+OUTFILE=whitelist_custom.txt ./generate_whitelist.sh >/dev/null
+if ! grep -q '^google.com' whitelist_custom.txt; then
+  echo "Не вдалося створити whitelist_custom.txt через змінну OUTFILE" >&2
+  rm -f whitelist_custom.txt
+  exit 1
+fi
+rm -f whitelist_custom.txt
+
+# Перевірка опції -o/--output з каталогом
+rm -rf tmp_output
+./generate_whitelist.sh -o tmp_output/alt_whitelist.txt >/dev/null
+if ! grep -q '^google.com' tmp_output/alt_whitelist.txt; then
+  echo "Опція -o не створила очікуваний файл" >&2
+  rm -rf tmp_output
+  exit 1
+fi
+rm -rf tmp_output
+
 echo "Інтеграційний тест успішно пройдено"

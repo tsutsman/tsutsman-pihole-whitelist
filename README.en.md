@@ -69,9 +69,11 @@ The `generate_whitelist.sh` script creates `whitelist.txt` from all files in `ca
 ```bash
 ./generate_whitelist.sh              # all categories
 ./generate_whitelist.sh categories/cloud_storage.txt extra_dir/  # specific files or folders
+./generate_whitelist.sh -o exports/custom.txt                   # save to a custom file
+OUTFILE=exports/custom.txt ./generate_whitelist.sh              # alternative via environment variable
 ```
 
-The resulting file is ready for import into pihole.
+The resulting file is ready for import into pihole. If you specify a path with nested folders, they will be created automatically.
 
 ## External domain sources
 
