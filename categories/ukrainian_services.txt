@@ -14,6 +14,17 @@ prom.ua          # торговий майданчик Prom
 pumb.ua          # онлайн-банк ПУМБ
 rozetka.com.ua   # маркетплейс Rozetka
 ukr.net          # популярний поштовий сервіс
+sensebank.com.ua       # Sense Bank — офіційний сайт
+online.sensebank.com.ua    # Sense Bank — інтернет-банкінг
+api.sensebank.com.ua       # Sense Bank — API мобільного застосунку
+raiffeisen.ua             # Raiffeisen Bank — офіційний портал
+online.raiffeisen.ua      # Raiffeisen Bank — інтернет-банкінг
+api.raiffeisen.ua         # Raiffeisen Bank — API для застосунків
+ukrposhta.ua              # Укрпошта — національний поштовий оператор
+my.ukrposhta.ua           # Укрпошта — особистий кабінет клієнта
+track.ukrposhta.ua        # Укрпошта — відстеження відправлень
+services.ukrposhta.ua     # Укрпошта — бізнес-сервіси та інтеграції
+izibank.com.ua            # Izibank — мобільний банк
 
 # Урядові сервіси
 acskidd.gov.ua       # акредитований центр сертифікації ключів ДПС
