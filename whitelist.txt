@@ -97,9 +97,11 @@ api.paymonobank.ua
 api.pinterest.com
 api.pluto.tv
 api.privatbank.ua
+api.raiffeisen.ua
 api.push.apple.com
 api.rlje.net
 api.sbs.com.au
+api.sensebank.com.ua
 api.telegram.org
 api.twitter.com
 api.xiaoyi.com
@@ -410,6 +412,7 @@ iphonesubmissions.apple.com
 iprofiles.apple.com
 ipv6.msftncsi.com
 itunes.apple.com
+izibank.com.ua
 jquery.com
 js.maxmind.com
 jsdelivr.net
@@ -481,6 +484,7 @@ mtalk.google.com
 music.youtube.com
 my.novaposhta.ua
 my.plexapp.com
+my.ukrposhta.ua
 naurok.ua
 netflix.com
 nexusrules.officeapps.live.com
@@ -515,6 +519,8 @@ office365.com
 officecdn.microsoft.com
 officeclient.microsoft.com
 olx.ua
+online.raiffeisen.ua
+online.sensebank.com.ua
 om.cbsi.com
 one.one.one.one
 oneclient.sfx.ms
@@ -588,6 +594,7 @@ pubsub.plex.tv
 pumb.ua
 push.apple.com
 push.services.mozilla.com
+raiffeisen.ua
 rada.gov.ua
 raw.githubusercontent.com
 redd.it
@@ -625,6 +632,7 @@ safebrowsing.google.com
 safebrowsing.googleapis.com
 sbs.com.au
 sbsvodns-vh.akamaihd.net
+sensebank.com.ua
 scontent-atl3-1.xx.fbcdn.net
 scontent-lhr3-1.xx.fbcdn.net
 scontent-mia3-1.xx.fbcdn.net
@@ -639,6 +647,7 @@ secure.surveymonkey.com
 security.cloudflare-dns.com
 serverstatus.apple.com
 services.sonarr.tv
+services.ukrposhta.ua
 settings-win.data.microsoft.com
 settings.live.net
 shareaholic.com
@@ -758,6 +767,7 @@ todo-ta-g7g.amazon.com
 token.cp.microsoft.com
 tokensit.cp.microsoft-tst.com
 track.ucas.com
+track.ukrposhta.ua
 tracking-protection.cdn.mozilla.net
 tracking.novaposhta.ua
 traffic.libsyn.com
@@ -778,6 +788,7 @@ ua.pool.ntp.org
 ud-chat.signal.org
 ui.skype.com
 ukr.net
+ukrposhta.ua
 unagi-na.amazon.com
 unpkg.com
 update.argotunnel.com
