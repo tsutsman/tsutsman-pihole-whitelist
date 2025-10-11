@@ -23,3 +23,14 @@ box.com                  # сервіс Box
 dropbox.com              # сервіс Dropbox
 *.dropbox.com            # піддомени Dropbox
 
+# Xiaomi Mi Cloud — резервні копії та синхронізація MIUI (2024-05-19)
+micloud.xiaomi.net              # головний портал Mi Cloud
+*.micloud.xiaomi.net            # регіональні кластери Mi Cloud
+api.micloud.xiaomi.net          # API резервних копій та синхронізації
+statusapi.micloud.xiaomi.net    # перевірка стану сервісів Mi Cloud
+user.micloud.xiaomi.net         # авторизація облікових записів Xiaomi
+galleryapi.micloud.xiaomi.net   # синхронізація галереї та медіа
+locationapi.micloud.xiaomi.net  # пошук пристрою та геолокація
+finderapi.micloud.xiaomi.net    # пошук пристрою Find Device
+i.mi.com                        # веб-інтерфейс Mi Cloud
+
