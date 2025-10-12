@@ -249,3 +249,33 @@ CATEGORIES_DIR=my_lists THRESHOLD=5 LOG_FILE=my.log ./cleanup_whitelist.sh
 ## Ліцензія
 
 Вміст репозиторію поширюється за умовами MIT License. Деталі в файлі `LICENSE`.
+
+## REST API та веб-форма для вибіркової генерації
+
+Для автоматизації побудови whitelist за категоріями додано прототип REST API `whitelist_builder_api.py`. Він запускає локальний сервер, який переиспользує скрипт `build_whitelist.sh` та надає кілька допоміжних ендпоінтів.
+
+### Запуск сервера
+```bash
+python3 whitelist_builder_api.py --host 127.0.0.1 --port 5050 \
+  --data-dir /tmp/whitelists --log-file /tmp/whitelist_builder.log
+```
+Основні параметри можна змінювати: `--categories-dir` (каталог з файлами категорій), `--allow-extra-path` (дозволені додаткові каталоги), `--allow-external-categories` (щоб приймати абсолютні шляхи файлів).
+
+Після запуску доступні такі ендпоінти:
+- `GET /health` — перевірка стану сервера;
+- `GET /api/categories` — перелік категорій із коротким описом і кількістю доменів;
+- `POST /api/build` — формування whitelist за вибраними параметрами;
+- `GET /downloads/<файл>` — завантаження сформованого файлу.
+
+Приклад запиту до `POST /api/build`:
+```bash
+curl -X POST http://127.0.0.1:5050/api/build \
+  -H 'Content-Type: application/json' \
+  -d '{"categories":["base.txt","apple.txt"],"include_external":true}'
+```
+У відповіді повертається кількість доменів та шлях до згенерованого файла.
+
+### Базова веб-форма
+У каталозі `web/` додано сторінку `whitelist_builder.html`, яка взаємодіє з API: завантажує перелік категорій, дає змогу відмітити потрібні та надіслати запит на генерацію. Щоб скористатися інтерфейсом, запустіть веб-сервер (наприклад, `python3 -m http.server` у корені репозиторію) та відкрийте `http://127.0.0.1:8000/web/whitelist_builder.html` у браузері.
+
+Форма відображає опис категорій, параметри зовнішніх джерел і виводить JSON-відповідь API з посиланням на файл.
