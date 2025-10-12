@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <title>Whitelist Builder</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    .categories { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .category { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .category h3 { margin: 0 0 0.5rem; font-size: 1rem; }
+    .result { background: #f5f5f5; border-radius: 8px; padding: 1rem; white-space: pre-wrap; }
+    button { padding: 0.6rem 1.2rem; border: none; border-radius: 6px; cursor: pointer; }
+    button.primary { background: #2563eb; color: white; }
+    button.secondary { background: #e5e7eb; }
+    .controls { display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    label { display: flex; align-items: center; gap: 0.4rem; }
+    .status { margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Прототип Whitelist Builder</h1>
+  <p>Форма взаємодіє з локальним API <code>whitelist_builder_api.py</code>. Спочатку запустіть сервер: <code>python3 whitelist_builder_api.py</code>.</p>
+  <div class="controls">
+    <button type="button" id="reload" class="secondary">Оновити категорії</button>
+    <label><input type="checkbox" id="includeExternal" checked> Включати зовнішні джерела</label>
+    <label><input type="checkbox" id="applyDirectly"> Одразу застосувати через Pi-hole</label>
+  </div>
+  <div id="categories" class="categories"></div>
+  <form id="builderForm">
+    <div style="margin-bottom: 1rem;">
+      <label>Кастомний файл джерел:<br><input type="text" id="sourcesCombined" placeholder="/path/to/all_sources.txt" style="width: 320px;"></label>
+    </div>
+    <div style="margin-bottom: 1rem;">
+      <label>Додаткові шляхи (через кому):<br><input type="text" id="extraPaths" placeholder="/srv/custom1,/srv/custom2" style="width: 320px;"></label>
+    </div>
+    <button type="submit" class="primary">Згенерувати whitelist</button>
+  </form>
+  <div id="status" class="status"></div>
+  <div id="result" class="result" hidden></div>
+
+  <script>
+    const categoriesContainer = document.getElementById('categories');
+    const statusBox = document.getElementById('status');
+    const resultBox = document.getElementById('result');
+
+    async function loadCategories() {
+      statusBox.textContent = 'Завантаження категорій…';
+      resultBox.hidden = true;
+      try {
+        const response = await fetch('/api/categories');
+        if (!response.ok) {
+          throw new Error('Помилка завантаження категорій');
+        }
+        const data = await response.json();
+        renderCategories(data.categories || []);
+        statusBox.textContent = `Доступно категорій: ${data.categories.length}`;
+      } catch (error) {
+        statusBox.textContent = error.message;
+        categoriesContainer.innerHTML = '';
+      }
+    }
+
+    function renderCategories(categories) {
+      categoriesContainer.innerHTML = '';
+      categories.forEach((item) => {
+        const wrapper = document.createElement('label');
+        wrapper.className = 'category';
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = item.name;
+        wrapper.appendChild(checkbox);
+        const title = document.createElement('h3');
+        title.textContent = `${item.name} (${item.domain_count})`;
+        wrapper.appendChild(title);
+        if (item.description) {
+          const description = document.createElement('p');
+          description.textContent = item.description;
+          wrapper.appendChild(description);
+        }
+        categoriesContainer.appendChild(wrapper);
+      });
+    }
+
+    document.getElementById('reload').addEventListener('click', loadCategories);
+
+    document.getElementById('builderForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const selectedCategories = Array.from(categoriesContainer.querySelectorAll('input[type="checkbox"]:checked')).map((input) => input.value);
+      if (selectedCategories.length === 0) {
+        statusBox.textContent = 'Оберіть принаймні одну категорію.';
+        return;
+      }
+      const payload = {
+        categories: selectedCategories,
+        include_external: document.getElementById('includeExternal').checked,
+        apply_directly: document.getElementById('applyDirectly').checked,
+        sources_combined: document.getElementById('sourcesCombined').value.trim(),
+        extra_paths: document.getElementById('extraPaths').value.split(',').map((item) => item.trim()).filter(Boolean),
+      };
+      statusBox.textContent = 'Генерація…';
+      resultBox.hidden = true;
+      try {
+        const response = await fetch('/api/build', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await response.json();
+        if (!response.ok || data.status !== 'ok') {
+          throw new Error((data.errors && data.errors.join('; ')) || 'Невідома помилка генерації');
+        }
+        statusBox.textContent = `Створено ${data.domain_count} доменів. Посилання на файл: ${data.download_url}`;
+        resultBox.hidden = false;
+        resultBox.textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        statusBox.textContent = error.message;
+      }
+    });
+
+    loadCategories();
+  </script>
+</body>
+</html>
