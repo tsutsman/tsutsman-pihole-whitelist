@@ -28,7 +28,7 @@ chmod +x "$tmpdir/host"
 
 export PATH="$tmpdir:$PATH"
 
-> "$HOST_LOG"
+: > "$HOST_LOG"
 
 if ./check_duplicates.sh "$tmpdir/list.txt" >/dev/null 2>&1; then
   echo "Скрипт мав завершитись помилкою" >&2
@@ -40,7 +40,7 @@ if ! grep -q 'good.com' "$HOST_LOG"; then
   exit 1
 fi
 
-> "$HOST_LOG"
+: > "$HOST_LOG"
 
 if ! SKIP_DNS_CHECK=1 ./check_duplicates.sh "$tmpdir/list.txt" >/dev/null 2>&1; then
   echo "Скрипт мав ігнорувати перевірку DNS" >&2
