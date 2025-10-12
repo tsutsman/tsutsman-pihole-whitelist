@@ -1,4 +1,7 @@
-# Cloudflare WARP та DNS — сервіси Cloudflare і клієнта WARP
+# @description: Cloudflare WARP та DNS — сервіси Cloudflare і клієнта WARP
+# @author: Команда проєкту whitelist
+# @last_review: 2024-05-01
+
 api.cloudflareclient.com
 cdnjs.cloudflare.com
 cf-v4.cloudflare.com

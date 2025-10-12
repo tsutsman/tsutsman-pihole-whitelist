@@ -1,4 +1,7 @@
-# OCSP та сертифікати — перевірка дійсності SSL-сертифікатів
+# @description: OCSP та сертифікати — перевірка дійсності SSL-сертифікатів
+# @author: Команда проєкту whitelist
+# @last_review: 2024-05-01
+
 acme-v02.api.letsencrypt.org
 crl3.digicert.com
 ocsp.digicert.com

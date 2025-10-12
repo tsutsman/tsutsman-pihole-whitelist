@@ -1,4 +1,7 @@
-# Веб-ресурси для скриптів та стилів — зовнішні бібліотеки та стилі
+# @description: Веб-ресурси для скриптів та стилів — зовнішні бібліотеки та стилі
+# @author: Команда проєкту whitelist
+# @last_review: 2024-05-01
+
 ajax.googleapis.com     # бібліотеки jQuery та інші
 assets.adobe.com          # хмарні ресурси Adobe
 cdn.jsdelivr.net        # CDN jsDelivr для скриптів та стилів

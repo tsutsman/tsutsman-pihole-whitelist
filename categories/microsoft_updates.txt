@@ -1,4 +1,7 @@
-# Оновлення та сервіси Microsoft — домени для оновлень Windows і Office
+# @description: Оновлення та сервіси Microsoft — домени для оновлень Windows і Office
+# @author: Команда проєкту whitelist
+# @last_review: 2024-05-01
+
 assets.onestore.ms
 cdn.office.net
 ctldl.windowsupdate.com

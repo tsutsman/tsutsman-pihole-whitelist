@@ -1,4 +1,7 @@
-# Сервіси CrealityPrint — домени для 3D-друку Creality
+# @description: Сервіси CrealityPrint — домени для 3D-друку Creality
+# @author: Команда проєкту whitelist
+# @last_review: 2024-05-01
+
 account.mycrealitycloud.com
 api.mycrealitycloud.com
 cdn.creality.com

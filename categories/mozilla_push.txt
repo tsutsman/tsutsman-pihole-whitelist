@@ -1,2 +1,5 @@
-# Mozilla Push — сервіс сповіщень Mozilla
+# @description: Mozilla Push — сервіс сповіщень Mozilla
+# @author: Команда проєкту whitelist
+# @last_review: 2024-05-01
+
 push.services.mozilla.com

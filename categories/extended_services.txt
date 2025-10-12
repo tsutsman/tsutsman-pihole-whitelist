@@ -1,4 +1,7 @@
-# Розширені сервіси — додаткові домени для різних платформ
+# @description: Розширені сервіси — додаткові домени для різних платформ
+# @author: Команда проєкту whitelist
+# @last_review: 2024-05-01
+
 0-edge-chat.facebook.com
 1-edge-chat.facebook.com
 2-edge-chat.facebook.com

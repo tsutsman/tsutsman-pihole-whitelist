@@ -1,4 +1,7 @@
-# Сервери точного часу (NTP) — синхронізація системного часу
+# @description: Сервери точного часу (NTP) — синхронізація системного часу
+# @author: Команда проєкту whitelist
+# @last_review: 2024-05-01
+
 ntp.org
 pool.ntp.org              # глобальний пул NTP
 time.cloudflare.com       # точний час Cloudflare

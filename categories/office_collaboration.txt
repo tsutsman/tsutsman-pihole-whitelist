@@ -1,4 +1,7 @@
-# Хмарні та офісні сервіси для спільної роботи — інструменти для співпраці
+# @description: Хмарні та офісні сервіси для спільної роботи — інструменти для співпраці
+# @author: Команда проєкту whitelist
+# @last_review: 2024-05-01
+
 microsoftteams.com   # Teams від Microsoft
 *.microsoftteams.com # піддомени Teams
 slack.com            # робочі чати Slack
