@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+    branches: ["main", "master", "codex/**"]
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Отримати код
+        uses: actions/checkout@v4
+
+      - name: Встановити залежності
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y dnsutils
+
+      - name: Запустити тестові сценарії
+        shell: bash
+        run: |
+          set -euo pipefail
+          chmod +x tests/*.sh
+          for script in tests/*_test.sh; do
+            echo "::group::${script}"
+            bash "$script"
+            echo "::endgroup::"
+          done
