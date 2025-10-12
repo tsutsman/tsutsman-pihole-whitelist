@@ -182,6 +182,7 @@ cdns.gigya.com
 cert.mgt.xboxlive.com
 certs.apple.com
 cf-v4.cloudflare.com
+chat.openai.com
 chat.signal.org
 chatgpt.com
 clamav.net
@@ -508,6 +509,7 @@ oauth.live.com
 oauthaccountmanager.googleapis.com
 ocsp.apple.com
 ocsp.digicert.com
+oaistatic.com
 ocsp.pki.goog
 ocsp.rootg2.amazontrust.com
 ocsp.usertrust.com
