@@ -1,4 +1,7 @@
-# Месенджери — сервіси для обміну повідомленнями
+# @description: Месенджери — сервіси для обміну повідомленнями
+# @author: Команда проєкту whitelist
+# @last_review: 2024-05-01
+
 api.telegram.org            # API Telegram
 cdn.telegram.org        # CDN Telegram
 core.telegram.org          # документація Telegram

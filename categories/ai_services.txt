@@ -1,4 +1,7 @@
-# AI-сервіси — платформи для роботи з ШІ
+# @description: AI-сервіси — платформи для роботи з ШІ
+# @author: Команда проєкту whitelist
+# @last_review: 2024-05-01
+
 aistudio.google.com      # інтерфейс Google AI Studio
 anthropic.com            # інформація та документація Anthropic
 api.openai.com           # API ChatGPT

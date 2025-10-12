@@ -1,4 +1,7 @@
-# Антивірусні сервіси — домени для оновлень та перевірки безпеки
+# @description: Антивірусні сервіси — домени для оновлень та перевірки безпеки
+# @author: Команда проєкту whitelist
+# @last_review: 2024-05-01
+
 avast.com
 defs.symantec.com
 livegrid.eset.com

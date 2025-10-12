@@ -1,4 +1,7 @@
-# Сервіси Google — основні домени Google
+# @description: Сервіси Google — основні домени Google
+# @author: Команда проєкту whitelist
+# @last_review: 2024-05-01
+
 0.client-channel.google.com
 accounts.google.com
 android.clients.google.com
