@@ -24,7 +24,16 @@ first|file://$TMP_DIR/source1.txt
 second|file://$TMP_DIR/source2.txt
 EOF2
 
-OUT_DIR="$TMP_DIR/out" COMBINED_FILE="$TMP_DIR/out/combined.txt" ./fetch_sources.sh "$TMP_DIR/sources.txt" >/dev/null
+CACHE_DIR="$TMP_DIR/cache" \
+OUT_DIR="$TMP_DIR/out" \
+COMBINED_FILE="$TMP_DIR/out/combined.txt" \
+./fetch_sources.sh "$TMP_DIR/sources.txt" >/dev/null
+
+cache_key=$(printf 'file://%s/source1.txt' "$TMP_DIR" | sha256sum | cut -d' ' -f1)
+if [ ! -f "$TMP_DIR/cache/$cache_key" ]; then
+  echo "Кеш не створено після першого запуску" >&2
+  exit 1
+fi
 
 if [ ! -f "$TMP_DIR/out/first.txt" ] || [ ! -f "$TMP_DIR/out/second.txt" ]; then
   echo "Не створені файли для джерел" >&2
@@ -73,6 +82,21 @@ fi
 
 if [ "$(sort "$TMP_DIR/out/combined.txt" | uniq | wc -l)" -ne "$(wc -l < "$TMP_DIR/out/combined.txt")" ]; then
   echo "Зведений файл містить дублікати" >&2
+  exit 1
+fi
+
+rm "$TMP_DIR/source1.txt"
+
+CACHE_DIR="$TMP_DIR/cache" \
+CACHE_TTL=999999 \
+RETRY_ATTEMPTS=2 \
+RETRY_DELAY=0 \
+OUT_DIR="$TMP_DIR/out2" \
+COMBINED_FILE="$TMP_DIR/out2/combined.txt" \
+./fetch_sources.sh "$TMP_DIR/sources.txt" >/dev/null
+
+if [ ! -f "$TMP_DIR/out2/first.txt" ]; then
+  echo "Кешоване джерело не відтворено" >&2
   exit 1
 fi
 

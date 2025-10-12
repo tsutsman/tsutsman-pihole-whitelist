@@ -7,6 +7,10 @@ set -euo pipefail
 CONFIG_FILE=${1:-"sources/default_sources.txt"}
 OUT_DIR=${OUT_DIR:-"sources/generated"}
 COMBINED_FILE=${COMBINED_FILE:-"$OUT_DIR/all_sources.txt"}
+CACHE_DIR=${CACHE_DIR:-"$OUT_DIR/cache"}
+CACHE_TTL=${CACHE_TTL:-86400}
+RETRY_ATTEMPTS=${RETRY_ATTEMPTS:-3}
+RETRY_DELAY=${RETRY_DELAY:-2}
 
 trim() {
   local str="$1"
@@ -117,10 +121,53 @@ while IFS= read -r raw_line || [ -n "$raw_line" ]; do
   target_file="$OUT_DIR/$safe_name.txt"
 
   tmp_source=$(mktemp)
-  if ! download "$url" "$tmp_source"; then
-    echo "Не вдалося завантажити $url" >&2
-    rm -f "$tmp_source"
-    exit 1
+
+  cache_key=$(printf '%s' "$url" | sha256sum | cut -d' ' -f1)
+  cache_path="$CACHE_DIR/$cache_key"
+  mkdir -p "$CACHE_DIR"
+
+  use_cache=0
+  if [[ -f "$cache_path" ]]; then
+    if [[ "$CACHE_TTL" == "0" ]]; then
+      rm -f "$cache_path"
+    else
+      now=$(date +%s)
+      modified=$(stat -c %Y "$cache_path" 2>/dev/null || echo 0)
+      if (( now - modified <= CACHE_TTL )); then
+        use_cache=1
+      fi
+    fi
+  fi
+
+  if (( use_cache )); then
+    cp "$cache_path" "$tmp_source"
+  else
+    attempt=1
+    success=0
+    while (( attempt <= RETRY_ATTEMPTS )); do
+      if download "$url" "$tmp_source"; then
+        cp "$tmp_source" "$cache_path"
+        success=1
+        break
+      fi
+      if (( attempt == RETRY_ATTEMPTS )); then
+        if [[ -f "$cache_path" ]]; then
+          cp "$cache_path" "$tmp_source"
+          echo "Використано кешовану копію для $url" >&2
+          success=1
+          break
+        fi
+        echo "Не вдалося завантажити $url після $RETRY_ATTEMPTS спроб" >&2
+        rm -f "$tmp_source"
+        exit 1
+      fi
+      sleep "$RETRY_DELAY"
+      ((attempt++))
+    done
+    if (( ! success )); then
+      rm -f "$tmp_source"
+      exit 1
+    fi
   fi
 
   normalize_domains "$tmp_source" "$target_file"
