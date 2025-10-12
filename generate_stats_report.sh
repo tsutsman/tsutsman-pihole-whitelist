@@ -7,7 +7,10 @@ GENERATED_DIR=${GENERATED_DIR:-sources/generated}
 STATE_FILE=${STATE_FILE:-cleanup_state.txt}
 DEPRECATED_FILE=${DEPRECATED_FILE:-$CATEGORIES_DIR/deprecated.txt}
 REPORT_FILE=${REPORT_FILE:-docs/data_stats.md}
+HTML_REPORT_FILE=${HTML_REPORT_FILE:-docs/dashboard.html}
+HISTORY_FILE=${HISTORY_FILE:-docs/data_history.json}
 LOG_FILE=${LOG_FILE:-cleanup.log}
+REMOVAL_HISTORY_LIMIT=${REMOVAL_HISTORY_LIMIT:-50}
 
 trim() {
   local value="$1"
@@ -27,6 +30,16 @@ safe_name() {
   printf '%s' "$name" | tr -c 'a-z0-9._-' '_'
 }
 
+html_escape() {
+  local text="$1"
+  text="${text//&/&amp;}"
+  text="${text//</&lt;}"
+  text="${text//>/&gt;}"
+  text="${text//\"/&quot;}"
+  text="${text//\'&#39;}"
+  printf '%s' "$text"
+}
+
 format_percent() {
   local numerator=$1
   local denominator=$2
@@ -42,13 +55,13 @@ declare -A removed_per_category
 declare -A failing_domains
 
 if [[ -f "$STATE_FILE" ]]; then
-  while read -r domain count rest; do
+  while read -r domain _count rest; do
     [[ -z ${domain:-} ]] && continue
     [[ ${domain:0:1} == '#' ]] && continue
     domain_key=$(lower "$domain")
     category=$(trim "${rest:-}")
     [[ -z "$category" ]] && category="невідомо"
-    pending_per_category[$category]=$((pending_per_category[$category]+1))
+    pending_per_category[$category]=$(( ${pending_per_category[$category]:-0} + 1 ))
     failing_domains[$domain_key]=1
   done < "$STATE_FILE"
 fi
@@ -67,13 +80,15 @@ if [[ -f "$DEPRECATED_FILE" ]]; then
       category=$(trim "$category")
       [[ -z "$category" ]] && category="невідомо"
     fi
-    removed_per_category[$category]=$((removed_per_category[$category]+1))
+    removed_per_category[$category]=$(( ${removed_per_category[$category]:-0} + 1 ))
     domain_key=$(lower "$domain")
     failing_domains[$domain_key]=1
   done < "$DEPRECATED_FILE"
 fi
 
 categories_list=()
+categories_html=""
+sources_html=""
 if [[ -d "$CATEGORIES_DIR" ]]; then
   while IFS= read -r -d '' file; do
     categories_list+=("$file")
@@ -107,6 +122,13 @@ for file in "${categories_list[@]}"; do
     last_check=$(date -r "$file" '+%F %T' 2>/dev/null || echo 'невідомо')
   fi
   printf '| %s | %d | %d | %s | %s |\n' "$category_name" "$active_count" "$problematic" "$share" "$last_check" >> "$report_tmp"
+  categories_html+=$'\n<tr>'
+  categories_html+="<td>$(html_escape "$category_name")</td>"
+  categories_html+="<td class=\"num\">$active_count</td>"
+  categories_html+="<td class=\"num\">$problematic</td>"
+  categories_html+="<td class=\"num\">$share</td>"
+  categories_html+="<td>$(html_escape "$last_check")</td>"
+  categories_html+=$'</tr>'
   total_active=$((total_active + active_count))
   total_problematic=$((total_problematic + problematic))
   total_removed=$((total_removed + removed))
@@ -153,6 +175,14 @@ if [[ -f "$SOURCES_CONFIG" ]]; then
       updated=$(date -r "$source_file" '+%F %T' 2>/dev/null || echo 'немає даних')
     fi
     printf '| %s | %s | %d | %d | %s | %s |\n' "$name" "$url" "$domain_count" "$problematic" "$share" "$updated" >> "$report_tmp"
+    sources_html+=$'\n<tr>'
+    sources_html+="<td>$(html_escape "$name")</td>"
+    sources_html+="<td><a href=\"$(html_escape "$url")\" target=\"_blank\" rel=\"noopener\">$(html_escape "$url")</a></td>"
+    sources_html+="<td class=\"num\">$domain_count</td>"
+    sources_html+="<td class=\"num\">$problematic</td>"
+    sources_html+="<td class=\"num\">$share</td>"
+    sources_html+="<td>$(html_escape "$updated")</td>"
+    sources_html+=$'</tr>'
     total_sources_domains=$((total_sources_domains + domain_count))
     total_sources_problematic=$((total_sources_problematic + problematic))
   done < "$SOURCES_CONFIG"
@@ -166,3 +196,221 @@ printf '* Домени у зведених джерелах: %d (з них пр�
 
 mkdir -p "$(dirname "$REPORT_FILE")"
 cp "$report_tmp" "$REPORT_FILE"
+
+mkdir -p "$(dirname "$HISTORY_FILE")"
+
+python3 - "$HISTORY_FILE" <<PY
+import json
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+history_path = Path(sys.argv[1])
+entry = {
+    "timestamp": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+    "active_domains": $total_active,
+    "problematic_domains": $total_problematic,
+    "deprecated_domains": $total_removed,
+    "sources_domains": $total_sources_domains,
+    "sources_problematic": $total_sources_problematic,
+}
+
+data = []
+if history_path.exists():
+    try:
+        data = json.loads(history_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        data = []
+
+if data:
+    last = data[-1]
+    if (
+        last.get("active_domains") == entry["active_domains"]
+        and last.get("problematic_domains") == entry["problematic_domains"]
+        and last.get("deprecated_domains") == entry["deprecated_domains"]
+        and last.get("sources_domains") == entry["sources_domains"]
+    ):
+        data[-1] = entry
+    else:
+        data.append(entry)
+else:
+    data.append(entry)
+
+data = data[-365:]
+history_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+PY
+
+history_json=$(cat "$HISTORY_FILE" 2>/dev/null || echo '[]')
+
+if [[ -z "${categories_html:-}" ]]; then
+  categories_html='<tr><td colspan="5">Немає доступних категорій</td></tr>'
+fi
+
+if [[ -z "${sources_html:-}" ]]; then
+  sources_html='<tr><td colspan="6">Немає даних про зовнішні джерела</td></tr>'
+fi
+
+removals_html=""
+if [[ -f "$LOG_FILE" && -s "$LOG_FILE" ]]; then
+  while IFS= read -r raw_line; do
+    line=$(trim "${raw_line%%$'\r'*}")
+    [[ -z "$line" ]] && continue
+    removals_html+=$'\n<li><code>'"$(html_escape "$line")"'</code></li>'
+  done < <(tail -n "$REMOVAL_HISTORY_LIMIT" "$LOG_FILE")
+else
+  removals_html='<li>Журнал порожній або недоступний.</li>'
+fi
+
+html_tmp=$(mktemp)
+cat > "$html_tmp" <<EOF
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <title>Моніторинг whitelist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <style>
+    body { font-family: "Inter", system-ui, -apple-system, sans-serif; margin: 2rem; background: #f8fafc; color: #0f172a; }
+    h1 { margin-bottom: 1rem; }
+    section { background: white; border-radius: 16px; padding: 1.5rem; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08); margin-bottom: 2rem; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { padding: 0.6rem 0.8rem; border-bottom: 1px solid #e2e8f0; text-align: left; }
+    th { background: #f1f5f9; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.75rem; color: #475569; }
+    td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-top: 1rem; }
+    .metric { padding: 1rem; border-radius: 12px; background: linear-gradient(135deg, #2563eb0d, #38bdf80d); border: 1px solid #e2e8f0; }
+    .metric span { display: block; font-size: 0.85rem; color: #475569; margin-bottom: 0.4rem; }
+    .metric strong { font-size: 1.6rem; font-variant-numeric: tabular-nums; }
+    ul.log { max-height: 280px; overflow-y: auto; list-style: none; padding: 0; margin: 0; }
+    ul.log li { padding: 0.4rem 0; border-bottom: 1px dashed #cbd5f5; font-family: "Fira Code", "JetBrains Mono", monospace; font-size: 0.85rem; }
+    ul.log code { background: transparent; color: #1e293b; }
+    footer { text-align: center; color: #64748b; margin-top: 3rem; font-size: 0.85rem; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #0f172a; color: #e2e8f0; }
+      section { background: #1e293b; box-shadow: none; }
+      th { background: rgba(148, 163, 184, 0.15); color: #cbd5f5; }
+      td { border-bottom-color: rgba(148, 163, 184, 0.2); }
+      .metric { background: rgba(37, 99, 235, 0.1); border-color: rgba(148, 163, 184, 0.2); }
+      ul.log li { border-bottom-color: rgba(148, 163, 184, 0.2); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Моніторинг білого списку Pi-hole</h1>
+  <p>Оновлено: $(date '+%F %T')</p>
+
+  <section>
+    <h2>Ключові показники</h2>
+    <div class="grid">
+      <div class="metric"><span>Активних доменів</span><strong>$total_active</strong></div>
+      <div class="metric"><span>Проблемні домени</span><strong>$total_problematic</strong></div>
+      <div class="metric"><span>Домени у deprecated</span><strong>$total_removed</strong></div>
+      <div class="metric"><span>Джерела (доменів)</span><strong>$total_sources_domains</strong></div>
+    </div>
+    <canvas id="historyChart" height="160" style="margin-top: 1.5rem;"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="application/json" id="history-data">$history_json</script>
+    <script>
+      const historyRaw = document.getElementById('history-data').textContent || '[]';
+      let historyData = [];
+      try { historyData = JSON.parse(historyRaw); } catch (error) { historyData = []; }
+      const labels = historyData.map((item) => item.timestamp);
+      const activeSeries = historyData.map((item) => item.active_domains);
+      const problematicSeries = historyData.map((item) => item.problematic_domains);
+      const canvas = document.getElementById('historyChart');
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+      if (!labels.length) {
+        const placeholder = document.createElement('p');
+        placeholder.textContent = 'Недостатньо даних для побудови графіка.';
+        placeholder.style.marginTop = '1rem';
+        canvas.replaceWith(placeholder);
+      } else {
+        const ctx = canvas.getContext('2d');
+        const axisColor = mediaQuery.matches ? '#cbd5f5' : '#475569';
+        const legendColor = mediaQuery.matches ? '#e2e8f0' : '#1e293b';
+
+        const chartInstance = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels,
+            datasets: [
+              { label: 'Активні домени', data: activeSeries, borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,0.2)', tension: 0.25, fill: true },
+              { label: 'Проблемні домени', data: problematicSeries, borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.2)', tension: 0.25, fill: true }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: { ticks: { color: axisColor } },
+              y: { ticks: { color: axisColor }, beginAtZero: true }
+            },
+            plugins: {
+              legend: { labels: { color: legendColor } }
+            }
+          }
+        });
+
+        const applyTheme = () => {
+          const darkMode = mediaQuery.matches;
+          const tickColor = darkMode ? '#cbd5f5' : '#475569';
+          const labelColor = darkMode ? '#e2e8f0' : '#1e293b';
+          chartInstance.options.scales.x.ticks.color = tickColor;
+          chartInstance.options.scales.y.ticks.color = tickColor;
+          chartInstance.options.plugins.legend.labels.color = labelColor;
+          chartInstance.update();
+        };
+
+        if (mediaQuery.addEventListener) {
+          mediaQuery.addEventListener('change', applyTheme);
+        } else if (mediaQuery.addListener) {
+          mediaQuery.addListener(applyTheme);
+        }
+        applyTheme();
+      }
+    </script>
+  </section>
+
+  <section>
+    <h2>Категорії</h2>
+    <table>
+      <thead>
+        <tr><th>Категорія</th><th>Активні</th><th>Проблемні</th><th>Частка недоступних</th><th>Остання перевірка</th></tr>
+      </thead>
+      <tbody>
+        $categories_html
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Зовнішні джерела</h2>
+    <table>
+      <thead>
+        <tr><th>Назва</th><th>URL</th><th>Доменів</th><th>Проблемні</th><th>Частка недоступних</th><th>Останнє оновлення</th></tr>
+      </thead>
+      <tbody>
+        $sources_html
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Журнал видалень</h2>
+    <ul class="log">
+      $removals_html
+    </ul>
+  </section>
+
+  <footer>
+    Звіт сформовано скриптом generate_stats_report.sh • $(date '+%F %T UTC' -u)
+  </footer>
+</body>
+</html>
+EOF
+
+mkdir -p "$(dirname "$HTML_REPORT_FILE")"
+cp "$html_tmp" "$HTML_REPORT_FILE"
+rm -f "$html_tmp"

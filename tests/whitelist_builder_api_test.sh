@@ -35,7 +35,7 @@ python3 whitelist_builder_api.py \
   >"$server_log" 2>&1 &
 server_pid=$!
 
-for attempt in $(seq 1 50); do
+for _ in $(seq 1 50); do
   if curl -fs "http://127.0.0.1:$port/health" >/dev/null; then
     break
   fi
