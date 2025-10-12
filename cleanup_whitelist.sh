@@ -13,6 +13,12 @@ trim() {
   printf '%s' "$var"
 }
 
+# Екранування спеціальних символів для використання в регулярних виразах
+escape_regex() {
+  local value="$1"
+  printf '%s' "$value" | sed -e 's/[.[\\*^$()+?{|]/\\&/g' -e 's/-/\\-/g'
+}
+
 # Виділення домену без коментаря
 extract_domain() {
   local line="$1"
@@ -63,9 +69,16 @@ PARALLEL=${PARALLEL:-4}
 
 # Завантаження наявного стану
 declare -A FAILS
+declare -A FAIL_CATEGORIES
 if [[ -f "$STATE_FILE" ]]; then
-  while read -r domain count; do
+  while read -r domain count rest; do
+    [[ -z "${domain:-}" ]] && continue
+    [[ "${domain:0:1}" == "#" ]] && continue
+    category=${rest:-}
     FAILS[$domain]=$count
+    if [[ -n "$category" ]]; then
+      FAIL_CATEGORIES[$domain]=$category
+    fi
   done < "$STATE_FILE"
 fi
 
@@ -74,6 +87,7 @@ fi
 
 # Обробка всіх файлів у каталозі категорій, окрім deprecated.txt
 while IFS= read -r -d '' file; do
+  category_label=$(basename "$file")
   tmp=$(mktemp)
   mapfile -t lines < "$file"
   domains=()
@@ -122,16 +136,28 @@ while IFS= read -r -d '' file; do
     fi
     if [[ ${RES[$domain]} == "ok" ]]; then
       unset 'FAILS[$domain]'
+      unset 'FAIL_CATEGORIES[$domain]'
       echo "$clean_line" >> "$tmp"
     else
       count=${FAILS[$domain]:-0}
       count=$((count+1))
       if (( count >= THRESHOLD )); then
-        grep -Fxq "$domain" "$DEPRECATED_FILE" 2>/dev/null || echo "$domain" >> "$DEPRECATED_FILE"
-        echo "$(date '+%F %T') $domain -> вилучено після $THRESHOLD невдалих перевірок" >> "$LOG_FILE"
+        existing_category=${FAIL_CATEGORIES[$domain]:-$category_label}
+        [[ -z "$existing_category" ]] && existing_category="невідомо"
+        domain_pattern=$(escape_regex "$domain")
+        if [[ -f "$DEPRECATED_FILE" ]]; then
+          if ! grep -Eq "^$domain_pattern([[:space:]]|$)" "$DEPRECATED_FILE"; then
+            echo "$domain # category:$existing_category" >> "$DEPRECATED_FILE"
+          fi
+        else
+          echo "$domain # category:$existing_category" >> "$DEPRECATED_FILE"
+        fi
+        echo "$(date '+%F %T') $domain -> вилучено після $THRESHOLD невдалих перевірок (категорія: $existing_category)" >> "$LOG_FILE"
         unset 'FAILS[$domain]'
+        unset 'FAIL_CATEGORIES[$domain]'
       else
         FAILS[$domain]=$count
+        FAIL_CATEGORIES[$domain]=${FAIL_CATEGORIES[$domain]:-$category_label}
         echo "$clean_line" >> "$tmp"
       fi
     fi
@@ -141,7 +167,11 @@ while IFS= read -r -d '' file; do
 
   : > "$STATE_FILE.tmp"
   for d in "${!FAILS[@]}"; do
-    echo "$d ${FAILS[$d]}" >> "$STATE_FILE.tmp"
+    if [[ -n "${FAIL_CATEGORIES[$d]:-}" ]]; then
+      echo "$d ${FAILS[$d]} ${FAIL_CATEGORIES[$d]}" >> "$STATE_FILE.tmp"
+    else
+      echo "$d ${FAILS[$d]}" >> "$STATE_FILE.tmp"
+    fi
   done
   mv "$STATE_FILE.tmp" "$STATE_FILE"
 
