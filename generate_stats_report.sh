@@ -7,6 +7,13 @@ GENERATED_DIR=${GENERATED_DIR:-sources/generated}
 STATE_FILE=${STATE_FILE:-cleanup_state.txt}
 DEPRECATED_FILE=${DEPRECATED_FILE:-$CATEGORIES_DIR/deprecated.txt}
 REPORT_FILE=${REPORT_FILE:-docs/data_stats.md}
+if [[ -z "${REPORT_FILE_EN:-}" ]]; then
+  if [[ "$REPORT_FILE" == *.md ]]; then
+    REPORT_FILE_EN="${REPORT_FILE%.md}.en.md"
+  else
+    REPORT_FILE_EN="${REPORT_FILE}.en.md"
+  fi
+fi
 HTML_REPORT_FILE=${HTML_REPORT_FILE:-docs/dashboard.html}
 HISTORY_FILE=${HISTORY_FILE:-docs/data_history.json}
 LOG_FILE=${LOG_FILE:-cleanup.log}
@@ -87,7 +94,9 @@ if [[ -f "$DEPRECATED_FILE" ]]; then
 fi
 
 categories_list=()
+categories_rows=()
 categories_html=""
+sources_rows=()
 sources_html=""
 if [[ -d "$CATEGORIES_DIR" ]]; then
   while IFS= read -r -d '' file; do
@@ -96,9 +105,11 @@ if [[ -d "$CATEGORIES_DIR" ]]; then
 fi
 
 report_tmp=$(mktemp)
-trap 'rm -f "$report_tmp"' EXIT
+report_en_tmp=$(mktemp)
+trap 'rm -f "$report_tmp" "$report_en_tmp"' EXIT
 
 printf '# Статистика whitelist\n\n' >> "$report_tmp"
+printf '> English version: [docs/data_stats.en.md](data_stats.en.md)\n\n' >> "$report_tmp"
 printf 'Оновлено: %s\n\n' "$(date '+%F %T')" >> "$report_tmp"
 
 printf '## Категорії\n' >> "$report_tmp"
@@ -122,6 +133,7 @@ for file in "${categories_list[@]}"; do
     last_check=$(date -r "$file" '+%F %T' 2>/dev/null || echo 'невідомо')
   fi
   printf '| %s | %d | %d | %s | %s |\n' "$category_name" "$active_count" "$problematic" "$share" "$last_check" >> "$report_tmp"
+  categories_rows+=("$category_name|$active_count|$problematic|$share|$last_check")
   categories_html+=$'\n<tr>'
   categories_html+="<td>$(html_escape "$category_name")</td>"
   categories_html+="<td class=\"num\">$active_count</td>"
@@ -175,6 +187,7 @@ if [[ -f "$SOURCES_CONFIG" ]]; then
       updated=$(date -r "$source_file" '+%F %T' 2>/dev/null || echo 'немає даних')
     fi
     printf '| %s | %s | %d | %d | %s | %s |\n' "$name" "$url" "$domain_count" "$problematic" "$share" "$updated" >> "$report_tmp"
+    sources_rows+=("$name|$url|$domain_count|$problematic|$share|$updated")
     sources_html+=$'\n<tr>'
     sources_html+="<td>$(html_escape "$name")</td>"
     sources_html+="<td><a href=\"$(html_escape "$url")\" target=\"_blank\" rel=\"noopener\">$(html_escape "$url")</a></td>"
@@ -196,6 +209,43 @@ printf '* Домени у зведених джерелах: %d (з них пр�
 
 mkdir -p "$(dirname "$REPORT_FILE")"
 cp "$report_tmp" "$REPORT_FILE"
+
+printf '# Whitelist statistics\n\n' >> "$report_en_tmp"
+printf '> Ukrainian version: [docs/data_stats.md](data_stats.md)\n\n' >> "$report_en_tmp"
+printf 'Updated: %s\n\n' "$(date '+%F %T')" >> "$report_en_tmp"
+
+printf '## Categories\n' >> "$report_en_tmp"
+printf '| Category | Active domains | Problematic | Unavailable share | Last check |\n' >> "$report_en_tmp"
+printf '| --- | ---: | ---: | ---: | --- |\n' >> "$report_en_tmp"
+for row in "${categories_rows[@]}"; do
+  IFS='|' read -r c_name c_active c_problematic c_share c_last <<< "$row"
+  printf '| %s | %s | %s | %s | %s |\n' "$c_name" "$c_active" "$c_problematic" "$c_share" "$c_last" >> "$report_en_tmp"
+done
+
+printf '\n### Notes\n' >> "$report_en_tmp"
+printf '* “Problematic” = domains that failed verification or were moved to `deprecated.txt`.\n' >> "$report_en_tmp"
+printf '* Dates are derived from the last modified timestamp of each category file.\n\n' >> "$report_en_tmp"
+
+printf '## External sources\n' >> "$report_en_tmp"
+printf '| Source | URL | Domains | Problematic | Unavailable share | Last update |\n' >> "$report_en_tmp"
+printf '| --- | --- | ---: | ---: | ---: | --- |\n' >> "$report_en_tmp"
+if [[ ${#sources_rows[@]} -eq 0 ]]; then
+  printf '| — | — | 0 | 0 | 0%% | no data |\n' >> "$report_en_tmp"
+else
+  for row in "${sources_rows[@]}"; do
+    IFS='|' read -r s_name s_url s_domains s_problematic s_share s_updated <<< "$row"
+    printf '| %s | %s | %s | %s | %s | %s |\n' "$s_name" "$s_url" "$s_domains" "$s_problematic" "$s_share" "$s_updated" >> "$report_en_tmp"
+  done
+fi
+
+printf '\n## Aggregated metrics\n' >> "$report_en_tmp"
+printf '* Active domains across categories: %d.\n' "$total_active" >> "$report_en_tmp"
+printf '* Problematic domains in categories (status + deprecated): %d.\n' "$total_problematic" >> "$report_en_tmp"
+printf '* Domains in `deprecated.txt`: %d.\n' "$total_removed" >> "$report_en_tmp"
+printf '* Domains in combined external sources: %d (problematic: %d).\n' "$total_sources_domains" "$total_sources_problematic" >> "$report_en_tmp"
+
+mkdir -p "$(dirname "$REPORT_FILE_EN")"
+cp "$report_en_tmp" "$REPORT_FILE_EN"
 
 mkdir -p "$(dirname "$HISTORY_FILE")"
 
