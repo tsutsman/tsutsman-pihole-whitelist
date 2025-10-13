@@ -1,11 +1,11 @@
-# Статистика whitelist
+# Whitelist statistics
 
-> English version: [docs/data_stats.en.md](data_stats.en.md)
+> Ukrainian version: [docs/data_stats.md](data_stats.md)
 
-Оновлено: 2025-10-12 20:55:07
+Updated: 2025-10-12 20:55:07
 
-## Категорії
-| Категорія | Активних доменів | Проблемні | Частка недоступних | Остання перевірка |
+## Categories
+| Category | Active domains | Problematic | Unavailable share | Last check |
 | --- | ---: | ---: | ---: | --- |
 | ai_services.txt | 21 | 0 | 0.0% | 2025-10-12 20:48:01 |
 | antivirus.txt | 20 | 0 | 0.0% | 2025-10-12 20:48:01 |
@@ -34,18 +34,18 @@
 | ukrainian_services.txt | 59 | 0 | 0.0% | 2025-10-12 20:48:01 |
 | web_resources.txt | 13 | 0 | 0.0% | 2025-10-12 20:48:01 |
 
-### Пояснення
-* "Проблемні" = домени, що мають невдалий стан перевірки або були перенесені до `deprecated.txt`.
-* Дати визначаються за часом останньої модифікації файлу категорії.
+### Notes
+* “Problematic” = domains that failed verification or were moved to `deprecated.txt`.
+* Dates are derived from the last modified timestamp of each category file.
 
-## Зовнішні джерела
-| Джерело | URL | Доменів | Проблемні | Частка недоступних | Останнє оновлення |
+## External sources
+| Source | URL | Domains | Problematic | Unavailable share | Last update |
 | --- | --- | ---: | ---: | ---: | --- |
-| anudeep_whitelist | https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt | 0 | 0 | 0% | немає даних |
-| anudeep_optional | https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/optional-list.txt | 0 | 0 | 0% | немає даних |
+| anudeep_whitelist | https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt | 0 | 0 | 0% | no data |
+| anudeep_optional | https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/optional-list.txt | 0 | 0 | 0% | no data |
 
-## Агреговані показники
-* Активних доменів у категоріях: 729.
-* Проблемних доменів у категоріях (стан + deprecated): 0.
-* Домени у deprecated.txt: 0.
-* Домени у зведених джерелах: 0 (з них проблемних 0).
+## Aggregated metrics
+* Active domains across categories: 729.
+* Problematic domains in categories (status + deprecated): 0.
+* Domains in `deprecated.txt`: 0.
+* Domains in combined external sources: 0 (problematic: 0).
