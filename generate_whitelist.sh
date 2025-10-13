@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 # Скрипт генерує файл whitelist.txt на основі списків у каталозі categories/
+# Script generates whitelist.txt based on the lists stored inside the categories/ directory.
 # Якщо передано аргументи, обробляються лише зазначені файли чи каталоги
+# If arguments are provided, only the specified files or directories are processed.
 # Коментарі (окремі та після доменів) й порожні рядки ігноруються
+# Standalone comments, inline comments and empty lines are skipped during processing.
 set -euo pipefail
 
 OUTFILE=${OUTFILE:-"whitelist.txt"}
@@ -11,12 +14,17 @@ INCLUDE_EXTERNAL_SOURCES=${INCLUDE_EXTERNAL_SOURCES:-1}
 print_usage() {
   cat <<'EOF'
 Використання: ./generate_whitelist.sh [опції] [файли_or_каталоги]
+Usage:      ./generate_whitelist.sh [options] [files_or_directories]
 
   -o, --output Файл для збереження результату (за замовчуванням whitelist.txt або значення змінної OUTFILE)
+  -o, --output Path to save the combined whitelist (defaults to whitelist.txt or the OUTFILE env var)
   -h, --help   Показати цю довідку
+  -h, --help   Show this help message
 
 Можна передавати як окремі файли, так і каталоги з файлами .txt. Якщо аргументи відсутні,
-буде використано всі файли у каталозі categories/.
+будуть використані всі файли у каталозі categories/.
+You can pass individual files or directories that contain .txt files. When no arguments are provided,
+all files inside categories/ will be processed.
 EOF
 }
 

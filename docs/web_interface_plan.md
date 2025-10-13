@@ -1,5 +1,7 @@
 # План автоматизації генерації вибіркових whitelist-файлів через веб-інтерфейс
 
+> English version: [docs/web_interface_plan.en.md](web_interface_plan.en.md)
+
 ## 1. Користувацький сценарій та вимоги
 
 ### Основні ролі
