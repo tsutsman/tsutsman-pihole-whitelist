@@ -122,6 +122,43 @@ SOURCES_COMBINED=custom.txt ./generate_whitelist.sh
    https://raw.githubusercontent.com/tsutsman/tsutsman-pihole-whitelist/main/whitelist.txt
    so pihole can automatically fetch updates.
 
+### Running alongside Dockerized Pi-hole
+
+If Pi-hole runs inside Docker, you can reuse the same scripts without leaving the host system.
+
+1. Clone the repository on the host that controls the container:
+   ```bash
+   git clone https://github.com/tsutsman/tsutsman-pihole-whitelist.git /srv/pihole-whitelist
+   ```
+2. Mount the repository inside the container. With `docker compose` it may look like this:
+   ```yaml
+   services:
+     pihole:
+       image: pihole/pihole:latest
+       container_name: pihole
+       volumes:
+         - ./etc-pihole:/etc/pihole
+         - ./etc-dnsmasq.d:/etc/dnsmasq.d
+         - /srv/pihole-whitelist:/whitelist:ro
+   ```
+   The `/srv/pihole-whitelist` directory becomes `/whitelist` inside the container.
+3. Generate the desired whitelist on the host (you may limit it to specific categories):
+   ```bash
+   cd /srv/pihole-whitelist
+   ./generate_whitelist.sh --output exports/docker-whitelist.txt categories/base.txt categories/ukrainian_services.txt
+   ```
+4. Apply the whitelist from within the container:
+   ```bash
+   docker exec -u root pihole bash -lc '/whitelist/apply_whitelist.sh /whitelist/exports/docker-whitelist.txt'
+   ```
+5. Automate the flow with cron on the host:
+   ```bash
+   0 4 * * * cd /srv/pihole-whitelist && git pull --rebase && ./update_and_apply.sh && \
+     docker exec -u root pihole bash -lc '/whitelist/apply_whitelist.sh /whitelist/whitelist.txt'
+   ```
+
+> **Tip.** Remove the `:ro` suffix if the container needs write access to `/whitelist` (for logs or temporary files) and ensure proper permissions.
+
 ## Automatic whitelist updates
 
 The list can stay up to date in two ways.
