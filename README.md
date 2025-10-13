@@ -139,6 +139,43 @@ SOURCES_COMBINED=custom.txt ./generate_whitelist.sh
   sudo pihole-FTL whitelist add $(cat whitelist.txt)
   ```
 
+### Інтеграція з Docker-контейнером Pi-hole
+
+Якщо Pi-hole працює у контейнері, список можна оновлювати безпосередньо з хост-системи.
+
+1. Клонуйте репозиторій на хості, з якого керуєте контейнером:
+   ```bash
+   git clone https://github.com/tsutsman/tsutsman-pihole-whitelist.git /srv/pihole-whitelist
+   ```
+2. Додайте спільний том до контейнера. Для `docker compose` це може виглядати так:
+   ```yaml
+   services:
+     pihole:
+       image: pihole/pihole:latest
+       container_name: pihole
+       volumes:
+         - ./etc-pihole:/etc/pihole
+         - ./etc-dnsmasq.d:/etc/dnsmasq.d
+         - /srv/pihole-whitelist:/whitelist:ro
+   ```
+   Том `/srv/pihole-whitelist` буде доступний усередині контейнера як `/whitelist` лише для читання.
+3. Згенеруйте потрібний список на хості (можна обмежитись вибраними категоріями):
+   ```bash
+   cd /srv/pihole-whitelist
+   ./generate_whitelist.sh --output exports/docker-whitelist.txt categories/base.txt categories/ukrainian_services.txt
+   ```
+4. Застосуйте whitelist у контейнері, виконавши скрипт зсередини Pi-hole:
+   ```bash
+   docker exec -u root pihole bash -lc '/whitelist/apply_whitelist.sh /whitelist/exports/docker-whitelist.txt'
+   ```
+5. Для автоматизації можна налаштувати cron на хості, який оновлюватиме репозиторій та запускатиме скрипт застосування:
+   ```bash
+   0 4 * * * cd /srv/pihole-whitelist && git pull --rebase && ./update_and_apply.sh && \
+     docker exec -u root pihole bash -lc '/whitelist/apply_whitelist.sh /whitelist/whitelist.txt'
+   ```
+
+> **Порада.** Якщо потрібно дозволити запис до каталогу з whitelist усередині контейнера (наприклад, для логів), змініть параметр `:ro` на `:rw` та переконайтеся, що користувач усередині контейнера має права на каталог.
+
 ## Автоматичне оновлення білого списку
 
 Список можна підтримувати актуальним двома способами.
