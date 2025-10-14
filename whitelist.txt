@@ -97,11 +97,12 @@ api.paymonobank.ua
 api.pinterest.com
 api.pluto.tv
 api.privatbank.ua
-api.raiffeisen.ua
 api.push.apple.com
+api.raiffeisen.ua
 api.rlje.net
 api.sbs.com.au
 api.sensebank.com.ua
+api.sportbank.ua
 api.telegram.org
 api.twitter.com
 api.xiaoyi.com
@@ -488,6 +489,7 @@ my.plexapp.com
 my.ukrposhta.ua
 naurok.ua
 netflix.com
+next.privat24.ua
 nexusrules.officeapps.live.com
 nine.plugins.plexapp.com
 no-ip.com
@@ -505,11 +507,11 @@ ntp.org
 ntservicepack.microsoft.com
 o1.email.plex.tv
 o2.sg0.plex.tv
+oaistatic.com
 oauth.live.com
 oauthaccountmanager.googleapis.com
 ocsp.apple.com
 ocsp.digicert.com
-oaistatic.com
 ocsp.pki.goog
 ocsp.rootg2.amazontrust.com
 ocsp.usertrust.com
@@ -521,13 +523,14 @@ office365.com
 officecdn.microsoft.com
 officeclient.microsoft.com
 olx.ua
-online.raiffeisen.ua
-online.sensebank.com.ua
 om.cbsi.com
 one.one.one.one
 oneclient.sfx.ms
 onedrive.com
 onedrive.live.com
+online.oschadbank.ua
+online.raiffeisen.ua
+online.sensebank.com.ua
 openai.com
 openai.gallerycdn.vsassets.io
 oscdn.apple.com
@@ -596,8 +599,8 @@ pubsub.plex.tv
 pumb.ua
 push.apple.com
 push.services.mozilla.com
-raiffeisen.ua
 rada.gov.ua
+raiffeisen.ua
 raw.githubusercontent.com
 redd.it
 reddit-uploaded-media.s3-accelerate.amazonaws.com
@@ -634,7 +637,6 @@ safebrowsing.google.com
 safebrowsing.googleapis.com
 sbs.com.au
 sbsvodns-vh.akamaihd.net
-sensebank.com.ua
 scontent-atl3-1.xx.fbcdn.net
 scontent-lhr3-1.xx.fbcdn.net
 scontent-mia3-1.xx.fbcdn.net
@@ -647,6 +649,7 @@ secure.brightcove.com
 secure.netflix.com
 secure.surveymonkey.com
 security.cloudflare-dns.com
+sensebank.com.ua
 serverstatus.apple.com
 services.sonarr.tv
 services.ukrposhta.ua
@@ -676,6 +679,7 @@ spclient.wg.spotify.com
 speed.cloudflare.com
 spending.gov.ua
 spoprod-a.akamaihd.net
+sportbank.ua
 spotify.com
 sq-device.apple.com
 sqs.us-east-1.amazonaws.com
