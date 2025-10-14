@@ -2,7 +2,7 @@
 
 > Ukrainian version: [docs/data_stats.md](data_stats.md)
 
-Updated: 2025-10-13 01:54:39
+Updated: 2025-10-14 19:31:05
 
 ## Categories
 | Category | Active domains | Problematic | Unavailable share | Last check |
@@ -31,7 +31,7 @@ Updated: 2025-10-13 01:54:39
 | smart_home_devices.txt | 16 | 0 | 0.0% | 2025-10-12 20:27:14 |
 | social_networks.txt | 9 | 0 | 0.0% | 2025-10-12 20:27:14 |
 | streaming_services.txt | 10 | 0 | 0.0% | 2025-10-12 20:27:14 |
-| ukrainian_services.txt | 59 | 0 | 0.0% | 2025-10-12 20:27:14 |
+| ukrainian_services.txt | 63 | 0 | 0.0% | 2025-10-14 19:29:46 |
 | web_resources.txt | 13 | 0 | 0.0% | 2025-10-12 20:27:14 |
 
 ### Notes
@@ -45,7 +45,7 @@ Updated: 2025-10-13 01:54:39
 | anudeep_optional | https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/optional-list.txt | 143 | 0 | 0.0% | 2025-10-13 01:52:03 |
 
 ## Aggregated metrics
-* Active domains across categories: 729.
+* Active domains across categories: 733.
 * Problematic domains in categories (status + deprecated): 0.
 * Domains in `deprecated.txt`: 0.
 * Domains in combined external sources: 334 (problematic: 0).
