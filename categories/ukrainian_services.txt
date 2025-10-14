@@ -1,6 +1,6 @@
 # @description: Українські сервіси — місцеві платформи та державні ресурси
 # @author: Команда проєкту whitelist
-# @last_review: 2024-05-01
+# @last_review: 2025-10-13
 
 liqpay.ua            # платіжна система LiqPay
 monobank.ua          # онлайн-банк Monobank
@@ -11,8 +11,10 @@ api.novaposhta.ua        # API Нової пошти
 my.novaposhta.ua         # особистий кабінет Нової пошти
 tracking.novaposhta.ua   # відстеження відправлень НП
 olx.ua               # сервіс оголошень
-oschadbank.ua    # інтернет-банкінг Ощадбанку
-privatbank.ua    # інтернет-банкінг ПриватБанку
+oschadbank.ua        # інтернет-банкінг Ощадбанку
+online.oschadbank.ua # вебверсія «Ощад 24/7»
+privatbank.ua        # інтернет-банкінг ПриватБанку
+next.privat24.ua     # новий інтерфейс Privat24
 prom.ua          # торговий майданчик Prom
 pumb.ua          # онлайн-банк ПУМБ
 rozetka.com.ua   # маркетплейс Rozetka
@@ -28,6 +30,8 @@ my.ukrposhta.ua           # Укрпошта — особистий кабіне
 track.ukrposhta.ua        # Укрпошта — відстеження відправлень
 services.ukrposhta.ua     # Укрпошта — бізнес-сервіси та інтеграції
 izibank.com.ua            # Izibank — мобільний банк
+sportbank.ua              # мобільний банк Sportbank
+api.sportbank.ua          # API застосунку Sportbank
 
 # Урядові сервіси
 acskidd.gov.ua       # акредитований центр сертифікації ключів ДПС
