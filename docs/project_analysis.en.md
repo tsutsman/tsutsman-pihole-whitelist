@@ -32,7 +32,7 @@
 
 ## 5. Strengths
 - Detailed documentation with automation examples (`README.md`) and a forward-looking plan for a web interface.
-- Comprehensive toolbox for list maintenance: generation, sorting, duplicate detection, cleanup, and remote updates.
+- Comprehensive toolbox for list maintenance: generation, sorting, duplicate detection, cleanup, remote updates, and multi-format exports via `export_whitelist.sh` for AdGuard Home and pfBlockerNG.
 - Active CI workflows monitoring whitelist quality plus scheduled availability checks.
 - Integration tests protect the critical shell script scenarios, lowering regression risk.
 

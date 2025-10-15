@@ -242,6 +242,25 @@ THRESHOLD=2 ./cleanup_whitelist.sh
 CATEGORIES_DIR=my_lists THRESHOLD=5 LOG_FILE=my.log ./cleanup_whitelist.sh
 ```
 
+## Експорт у сторонні DNS-рішення
+
+Щоб використати сформований whitelist поза Pi-hole, скористайтеся скриптом
+`export_whitelist.sh`. Він підтримує перетворення у формати AdGuard Home та
+pfBlockerNG, автоматично пропускає коментарі та порожні рядки і забезпечує
+сортування з deduplication.
+
+```bash
+# експорт стандартного whitelist.txt у формат AdGuard Home
+./export_whitelist.sh --format adguard-home
+
+# робота з власним файлом і кастомним шляхом виводу
+./export_whitelist.sh --source exports/custom.txt --format pfblockerng --output exports/custom-pf.txt
+```
+
+За замовчуванням результати зберігаються у каталозі `exports/` з назвою на зразок
+`whitelist-adguard-home.txt`. Якщо вхідний файл не містить доменів, буде створено
+порожній файл, а скрипт виведе попередження у stderr.
+
 ## Дорожня карта
 
 Нижче наведено ключові напрями розвитку проєкту на найближчі релізи.
