@@ -59,6 +59,8 @@ acskidd.gov.ua
 activate.adobe.com
 activity.windows.com
 adf.ly
+adguard-dns.com
+adguard.com
 ae01.alicdn.com
 aistudio.google.com
 ajax.googleapis.com
@@ -268,6 +270,7 @@ dl.dropboxusercontent.com
 dl.google.com
 dmd.metaservices.microsoft.com
 dmss.dahuatech.com
+dns.adguard.com
 dns.google
 dns.msftncsi.com
 docs.google.com
@@ -484,6 +487,7 @@ msn.com
 mssdk-va.tiktok.com
 mtalk.google.com
 music.youtube.com
+my.adguard.com
 my.novaposhta.ua
 my.plexapp.com
 my.ukrposhta.ua

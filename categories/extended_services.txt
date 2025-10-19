@@ -154,6 +154,11 @@ t0.ssl.ak.dynamic.tiles.virtualearth.net
 t0.ssl.ak.tiles.virtualearth.net
 textsecure-service-whispersystems.org
 thumbs.redditmedia.com
+# AdGuard — керування сервісами та підпискою (2025-03-18)
+adguard.com                     # офіційний сайт і завантаження AdGuard
+adguard-dns.com                 # налаштування сервісу AdGuard DNS
+dns.adguard.com                 # основний резолвер публічного AdGuard DNS
+my.adguard.com                  # особистий кабінет користувача AdGuard
 # TikTok та пов'язані сервіси ByteDance (оновлено 2025-03-17)
 byteoversea.com
 byteoversea.net
