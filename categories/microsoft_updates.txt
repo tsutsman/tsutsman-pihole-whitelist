@@ -13,6 +13,8 @@ live.com
 login.live.com
 login.microsoftonline.com
 microsoft.com
+# Microsoft 365 — маркетингові сторінки (додано 2025-10-21)
+m365.com                  # головна сторінка продукту Microsoft 365
 microsoft365.com
 microsoftonline.com
 msn.com

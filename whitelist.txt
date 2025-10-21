@@ -451,6 +451,7 @@ login.p4.worldoftanks.eu
 login.wargaming.net
 login.windows.net
 lotustalk.com
+m365.com
 m.facebook.com
 m.hotmail.com
 m.weeklyad.target.com
