@@ -1,0 +1,572 @@
+{
+  "generated_at": "2025-10-21T18:13:30.741551+00:00",
+  "summary": {
+    "categories": 26,
+    "total_records": 738,
+    "unique_domains": 707,
+    "multi_category_domains": 29
+  },
+  "categories": {
+    "ai_services.txt": {
+      "total": 21,
+      "unique": 21,
+      "duplicates": 0
+    },
+    "antivirus.txt": {
+      "total": 20,
+      "unique": 20,
+      "duplicates": 0
+    },
+    "apple.txt": {
+      "total": 109,
+      "unique": 109,
+      "duplicates": 0
+    },
+    "base.txt": {
+      "total": 10,
+      "unique": 10,
+      "duplicates": 0
+    },
+    "certificates.txt": {
+      "total": 4,
+      "unique": 4,
+      "duplicates": 0
+    },
+    "cloud_storage.txt": {
+      "total": 24,
+      "unique": 24,
+      "duplicates": 0
+    },
+    "cloudflare_warp.txt": {
+      "total": 19,
+      "unique": 19,
+      "duplicates": 0
+    },
+    "creality_print.txt": {
+      "total": 14,
+      "unique": 14,
+      "duplicates": 0
+    },
+    "ecommerce.txt": {
+      "total": 7,
+      "unique": 7,
+      "duplicates": 0
+    },
+    "educational_resources.txt": {
+      "total": 5,
+      "unique": 5,
+      "duplicates": 0
+    },
+    "extended_services.txt": {
+      "total": 216,
+      "unique": 216,
+      "duplicates": 0
+    },
+    "gaming.txt": {
+      "total": 31,
+      "unique": 31,
+      "duplicates": 0
+    },
+    "google_services.txt": {
+      "total": 30,
+      "unique": 30,
+      "duplicates": 0
+    },
+    "international_banks.txt": {
+      "total": 5,
+      "unique": 5,
+      "duplicates": 0
+    },
+    "messengers.txt": {
+      "total": 11,
+      "unique": 11,
+      "duplicates": 0
+    },
+    "microsoft_onedrive.txt": {
+      "total": 49,
+      "unique": 49,
+      "duplicates": 0
+    },
+    "microsoft_updates.txt": {
+      "total": 31,
+      "unique": 31,
+      "duplicates": 0
+    },
+    "mozilla_push.txt": {
+      "total": 1,
+      "unique": 1,
+      "duplicates": 0
+    },
+    "news_media.txt": {
+      "total": 5,
+      "unique": 5,
+      "duplicates": 0
+    },
+    "ntp_servers.txt": {
+      "total": 9,
+      "unique": 9,
+      "duplicates": 0
+    },
+    "office_collaboration.txt": {
+      "total": 6,
+      "unique": 6,
+      "duplicates": 0
+    },
+    "smart_home_devices.txt": {
+      "total": 16,
+      "unique": 16,
+      "duplicates": 0
+    },
+    "social_networks.txt": {
+      "total": 9,
+      "unique": 9,
+      "duplicates": 0
+    },
+    "streaming_services.txt": {
+      "total": 10,
+      "unique": 10,
+      "duplicates": 0
+    },
+    "ukrainian_services.txt": {
+      "total": 63,
+      "unique": 63,
+      "duplicates": 0
+    },
+    "web_resources.txt": {
+      "total": 13,
+      "unique": 13,
+      "duplicates": 0
+    }
+  },
+  "tld": {
+    "com": 500,
+    "us": 5,
+    "co": 2,
+    "org": 25,
+    "it": 1,
+    "ua": 64,
+    "ai": 6,
+    "net": 75,
+    "ms": 4,
+    "nz": 4,
+    "eu": 7,
+    "is": 1,
+    "me": 2,
+    "io": 2,
+    "tv": 2,
+    "media": 1,
+    "app": 1,
+    "one": 1,
+    "goog": 1,
+    "gov": 1,
+    "google": 1,
+    "in": 1
+  },
+  "base_domains": {
+    "apple.com": 102,
+    "zoom.us": 2,
+    "eyecon-app.com": 2,
+    "facebook.com": 28,
+    "wgcdn.co": 1,
+    "bitdefender.com": 2,
+    "spotify.com": 4,
+    "pinterest.com": 3,
+    "icloud.com": 2,
+    "microsoft365.com": 1,
+    "cloudflareclient.com": 4,
+    "messenger.com": 4,
+    "khanacademy.org": 1,
+    "redd.it": 1,
+    "github.com": 3,
+    "com.ua": 7,
+    "digicert.com": 2,
+    "gov.ua": 22,
+    "steamcontent.com": 1,
+    "tiktokw.us": 1,
+    "mistral.ai": 1,
+    "ntp.org": 3,
+    "redditstatic.com": 1,
+    "cloudflare.com": 12,
+    "whatsapp.com": 1,
+    "tiktokcdn.com": 1,
+    "norton.com": 1,
+    "creality.com": 6,
+    "discord.com": 1,
+    "telegram.org": 4,
+    "microsoft.com": 26,
+    "adguard-dns.com": 1,
+    "steamcommunity.com": 1,
+    "yitechnology.com": 1,
+    "geforce.com": 1,
+    "mycrealitycloud.com": 7,
+    "byteoversea.com": 1,
+    "amazonaws.com": 2,
+    "fb.com": 1,
+    "privatbank.ua": 3,
+    "windows.net": 4,
+    "googleapis.com": 12,
+    "pb.ua": 1,
+    "googlevideo.com": 2,
+    "fbcdn.net": 22,
+    "live.com": 16,
+    "huggingface.co": 1,
+    "xboxlive.com": 15,
+    "onestore.ms": 1,
+    "windowsupdate.com": 2,
+    "google.com": 25,
+    "tuyaeu.com": 1,
+    "msn.com": 2,
+    "youtube.com": 3,
+    "msftconnecttest.com": 1,
+    "x.com": 1,
+    "ttoversea.net": 1,
+    "chatgpt.com": 1,
+    "mega.nz": 2,
+    "snapchat.com": 1,
+    "capcutapi.com": 1,
+    "wargaming.net": 6,
+    "cdn-apple.com": 6,
+    "openai.com": 4,
+    "dropbox.com": 4,
+    "org.ua": 1,
+    "ukrposhta.ua": 4,
+    "virtualearth.net": 4,
+    "tiktokd.org": 1,
+    "live.net": 10,
+    "gog.com": 1,
+    "hotmail.com": 1,
+    "paypal.com": 1,
+    "symcb.com": 2,
+    "jsdelivr.net": 1,
+    "monobank.ua": 5,
+    "mi.com": 1,
+    "worldoftanks.eu": 4,
+    "xiaomi.net": 8,
+    "adguard.com": 3,
+    "tiktokw.eu": 1,
+    "clamav.net": 1,
+    "crealitycloud.com": 1,
+    "windows.com": 2,
+    "microsoftonline.com": 2,
+    "cdninstagram.com": 3,
+    "eset.com": 3,
+    "alibaba.com": 1,
+    "googletagmanager.com": 1,
+    "signal.org": 9,
+    "akamaihd.net": 2,
+    "time.is": 1,
+    "sophos.com": 1,
+    "wotblitz.com": 1,
+    "raiffeisen.ua": 3,
+    "hbomax.com": 1,
+    "gvt1.com": 1,
+    "fb.me": 1,
+    "gstatic.com": 4,
+    "malwarebytes.com": 2,
+    "fabric.io": 1,
+    "anthropic.com": 1,
+    "passport.net": 1,
+    "reddit.com": 1,
+    "capcutapi.us": 1,
+    "msftncsi.com": 4,
+    "tiktokv.com": 1,
+    "skype.com": 3,
+    "avast.com": 1,
+    "twitter.com": 4,
+    "snssdk.com": 1,
+    "fastly.net": 1,
+    "steampowered.com": 2,
+    "c-wss.com": 1,
+    "ys7.com": 2,
+    "sportbank.ua": 2,
+    "omtrdc.net": 1,
+    "office.com": 3,
+    "oschadbank.ua": 2,
+    "cloudflare-dns.com": 2,
+    "mcafee.com": 2,
+    "xiaoyi.com": 2,
+    "googleusercontent.com": 2,
+    "mozilla.com": 1,
+    "espreso.tv": 1,
+    "freepik.com": 1,
+    "adobe.com": 1,
+    "instagram.com": 5,
+    "axm-usercontent-apple.com": 1,
+    "prom.ua": 2,
+    "wotblitz.eu": 1,
+    "coursera.org": 1,
+    "riotgames.com": 1,
+    "gamepass.com": 1,
+    "linkedin.com": 1,
+    "revolut.com": 1,
+    "suspilne.media": 1,
+    "nsatc.net": 1,
+    "crashlytics.com": 1,
+    "olx.ua": 1,
+    "hik-connect.com": 1,
+    "shopify.com": 1,
+    "x.ai": 1,
+    "akadns.net": 2,
+    "replicate.com": 1,
+    "tuya.com": 1,
+    "poe.com": 1,
+    "soundcloud.com": 1,
+    "leagueoflegends.com": 1,
+    "textsecure-service-whispersystems.org": 1,
+    "wise.com": 1,
+    "pandasecurity.com": 2,
+    "tiktokv.us": 1,
+    "hulu.com": 1,
+    "avira.com": 2,
+    "dahuatech.com": 3,
+    "tiktok.tv": 1,
+    "souqcdn.com": 2,
+    "threads.net": 1,
+    "netflix.com": 1,
+    "novaposhta.ua": 4,
+    "tiktokcdn-us.com": 1,
+    "onedrive.com": 2,
+    "payoneer.com": 1,
+    "cloudfront.net": 1,
+    "mozilla.net": 1,
+    "sophosupd.com": 1,
+    "skydrive.com": 1,
+    "whispersystems.org": 2,
+    "microsoftteams.com": 2,
+    "pinimg.com": 1,
+    "claude.ai": 1,
+    "1drv.com": 1,
+    "office.net": 1,
+    "ukr.net": 1,
+    "unpkg.com": 1,
+    "fontawesome.com": 1,
+    "sfx.ms": 2,
+    "liqpay.ua": 1,
+    "ebay.com": 1,
+    "office365.com": 2,
+    "grok.com": 1,
+    "tiktok.com": 2,
+    "blizzard.com": 1,
+    "co.nz": 2,
+    "wikipedia.org": 1,
+    "disneyplus.com": 1,
+    "steam-chat.com": 1,
+    "wa.me": 1,
+    "aliexpress.com": 1,
+    "tiktokapi.com": 1,
+    "steamstatic.com": 1,
+    "facebook.net": 1,
+    "privat24.ua": 2,
+    "s-microsoft.com": 2,
+    "perplexity.ai": 1,
+    "24tv.ua": 1,
+    "byteoversea.net": 1,
+    "pumb.ua": 1,
+    "naurok.ua": 1,
+    "tiktokv-us.com": 1,
+    "stripe.com": 1,
+    "gfx.ms": 1,
+    "argotunnel.com": 1,
+    "twimg.com": 1,
+    "amazon.com": 1,
+    "slack.com": 2,
+    "ttlivecdn.com": 1,
+    "bbc.com": 1,
+    "novaposhta.com": 1,
+    "synology.com": 4,
+    "diia.app": 1,
+    "box.com": 1,
+    "tlivecdn.com": 1,
+    "livefilestore.com": 1,
+    "ttoverseaus.net": 1,
+    "cohere.ai": 1,
+    "vsassets.io": 1,
+    "hikvision.com": 1,
+    "tiktokcdn-in.com": 1,
+    "stability.ai": 1,
+    "letsencrypt.org": 1,
+    "hoyoverse.com": 1,
+    "microsoft-tst.com": 1,
+    "outlook.com": 1,
+    "redditmedia.com": 3,
+    "symantecliveupdate.com": 1,
+    "playvalorant.com": 1,
+    "one.one": 1,
+    "dahuasecurity.com": 1,
+    "pki.goog": 1,
+    "rockstargames.com": 1,
+    "apple-cloudkit.com": 1,
+    "bestbuy.com": 1,
+    "battle.net": 1,
+    "mzstatic.com": 1,
+    "fbsbx.com": 1,
+    "max.com": 1,
+    "epicgames.com": 1,
+    "edx.org": 1,
+    "android.com": 1,
+    "ty-iot.com": 1,
+    "dropboxusercontent.com": 1,
+    "xbox.com": 1,
+    "m365.com": 1,
+    "valorant.com": 1,
+    "etsy.com": 1,
+    "nist.gov": 1,
+    "primevideo.com": 1,
+    "cloudflarewarp.com": 1,
+    "playstation.com": 1,
+    "tiktokv.eu": 1,
+    "samsungapps.com": 1,
+    "githubusercontent.com": 1,
+    "paymonobank.ua": 1,
+    "mesh.com": 1,
+    "tuyaus.com": 1,
+    "symantec.com": 1,
+    "appleiphonecell.com": 1,
+    "aliyuncs.com": 1,
+    "dns.google": 1,
+    "deezer.com": 1,
+    "jquery.com": 1,
+    "cloudflareinsights.com": 1,
+    "deepseek.com": 1,
+    "oaistatic.com": 1,
+    "tiktok.in": 1,
+    "demdex.net": 1,
+    "usertrust.com": 1
+  },
+  "duplicates": {
+    "gemini.google.com": [
+      "ai_services.txt",
+      "google_services.txt"
+    ],
+    "appleid.apple.com": [
+      "apple.txt",
+      "extended_services.txt"
+    ],
+    "itunes.apple.com": [
+      "apple.txt",
+      "extended_services.txt"
+    ],
+    "captive.apple.com": [
+      "apple.txt",
+      "extended_services.txt"
+    ],
+    "www.apple.com": [
+      "apple.txt",
+      "extended_services.txt"
+    ],
+    "microsoft.com": [
+      "base.txt",
+      "microsoft_updates.txt"
+    ],
+    "cdnjs.cloudflare.com": [
+      "cloudflare_warp.txt",
+      "web_resources.txt"
+    ],
+    "android.clients.google.com": [
+      "extended_services.txt",
+      "google_services.txt"
+    ],
+    "clients2.google.com": [
+      "extended_services.txt",
+      "google_services.txt"
+    ],
+    "clients3.google.com": [
+      "extended_services.txt",
+      "google_services.txt"
+    ],
+    "clients4.google.com": [
+      "extended_services.txt",
+      "google_services.txt"
+    ],
+    "connectivitycheck.gstatic.com": [
+      "extended_services.txt",
+      "google_services.txt"
+    ],
+    "ctldl.windowsupdate.com": [
+      "extended_services.txt",
+      "microsoft_updates.txt"
+    ],
+    "dl.delivery.mp.microsoft.com": [
+      "extended_services.txt",
+      "microsoft_updates.txt"
+    ],
+    "g.live.com": [
+      "extended_services.txt",
+      "microsoft_onedrive.txt"
+    ],
+    "login.live.com": [
+      "extended_services.txt",
+      "microsoft_onedrive.txt",
+      "microsoft_updates.txt"
+    ],
+    "login.microsoftonline.com": [
+      "extended_services.txt",
+      "microsoft_onedrive.txt",
+      "microsoft_updates.txt"
+    ],
+    "officeclient.microsoft.com": [
+      "extended_services.txt",
+      "microsoft_updates.txt"
+    ],
+    "outlook.office365.com": [
+      "extended_services.txt",
+      "microsoft_updates.txt"
+    ],
+    "products.office.com": [
+      "extended_services.txt",
+      "microsoft_updates.txt"
+    ],
+    "settings-win.data.microsoft.com": [
+      "extended_services.txt",
+      "microsoft_updates.txt"
+    ],
+    "signal.org": [
+      "extended_services.txt",
+      "messengers.txt"
+    ],
+    "twitter.com": [
+      "extended_services.txt",
+      "social_networks.txt"
+    ],
+    "www.msftconnecttest.com": [
+      "extended_services.txt",
+      "microsoft_updates.txt"
+    ],
+    "www.msftncsi.com": [
+      "extended_services.txt",
+      "microsoft_updates.txt"
+    ],
+    "fonts.googleapis.com": [
+      "google_services.txt",
+      "web_resources.txt"
+    ],
+    "fonts.gstatic.com": [
+      "google_services.txt",
+      "web_resources.txt"
+    ],
+    "time.google.com": [
+      "google_services.txt",
+      "ntp_servers.txt"
+    ],
+    "onedrive.live.com": [
+      "microsoft_onedrive.txt",
+      "microsoft_updates.txt"
+    ]
+  },
+  "whitelist": {
+    "unique_whitelist": 912,
+    "only_in_whitelist": 214,
+    "only_in_whitelist_examples": [
+      "1drv.com",
+      "2.android.pool.ntp.org",
+      "a463.w10.akamai.net",
+      "a790.w16.akamai.net",
+      "acdn.adnxs.com",
+      "activate.adobe.com",
+      "adf.ly",
+      "ae01.alicdn.com",
+      "akamaihd.net",
+      "akamaitechnologies.com"
+    ]
+  }
+}

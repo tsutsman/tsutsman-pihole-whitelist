@@ -92,6 +92,21 @@ OUTFILE=exports/custom.txt ./generate_whitelist.sh              # альтерн
 
 Сформований файл одразу готовий до імпорту в pihole. Якщо вказати шлях із підкаталогами, вони будуть створені автоматично.
 
+## Аналітика доменів
+
+Для огляду структури списків використовуйте скрипт `analyze_domains.py`. Він підраховує кількість доменів у кожній категорії,
+виявляє дублікати між файлами та формує звіт із розподілом за TLD.
+
+```bash
+./analyze_domains.py               # звіт у docs/domain_analysis.md та JSON-версія
+DOMAIN_ANALYSIS_OUTPUT=custom.md \
+DOMAIN_ANALYSIS_JSON=stats.json \
+./analyze_domains.py --stdout     # кастомні шляхи та вивід у консоль
+```
+
+Підсумки доступні у форматах Markdown (`docs/domain_analysis.md`) та JSON (`docs/domain_analysis.json`), що зручно для
+подальшої інтеграції у CI або дашборди.
+
 ## Зовнішні джерела доменів
 
 Щоб не шукати вручну додаткові домени для білого списку, скористайтеся

@@ -103,6 +103,21 @@ INCLUDE_EXTERNAL_SOURCES=0 ./generate_whitelist.sh
 SOURCES_COMBINED=custom.txt ./generate_whitelist.sh
 ```
 
+## Domain analytics
+
+Use the `analyze_domains.py` script to examine how categories are structured. It counts domains per category, highlights
+duplicates across files, and builds a TLD distribution report.
+
+```bash
+./analyze_domains.py               # writes docs/domain_analysis.md plus a JSON snapshot
+DOMAIN_ANALYSIS_OUTPUT=custom.md \
+DOMAIN_ANALYSIS_JSON=stats.json \
+./analyze_domains.py --stdout     # custom paths and console output
+```
+
+Reports are available as Markdown (`docs/domain_analysis.md`) and JSON (`docs/domain_analysis.json`) so they can be reused in CI
+pipelines or dashboards.
+
 ## Usage
 
 1. Copy `whitelist.txt` to your pihole server.
