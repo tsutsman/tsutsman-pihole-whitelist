@@ -8,6 +8,6 @@ linkedin.com
 pinterest.com
 threads.net         # соцмережа Threads від Meta
 snapchat.com
-tiktok.com
+tiktok.com          # 2025-03-20: Основний домен соцмережі TikTok
 twitter.com
 x.com               # X (колишній Twitter)
