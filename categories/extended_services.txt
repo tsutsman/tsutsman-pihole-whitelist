@@ -109,7 +109,7 @@ mobile.twitter.com
 mqtt.c10r.facebook.com
 msedge.api.cdp.microsoft.com
 msftncsi.com
-mssdk-va.tiktok.com
+mssdk-va.tiktok.com        # 2025-03-20: SDK TikTok для авторизації та аналітики в застосунку
 notify.xboxlive.com
 ns1.dropbox.com
 ns2.dropbox.com
@@ -159,25 +159,31 @@ adguard.com                     # офіційний сайт і заванта�
 adguard-dns.com                 # налаштування сервісу AdGuard DNS
 dns.adguard.com                 # основний резолвер публічного AdGuard DNS
 my.adguard.com                  # особистий кабінет користувача AdGuard
-# TikTok та пов'язані сервіси ByteDance (оновлено 2025-03-17)
-byteoversea.com
-byteoversea.net
-capcutapi.com
-capcutapi.us
-snssdk.com
-tiktok.in
-tiktok.tv
-tiktokapi.com
-tiktokcdn-in.com
-tiktokcdn-us.com
-tiktokcdn.com
-tiktokd.org
-tiktokv-us.com
-tiktokv.com
-tiktokv.eu
-tiktokv.us
-tiktokw.eu
-tiktokw.us
+# TikTok та пов'язані сервіси ByteDance (оновлено 2025-03-20)
+byteoversea.com             # 2025-03-20: Основний домен ByteDance для інфраструктури TikTok
+byteoversea.net             # 2025-03-20: Резервний домен ByteDance для TikTok CDN
+bytefcdn-oversea.com        # 2025-03-20: CDN ByteDance для статичних ресурсів TikTok
+bytefcdn-oversea.net        # 2025-03-20: Регіональний CDN ByteDance для TikTok
+capcutapi.com               # 2025-03-20: API для мобільного редактора відео CapCut
+capcutapi.us                # 2025-03-20: Регіональний API CapCut для користувачів США
+snssdk.com                  # 2025-03-20: Сервіси TikTok SDK та трекінгу
+tiktok.in                   # 2025-03-20: Регіональний домен TikTok для Індії
+tiktok.tv                   # 2025-03-20: Доступ до TikTok TV та пристроїв Smart TV
+tiktokapi.com               # 2025-03-20: Публічний API TikTok для авторизації та даних
+tiktokcdn-in.com            # 2025-03-20: Регіональний CDN TikTok для Індії
+tiktokcdn-us.com            # 2025-03-20: Регіональний CDN TikTok для США
+tiktokcdn.com               # 2025-03-20: Основний CDN TikTok для відео та ресурсів
+tiktokcdn-eu.com            # 2025-03-20: Європейський CDN TikTok для доставки відео
+tiktokcdn-live.com          # 2025-03-20: CDN TikTok Live для потокових трансляцій
+tiktokd.org                 # 2025-03-20: Домен для сервісів завантаження та редиректів TikTok
+tiktokv-us.com              # 2025-03-20: Відеосервіси TikTok для користувачів США
+tiktokv.com                 # 2025-03-20: Основний домен відеоплатформи TikTok
+tiktokv.eu                  # 2025-03-20: Європейський відеосервіс TikTok
+tiktokv.us                  # 2025-03-20: Регіональний відеосервіс TikTok для США
+tiktokw.eu                  # 2025-03-20: Веб-клієнт TikTok для користувачів ЄС
+tiktokw.us                  # 2025-03-20: Веб-клієнт TikTok для ринку США
+*.ibytedtos.com             # 2025-03-20: CDN ByteDance для медіафайлів TikTok
+*.ibyteimg.com              # 2025-03-20: Хостинг зображень та прев'ю TikTok
 title.auth.xboxlive.com
 title.mgt.xboxlive.com
 tlivecdn.com
