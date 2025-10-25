@@ -115,6 +115,15 @@ DOMAIN_ANALYSIS_JSON=stats.json \
 ./analyze_domains.py --stdout     # custom paths and console output
 ```
 
+You can adjust the "Category breakdown" sorting logic:
+
+```bash
+./analyze_domains.py --category-sort total                 # sort by number of records (descending)
+./analyze_domains.py --category-sort unique --category-sort-order asc
+DOMAIN_ANALYSIS_CATEGORY_SORT=unique_ratio \
+DOMAIN_ANALYSIS_CATEGORY_SORT_ORDER=desc ./analyze_domains.py
+```
+
 Reports are available as Markdown (`docs/domain_analysis.md`) and JSON (`docs/domain_analysis.json`) so they can be reused in CI
 pipelines or dashboards.
 
