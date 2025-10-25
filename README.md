@@ -104,6 +104,15 @@ DOMAIN_ANALYSIS_JSON=stats.json \
 ./analyze_domains.py --stdout     # кастомні шляхи та вивід у консоль
 ```
 
+Для таблиці «Розподіл за категоріями» можна змінювати логіку сортування:
+
+```bash
+./analyze_domains.py --category-sort total                 # сортування за кількістю записів (спадно)
+./analyze_domains.py --category-sort unique --category-sort-order asc
+DOMAIN_ANALYSIS_CATEGORY_SORT=unique_ratio \
+DOMAIN_ANALYSIS_CATEGORY_SORT_ORDER=desc ./analyze_domains.py
+```
+
 Підсумки доступні у форматах Markdown (`docs/domain_analysis.md`) та JSON (`docs/domain_analysis.json`), що зручно для
 подальшої інтеграції у CI або дашборди.
 

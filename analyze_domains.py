@@ -15,7 +15,7 @@ import json
 import os
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Counter, Dict, Iterable, List, Mapping, Sequence, Set, Tuple
+from typing import Callable, Counter, Dict, Iterable, List, Mapping, Sequence, Set, Tuple
 
 DEFAULT_CATEGORIES_DIR = "categories"
 DEFAULT_WHITELIST_FILE = "whitelist.txt"
@@ -45,6 +45,18 @@ class CategoryStats:
 
     def top_tlds(self, limit: int = 3) -> List[Tuple[str, int]]:
         return sorted(self.tld_counter.items(), key=lambda item: (-item[1], item[0]))[:limit]
+
+
+def _make_category_sorter(key_name: str) -> Callable[[CategoryStats], Tuple[object, ...]]:
+    if key_name == "total":
+        return lambda stats: (stats.total, stats.name)
+    if key_name == "unique":
+        return lambda stats: (stats.unique, stats.name)
+    if key_name == "duplicates":
+        return lambda stats: (stats.duplicates, stats.name)
+    if key_name == "unique_ratio":
+        return lambda stats: (stats.unique_ratio, stats.name)
+    return lambda stats: (stats.name.lower(),)
 
 
 class DomainAnalyzer:
@@ -203,7 +215,7 @@ def render_markdown(
     else:
         lines.append("| Категорія | Записів | Унікальних | Повторів | Частка унікальних | Топ TLD |")
         lines.append("| --- | ---: | ---: | ---: | ---: | --- |")
-        for stats in sorted(category_stats, key=lambda item: item.name):
+        for stats in category_stats:
             top_tld_str = ", ".join(
                 f"{tld} ({count})" for tld, count in stats.top_tlds()
             ) or "—"
@@ -300,6 +312,20 @@ def main() -> None:
         help="JSON-файл зі статистикою",
     )
     parser.add_argument(
+        "--category-sort",
+        dest="category_sort",
+        choices=["name", "total", "unique", "duplicates", "unique_ratio"],
+        default=os.environ.get("DOMAIN_ANALYSIS_CATEGORY_SORT", "name"),
+        help="Поле для сортування таблиці категорій",
+    )
+    parser.add_argument(
+        "--category-sort-order",
+        dest="category_sort_order",
+        choices=["auto", "asc", "desc"],
+        default=os.environ.get("DOMAIN_ANALYSIS_CATEGORY_SORT_ORDER", "auto"),
+        help="Порядок сортування категорій (auto|asc|desc)",
+    )
+    parser.add_argument(
         "--stdout", action="store_true", help="Вивести результат у stdout замість запису у файл"
     )
 
@@ -349,9 +375,18 @@ def main() -> None:
 
     generated_at = _dt.datetime.now(tz=_dt.timezone.utc).astimezone()
 
+    category_stats_list = list(per_category.values())
+    sorter = _make_category_sorter(args.category_sort)
+    order = args.category_sort_order
+    if order == "auto":
+        reverse = args.category_sort != "name"
+    else:
+        reverse = order == "desc"
+    sorted_categories = sorted(category_stats_list, key=sorter, reverse=reverse)
+
     markdown = render_markdown(
         summary=summary,
-        category_stats=list(per_category.values()),
+        category_stats=sorted_categories,
         tld_counts=tld_counts,
         base_domain_counts=base_domain_counts,
         duplicates=duplicates,
