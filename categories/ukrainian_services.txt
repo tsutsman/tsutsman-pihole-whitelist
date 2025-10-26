@@ -1,6 +1,11 @@
 # @description: Українські сервіси — місцеві платформи та державні ресурси
 # @author: Команда проєкту whitelist
-# @last_review: 2025-10-13
+# @last_review: 2025-02-14
+
+hotline.ua          # маркетплейс Hotline для пошуку товарів
+*.hotline.ua        # субдомени сервісу Hotline (www, finance, media тощо)
+hotline.finance     # страхування та фінансові послуги Hotline Finance
+*.hotline.finance   # субдомени платформи Hotline Finance
 
 liqpay.ua            # платіжна система LiqPay
 monobank.ua          # онлайн-банк Monobank
