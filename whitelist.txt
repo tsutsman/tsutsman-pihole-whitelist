@@ -13,6 +13,8 @@
 *.gfx.ms
 *.groups.office.live.com
 *.groups.photos.live.com
+*.hotline.finance
+*.hotline.ua
 *.icloud.apple.com
 *.icloud.com
 *.ibytedtos.com
@@ -389,6 +391,8 @@ hls.ted.com
 hosts-file.net
 hostsfile.mine.nu
 hostsfile.org
+hotline.finance
+hotline.ua
 hoyoverse.com
 huggingface.co
 hulu.com
