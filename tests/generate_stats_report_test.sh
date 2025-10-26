@@ -73,4 +73,46 @@ if not required.issubset(data[-1]):
     raise SystemExit('Бракує ключів в історії')
 PY
 
+report_before=$(cat "$tmpdir/docs/report.md")
+report_en_before=$(cat "$tmpdir/docs/report.en.md")
+dashboard_before=$(cat "$tmpdir/docs/dashboard.html")
+history_before=$(cat "$tmpdir/docs/history.json")
+
+REPORT_TIMESTAMP_MODE=keep \
+DASHBOARD_TIMESTAMP_MODE=keep \
+REPORT_FOOTER_TIMESTAMP_MODE=keep \
+HISTORY_TIMESTAMP_MODE=keep \
+CATEGORIES_DIR="$tmpdir/categories" \
+SOURCES_CONFIG="$tmpdir/sources.txt" \
+GENERATED_DIR="$tmpdir/generated" \
+STATE_FILE="$tmpdir/state.txt" \
+DEPRECATED_FILE="$tmpdir/categories/deprecated.txt" \
+REPORT_FILE="$tmpdir/docs/report.md" \
+REPORT_FILE_EN="$tmpdir/docs/report.en.md" \
+HTML_REPORT_FILE="$tmpdir/docs/dashboard.html" \
+HISTORY_FILE="$tmpdir/docs/history.json" \
+LOG_FILE="$tmpdir/cleanup.log" \
+REMOVAL_HISTORY_LIMIT=10 \
+"$(pwd)/generate_stats_report.sh"
+
+if [[ "$report_before" != "$(cat "$tmpdir/docs/report.md")" ]]; then
+  echo "Повторний запуск не має змінювати Markdown-звіт у режимі keep" >&2
+  exit 1
+fi
+
+if [[ "$report_en_before" != "$(cat "$tmpdir/docs/report.en.md")" ]]; then
+  echo "Повторний запуск не має змінювати англомовний звіт у режимі keep" >&2
+  exit 1
+fi
+
+if [[ "$dashboard_before" != "$(cat "$tmpdir/docs/dashboard.html")" ]]; then
+  echo "Повторний запуск не має змінювати HTML-звіт у режимі keep" >&2
+  exit 1
+fi
+
+if [[ "$history_before" != "$(cat "$tmpdir/docs/history.json")" ]]; then
+  echo "Історія не повинна змінюватися, коли метрики незмінні" >&2
+  exit 1
+fi
+
 echo "Тест generate_stats_report.sh пройдено"

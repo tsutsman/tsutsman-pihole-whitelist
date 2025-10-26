@@ -27,3 +27,14 @@ jobs:
             bash "$script"
             echo "::endgroup::"
           done
+
+      - name: Перевірити актуальність статистичних звітів
+        shell: bash
+        run: |
+          set -euo pipefail
+          REPORT_TIMESTAMP_MODE=keep \
+          DASHBOARD_TIMESTAMP_MODE=keep \
+          REPORT_FOOTER_TIMESTAMP_MODE=keep \
+          HISTORY_TIMESTAMP_MODE=keep \
+          ./generate_stats_report.sh
+          git diff --exit-code docs/data_stats.md docs/data_stats.en.md docs/dashboard.html docs/data_history.json
