@@ -19,6 +19,85 @@ HISTORY_FILE=${HISTORY_FILE:-docs/data_history.json}
 LOG_FILE=${LOG_FILE:-cleanup.log}
 REMOVAL_HISTORY_LIMIT=${REMOVAL_HISTORY_LIMIT:-50}
 
+REPORT_TIMESTAMP=${REPORT_TIMESTAMP:-}
+REPORT_TIMESTAMP_MODE=${REPORT_TIMESTAMP_MODE:-now}
+DASHBOARD_TIMESTAMP=${DASHBOARD_TIMESTAMP:-}
+DASHBOARD_TIMESTAMP_MODE=${DASHBOARD_TIMESTAMP_MODE:-$REPORT_TIMESTAMP_MODE}
+REPORT_FOOTER_TIMESTAMP=${REPORT_FOOTER_TIMESTAMP:-}
+REPORT_FOOTER_TIMESTAMP_MODE=${REPORT_FOOTER_TIMESTAMP_MODE:-now}
+HISTORY_TIMESTAMP=${HISTORY_TIMESTAMP:-}
+HISTORY_TIMESTAMP_MODE=${HISTORY_TIMESTAMP_MODE:-update}
+
+extract_existing_timestamp() {
+  local file="$1"
+  local prefix="$2"
+  local suffix="${3:-}"
+  [[ -f "$file" ]] || return 1
+  local line
+  line=$(grep -m1 "$prefix" "$file" || true)
+  [[ -n "$line" ]] || return 1
+  line=$(trim "$line")
+  [[ "$line" == "$prefix"* ]] || return 1
+  line=${line#"$prefix"}
+  if [[ -n "$suffix" && "$line" == *"$suffix"* ]]; then
+    line=${line%%"$suffix"*}
+  fi
+  line=$(trim "$line")
+  [[ -n "$line" ]] || return 1
+  printf '%s' "$line"
+}
+
+determine_report_timestamp() {
+  if [[ -n "$REPORT_TIMESTAMP" ]]; then
+    printf '%s' "$REPORT_TIMESTAMP"
+    return
+  fi
+  if [[ "$REPORT_TIMESTAMP_MODE" == "keep" ]]; then
+    if ts=$(extract_existing_timestamp "$REPORT_FILE" "Оновлено:" ); then
+      printf '%s' "$ts"
+      return
+    fi
+    if ts=$(extract_existing_timestamp "$REPORT_FILE_EN" "Updated:" ); then
+      printf '%s' "$ts"
+      return
+    fi
+    if ts=$(extract_existing_timestamp "$HTML_REPORT_FILE" "<p>Оновлено:" "</p>"); then
+      printf '%s' "$ts"
+      return
+    fi
+  fi
+  date '+%F %T'
+}
+
+determine_dashboard_timestamp() {
+  local fallback="$1"
+  if [[ -n "$DASHBOARD_TIMESTAMP" ]]; then
+    printf '%s' "$DASHBOARD_TIMESTAMP"
+    return
+  fi
+  if [[ "$DASHBOARD_TIMESTAMP_MODE" == "keep" ]]; then
+    if ts=$(extract_existing_timestamp "$HTML_REPORT_FILE" "<p>Оновлено:" "</p>"); then
+      printf '%s' "$ts"
+      return
+    fi
+  fi
+  printf '%s' "$fallback"
+}
+
+determine_footer_timestamp() {
+  if [[ -n "$REPORT_FOOTER_TIMESTAMP" ]]; then
+    printf '%s' "$REPORT_FOOTER_TIMESTAMP"
+    return
+  fi
+  if [[ "$REPORT_FOOTER_TIMESTAMP_MODE" == "keep" ]]; then
+    if ts=$(extract_existing_timestamp "$HTML_REPORT_FILE" "Звіт сформовано скриптом generate_stats_report.sh •" ); then
+      printf '%s' "$ts"
+      return
+    fi
+  fi
+  date '+%F %T UTC' -u
+}
+
 trim() {
   local value="$1"
   value="${value#${value%%[![:space:]]*}}"
@@ -101,16 +180,20 @@ sources_html=""
 if [[ -d "$CATEGORIES_DIR" ]]; then
   while IFS= read -r -d '' file; do
     categories_list+=("$file")
-  done < <(find "$CATEGORIES_DIR" -type f -name '*.txt' ! -name 'deprecated.txt' -print0 | LC_ALL=C sort -z)
+  done < <(find "$CATEGORIES_DIR" -type f -name '*.txt' ! -name 'deprecated.txt' ! -name 'comment_allowlist.txt' -print0 | LC_ALL=C sort -z)
 fi
 
 report_tmp=$(mktemp)
 report_en_tmp=$(mktemp)
 trap 'rm -f "$report_tmp" "$report_en_tmp"' EXIT
 
+report_timestamp="$(determine_report_timestamp)"
+dashboard_timestamp="$(determine_dashboard_timestamp "$report_timestamp")"
+report_footer_timestamp="$(determine_footer_timestamp)"
+
 printf '# Статистика whitelist\n\n' >> "$report_tmp"
 printf '> English version: [docs/data_stats.en.md](data_stats.en.md)\n\n' >> "$report_tmp"
-printf 'Оновлено: %s\n\n' "$(date '+%F %T')" >> "$report_tmp"
+printf 'Оновлено: %s\n\n' "$report_timestamp" >> "$report_tmp"
 
 printf '## Категорії\n' >> "$report_tmp"
 printf '| Категорія | Активних доменів | Проблемні | Частка недоступних | Остання перевірка |\n' >> "$report_tmp"
@@ -212,7 +295,7 @@ cp "$report_tmp" "$REPORT_FILE"
 
 printf '# Whitelist statistics\n\n' >> "$report_en_tmp"
 printf '> Ukrainian version: [docs/data_stats.md](data_stats.md)\n\n' >> "$report_en_tmp"
-printf 'Updated: %s\n\n' "$(date '+%F %T')" >> "$report_en_tmp"
+printf 'Updated: %s\n\n' "$report_timestamp" >> "$report_en_tmp"
 
 printf '## Categories\n' >> "$report_en_tmp"
 printf '| Category | Active domains | Problematic | Unavailable share | Last check |\n' >> "$report_en_tmp"
@@ -249,15 +332,20 @@ cp "$report_en_tmp" "$REPORT_FILE_EN"
 
 mkdir -p "$(dirname "$HISTORY_FILE")"
 
-python3 - "$HISTORY_FILE" <<PY
+env HISTORY_TIMESTAMP_MODE="$HISTORY_TIMESTAMP_MODE" HISTORY_TIMESTAMP="$HISTORY_TIMESTAMP" python3 - "$HISTORY_FILE" <<PY
 import json
+import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 history_path = Path(sys.argv[1])
+mode = os.environ.get("HISTORY_TIMESTAMP_MODE", "update").lower()
+custom_ts = os.environ.get("HISTORY_TIMESTAMP", "")
+
+timestamp = custom_ts or datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 entry = {
-    "timestamp": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+    "timestamp": timestamp,
     "active_domains": $total_active,
     "problematic_domains": $total_problematic,
     "deprecated_domains": $total_removed,
@@ -272,14 +360,19 @@ if history_path.exists():
     except json.JSONDecodeError:
         data = []
 
+metrics_match = False
 if data:
     last = data[-1]
-    if (
+    metrics_match = (
         last.get("active_domains") == entry["active_domains"]
         and last.get("problematic_domains") == entry["problematic_domains"]
         and last.get("deprecated_domains") == entry["deprecated_domains"]
         and last.get("sources_domains") == entry["sources_domains"]
-    ):
+        and last.get("sources_problematic") == entry["sources_problematic"]
+    )
+    if metrics_match:
+        if mode == "keep" and not custom_ts:
+            entry["timestamp"] = last.get("timestamp", entry["timestamp"])
         data[-1] = entry
     else:
         data.append(entry)
@@ -348,7 +441,7 @@ cat > "$html_tmp" <<EOF
 </head>
 <body>
   <h1>Моніторинг білого списку Pi-hole</h1>
-  <p>Оновлено: $(date '+%F %T')</p>
+  <p>Оновлено: $dashboard_timestamp</p>
 
   <section>
     <h2>Ключові показники</h2>
@@ -455,7 +548,7 @@ cat > "$html_tmp" <<EOF
   </section>
 
   <footer>
-    Звіт сформовано скриптом generate_stats_report.sh • $(date '+%F %T UTC' -u)
+    Звіт сформовано скриптом generate_stats_report.sh • $report_footer_timestamp
   </footer>
 </body>
 </html>

@@ -57,4 +57,12 @@ if ! SKIP_DNS_CHECK=yes ./check_duplicates.sh "$tmpdir/list.txt" >/dev/null 2>&1
   exit 1
 fi
 
+empty_file="$tmpdir/empty.txt"
+: > "$empty_file"
+
+if ! SKIP_DNS_CHECK=1 ./check_duplicates.sh "$empty_file" >/dev/null 2>&1; then
+  echo "Порожній файл не повинен спричиняти помилку" >&2
+  exit 1
+fi
+
 echo "Тест check_duplicates.sh пройдено"

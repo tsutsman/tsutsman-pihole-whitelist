@@ -22,5 +22,13 @@
     "deprecated_domains": 0,
     "sources_domains": 334,
     "sources_problematic": 0
+  },
+  {
+    "timestamp": "2025-10-26T19:21:28+00:00",
+    "active_domains": 748,
+    "problematic_domains": 0,
+    "deprecated_domains": 0,
+    "sources_domains": 0,
+    "sources_problematic": 0
   }
 ]

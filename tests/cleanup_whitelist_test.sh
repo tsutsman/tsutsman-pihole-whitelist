@@ -9,6 +9,8 @@ nonexistent.invalid # тимчасова проблема
 example.com # стабільний домен
 LIST
 
+touch "$tmpdir/categories/empty.txt"
+
 cat <<'HOST' > "$tmpdir/host"
 #!/usr/bin/env bash
 domain="${@: -1}"
@@ -62,5 +64,25 @@ if [[ -f "$tmpdir/categories/deprecated.txt" ]] && grep -q '^example.com$' "$tmp
 fi
 
 grep -q 'категорія: test.txt' "$tmpdir/log.txt"
+
+before_parallel=$(cat "$tmpdir/categories/test.txt")
+
+STATE_FILE="$tmpdir/state.txt" \
+CATEGORIES_DIR="$tmpdir/categories" \
+THRESHOLD=2 \
+DEPRECATED_FILE="$tmpdir/categories/deprecated.txt" \
+LOG_FILE="$tmpdir/log.txt" \
+PARALLEL=2 \
+./cleanup_whitelist.sh >/dev/null
+
+if [[ "$before_parallel" != "$(cat "$tmpdir/categories/test.txt")" ]]; then
+  echo "Паралельний режим не повинен змінювати стабільні записи" >&2
+  exit 1
+fi
+
+if [[ -s "$tmpdir/categories/empty.txt" ]]; then
+  echo "Порожня категорія не повинна заповнюватися автоматично" >&2
+  exit 1
+fi
 
 echo "Тест cleanup_whitelist.sh пройдено"
