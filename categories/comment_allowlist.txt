@@ -11,7 +11,6 @@ antivirus.txt|repository.eset.com
 antivirus.txt|update.eset.com
 antivirus.txt|avira.com
 antivirus.txt|bitdefender.com
-antivirus.txt|clamav.net
 antivirus.txt|downloads.malwarebytes.com
 antivirus.txt|downloads.sophos.com
 antivirus.txt|malwarebytes.com

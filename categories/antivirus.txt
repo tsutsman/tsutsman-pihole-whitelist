@@ -1,6 +1,6 @@
 # @description: Антивірусні сервіси — домени для оновлень та перевірки безпеки
 # @author: Команда проєкту whitelist
-# @last_review: 2024-05-01
+# @last_review: 2024-05-27
 
 avast.com
 defs.symantec.com
@@ -13,7 +13,6 @@ update.eset.com
 # Популярні антивіруси
 avira.com
 bitdefender.com
-clamav.net
 downloads.malwarebytes.com
 downloads.sophos.com
 malwarebytes.com
@@ -24,3 +23,15 @@ update.avira.com
 update.pandasecurity.com
 updates.bitdefender.com
 updates.mcafee.com
+
+# ClamAV — оновлення сигнатур і документація (2024-05-27)
+clamav.net                       # офіційний сайт та документація ClamAV
+database.clamav.net              # основний сервер оновлення баз вірусів
+db.us.clamav.net                 # регіональне дзеркало оновлень (США)
+db.ca.clamav.net                 # регіональне дзеркало оновлень (Канада)
+db.fr.clamav.net                 # регіональне дзеркало оновлень (Франція)
+db.de.clamav.net                 # регіональне дзеркало оновлень (Німеччина)
+db.uk.clamav.net                 # регіональне дзеркало оновлень (Велика Британія)
+db.it.clamav.net                 # регіональне дзеркало оновлень (Італія)
+db.jp.clamav.net                 # регіональне дзеркало оновлень (Японія)
+db.hk.clamav.net                 # регіональне дзеркало оновлень (Гонконг)

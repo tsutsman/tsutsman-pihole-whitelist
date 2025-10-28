@@ -237,6 +237,15 @@ ctldl.windowsupdate.com
 cws.conviva.com
 cwtv-mrss-akamai.cwtv.com
 cwtv-prod-elb.digitalsmiths.net
+database.clamav.net
+db.ca.clamav.net
+db.de.clamav.net
+db.fr.clamav.net
+db.hk.clamav.net
+db.it.clamav.net
+db.jp.clamav.net
+db.uk.clamav.net
+db.us.clamav.net
 d2c8v52ll5s99u.cloudfront.net
 d2gatte9o95jao.cloudfront.net
 d83eunklitikj.cloudfront.net
