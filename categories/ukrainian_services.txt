@@ -1,6 +1,6 @@
 # @description: Українські сервіси — місцеві платформи та державні ресурси
 # @author: Команда проєкту whitelist
-# @last_review: 2025-02-14
+# @last_review: 2025-10-29
 
 hotline.ua          # маркетплейс Hotline для пошуку товарів
 *.hotline.ua        # субдомени сервісу Hotline (www, finance, media тощо)
@@ -63,6 +63,12 @@ spending.gov.ua      # портал використання публічних 
 tax.gov.ua           # Державна податкова служба України
 trembita.gov.ua      # система взаємодії державних реєстрів
 zakon.rada.gov.ua    # база нормативно-правових актів України
+smarttender.biz                # електронні закупівлі SmartTender як майданчик ProZorro
+procurement.smarttender.biz    # кабінет закупівель SmartTender для учасників торгів
+smartid.smarttender.biz        # сервіс SmartID для авторизації користувачів SmartTender
+upload.smarttender.biz         # завантаження тендерної документації на платформі SmartTender
+content.smarttender.biz        # статичні ресурси та медіафайли SmartTender
+api.smarttender.biz            # API SmartTender для інтеграцій із зовнішніми системами
 
 # Банківські сервіси
 api.monobank.ua
