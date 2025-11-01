@@ -1,0 +1,22 @@
+# @description: Самохостингові платформи — домени для DietPi та Docker
+# @author: Команда проєкту whitelist
+# @last_review: 2024-05-27
+
+# DietPi
+# 2024-05-27: Додано базові домени для завантажень та спільноти DietPi
+beta.dietpi.com                 # 2024-05-27 тестові збірки та оновлення DietPi
+dietpi.com                      # 2024-05-27 офіційний сайт і документація DietPi
+forum.dietpi.com                # 2024-05-27 офіційний форум DietPi Community
+
+# Docker
+# 2024-05-27: Критичні домени для роботи Docker Engine та Docker Hub
+auth.docker.io                  # 2024-05-27 авторизація Docker Hub
+cs.docker.com                   # 2024-05-27 служба підтримки та база знань Docker
+desktop.docker.com              # 2024-05-27 оновлення Docker Desktop
+docs.docker.com                 # 2024-05-27 офіційна документація Docker
+download.docker.com             # 2024-05-27 пакети Docker Engine та Desktop
+hub.docker.com                  # 2024-05-27 веб-інтерфейс Docker Hub
+index.docker.io                 # 2024-05-27 API сумісності Docker Hub
+production.cloudflare.docker.com # 2024-05-27 CDN із бінарними файлами Docker
+registry-1.docker.io            # 2024-05-27 реєстр Docker Hub
+www.docker.com                  # 2024-05-27 головний сайт Docker

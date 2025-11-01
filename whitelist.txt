@@ -137,6 +137,7 @@ assets.onestore.ms
 attestation.xboxlive.com
 audio-ake.spotify.com.edgesuite.net
 audiocontentdownload.apple.com
+auth.docker.io
 avast.com
 avira.com
 ax.phobos.apple.com.edgesuite.net
@@ -150,6 +151,7 @@ b-graph.facebook.com
 battle.net
 bbc.com
 bestbuy.com
+beta.dietpi.com
 bigzipfiles.facebook.com
 bit.ly
 bitdefender.com
@@ -231,6 +233,7 @@ creality.com
 creative.ak.fbcdn.net
 crl.apple.com
 crl3.digicert.com
+cs.docker.com
 cse.google.com
 cssubmissions.apple.com
 ctldl.windowsupdate.com
@@ -259,6 +262,7 @@ deezer.com
 def-vef.xboxlive.com
 defs.symantec.com
 delivery.vidible.tv
+desktop.docker.com
 det-ta-g7g.amazon.com
 dev.virtualearth.net
 developers.cloudflare.com
@@ -271,6 +275,7 @@ deviceenrollment.apple.com
 deviceservices-external.apple.com
 devimages-cdn.apple.com
 diagassets.apple.com
+dietpi.com
 diia.app
 diia.gov.ua
 directvapplications.hb.omtrdc.net
@@ -288,10 +293,12 @@ dmss.dahuatech.com
 dns.adguard.com
 dns.google
 dns.msftncsi.com
+docs.docker.com
 docs.google.com
 docs.live.net
 doh.dns.apple.com
 download.developer.apple.com
+download.docker.com
 download.sonarr.tv
 download.windowsupdate.com
 downloads.malwarebytes.com
@@ -350,6 +357,7 @@ fe3.delivery.dsp.mp.microsoft.com.nsatc.net
 firestore.googleapis.com
 fonts.googleapis.com
 fonts.gstatic.com
+forum.dietpi.com
 forums.sonarr.tv
 fpdownload.adobe.com
 freepik.com
@@ -403,6 +411,7 @@ hostsfile.org
 hotline.finance
 hotline.ua
 hoyoverse.com
+hub.docker.com
 huggingface.co
 hulu.com
 humb.apple.com
@@ -424,6 +433,7 @@ imagesak.secureserver.net
 img.vidible.tv
 imgix.net
 imgs.xkcd.com
+index.docker.io
 init-p01st.push.apple.com
 instagram.c10r.facebook.com
 instagram.com
@@ -609,6 +619,7 @@ primevideo.com
 privat24.ua
 privatbank.ua
 prod.telemetry.ros.rockstargames.com
+production.cloudflare.docker.com
 products.office.com
 prom.ua
 prometheus.org.ua
@@ -632,6 +643,7 @@ redemptionservices.accesscontrol.windows.net
 redirector.googlevideo.com
 redirector.gvt1.com
 refersion.com
+registry-1.docker.io
 reminders-pa.googleapis.com
 replicate.com
 repository.eset.com
@@ -886,6 +898,7 @@ www.bit.ly
 www.cloudflare.com
 www.creality.com
 www.dataplicity.com
+www.docker.com
 www.eyecon-app.com
 www.facebook.com
 www.google-analytics.com
