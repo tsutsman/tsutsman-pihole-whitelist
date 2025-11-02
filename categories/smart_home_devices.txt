@@ -25,3 +25,14 @@ tuya.com                # Tuya Smart — глобальна платформа I
 tuyaus.com              # Tuya — регіональний кластер США
 tuyaeu.com              # Tuya — регіональний кластер ЄС
 ty-iot.com              # службові домени Tuya для пристроїв
+openapi.tuyaus.com      # Tuya API — керування пристроями (кластер США)
+openapi.tuyaeu.com      # Tuya API — керування пристроями (кластер ЄС)
+openapi.tuyacn.com      # Tuya API — керування пристроями (кластер Китай)
+a1.tuyaus.com           # Tuya MQTT-шлюз для реального часу (кластер США)
+a1.tuyaeu.com           # Tuya MQTT-шлюз для реального часу (кластер ЄС)
+a1.tuyacn.com           # Tuya MQTT-шлюз для реального часу (кластер Китай)
+
+# Nous Smart Home
+nous.technology         # Nous Smart Home — офіційний портал та акаунти
+cloud.nous.technology   # Nous Cloud — керування та прошивки пристроїв
+app.nous.technology     # Nous Home — мобільний застосунок та API
