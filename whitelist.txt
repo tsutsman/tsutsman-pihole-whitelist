@@ -25,6 +25,7 @@
 *.mega.co.nz
 *.mega.nz
 *.mesh.com
+*.micloud.xiaomi.net
 *.microsoft.com
 *.microsoftteams.com
 *.office.com
@@ -52,6 +53,9 @@
 4-edge-chat.facebook.com
 5-edge-chat.facebook.com
 6-edge-chat.facebook.com
+a1.tuyacn.com
+a1.tuyaeu.com
+a1.tuyaus.com
 a463.w10.akamai.net
 a790.w16.akamai.net
 account.apple.com
@@ -95,6 +99,7 @@ api.github.com
 api.instagram.com
 api.ipify.org
 api.live.net
+api.micloud.xiaomi.net
 api.monobank.ua
 api.mycrealitycloud.com
 api.novaposhta.ua
@@ -108,6 +113,7 @@ api.raiffeisen.ua
 api.rlje.net
 api.sbs.com.au
 api.sensebank.com.ua
+api.smarttender.biz
 api.sportbank.ua
 api.telegram.org
 api.twitter.com
@@ -116,6 +122,7 @@ apis.live.net
 app-api.ted.com
 app-site-association.cdn-apple.com
 app.diia.gov.ua
+app.nous.technology
 appboot.netflix.com
 appldnld.apple.com
 apple-relay.apple.com
@@ -207,6 +214,7 @@ clients4.google.com
 clients5.google.com
 clients6.google.com
 cloud.mycrealitycloud.com
+cloud.nous.technology
 cloudcameraiot.oss-cn-shanghai.aliyuncs.com
 cloudflare-dns.com
 cloudflare.com
@@ -222,6 +230,7 @@ connect.facebook.com
 connectivity.cloudflareclient.com
 connectivitycheck.android.com
 connectivitycheck.gstatic.com
+content.smarttender.biz
 contentproxy.signal.org
 continuum.dds.microsoft.com
 copilot.microsoft.com
@@ -354,6 +363,7 @@ fbcdn-creative-a.akamaihd.net
 fbcdn.net
 fcs-keys-pub-prod.cdn-apple.com
 fe3.delivery.dsp.mp.microsoft.com.nsatc.net
+finderapi.micloud.xiaomi.net
 firestore.googleapis.com
 fonts.googleapis.com
 fonts.gstatic.com
@@ -362,6 +372,7 @@ forums.sonarr.tv
 fpdownload.adobe.com
 freepik.com
 g.live.com
+galleryapi.micloud.xiaomi.net
 gdlp01.c-wss.com
 gdmf-ados.apple.com
 gdmf.apple.com
@@ -433,6 +444,7 @@ imagesak.secureserver.net
 img.vidible.tv
 imgix.net
 imgs.xkcd.com
+i.mi.com
 index.docker.io
 init-p01st.push.apple.com
 instagram.c10r.facebook.com
@@ -468,6 +480,7 @@ livegrid.eset.com
 livepassdl.conviva.com
 liveupdate.symantecliveupdate.com
 lm.licenses.adobe.com
+locationapi.micloud.xiaomi.net
 login.diia.gov.ua
 login.live.com
 login.microsoftonline.com
@@ -498,6 +511,7 @@ mesu.apple.com
 meta-db-worker02.pop.ric.plex.bz
 meta.plex.bz
 meta.plex.tv
+micloud.xiaomi.net
 microsoft.com
 microsoft365.com
 microsoftonline.com
@@ -528,6 +542,7 @@ no-ip.com
 node.plexapp.com
 norton.com
 notify.xboxlive.com
+nous.technology
 novaposhta.com
 novaposhta.com.ua
 novaposhta.ua
@@ -565,6 +580,9 @@ online.raiffeisen.ua
 online.sensebank.com.ua
 openai.com
 openai.gallerycdn.vsassets.io
+openapi.tuyacn.com
+openapi.tuyaeu.com
+openapi.tuyaus.com
 oscdn.apple.com
 oschadbank.ua
 osrecovery.apple.com
@@ -618,6 +636,7 @@ pricelist.skype.com
 primevideo.com
 privat24.ua
 privatbank.ua
+procurement.smarttender.biz
 prod.telemetry.ros.rockstargames.com
 production.cloudflare.docker.com
 products.office.com
@@ -701,6 +720,8 @@ skydrive.live.com
 skyhook.sonarr.tv
 slack.com
 sls.update.microsoft.com.akadns.net
+smartid.smarttender.biz
+smarttender.biz
 smp-device-content.apple.com
 snapchat.com
 snapi.live.net
@@ -733,6 +754,7 @@ stats.streamelements.com
 status.cloudflare.com
 status.github.com
 status.plex.tv
+statusapi.micloud.xiaomi.net
 steam-chat.com
 steamcommunity.com
 steamcontent.com
@@ -847,10 +869,12 @@ updates.mcafee.com
 updates2.signal.org
 upgrade.scdn.com
 upload.facebook.com
+upload.smarttender.biz
 upload.twitter.com
 us-east-1.amazonaws.com
 us-west-2.aws.crealitycloud.com
 use.fontawesome.com
+user.micloud.xiaomi.net
 v.firebog.net
 v10.events.data.microsoft.com
 v10.vortex-win.data.microsoft.com
