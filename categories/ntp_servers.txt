@@ -2,7 +2,7 @@
 # @author: Команда проєкту whitelist
 # @last_review: 2024-05-01
 
-ntp.org
+ntp.org                  # офіційний сайт проєкту Network Time Protocol
 pool.ntp.org              # глобальний пул NTP
 time.cloudflare.com       # точний час Cloudflare
 time.facebook.com        # сервер часу Facebook

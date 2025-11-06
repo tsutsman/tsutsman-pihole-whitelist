@@ -2,13 +2,13 @@
 # @author: Команда проєкту whitelist
 # @last_review: 2024-05-01
 
-deezer.com
-disneyplus.com
+deezer.com           # музичний сервіс потокового відтворення Deezer
+disneyplus.com       # відеобібліотека Disney+ для фільмів та серіалів
 hbomax.com            # старий домен HBO Max
-hulu.com
+hulu.com             # американський сервіс потокового відео Hulu
 max.com               # сервіс Max (раніше HBO Max)
 music.youtube.com     # музичний сервіс YouTube Music
-netflix.com
-primevideo.com
-soundcloud.com
-spotify.com
+netflix.com          # глобальна платформа Netflix з оригінальним контентом
+primevideo.com       # відеосервіс Amazon Prime Video
+soundcloud.com       # платформа для прослуховування та публікації музики
+spotify.com          # стрімінговий сервіс Spotify з музикою та подкастами

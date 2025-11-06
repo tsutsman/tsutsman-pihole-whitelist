@@ -2,12 +2,12 @@
 # @author: Команда проєкту whitelist
 # @last_review: 2024-05-01
 
-facebook.com
-instagram.com
-linkedin.com
-pinterest.com
+facebook.com        # основний сайт соцмережі Facebook
+instagram.com       # вебверсія Instagram від Meta
+linkedin.com        # професійна соцмережа LinkedIn
+pinterest.com       # сервіс візуальних закладок Pinterest
 threads.net         # соцмережа Threads від Meta
-snapchat.com
+snapchat.com        # платформа обміну зникаючими повідомленнями Snapchat
 tiktok.com          # 2025-03-20: Основний домен соцмережі TikTok
-twitter.com
+twitter.com         # класичний домен соцмережі Twitter
 x.com               # X (колишній Twitter)

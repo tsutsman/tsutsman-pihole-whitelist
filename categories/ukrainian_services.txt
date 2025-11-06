@@ -71,12 +71,12 @@ content.smarttender.biz        # статичні ресурси та медіа
 api.smarttender.biz            # API SmartTender для інтеграцій із зовнішніми системами
 
 # Банківські сервіси
-api.monobank.ua
-api.paymonobank.ua
-api.privatbank.ua
-pay.monobank.ua
-payhub.privatbank.ua
-pb.ua
-privat24.ua
-static.monobank.ua
-web.monobank.ua
+api.monobank.ua        # API для мобільного застосунку Monobank
+api.paymonobank.ua     # шлюз платежів Monobank для інтернет-еквайрингу
+api.privatbank.ua      # API ПриватБанку для інтеграцій
+pay.monobank.ua        # платіжна сторінка Monobank для онлайн-оплат
+payhub.privatbank.ua   # платіжний шлюз ПриватБанку PayHub
+pb.ua                  # головний портал ПриватБанку
+privat24.ua            # вебверсія сервісу Privat24
+static.monobank.ua     # статичні ресурси та CDN Monobank
+web.monobank.ua        # веб-додаток Monobank для керування рахунком
