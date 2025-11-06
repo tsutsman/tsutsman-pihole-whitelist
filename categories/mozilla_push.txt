@@ -2,4 +2,4 @@
 # @author: Команда проєкту whitelist
 # @last_review: 2024-05-01
 
-push.services.mozilla.com
+push.services.mozilla.com   # сервер push-сповіщень Mozilla для Firefox
