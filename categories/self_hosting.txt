@@ -1,6 +1,6 @@
 # @description: Самохостингові платформи — домени для DietPi та Docker
 # @author: Команда проєкту whitelist
-# @last_review: 2024-05-27
+# @last_review: 2025-05-03
 
 # DietPi
 # 2024-05-27: Додано базові домени для завантажень та спільноти DietPi
@@ -20,3 +20,13 @@ index.docker.io                 # 2024-05-27 API сумісності Docker Hub
 production.cloudflare.docker.com # 2024-05-27 CDN із бінарними файлами Docker
 registry-1.docker.io            # 2024-05-27 реєстр Docker Hub
 www.docker.com                  # 2024-05-27 головний сайт Docker
+
+# MikroTik
+# 2025-05-03: Домени для оновлень RouterOS та підтримки MikroTik
+mikrotik.com                    # 2025-05-03 головний сайт MikroTik із документацією та новинами
+download.mikrotik.com           # 2025-05-03 завантаження RouterOS, The Dude та інструментів MikroTik
+upgrade.mikrotik.com            # 2025-05-03 сервер оновлень RouterOS для автооновлення
+wiki.mikrotik.com               # 2025-05-03 офіційна wiki-документація MikroTik
+help.mikrotik.com               # 2025-05-03 база знань та довідкові статті MikroTik
+support.mikrotik.com            # 2025-05-03 система заявок техпідтримки MikroTik
+forum.mikrotik.com              # 2025-05-03 комʼюніті-форум користувачів MikroTik
