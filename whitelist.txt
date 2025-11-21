@@ -104,6 +104,7 @@ api.live.net
 api.micloud.xiaomi.net
 api.monobank.ua
 api.mycrealitycloud.com
+api.nova.ua
 api.novaposhta.ua
 api.openai.com
 api.paymonobank.ua
@@ -885,6 +886,7 @@ mssdk-va.tiktok.com
 mtalk.google.com
 music.youtube.com
 my.adguard.com
+my.nova.ua
 my.novaposhta.ua
 my.ukrposhta.ua
 naurok.ua
@@ -893,6 +895,7 @@ next.privat24.ua
 norton.com
 notify.xboxlive.com
 nous.technology
+nova.ua
 novaposhta.com
 novaposhta.com.ua
 novaposhta.ua
@@ -1120,6 +1123,7 @@ token.cp.microsoft.com
 tokensit.cp.microsoft-tst.com
 track.ukrposhta.ua
 tracking-protection.cdn.mozilla.net
+tracking.nova.ua
 tracking.novaposhta.ua
 trembita.gov.ua
 ttlivecdn.com
