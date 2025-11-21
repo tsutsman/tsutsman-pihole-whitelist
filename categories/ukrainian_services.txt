@@ -15,6 +15,10 @@ novaposhta.ua        # логістична компанія Нова пошта
 api.novaposhta.ua        # API Нової пошти
 my.novaposhta.ua         # особистий кабінет Нової пошти
 tracking.novaposhta.ua   # відстеження відправлень НП
+nova.ua                # новий бренд «Нова»
+api.nova.ua            # API сервісів бренду «Нова»
+my.nova.ua             # особистий кабінет бренду «Нова»
+tracking.nova.ua       # відстеження відправлень бренду «Нова»
 olx.ua               # сервіс оголошень
 oschadbank.ua        # інтернет-банкінг Ощадбанку
 online.oschadbank.ua # вебверсія «Ощад 24/7»
