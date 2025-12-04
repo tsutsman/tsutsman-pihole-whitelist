@@ -317,6 +317,7 @@ cdn.creality.com
 cdn.embedly.com
 cdn.fbsbx.com
 cdn.jsdelivr.net
+cdn.oaistatic.com
 cdn.office.net
 cdn.optimizely.com
 cdn.refersion.com
@@ -1032,6 +1033,7 @@ ntservicepack.microsoft.com
 o1.email.plex.tv
 o2.sg0.plex.tv
 oaistatic.com
+oaiusercontent.com
 oauth.live.com
 oauthaccountmanager.googleapis.com
 ocsp.apple.com
