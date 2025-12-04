@@ -15,7 +15,9 @@ gemini.google.com        # Google Gemini (раніше Bard)
 grok.com                 # Grok від xAI
 huggingface.co           # платформа HuggingFace
 mistral.ai               # генеративні моделі Mistral
+cdn.oaistatic.com        # CDN зі статичними ресурсами ChatGPT
 oaistatic.com            # статичні ресурси для ChatGPT
+oaiusercontent.com       # завантаження та вкладення користувачів ChatGPT
 openai.com               # офіційний сайт OpenAI
 perplexity.ai            # пошук з AI
 poe.com                  # AI-чатботи від Quora
