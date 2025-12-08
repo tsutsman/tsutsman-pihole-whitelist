@@ -7,6 +7,7 @@ anthropic.com            # інформація та документація An
 api.openai.com           # API ChatGPT
 chatgpt.com              # веб-інтерфейс ChatGPT
 chat.openai.com          # вебклієнт ChatGPT на домені openai.com
+cdn.openai.com           # CDN зі статичними ресурсами та зображеннями ChatGPT
 claude.ai                # сервіс Claude від Anthropic
 cohere.ai                # сервіс Cohere API
 copilot.microsoft.com    # веб-інтерфейс Microsoft Copilot
@@ -19,6 +20,7 @@ cdn.oaistatic.com        # CDN зі статичними ресурсами Chat
 oaistatic.com            # статичні ресурси для ChatGPT
 oaiusercontent.com       # завантаження та вкладення користувачів ChatGPT
 openai.com               # офіційний сайт OpenAI
+openaicom.imgix.net      # медіафайли та ілюстрації на сторінках ChatGPT
 perplexity.ai            # пошук з AI
 poe.com                  # AI-чатботи від Quora
 platform.openai.com      # веб-інтерфейс OpenAI
