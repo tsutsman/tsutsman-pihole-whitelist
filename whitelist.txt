@@ -3,6 +3,7 @@
 *.apps-marketplace.apple.com
 *.apps.apple.com
 *.aria.microsoft.com
+*.auto.ria.com
 *.business.apple.com
 *.crashlytics.com
 *.demdex.net
@@ -35,6 +36,7 @@
 *.pinimg.com
 *.policies.live.net
 *.push.apple.com
+*.riastatic.com
 *.school.apple.com
 *.servicebus.windows.net
 *.settings.live.net
@@ -70,6 +72,7 @@ adf.ly
 adguard-dns.com
 adguard.com
 ae01.alicdn.com
+agro.ria.com
 aistudio.google.com
 ajax.googleapis.com
 akamaihd.net
@@ -276,6 +279,7 @@ attestation.xboxlive.com
 audio-ake.spotify.com.edgesuite.net
 audiocontentdownload.apple.com
 auth.docker.io
+auto.ria.com
 avast.com
 avira.com
 ax.phobos.apple.com.edgesuite.net
@@ -340,6 +344,7 @@ certificates.txt|ocsp.usertrust.com
 certs.apple.com
 cf-v4.cloudflare.com
 chat.openai.com
+chat.ria.com
 chat.signal.org
 chatgpt.com
 clamav.net
@@ -892,6 +897,7 @@ locationapi.micloud.xiaomi.net
 login.diia.gov.ua
 login.live.com
 login.microsoftonline.com
+login.ria.com
 login.p1.worldoftanks.eu
 login.p2.worldoftanks.eu
 login.p3.worldoftanks.eu
@@ -1148,6 +1154,7 @@ repository.eset.com
 res.cloudinary.com
 resources.sbs.com.au
 revolut.com
+ria.com
 riotgames.com
 rockstargames.com
 rozetka.com.ua
@@ -1182,6 +1189,7 @@ secure.netflix.com
 secure.surveymonkey.com
 security.cloudflare-dns.com
 sensebank.com.ua
+sentry.ria.com
 serverstatus.apple.com
 services.sonarr.tv
 services.ukrposhta.ua
@@ -1332,6 +1340,7 @@ twitter.com
 ty-iot.com
 ua.pool.ntp.org
 ud-chat.signal.org
+ui.ria.com
 ui.skype.com
 ukr.net
 ukrposhta.ua
@@ -1448,6 +1457,7 @@ yt3.ggpht.com
 z.cdn.turner.com
 zakon.rada.gov.ua
 zakupki.prom.ua
+zapchasti.ria.com
 zee.cws.conviva.com
 zeustracker.abuse.ch
 zoom.us
