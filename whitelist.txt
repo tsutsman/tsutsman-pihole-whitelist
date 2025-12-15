@@ -1271,6 +1271,7 @@ sysctl.org
 s{1..5}.symcb.com
 t.co
 t.ly
+t.me
 t0.ssl.ak.dynamic.tiles.virtualearth.net
 t0.ssl.ak.tiles.virtualearth.net
 tawk.to
@@ -1279,6 +1280,7 @@ tbsc.apple.com
 teams.cloudflare.com
 teams.microsoft.com
 tedcdn.com
+telegra.ph
 telegram.org
 textsecure-service-whispersystems.org
 themoviedb.com
@@ -1387,6 +1389,7 @@ warp.cloudflare.com
 warp.cloudflareclient.com
 web.facebook.com
 web.monobank.ua
+web.telegram.org
 weeklyad.target.com
 weeklyad.target.com.edgesuite.net
 wg.gcdn.wargaming.net
