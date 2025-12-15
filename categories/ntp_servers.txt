@@ -1,12 +1,15 @@
 # @description: Сервери точного часу (NTP) — синхронізація системного часу
 # @author: Команда проєкту whitelist
-# @last_review: 2024-05-01
+# @last_review: 2024-11-05
 
 ntp.org                  # офіційний сайт проєкту Network Time Protocol
 pool.ntp.org              # глобальний пул NTP
+europe.pool.ntp.org       # регіональний пул NTP для Європи
+ntp.ubuntu.com            # стандартний сервер часу для Ubuntu
 time.cloudflare.com       # точний час Cloudflare
 time.facebook.com        # сервер часу Facebook
 time.google.com           # точний час Google
+time.android.com          # синхронізація часу на пристроях Android
 time.is                  # сервіс перевірки часу
 time.nist.gov             # сервер точного часу NIST
 time.windows.com          # сервіс часу Microsoft
