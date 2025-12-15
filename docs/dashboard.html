@@ -33,15 +33,15 @@
 </head>
 <body>
   <h1>Моніторинг білого списку Pi-hole</h1>
-  <p>Оновлено: 2025-11-23 22:01:04</p>
+  <p>Оновлено: 2025-12-15 14:08:37</p>
 
   <section>
     <h2>Ключові показники</h2>
     <div class="grid">
-      <div class="metric"><span>Активних доменів</span><strong>796</strong></div>
+      <div class="metric"><span>Активних доменів</span><strong>840</strong></div>
       <div class="metric"><span>Проблемні домени</span><strong>0</strong></div>
       <div class="metric"><span>Домени у deprecated</span><strong>0</strong></div>
-      <div class="metric"><span>Джерела (доменів)</span><strong>334</strong></div>
+      <div class="metric"><span>Джерела (доменів)</span><strong>0</strong></div>
     </div>
     <canvas id="historyChart" height="160" style="margin-top: 1.5rem;"></canvas>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -84,6 +84,14 @@
     "problematic_domains": 0,
     "deprecated_domains": 0,
     "sources_domains": 334,
+    "sources_problematic": 0
+  },
+  {
+    "timestamp": "2025-12-15T14:08:39+00:00",
+    "active_domains": 840,
+    "problematic_domains": 0,
+    "deprecated_domains": 0,
+    "sources_domains": 0,
     "sources_problematic": 0
   }
 ]</script>
@@ -157,33 +165,33 @@
       </thead>
       <tbody>
         
-<tr><td>ai_services.txt</td><td class="num">21</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>antivirus.txt</td><td class="num">29</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>apple.txt</td><td class="num">109</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>base.txt</td><td class="num">10</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>certificates.txt</td><td class="num">4</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>cloud_storage.txt</td><td class="num">24</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>cloudflare_warp.txt</td><td class="num">19</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>creality_print.txt</td><td class="num">14</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>ecommerce.txt</td><td class="num">7</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>educational_resources.txt</td><td class="num">5</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>extended_services.txt</td><td class="num">222</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>gaming.txt</td><td class="num">31</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>google_services.txt</td><td class="num">30</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>international_banks.txt</td><td class="num">5</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>messengers.txt</td><td class="num">11</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>microsoft_onedrive.txt</td><td class="num">49</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>microsoft_updates.txt</td><td class="num">31</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>mozilla_push.txt</td><td class="num">1</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>news_media.txt</td><td class="num">5</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>ntp_servers.txt</td><td class="num">9</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>office_collaboration.txt</td><td class="num">6</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>self_hosting.txt</td><td class="num">20</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>smart_home_devices.txt</td><td class="num">25</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>social_networks.txt</td><td class="num">9</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>streaming_services.txt</td><td class="num">10</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>ukrainian_services.txt</td><td class="num">77</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
-<tr><td>web_resources.txt</td><td class="num">13</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:57:41</td></tr>
+<tr><td>ai_services.txt</td><td class="num">25</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>antivirus.txt</td><td class="num">29</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>apple.txt</td><td class="num">109</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>base.txt</td><td class="num">10</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>certificates.txt</td><td class="num">4</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>cloud_storage.txt</td><td class="num">24</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>cloudflare_warp.txt</td><td class="num">19</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>creality_print.txt</td><td class="num">14</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>ecommerce.txt</td><td class="num">7</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>educational_resources.txt</td><td class="num">5</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>extended_services.txt</td><td class="num">222</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>gaming.txt</td><td class="num">31</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>google_services.txt</td><td class="num">49</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 14:07:49</td></tr>
+<tr><td>international_banks.txt</td><td class="num">5</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>messengers.txt</td><td class="num">14</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 14:02:07</td></tr>
+<tr><td>microsoft_onedrive.txt</td><td class="num">49</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>microsoft_updates.txt</td><td class="num">31</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>mozilla_push.txt</td><td class="num">1</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>news_media.txt</td><td class="num">5</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>ntp_servers.txt</td><td class="num">9</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>office_collaboration.txt</td><td class="num">6</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>self_hosting.txt</td><td class="num">20</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>smart_home_devices.txt</td><td class="num">25</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>social_networks.txt</td><td class="num">9</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>streaming_services.txt</td><td class="num">10</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>ukrainian_services.txt</td><td class="num">95</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
+<tr><td>web_resources.txt</td><td class="num">13</td><td class="num">0</td><td class="num">0.0%</td><td>2025-12-15 13:54:41</td></tr>
       </tbody>
     </table>
   </section>
@@ -196,8 +204,8 @@
       </thead>
       <tbody>
         
-<tr><td>anudeep_whitelist</td><td><a href="https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt</a></td><td class="num">191</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:59:46</td></tr>
-<tr><td>anudeep_optional</td><td><a href="https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/optional-list.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/optional-list.txt</a></td><td class="num">143</td><td class="num">0</td><td class="num">0.0%</td><td>2025-11-23 21:59:47</td></tr>
+<tr><td>anudeep_whitelist</td><td><a href="https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt</a></td><td class="num">0</td><td class="num">0</td><td class="num">0%</td><td>немає даних</td></tr>
+<tr><td>anudeep_optional</td><td><a href="https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/optional-list.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/optional-list.txt</a></td><td class="num">0</td><td class="num">0</td><td class="num">0%</td><td>немає даних</td></tr>
       </tbody>
     </table>
   </section>
@@ -210,7 +218,7 @@
   </section>
 
   <footer>
-    Звіт сформовано скриптом generate_stats_report.sh • 2025-11-23 22:01:04 UTC
+    Звіт сформовано скриптом generate_stats_report.sh • 2025-12-15 14:08:37 UTC
   </footer>
 </body>
 </html>

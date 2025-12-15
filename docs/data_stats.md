@@ -2,38 +2,38 @@
 
 > English version: [docs/data_stats.en.md](data_stats.en.md)
 
-Оновлено: 2025-11-23 22:01:04
+Оновлено: 2025-12-15 14:08:37
 
 ## Категорії
 | Категорія | Активних доменів | Проблемні | Частка недоступних | Остання перевірка |
 | --- | ---: | ---: | ---: | --- |
-| ai_services.txt | 21 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| antivirus.txt | 29 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| apple.txt | 109 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| base.txt | 10 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| certificates.txt | 4 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| cloud_storage.txt | 24 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| cloudflare_warp.txt | 19 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| creality_print.txt | 14 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| ecommerce.txt | 7 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| educational_resources.txt | 5 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| extended_services.txt | 222 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| gaming.txt | 31 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| google_services.txt | 30 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| international_banks.txt | 5 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| messengers.txt | 11 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| microsoft_onedrive.txt | 49 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| microsoft_updates.txt | 31 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| mozilla_push.txt | 1 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| news_media.txt | 5 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| ntp_servers.txt | 9 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| office_collaboration.txt | 6 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| self_hosting.txt | 20 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| smart_home_devices.txt | 25 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| social_networks.txt | 9 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| streaming_services.txt | 10 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| ukrainian_services.txt | 77 | 0 | 0.0% | 2025-11-23 21:57:41 |
-| web_resources.txt | 13 | 0 | 0.0% | 2025-11-23 21:57:41 |
+| ai_services.txt | 25 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| antivirus.txt | 29 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| apple.txt | 109 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| base.txt | 10 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| certificates.txt | 4 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| cloud_storage.txt | 24 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| cloudflare_warp.txt | 19 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| creality_print.txt | 14 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| ecommerce.txt | 7 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| educational_resources.txt | 5 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| extended_services.txt | 222 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| gaming.txt | 31 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| google_services.txt | 49 | 0 | 0.0% | 2025-12-15 14:07:49 |
+| international_banks.txt | 5 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| messengers.txt | 14 | 0 | 0.0% | 2025-12-15 14:02:07 |
+| microsoft_onedrive.txt | 49 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| microsoft_updates.txt | 31 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| mozilla_push.txt | 1 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| news_media.txt | 5 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| ntp_servers.txt | 9 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| office_collaboration.txt | 6 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| self_hosting.txt | 20 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| smart_home_devices.txt | 25 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| social_networks.txt | 9 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| streaming_services.txt | 10 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| ukrainian_services.txt | 95 | 0 | 0.0% | 2025-12-15 13:54:41 |
+| web_resources.txt | 13 | 0 | 0.0% | 2025-12-15 13:54:41 |
 
 ### Пояснення
 * "Проблемні" = домени, що мають невдалий стан перевірки або були перенесені до `deprecated.txt`.
@@ -42,11 +42,11 @@
 ## Зовнішні джерела
 | Джерело | URL | Доменів | Проблемні | Частка недоступних | Останнє оновлення |
 | --- | --- | ---: | ---: | ---: | --- |
-| anudeep_whitelist | https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt | 191 | 0 | 0.0% | 2025-11-23 21:59:46 |
-| anudeep_optional | https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/optional-list.txt | 143 | 0 | 0.0% | 2025-11-23 21:59:47 |
+| anudeep_whitelist | https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt | 0 | 0 | 0% | немає даних |
+| anudeep_optional | https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/optional-list.txt | 0 | 0 | 0% | немає даних |
 
 ## Агреговані показники
-* Активних доменів у категоріях: 796.
+* Активних доменів у категоріях: 840.
 * Проблемних доменів у категоріях (стан + deprecated): 0.
 * Домени у deprecated.txt: 0.
-* Домени у зведених джерелах: 334 (з них проблемних 0).
+* Домени у зведених джерелах: 0 (з них проблемних 0).
