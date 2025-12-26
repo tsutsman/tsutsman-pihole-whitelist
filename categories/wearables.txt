@@ -1,0 +1,11 @@
+# @description: Розумні годинники Amazfit та екосистема Zepp (оновлено 2025-12-26)
+# @author: Команда проєкту whitelist
+# @last_review: 2025-12-26
+
+amazfit.com            # 2025-12-26: офіційний сайт та сервіс акаунтів Amazfit/Zepp
+api.amazfit.com        # 2025-12-26: API Zepp для синхронізації пристроїв і завантаження карт
+maps.amazfit.com       # 2025-12-26: хост завантаження карт та маршрутів для годинників Amazfit
+map.amazfit.com        # 2025-12-26: резервний домен картографічних даних Amazfit
+zepp.com               # 2025-12-26: бренд Zepp — мобільний застосунок та сервісні портали
+account.huami.com      # 2025-12-26: облікові записи виробника Huami/Amazfit
+api-mifit.huami.com    # 2025-12-26: API Huami для синхронізації даних та картографії Amazfit
