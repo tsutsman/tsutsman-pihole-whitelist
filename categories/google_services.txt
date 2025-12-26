@@ -42,10 +42,13 @@ ocsp.pki.goog
 play.googleapis.com
 redirector.googlevideo.com
 redirector.gvt1.com
+redirector.gvt2.com           # завантаження Chrome/Android через GVT
 reminders-pa.googleapis.com
 safebrowsing.google.com
 safebrowsing.googleapis.com
+storage.googleapis.com        # публічні об’єкти Google Cloud Storage
 time.google.com
+play-lh.googleusercontent.com # іконки та медіа Google Play
 video-stats.l.google.com
 www.google.com
 www.googleapis.com

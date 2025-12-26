@@ -68,6 +68,8 @@ adguard.com
 agro.ria.com
 aistudio.google.com
 ajax.googleapis.com
+akamaihd.net
+akamaized.net
 albert.apple.com
 alibaba.com
 aliexpress.com
@@ -299,6 +301,7 @@ cdn.openai.com
 cdn.signal.org
 cdn.telegram.org
 cdn.wargaming.net
+cdn.whatsapp.net
 cdninstagram.com
 cdnjs.cloudflare.com
 cert.mgt.xboxlive.com
@@ -347,6 +350,7 @@ cloudflare_warp.txt|warp.cloudflare.com
 cloudflare_warp.txt|warp.cloudflareclient.com
 cloudflare_warp.txt|www.cloudflare.com
 cloudflarewarp.com
+cloudfront.net
 cls-ingest.itunes.apple.com
 cls-iosclient.itunes.apple.com
 cms.souqcdn.com
@@ -451,6 +455,8 @@ ecommerce.txt|shopify.com
 edge-chat.facebook.com
 edge-chat.messenger.com
 edge-mqtt.facebook.com
+edgekey.net
+edgesuite.net
 eds.xboxlive.com
 edx.org
 engage.cloudflareclient.com
@@ -668,6 +674,7 @@ eyecon-app.com
 fabric.io
 facebook.com
 facebook.net
+fastly.net
 favorites.live.com
 fb.me
 fba.apple.com
@@ -995,6 +1002,7 @@ pg-bootstrap.itunes.apple.com
 photos.live.com
 pinterest.com
 platform.openai.com
+play-lh.googleusercontent.com
 play.googleapis.com
 play.itunes.apple.com
 playgrounds-assets-cdn.apple.com
@@ -1035,6 +1043,7 @@ reddit.map.fastly.net
 redemptionservices.accesscontrol.windows.net
 redirector.googlevideo.com
 redirector.gvt1.com
+redirector.gvt2.com
 registry-1.docker.io
 reminders-pa.googleapis.com
 replicate.com
@@ -1108,6 +1117,7 @@ steamcommunity.com
 steamcontent.com
 steampowered.com
 steamstatic.com
+storage.googleapis.com
 storage.live.com
 storage.signal.org
 store.steampowered.com
@@ -1233,6 +1243,7 @@ wg.gcdn.wargaming.net
 wgcdn.co
 wgus.wargaming.net
 whatsapp.com
+whatsapp.net
 whispersystems-textsecure-attachments.s3-accelerate.amazonaws.com
 widgets.pinterest.com
 wiki.mikrotik.com
