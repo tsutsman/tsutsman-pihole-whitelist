@@ -27,6 +27,7 @@ Available files include:
 - `cloud_storage.txt` — cloud platforms (Google Drive, MEGA, Synology etc.);
 - `messengers.txt` — domains for Telegram, WhatsApp, Discord;
 - `smart_home_devices.txt` — Hikvision, Dahua, Yi Home cameras and the Tuya platform;
+- `wearables.txt` — Amazfit/Zepp smartwatches and related services;
 - `ntp_servers.txt` — NTP time servers;
 - `gaming.txt` — domains for Steam, Epic Games, Riot, Blizzard and Wargaming;
 - `web_resources.txt` — CDNs and hosts for website scripts and styles;

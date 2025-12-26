@@ -57,6 +57,7 @@ a1.tuyacn.com
 a1.tuyaeu.com
 a1.tuyaus.com
 account.apple.com
+account.huami.com
 account.mycrealitycloud.com
 accounts.google.com
 acme-v02.api.letsencrypt.org
@@ -70,6 +71,7 @@ ajax.googleapis.com
 albert.apple.com
 alibaba.com
 aliexpress.com
+amazfit.com
 amazon.com
 android.clients.google.com
 anthropic.com
@@ -93,8 +95,10 @@ antivirus.txt|update.pandasecurity.com
 antivirus.txt|updates.bitdefender.com
 antivirus.txt|updates.mcafee.com
 api-business.apple.com
+api-mifit.huami.com
 api-school.apple.com
 api-tv.spotify.com
+api.amazfit.com
 api.apple-cloudkit.com
 api.cloudflareclient.com
 api.directory.signal.org
@@ -828,6 +832,8 @@ m.hotmail.com
 m365.com
 malwarebytes.com
 manifest.googlevideo.com
+map.amazfit.com
+maps.amazfit.com
 max.com
 mbasic.facebook.com
 mcafee.com
@@ -1273,4 +1279,5 @@ youtubei.googleapis.com
 zakon.rada.gov.ua
 zakupki.prom.ua
 zapchasti.ria.com
+zepp.com
 zoom.us
