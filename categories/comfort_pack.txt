@@ -1,0 +1,18 @@
+# @description: Комфортний набір — CDN і допоміжні хости, які часто блокуються динамічними списками
+# @author: Команда проєкту whitelist
+# @last_review: 2025-02-05
+
+akamaihd.net                     # CDN для медіа Facebook, Steam та завантажень застосунків
+akamaized.net                    # CDN Akamai для потокового відео та мобільних сервісів
+cloudfront.net                   # CDN AWS CloudFront для статичних ресурсів сайтів
+edgekey.net                      # CNAME Akamai, що використовується вебсайтами та стрімінгами
+edgesuite.net                    # CDN Akamai для роздачі контенту
+fastly.net                       # CDN Fastly для вебдодатків і оновлень
+fbcdn.net                        # мультимедійні ресурси Facebook та Instagram
+static.xx.fbcdn.net              # статичні файли Facebook і Messenger
+scontent.xx.fbcdn.net            # медіафайли Facebook та Instagram
+whatsapp.net                     # доставка медіа у WhatsApp
+cdn.whatsapp.net                 # статичні файли клієнтів WhatsApp
+storage.googleapis.com           # сховища Google Cloud Storage для завантажень і бекапів
+play-lh.googleusercontent.com    # іконки та медіа з Google Play
+redirector.gvt2.com              # завантаження та оновлення Google Chrome/Android

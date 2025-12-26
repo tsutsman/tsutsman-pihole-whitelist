@@ -50,6 +50,7 @@
 - `educational_resources.txt` — корисні освітні портали.
 - `news_media.txt` — популярні новинні ресурси.
 - `international_banks.txt` — міжнародні платіжні сервіси.
+- `comfort_pack.txt` — CDN (Akamai, CloudFront, Fastly) та мультимедіа Facebook/WhatsApp/Instagram для комфортного серфінгу з агресивними блоклистами.
 
 #### Автоматична перевірка коментарів у категоріях
 
