@@ -1284,6 +1284,7 @@ xkms.xboxlive.com
 xp-cdn.apple.com
 xp.apple.com
 xsts.auth.xboxlive.com
+yellowsquare.shop
 yitechnology.com
 youtube.com
 youtubei.googleapis.com

@@ -46,6 +46,7 @@ prom.ua          # торговий майданчик Prom
 pumb.ua          # онлайн-банк ПУМБ
 rozetka.com.ua   # маркетплейс Rozetka
 ukr.net          # популярний поштовий сервіс
+yellowsquare.shop # 2026-01-03: інтернет-магазин одягу Yellow Square, потрібен для коректного завантаження сайту
 sensebank.com.ua       # Sense Bank — офіційний сайт
 online.sensebank.com.ua    # Sense Bank — інтернет-банкінг
 api.sensebank.com.ua       # Sense Bank — API мобільного застосунку
