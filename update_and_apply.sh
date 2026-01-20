@@ -4,6 +4,12 @@
 # 0 3 * * 0 /path/to/update_and_apply.sh >> /var/log/update_whitelist.log 2>&1
 set -euo pipefail
 
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+if [ -f "$SCRIPT_DIR/telegram_logger.sh" ]; then
+  # shellcheck source=telegram_logger.sh
+  source "$SCRIPT_DIR/telegram_logger.sh"
+fi
+
 # URL до файлу whitelist.txt у гілці main
 REPO_URL=${REPO_URL:-"https://raw.githubusercontent.com/tsutsman/tsutsman-pihole-whitelist/main/whitelist.txt"}
 # Файл журналу
@@ -15,6 +21,8 @@ delete_tmp() {
   rm -f "$TMP_FILE"
 }
 trap delete_tmp EXIT
+
+tg_log "$(date '+%Y-%m-%d %H:%M:%S') Початок оновлення whitelist"
 
 # Завантаження whitelist.txt
 if command -v curl >/dev/null 2>&1; then
@@ -37,11 +45,10 @@ if [ ! -s "$TMP_FILE" ]; then
   exit 1
 fi
 
-SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
-
 if ! "$SCRIPT_DIR/apply_whitelist.sh" "$TMP_FILE"; then
   echo "Помилка під час застосування whitelist" >&2
   exit 1
 fi
 
 echo "$(date '+%Y-%m-%d %H:%M:%S') Список оновлено та застосовано" | tee -a "$LOG_FILE"
+tg_log "$(date '+%Y-%m-%d %H:%M:%S') Список оновлено та застосовано"

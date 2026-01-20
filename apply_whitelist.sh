@@ -4,6 +4,12 @@
 # Використання: ./apply_whitelist.sh [шлях_до_файла]
 set -euo pipefail
 
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+if [ -f "$SCRIPT_DIR/telegram_logger.sh" ]; then
+  # shellcheck source=telegram_logger.sh
+  source "$SCRIPT_DIR/telegram_logger.sh"
+fi
+
 FILE="${1:-whitelist.txt}"
 
 # Обрізання пробілів по краях рядка
@@ -23,6 +29,8 @@ if ! command -v pihole >/dev/null 2>&1; then
   echo "Команду pihole не знайдено" >&2
   exit 1
 fi
+
+tg_log "$(date '+%Y-%m-%d %H:%M:%S') Початок застосування whitelist: $FILE"
 
 # Визначення основної команди для додавання доменів залежно від версії Pi-hole
 PIHOLE_VER=$(pihole -v -p 2>/dev/null | grep -oE '[0-9]+' | head -1 || echo 5)
@@ -45,3 +53,4 @@ while IFS= read -r line; do
 done < "$FILE"
 
 echo "Доменів з $FILE додано до білого списку"
+tg_log "$(date '+%Y-%m-%d %H:%M:%S') Застосування whitelist завершено: $FILE"

@@ -32,6 +32,20 @@ FTL
 
 export PATH="$tmpdir:$PATH"
 export PIHOLE_CALLS_LOG="$tmpdir/calls.log"
+export TELEGRAM_BOT_TOKEN="test-token"
+export TELEGRAM_CHAT_ID="test-chat"
+export TELEGRAM_API_URL="https://api.telegram.org"
+export TELEGRAM_CALLS_LOG="$tmpdir/telegram_calls.log"
+
+cat <<'MOCK' > "$tmpdir/curl"
+#!/usr/bin/env bash
+if [[ "$*" == *"sendMessage"* ]]; then
+  echo "$*" >> "$TELEGRAM_CALLS_LOG"
+  exit 0
+fi
+exit 1
+MOCK
+chmod +x "$tmpdir/curl"
 
 # Перевірка для v5
 create_mock 5
@@ -40,6 +54,7 @@ grep -Fxq -- "-w example.com" "$PIHOLE_CALLS_LOG"
 grep -Fxq -- "-w inline.test" "$PIHOLE_CALLS_LOG"
 grep -Fxq -- "-w test.org" "$PIHOLE_CALLS_LOG"
 ! grep -q '#' "$PIHOLE_CALLS_LOG"
+grep -q "sendMessage" "$tmpdir/telegram_calls.log"
 
 # Перевірка для v6
 : > "$PIHOLE_CALLS_LOG"
@@ -49,5 +64,6 @@ grep -Fxq -- "whitelist add example.com" "$PIHOLE_CALLS_LOG"
 grep -Fxq -- "whitelist add inline.test" "$PIHOLE_CALLS_LOG"
 grep -Fxq -- "whitelist add test.org" "$PIHOLE_CALLS_LOG"
 ! grep -q '#' "$PIHOLE_CALLS_LOG"
+grep -q "sendMessage" "$tmpdir/telegram_calls.log"
 
 echo "Тест apply_whitelist.sh пройдено"
