@@ -237,6 +237,7 @@ SOURCES_COMBINED=custom.txt ./generate_whitelist.sh
    0 3 * * * /srv/pihole-whitelist/update_and_apply.sh >> /var/log/pihole-whitelist.log 2>&1
    ```
    Скрипт завантажить актуальний `whitelist.txt`, застосує його до Pi-hole та занотує подію в журнал. URL джерела можна змінити через змінну `REPO_URL`, а шлях до журналу — через `LOG_FILE`.
+   За потреби можна дублювати ключові події в Telegram: достатньо встановити `TELEGRAM_BOT_TOKEN` і `TELEGRAM_CHAT_ID`. Додатково можна перевизначити `TELEGRAM_API_URL`, якщо використовується проксі.
 
 ## Перевірка списку
 
