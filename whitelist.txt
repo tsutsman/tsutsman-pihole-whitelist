@@ -325,6 +325,7 @@ clients3.google.com
 clients4.google.com
 clients5.google.com
 clients6.google.com
+clientservices.googleapis.com
 cloud.mycrealitycloud.com
 cloud.nous.technology
 cloudcameraiot.oss-cn-shanghai.aliyuncs.com
@@ -404,6 +405,7 @@ deepseek.com
 deezer.com
 def-vef.xboxlive.com
 defs.symantec.com
+delivery.mp.microsoft.com
 desktop.docker.com
 dev.virtualearth.net
 developers.cloudflare.com
@@ -680,6 +682,7 @@ fb.me
 fba.apple.com
 fbcdn-creative-a.akamaihd.net
 fbcdn.net
+fcm.googleapis.com
 fcs-keys-pub-prod.cdn-apple.com
 fe3.delivery.dsp.mp.microsoft.com.nsatc.net
 finderapi.micloud.xiaomi.net
@@ -956,6 +959,7 @@ ntservicepack.microsoft.com
 oaistatic.com
 oaiusercontent.com
 oauth.live.com
+oauth2.googleapis.com
 oauthaccountmanager.googleapis.com
 ocsp.apple.com
 ocsp.digicert.com
@@ -1248,6 +1252,7 @@ whispersystems-textsecure-attachments.s3-accelerate.amazonaws.com
 widgets.pinterest.com
 wiki.mikrotik.com
 wikipedia.org
+windowsupdate.com
 windowsupdate.microsoft.com
 wise.com
 wkms-public.apple.com

@@ -5,6 +5,7 @@
 assets.onestore.ms
 cdn.office.net
 ctldl.windowsupdate.com
+delivery.mp.microsoft.com
 dl.delivery.mp.microsoft.com
 dns.msftncsi.com
 download.windowsupdate.com
@@ -31,6 +32,7 @@ settings-win.data.microsoft.com
 storeedgefd.dsx.mp.microsoft.com
 teams.microsoft.com
 update.microsoft.com
+windowsupdate.com
 windowsupdate.microsoft.com
 www.msftconnecttest.com
 www.msftncsi.com
