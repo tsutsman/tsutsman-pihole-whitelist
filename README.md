@@ -151,6 +151,34 @@ INCLUDE_EXTERNAL_SOURCES=0 ./generate_whitelist.sh
 SOURCES_COMBINED=custom.txt ./generate_whitelist.sh
 ```
 
+## Автоматична актуалізація доменів у репозиторії
+
+Для регулярного оновлення доменів із категорій та зовнішніх джерел
+доступний скрипт `auto_update_domains.sh`. Він виконує завантаження
+джерел, перегенерує `whitelist.txt`, за потреби оновлює аналітику
+та може одразу застосувати список до Pi-hole.
+
+```bash
+./auto_update_domains.sh
+```
+
+Найчастіше використовувані опції:
+
+```bash
+# оновити джерела, згенерувати whitelist та оновити аналітику
+./auto_update_domains.sh --update-analysis 1
+
+# використати власний файл джерел і журнал, запустити без застосування
+./auto_update_domains.sh --sources-config sources/custom_sources.txt --log-file logs/update.log
+
+# запуск із cron щодня о 02:30
+30 2 * * * /srv/pihole-whitelist/auto_update_domains.sh >> /var/log/pihole-auto-update.log 2>&1
+```
+
+За потреби можна відключити зовнішні джерела (`--include-external 0`)
+або пропустити їх завантаження (`--skip-fetch 1`), якщо джерела
+оновлюються окремо.
+
 ## Використання
 
 1. Скопіюйте файл `whitelist.txt` на сервер з pihole.
