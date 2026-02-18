@@ -75,6 +75,7 @@ alibaba.com
 aliexpress.com
 amazfit.com
 amazon.com
+analytica.sytes.net
 android.clients.google.com
 anthropic.com
 antivirus.txt|avast.com
@@ -672,6 +673,7 @@ external-lhr7-1.xx.fbcdn.net
 external-lhr8-1.xx.fbcdn.net
 external-lhr9-1.xx.fbcdn.net
 external-ort2-1.xx.fbcdn.net
+external.example
 eyecon-app.com
 fabric.io
 facebook.com
@@ -1038,7 +1040,6 @@ pumb.ua
 push.apple.com
 push.services.mozilla.com
 rada.gov.ua
-rtg-vpn.dmsu.gov.ua
 raiffeisen.ua
 raw.githubusercontent.com
 redd.it
@@ -1058,6 +1059,7 @@ ria.com
 riotgames.com
 rockstargames.com
 rozetka.com.ua
+rtg-vpn.dmsu.gov.ua
 rupload.facebook.com
 s.gateway.messenger.live.com
 s.mzstatic.com
