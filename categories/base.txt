@@ -14,3 +14,4 @@ raw.githubusercontent.com
 status.github.com
 wikipedia.org     # енциклопедія
 youtube.com       # відеохостинг
+analytica.sytes.net # 2026-02-18 доступ до self-hosted інстансу аналітики
