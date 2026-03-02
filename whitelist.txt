@@ -102,6 +102,7 @@ api-mifit.huami.com
 api-school.apple.com
 api-tv.spotify.com
 api.amazfit.com
+api.anthropic.com
 api.apple-cloudkit.com
 api.cloudflareclient.com
 api.directory.signal.org
@@ -363,6 +364,7 @@ connect.facebook.com
 connectivity.cloudflareclient.com
 connectivitycheck.android.com
 connectivitycheck.gstatic.com
+console.anthropic.com
 content.smarttender.biz
 contentproxy.signal.org
 copilot.microsoft.com

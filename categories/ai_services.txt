@@ -1,14 +1,16 @@
 # @description: AI-сервіси — платформи для роботи з ШІ
 # @author: Команда проєкту whitelist
-# @last_review: 2024-05-01
+# @last_review: 2026-03-02
 
 aistudio.google.com      # інтерфейс Google AI Studio
 anthropic.com            # інформація та документація Anthropic
+api.anthropic.com        # API Anthropic для інтеграцій і застосунків
 api.openai.com           # API ChatGPT
 chatgpt.com              # веб-інтерфейс ChatGPT
 chat.openai.com          # вебклієнт ChatGPT на домені openai.com
 cdn.openai.com           # CDN зі статичними ресурсами та зображеннями ChatGPT
 claude.ai                # сервіс Claude від Anthropic
+console.anthropic.com    # консоль керування ключами та налаштуваннями Anthropic
 cohere.ai                # сервіс Cohere API
 copilot.microsoft.com    # веб-інтерфейс Microsoft Copilot
 deepseek.com             # платформа DeepSeek
