@@ -261,6 +261,7 @@ assets.onestore.ms
 attestation.xboxlive.com
 audiocontentdownload.apple.com
 auth.docker.io
+auth.openai.com
 auto.ria.com
 avast.com
 avira.com
@@ -675,7 +676,6 @@ external-lhr7-1.xx.fbcdn.net
 external-lhr8-1.xx.fbcdn.net
 external-lhr9-1.xx.fbcdn.net
 external-ort2-1.xx.fbcdn.net
-external.example
 eyecon-app.com
 fabric.io
 facebook.com
@@ -689,6 +689,7 @@ fbcdn.net
 fcm.googleapis.com
 fcs-keys-pub-prod.cdn-apple.com
 fe3.delivery.dsp.mp.microsoft.com.nsatc.net
+files.oaiusercontent.com
 finderapi.micloud.xiaomi.net
 firestore.googleapis.com
 fonts.googleapis.com
