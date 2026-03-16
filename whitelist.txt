@@ -65,6 +65,7 @@ acskidd.gov.ua
 activity.windows.com
 adguard-dns.com
 adguard.com
+ads.telegram.org
 agro.ria.com
 aistudio.google.com
 ajax.googleapis.com
@@ -292,6 +293,7 @@ bitdefender.com
 blizzard.com
 box.com
 bpapi.apple.com
+bugs.telegram.org
 bundle.zepp.com
 bytefcdn-oversea.com
 bytefcdn-oversea.net
@@ -420,6 +422,7 @@ def-vef.xboxlive.com
 defs.symantec.com
 delivery.mp.microsoft.com
 desktop.docker.com
+desktop.telegram.org
 dev.virtualearth.net
 developers.cloudflare.com
 device.auth.xboxlive.com
@@ -685,7 +688,6 @@ external-lhr7-1.xx.fbcdn.net
 external-lhr8-1.xx.fbcdn.net
 external-lhr9-1.xx.fbcdn.net
 external-ort2-1.xx.fbcdn.net
-external.example
 eyecon-app.com
 fabric.io
 facebook.com
@@ -710,6 +712,7 @@ fonts.gstatic.com
 forms.novapost.world
 forum.dietpi.com
 forum.mikrotik.com
+fragment.com
 freepik.com
 g.live.com
 galleryapi.micloud.xiaomi.net
@@ -826,6 +829,7 @@ init-p01st.push.apple.com
 instagram.c10r.facebook.com
 instagram.com
 instantmessaging-pa.googleapis.com
+instantview.telegram.org
 iot.mycrealitycloud.com
 iphonesubmissions.apple.com
 iprofiles.apple.com
@@ -861,6 +865,7 @@ login.windows.net
 m.facebook.com
 m.hotmail.com
 m365.com
+macos.telegram.org
 malwarebytes.com
 manifest.googlevideo.com
 map.amazfit.com
@@ -1058,6 +1063,7 @@ production.cloudflare.docker.com
 products.office.com
 prom.ua
 prometheus.org.ua
+promote.telegram.org
 prozorro.gov.ua
 pumb.ua
 push.apple.com
@@ -1159,6 +1165,7 @@ storeedgefd.dsx.mp.microsoft.com
 stripe.com
 styles.redditmedia.com
 suconfig.apple.com
+suggestions.telegram.org
 support.apple.com
 support.cloudflare.com
 support.mikrotik.com
@@ -1179,8 +1186,12 @@ tbsc.apple.com
 teams.cloudflare.com
 teams.microsoft.com
 telegra.ph
+telegram.dog
+telegram.me
 telegram.org
+telesco.pe
 textsecure-service-whispersystems.org
+themes.telegram.org
 threads.net
 thumbs.redditmedia.com
 tiktok.com
@@ -1219,6 +1230,7 @@ track.ukrposhta.ua
 tracking-protection.cdn.mozilla.net
 tracking.nova.ua
 tracking.novaposhta.ua
+translations.telegram.org
 trembita.gov.ua
 ttlivecdn.com
 ttoversea.net
