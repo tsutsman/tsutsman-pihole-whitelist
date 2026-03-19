@@ -1,6 +1,6 @@
-# @description: Пристрої розумного дому та камери відеоспостереження (оновлено 2025-03-19)
+# @description: Пристрої розумного дому та камери відеоспостереження (оновлено 2026-03-19)
 # @author: Команда проєкту whitelist
-# @last_review: 2024-05-01
+# @last_review: 2026-03-19
 
 # Hikvision / Hik-Connect
 hikvision.com           # основний сайт та платформа Hikvision
@@ -36,3 +36,18 @@ a1.tuyacn.com           # Tuya MQTT-шлюз для реального часу 
 nous.technology         # Nous Smart Home — офіційний портал та акаунти
 cloud.nous.technology   # Nous Cloud — керування та прошивки пристроїв
 app.nous.technology     # Nous Home — мобільний застосунок та API
+
+# SolaX Cloud
+solaxcloud.com              # 2026-03-19: базовий домен SolaX Cloud та портал облікових записів
+www.solaxcloud.com          # 2026-03-19: основний веб-портал SolaX Cloud та user-center
+global.solaxcloud.com       # 2026-03-19: глобальний портал SolaX Cloud та API-документація
+eu.solaxcloud.com           # 2026-03-19: європейський регіональний портал SolaX Cloud
+www.eu.solaxcloud.com       # 2026-03-19: веб-інтерфейс SolaX Cloud для EU-кластера
+cn.solaxcloud.com           # 2026-03-19: китайський регіональний портал SolaX Cloud
+mobile.solaxcloud.com       # 2026-03-19: мобільні сервіси застосунку SolaX Cloud
+abroad.solaxcloud.com       # 2026-03-19: legacy-глобальний вузол SolaX Cloud
+openapi.solaxcloud.com      # 2026-03-19: API SolaX Cloud для інтеграцій та зовнішніх клієнтів
+openapi-eu.solaxcloud.com   # 2026-03-19: API SolaX Cloud для EU-регіону
+openapi-cn.solaxcloud.com   # 2026-03-19: API SolaX Cloud для CN-регіону
+mqtt101.solaxcloud.com      # 2026-03-19: MQTT-вузол SolaX для зв'язку з WiFi-донглом
+mqtt102.solaxcloud.com      # 2026-03-19: альтернативний MQTT-вузол SolaX для телеметрії пристрою

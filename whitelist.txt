@@ -56,6 +56,7 @@
 a1.tuyacn.com
 a1.tuyaeu.com
 a1.tuyaus.com
+abroad.solaxcloud.com
 account.apple.com
 account.huami.com
 account.mycrealitycloud.com
@@ -369,6 +370,7 @@ cloudfront.net
 cls-ingest.itunes.apple.com
 cls-iosclient.itunes.apple.com
 cms.souqcdn.com
+cn.solaxcloud.com
 code.jquery.com
 cohere.ai
 configuration.apple.com
@@ -481,6 +483,7 @@ engage.cloudflareclient.com
 epicgames.com
 espreso.tv
 etsy.com
+eu.solaxcloud.com
 eu.wargaming.net
 europe.pool.ntp.org
 extended_services.txt|*.pinimg.com
@@ -726,6 +729,7 @@ gg.apple.com
 giphy-proxy-production.whispersystems.org
 github.com
 global.download.synology.com
+global.solaxcloud.com
 go.microsoft.com
 gog.com
 google.com
@@ -954,10 +958,13 @@ microsoftonline.com
 microsoftteams.com
 mikrotik.com
 mistral.ai
+mobile.solaxcloud.com
 mobile.twitter.com
 monobank.ua
 mqtt.c10r.facebook.com
 mqtt.mycrealitycloud.com
+mqtt101.solaxcloud.com
+mqtt102.solaxcloud.com
 msedge.api.cdp.microsoft.com
 msftncsi.com
 msn.com
@@ -1012,6 +1019,9 @@ online.sensebank.com.ua
 openai.com
 openai.gallerycdn.vsassets.io
 openaicom.imgix.net
+openapi-cn.solaxcloud.com
+openapi-eu.solaxcloud.com
+openapi.solaxcloud.com
 openapi.tuyacn.com
 openapi.tuyaeu.com
 openapi.tuyaus.com
@@ -1127,6 +1137,7 @@ smp-device-content.apple.com
 snapchat.com
 snapi.live.net
 snssdk.com
+solaxcloud.com
 sophosupd.com
 soundcloud.com
 souqcdn.com
@@ -1311,6 +1322,7 @@ www.appleiphonecell.com
 www.cloudflare.com
 www.creality.com
 www.docker.com
+www.eu.solaxcloud.com
 www.eyecon-app.com
 www.facebook.com
 www.google.com
@@ -1323,6 +1335,7 @@ www.msftncsi.com
 www.redditmedia.com
 www.redditstatic.com
 www.signal.org
+www.solaxcloud.com
 www.synology.com
 www.xboxlive.com
 x.ai
