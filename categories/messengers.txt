@@ -1,30 +1,37 @@
 # @description: Месенджери — сервіси для обміну повідомленнями
 # @author: Команда проєкту whitelist
-# @last_review: 2026-03-16
+# @last_review: 2026-03-24
 
 api.telegram.org            # API Telegram
 ads.telegram.org            # рекламна платформа Telegram
 bugs.telegram.org           # багтрекер та зворотний зв'язок Telegram
 cdn.telegram.org            # CDN Telegram
+contest.com                # офіційні конкурси та промо Telegram
+contest.dev                # dev-середовище конкурсів Telegram
 core.telegram.org           # документація та API Telegram
 desktop.telegram.org        # десктопний клієнт Telegram для Windows, macOS та Linux
 fragment.com                # сервіс Telegram для collectible usernames і anonymous numbers
 instantview.telegram.org    # Instant View від Telegram
 t.me                        # короткі посилання на канали та боти Telegram
-discord.com             # чат Discord
-messenger.com           # вебверсія Facebook Messenger
-signal.org              # офіційний сайт Signal із завантаженнями клієнтів
+k.t.me                      # домен автологіну Telegram Web
+z.t.me                      # домен автологіну Telegram Web
+a.t.me                      # домен автологіну Telegram Web
+oauth.telegram.org          # Telegram Login / URL authorization
 macos.telegram.org          # нативний клієнт Telegram для macOS
+telesco.pe                  # сторінки каналів та постів Telegram
+themes.telegram.org         # каталог тем Telegram
+translations.telegram.org   # платформа перекладів Telegram
+web.telegram.org            # вебклієнт Telegram
+web.t.me                    # альтернативний вебклієнт Telegram
 promote.telegram.org        # промосторінки та рекламні інструменти Telegram
 suggestions.telegram.org    # портал пропозицій Telegram
 telegra.ph                  # платформа статей Telegraph від Telegram
 telegram.dog                # альтернативні короткі посилання Telegram
 telegram.me                 # застарілий домен коротких посилань Telegram
 telegram.org                # месенджер Telegram
-telesco.pe                  # сторінки каналів та постів Telegram
-themes.telegram.org         # каталог тем Telegram
-translations.telegram.org   # платформа перекладів Telegram
-web.telegram.org            # вебклієнт Telegram
+discord.com             # чат Discord
+messenger.com           # вебверсія Facebook Messenger
+signal.org              # офіційний сайт Signal із завантаженнями клієнтів
 whatsapp.com            # месенджер WhatsApp
 eyecon-app.com         # телефонна книга Eyecon
 www.eyecon-app.com     # вебінтерфейс Eyecon

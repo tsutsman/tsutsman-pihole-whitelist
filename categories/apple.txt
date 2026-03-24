@@ -1,6 +1,6 @@
 # @description: Сервіси Apple — домени для iCloud та інфраструктури Apple
 # @author: Команда проєкту whitelist
-# @last_review: 2024-05-01
+# @last_review: 2026-03-24
 
 *.appattest.apple.com
 *.apps-marketplace.apple.com
@@ -115,3 +115,32 @@ ws.school.apple.com
 www.apple.com
 xp-cdn.apple.com
 xp.apple.com
+
+# Додаткові офіційні хости Apple Support 101555, яких бракувало у списку
+*.apple-cloudkit.com                # усі сервіси iCloud CloudKit
+*.apple-livephotoskit.com           # Live Photos у сервісах iCloud
+*.apple-mapkit.com                  # Apple MapKit для Managed Lost Mode
+*.apzones.com                       # iCloud сервіси в Китаї
+*.icloud-content.com                # контент iCloud і пов'язані ресурси
+*.icloud.com.cn                     # iCloud сервіси в Китаї
+*.mzstatic.com                      # App Store, Books, Music та marketplace-контент
+*.vertexsmb.com                     # перевірка tax-exempt статусу в Apple Business Manager
+app-site-association.networking.apple # Associated Domains та Universal Links
+apple-native-relay.apple.com        # relay для RCS
+apple-relay.cloudflare.com          # Private Cloud Compute relay
+apple-relay.fastly-edge.com         # Private Cloud Compute relay
+appldnld.apple.com.edgesuite.net    # оновлення carrier bundle
+cp4.cloudflare.com                  # Private Cloud Compute relay
+gateway.icloud.com                  # CloudKit контент, XProtect та Voice Control assets
+itunes.com                          # виявлення оновлень carrier bundle
+mask-api.icloud.com                 # API iCloud Private Relay
+mask-h2.icloud.com                  # HTTP/2 endpoint iCloud Private Relay
+mask.icloud.com                     # iCloud Private Relay
+metrics.icloud.com                  # діагностика iCloud
+pong.icloud.com                     # тестування підключення iCloud
+probe.icloud.com                    # тестування підключення iCloud
+setup.icloud.com                    # Managed Apple Account на Shared iPad
+statici.icloud.com                  # іконки пристроїв для Apple Business Manager
+token.safebrowsing.apple            # Safari fraudulent website warnings
+upload.appleschoolcontent.com       # SFTP uploads для Apple School Manager
+ws-ee-maidsvc.icloud.com            # lookup користувачів Managed Apple Accounts

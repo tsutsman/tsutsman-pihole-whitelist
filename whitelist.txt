@@ -1,7 +1,11 @@
 # Автоматично згенеровано скриптом generate_whitelist.sh
 *.appattest.apple.com
+*.apple-cloudkit.com
+*.apple-livephotoskit.com
+*.apple-mapkit.com
 *.apps-marketplace.apple.com
 *.apps.apple.com
+*.apzones.com
 *.aria.microsoft.com
 *.auto.ria.com
 *.business.apple.com
@@ -18,8 +22,10 @@
 *.hotline.ua
 *.ibytedtos.com
 *.ibyteimg.com
+*.icloud-content.com
 *.icloud.apple.com
 *.icloud.com
+*.icloud.com.cn
 *.itunes.apple.com
 *.iwork.apple.com
 *.livefilestore.com
@@ -29,6 +35,7 @@
 *.micloud.xiaomi.net
 *.microsoft.com
 *.microsoftteams.com
+*.mzstatic.com
 *.office.com
 *.officeapps.live.com
 *.omtrdc.net
@@ -43,6 +50,7 @@
 *.slack.com
 *.smoot.apple.com
 *.storage.live.com
+*.vertexsmb.com
 *.zoom.us
 0-edge-chat.facebook.com
 0.client-channel.google.com
@@ -53,6 +61,7 @@
 4-edge-chat.facebook.com
 5-edge-chat.facebook.com
 6-edge-chat.facebook.com
+a.t.me
 a1.tuyacn.com
 a1.tuyaeu.com
 a1.tuyaus.com
@@ -141,10 +150,15 @@ api.xiaoyi.com
 apis.live.net
 app-analytics-de.zepp.com
 app-site-association.cdn-apple.com
+app-site-association.networking.apple
 app.diia.gov.ua
 app.nous.technology
 appldnld.apple.com
+appldnld.apple.com.edgesuite.net
+apple-native-relay.apple.com
 apple-relay.apple.com
+apple-relay.cloudflare.com
+apple-relay.fastly-edge.com
 apple.com
 apple.txt|*.appattest.apple.com
 apple.txt|*.apps-marketplace.apple.com
@@ -381,9 +395,12 @@ connectivitycheck.gstatic.com
 console.anthropic.com
 content.smarttender.biz
 contentproxy.signal.org
+contest.com
+contest.dev
 copilot.microsoft.com
 core.telegram.org
 coursera.org
+cp4.cloudflare.com
 creality.com
 creality_print.txt|account.mycrealitycloud.com
 creality_print.txt|api.mycrealitycloud.com
@@ -719,6 +736,7 @@ fragment.com
 freepik.com
 g.live.com
 galleryapi.micloud.xiaomi.net
+gateway.icloud.com
 gdlp01.c-wss.com
 gdmf-ados.apple.com
 gdmf.apple.com
@@ -839,7 +857,9 @@ iphonesubmissions.apple.com
 iprofiles.apple.com
 ipv6.msftncsi.com
 itunes.apple.com
+itunes.com
 izibank.com.ua
+k.t.me
 khanacademy.org
 kmu.gov.ua
 l.facebook.com
@@ -875,6 +895,9 @@ manifest.googlevideo.com
 map.amazfit.com
 maps-cdn.zepp.com
 maps.amazfit.com
+mask-api.icloud.com
+mask-h2.icloud.com
+mask.icloud.com
 max.com
 mbasic.facebook.com
 mcafee.com
@@ -886,6 +909,7 @@ mega.nz
 messenger.com
 mesu.apple.com
 meta.com
+metrics.icloud.com
 micloud.xiaomi.net
 microsoft.com
 microsoft365.com
@@ -996,6 +1020,7 @@ ntservicepack.microsoft.com
 oaistatic.com
 oaiusercontent.com
 oauth.live.com
+oauth.telegram.org
 oauth2.googleapis.com
 oauthaccountmanager.googleapis.com
 ocsp.apple.com
@@ -1055,6 +1080,7 @@ playstation.com
 playvalorant.com
 poe.com
 policies.live.net
+pong.icloud.com
 pool.ntp.org
 portal.fb.com
 portal.pfu.gov.ua
@@ -1068,6 +1094,7 @@ pricelist.skype.com
 primevideo.com
 privat24.ua
 privatbank.ua
+probe.icloud.com
 procurement.smarttender.biz
 production.cloudflare.docker.com
 products.office.com
@@ -1122,6 +1149,7 @@ serverstatus.apple.com
 services.ukrposhta.ua
 settings-win.data.microsoft.com
 settings.live.net
+setup.icloud.com
 shopify.com
 signal.org
 site-assets.novapost.com
@@ -1158,6 +1186,7 @@ static.ips.apple.com
 static.monobank.ua
 static.xx.fbcdn.net
 static.zepp.com
+statici.icloud.com
 status.cloudflare.com
 status.github.com
 statusapi.micloud.xiaomi.net
@@ -1236,6 +1265,7 @@ title.mgt.xboxlive.com
 tlivecdn.com
 tlu.dl.delivery.mp.microsoft.com
 token.cp.microsoft.com
+token.safebrowsing.apple
 tokensit.cp.microsoft-tst.com
 track.ukrposhta.ua
 tracking-protection.cdn.mozilla.net
@@ -1275,6 +1305,7 @@ updates2.signal.org
 upgrade.mikrotik.com
 upload-cdn.huami.com
 upload-cdn.zepp.com
+upload.appleschoolcontent.com
 upload.facebook.com
 upload.smarttender.biz
 upload.twitter.com
@@ -1299,6 +1330,7 @@ warp.cloudflare.com
 warp.cloudflareclient.com
 web.facebook.com
 web.monobank.ua
+web.t.me
 web.telegram.org
 webapp.zepp.com
 wg.gcdn.wargaming.net
@@ -1316,6 +1348,7 @@ wise.com
 wkms-public.apple.com
 wotblitz.com
 wotblitz.eu
+ws-ee-maidsvc.icloud.com
 ws.school.apple.com
 www.apple.com
 www.appleiphonecell.com
@@ -1353,6 +1386,7 @@ yellowsquare.shop
 yitechnology.com
 youtube.com
 youtubei.googleapis.com
+z.t.me
 zakon.rada.gov.ua
 zakupki.prom.ua
 zapchasti.ria.com
