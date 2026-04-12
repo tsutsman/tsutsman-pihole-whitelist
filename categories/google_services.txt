@@ -49,6 +49,7 @@ reminders-pa.googleapis.com
 safebrowsing.google.com
 safebrowsing.googleapis.com
 fcm.googleapis.com
+notifications.googleapis.com
 storage.googleapis.com        # публічні об’єкти Google Cloud Storage
 time.google.com
 play-lh.googleusercontent.com # іконки та медіа Google Play
