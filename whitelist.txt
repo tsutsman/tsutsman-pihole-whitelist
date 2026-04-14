@@ -1283,6 +1283,7 @@ tuyaus.com
 twimg.com
 twitter.com
 ty-iot.com
+tailscale.com
 ua.pool.ntp.org
 ud-chat.signal.org
 ui.ria.com
