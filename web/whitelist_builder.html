@@ -25,6 +25,9 @@
     <label><input type="checkbox" id="includeExternal" checked> Включати зовнішні джерела</label>
     <label><input type="checkbox" id="applyDirectly"> Одразу застосувати через Pi-hole</label>
   </div>
+  <div style="margin-bottom: 1rem;">
+    <label>API токен:<br><input type="password" id="apiToken" placeholder="Bearer token" style="width: 320px;"></label>
+  </div>
   <div id="categories" class="categories"></div>
   <form id="builderForm">
     <div style="margin-bottom: 1rem;">
@@ -43,11 +46,22 @@
     const statusBox = document.getElementById('status');
     const resultBox = document.getElementById('result');
 
+    function buildHeaders() {
+      const headers = { 'Content-Type': 'application/json' };
+      const token = document.getElementById('apiToken').value.trim();
+      if (token) {
+        headers.Authorization = `Bearer ${token}`;
+      }
+      return headers;
+    }
+
     async function loadCategories() {
       statusBox.textContent = 'Завантаження категорій…';
       resultBox.hidden = true;
       try {
-        const response = await fetch('/api/categories');
+        const response = await fetch('/api/categories', {
+          headers: buildHeaders(),
+        });
         if (!response.ok) {
           throw new Error('Помилка завантаження категорій');
         }
@@ -102,7 +116,7 @@
       try {
         const response = await fetch('/api/build', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: buildHeaders(),
           body: JSON.stringify(payload),
         });
         const data = await response.json();

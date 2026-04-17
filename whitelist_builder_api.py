@@ -4,7 +4,9 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hmac
 import json
+import os
 import pathlib
 import threading
 import uuid
@@ -106,6 +108,8 @@ class BuilderConfig:
         categories_dir: pathlib.Path,
         allow_external_categories: bool,
         allowed_extra_paths: Optional[List[pathlib.Path]],
+        auth_token: str,
+        allow_apply_directly: bool,
     ) -> None:
         self.build_script = build_script
         self.data_dir = data_dir
@@ -113,6 +117,8 @@ class BuilderConfig:
         self.categories_dir = categories_dir
         self.allow_external_categories = allow_external_categories
         self.allowed_extra_paths = allowed_extra_paths or []
+        self.auth_token = auth_token
+        self.allow_apply_directly = allow_apply_directly
         self.data_dir.mkdir(parents=True, exist_ok=True)
         self.log_file.parent.mkdir(parents=True, exist_ok=True)
 
@@ -169,9 +175,31 @@ class BuilderRequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data)
 
+    def _extract_token(self) -> str:
+        auth_header = self.headers.get("Authorization", "")
+        if auth_header.startswith("Bearer "):
+            return auth_header[len("Bearer ") :].strip()
+        return self.headers.get("X-API-Token", "").strip()
+
+    def _authenticate(self) -> bool:
+        provided = self._extract_token()
+        expected = self.server.config.auth_token
+        if provided and hmac.compare_digest(provided, expected):
+            return True
+        self._send_json(
+            HTTPStatus.UNAUTHORIZED,
+            {
+                "status": "error",
+                "errors": ["Потрібна авторизація API-токеном"],
+            },
+        )
+        return False
+
     def do_GET(self) -> None:  # noqa: N802
         if self.path == "/health":
             self._send_json(HTTPStatus.OK, {"status": "ok"})
+            return
+        if not self._authenticate():
             return
         if self.path == "/api/categories":
             self._handle_categories()
@@ -210,6 +238,8 @@ class BuilderRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(data)
 
     def do_POST(self) -> None:  # noqa: N802
+        if not self._authenticate():
+            return
         if self.path == "/api/build":
             self._handle_build()
             return
@@ -287,6 +317,8 @@ class BuilderRequestHandler(BaseHTTPRequestHandler):
 
         include_external = bool(payload.get("include_external", True))
         apply_directly = bool(payload.get("apply_directly", False))
+        if apply_directly and not self.server.config.allow_apply_directly:
+            raise ValueError("Параметр apply_directly заборонено політикою сервера")
         sources_combined = payload.get("sources_combined", "")
         if sources_combined:
             sources_combined = str(sources_combined)
@@ -335,6 +367,19 @@ def parse_args() -> argparse.Namespace:
         default=[],
         help="Додаткові дозволені каталоги для extra-path (якщо не вказано — дозволено будь-які існуючі шляхи)",
     )
+    parser.add_argument(
+        "--api-token",
+        default=os.environ.get("WHITELIST_BUILDER_API_TOKEN", ""),
+        help=(
+            "API-токен для Authorization: Bearer <token> або X-API-Token. "
+            "Якщо не передано, береться WHITELIST_BUILDER_API_TOKEN."
+        ),
+    )
+    parser.add_argument(
+        "--allow-apply-directly",
+        action="store_true",
+        help="Дозволити apply_directly через API (за замовчуванням вимкнено для безпеки)",
+    )
     return parser.parse_args()
 
 
@@ -342,6 +387,10 @@ def build_server(args: argparse.Namespace) -> BuilderHTTPServer:
     build_script = pathlib.Path(args.build_script).resolve()
     if not build_script.exists():
         raise SystemExit(f"Скрипт {build_script} не знайдено")
+    if not args.api_token:
+        raise SystemExit(
+            "Не задано API-токен. Використайте --api-token або змінну WHITELIST_BUILDER_API_TOKEN."
+        )
     config = BuilderConfig(
         build_script=build_script,
         data_dir=pathlib.Path(args.data_dir).resolve(),
@@ -349,6 +398,8 @@ def build_server(args: argparse.Namespace) -> BuilderHTTPServer:
         categories_dir=pathlib.Path(args.categories_dir).resolve(),
         allow_external_categories=bool(args.allow_external_categories),
         allowed_extra_paths=[pathlib.Path(item).resolve() for item in args.allow_extra_path],
+        auth_token=str(args.api_token),
+        allow_apply_directly=bool(args.allow_apply_directly),
     )
     server = BuilderHTTPServer((args.host, args.port), config)
     return server

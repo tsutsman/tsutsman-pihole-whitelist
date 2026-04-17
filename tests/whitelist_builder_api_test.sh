@@ -15,6 +15,7 @@ PY
 tmpdir=$(mktemp -d)
 server_log="$tmpdir/server.log"
 server_pid=""
+api_token="test-api-token"
 
 cleanup() {
   if [[ -n "${server_pid:-}" ]]; then
@@ -32,6 +33,7 @@ python3 whitelist_builder_api.py \
   --port "$port" \
   --data-dir "$tmpdir/output" \
   --log-file "$tmpdir/api.log" \
+  --api-token "$api_token" \
   >"$server_log" 2>&1 &
 server_pid=$!
 
@@ -50,7 +52,13 @@ if ! curl -fs "http://127.0.0.1:$port/health" >/dev/null; then
   exit 1
 fi
 
-categories_json=$(curl -fs "http://127.0.0.1:$port/api/categories")
+if curl -fs "http://127.0.0.1:$port/api/categories" >/dev/null; then
+  echo "Запит без токена мав завершитися 401" >&2
+  exit 1
+fi
+
+categories_json=$(curl -fs "http://127.0.0.1:$port/api/categories" \
+  -H "Authorization: Bearer $api_token")
 CATEGORIES_PAYLOAD="$categories_json" python3 <<'PY'
 import json, os
 payload = json.loads(os.environ["CATEGORIES_PAYLOAD"])
@@ -61,6 +69,7 @@ if not payload.get("categories"):
 PY
 
 response=$(curl -fs -X POST "http://127.0.0.1:$port/api/build" \
+  -H "Authorization: Bearer $api_token" \
   -H 'Content-Type: application/json' \
   -d '{"categories":["base.txt"],"include_external":false}')
 
@@ -89,7 +98,10 @@ if [[ ! -s "$file_path" ]]; then
   exit 1
 fi
 
-if curl -fs "http://127.0.0.1:$port/api/build" -H 'Content-Type: application/json' -d '{}' >/dev/null; then
+if curl -fs "http://127.0.0.1:$port/api/build" \
+  -H "Authorization: Bearer $api_token" \
+  -H 'Content-Type: application/json' \
+  -d '{}' >/dev/null; then
   echo "Порожній запит мав завершитися помилкою" >&2
   exit 1
 fi
