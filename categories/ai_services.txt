@@ -1,10 +1,11 @@
 # @description: AI-сервіси — платформи для роботи з ШІ
 # @author: Команда проєкту whitelist
-# @last_review: 2026-03-02
+# @last_review: 2026-04-20
 
 aistudio.google.com      # інтерфейс Google AI Studio
 anthropic.com            # інформація та документація Anthropic
 api.anthropic.com        # API Anthropic для інтеграцій і застосунків
+api.ollama.com           # хмарний API та сервіси Ollama
 api.openai.com           # API ChatGPT
 auth.openai.com          # авторизація OpenAI/ChatGPT
 chatgpt.com              # веб-інтерфейс ChatGPT
@@ -15,19 +16,25 @@ console.anthropic.com    # консоль керування ключами та
 cohere.ai                # сервіс Cohere API
 copilot.microsoft.com    # веб-інтерфейс Microsoft Copilot
 deepseek.com             # платформа DeepSeek
+docs.ollama.com          # документація Ollama
 gemini.google.com        # Google Gemini (раніше Bard)
 grok.com                 # Grok від xAI
 huggingface.co           # платформа HuggingFace
 mistral.ai               # генеративні моделі Mistral
+models.ollama.com        # каталог моделей на сайті Ollama
 cdn.oaistatic.com        # CDN зі статичними ресурсами ChatGPT
 oaistatic.com            # статичні ресурси для ChatGPT
 oaiusercontent.com       # завантаження та вкладення користувачів ChatGPT
 files.oaiusercontent.com # доступ до файлів і вкладень у ChatGPT
+ollama.com               # офіційний сайт Ollama, завантаження клієнта та API
 openai.com               # офіційний сайт OpenAI
 openaicom.imgix.net      # медіафайли та ілюстрації на сторінках ChatGPT
 perplexity.ai            # пошук з AI
 poe.com                  # AI-чатботи від Quora
 platform.openai.com      # веб-інтерфейс OpenAI
+registry.ollama.ai       # реєстр моделей Ollama (завантаження образів)
+registry.ollama.com      # альтернативний хост реєстру та вебінтерфейсу Ollama
 replicate.com            # запуск AI-моделей
 stability.ai             # розробник Stable Diffusion
+www.ollama.com           # вебсайт Ollama (www)
 x.ai                     # головна сторінка xAI

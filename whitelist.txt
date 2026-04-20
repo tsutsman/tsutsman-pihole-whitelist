@@ -135,6 +135,7 @@ api.nova.ua
 api.novaposhta.ua
 api.novapost.com
 api.novapost.pl
+api.ollama.com
 api.openai.com
 api.paymonobank.ua
 api.pinterest.com
@@ -468,6 +469,7 @@ dns.msftncsi.com
 docs.docker.com
 docs.google.com
 docs.live.net
+docs.ollama.com
 doh.dns.apple.com
 download.developer.apple.com
 download.docker.com
@@ -708,6 +710,7 @@ external-lhr7-1.xx.fbcdn.net
 external-lhr8-1.xx.fbcdn.net
 external-lhr9-1.xx.fbcdn.net
 external-ort2-1.xx.fbcdn.net
+external.example
 eyecon-app.com
 fabric.io
 facebook.com
@@ -984,6 +987,7 @@ mikrotik.com
 mistral.ai
 mobile.solaxcloud.com
 mobile.twitter.com
+models.ollama.com
 monobank.ua
 mqtt.c10r.facebook.com
 mqtt.mycrealitycloud.com
@@ -1004,6 +1008,7 @@ netflix.com
 new.novaposhta.ua
 next.privat24.ua
 norton.com
+notifications.googleapis.com
 notify.xboxlive.com
 nous.technology
 nova.ua
@@ -1033,6 +1038,7 @@ office.com
 office365.com
 officecdn.microsoft.com
 officeclient.microsoft.com
+ollama.com
 olx.ua
 one.one.one.one
 oneclient.sfx.ms
@@ -1117,6 +1123,8 @@ redirector.googlevideo.com
 redirector.gvt1.com
 redirector.gvt2.com
 registry-1.docker.io
+registry.ollama.ai
+registry.ollama.com
 relaxmusic-cdn.zepp.com
 reminders-pa.googleapis.com
 replicate.com
@@ -1283,7 +1291,6 @@ tuyaus.com
 twimg.com
 twitter.com
 ty-iot.com
-tailscale.com
 ua.pool.ntp.org
 ud-chat.signal.org
 ui.ria.com
@@ -1366,6 +1373,7 @@ www.instagram.com
 www.messenger.com
 www.msftconnecttest.com
 www.msftncsi.com
+www.ollama.com
 www.redditmedia.com
 www.redditstatic.com
 www.signal.org
