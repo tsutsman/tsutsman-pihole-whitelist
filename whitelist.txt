@@ -1,4 +1,4 @@
-# Автоматично згенеровано скриптом generate_whitelist.sh
+# Автоматично згенеровано
 *.appattest.apple.com
 *.apple-cloudkit.com
 *.apple-livephotoskit.com
@@ -87,6 +87,7 @@ aliexpress.com
 amazfit.com
 amazon.com
 analytica.sytes.net
+android.apis.google.com
 android.clients.google.com
 anthropic.com
 antivirus.txt|avast.com
@@ -359,8 +360,6 @@ clientservices.googleapis.com
 cloud.mycrealitycloud.com
 cloud.nous.technology
 cloudcameraiot.oss-cn-shanghai.aliyuncs.com
-cloudflare-dns.com
-cloudflare.com
 cloudflare_warp.txt|api.cloudflareclient.com
 cloudflare_warp.txt|cdnjs.cloudflare.com
 cloudflare_warp.txt|cf-v4.cloudflare.com
@@ -380,6 +379,8 @@ cloudflare_warp.txt|update.argotunnel.com
 cloudflare_warp.txt|warp.cloudflare.com
 cloudflare_warp.txt|warp.cloudflareclient.com
 cloudflare_warp.txt|www.cloudflare.com
+cloudflare-dns.com
+cloudflare.com
 cloudflarewarp.com
 cloudfront.net
 cls-ingest.itunes.apple.com
@@ -402,7 +403,6 @@ copilot.microsoft.com
 core.telegram.org
 coursera.org
 cp4.cloudflare.com
-creality.com
 creality_print.txt|account.mycrealitycloud.com
 creality_print.txt|api.mycrealitycloud.com
 creality_print.txt|cdn.creality.com
@@ -417,6 +417,7 @@ creality_print.txt|static.creality.com
 creality_print.txt|update.creality.com
 creality_print.txt|us-west-2.aws.crealitycloud.com
 creality_print.txt|www.creality.com
+creality.com
 creative.ak.fbcdn.net
 crl.apple.com
 crl3.digicert.com
@@ -632,6 +633,7 @@ extended_services.txt|rupload.facebook.com
 extended_services.txt|s.gateway.messenger.live.com
 extended_services.txt|s.mzstatic.com
 extended_services.txt|s.youtube.com
+extended_services.txt|s{1..5}.symcb.com
 extended_services.txt|sa.symcb.com
 extended_services.txt|scontent-atl3-1.xx.fbcdn.net
 extended_services.txt|scontent-lhr3-1.xx.fbcdn.net
@@ -651,7 +653,6 @@ extended_services.txt|static.cdninstagram.com
 extended_services.txt|static.xx.fbcdn.net
 extended_services.txt|storage.signal.org
 extended_services.txt|styles.redditmedia.com
-extended_services.txt|s{1..5}.symcb.com
 extended_services.txt|t0.ssl.ak.dynamic.tiles.virtualearth.net
 extended_services.txt|t0.ssl.ak.tiles.virtualearth.net
 extended_services.txt|textsecure-service-whispersystems.org
@@ -710,7 +711,6 @@ external-lhr7-1.xx.fbcdn.net
 external-lhr8-1.xx.fbcdn.net
 external-lhr9-1.xx.fbcdn.net
 external-ort2-1.xx.fbcdn.net
-external.example
 eyecon-app.com
 fabric.io
 facebook.com
@@ -728,6 +728,7 @@ fe-cdn.zepp.com
 fe3.delivery.dsp.mp.microsoft.com.nsatc.net
 files.oaiusercontent.com
 finderapi.micloud.xiaomi.net
+firebaseinstallations.googleapis.com
 firestore.googleapis.com
 flow.zepp.com
 fonts.googleapis.com
@@ -753,7 +754,6 @@ global.download.synology.com
 global.solaxcloud.com
 go.microsoft.com
 gog.com
-google.com
 google_services.txt|0.client-channel.google.com
 google_services.txt|accounts.google.com
 google_services.txt|aistudio.google.com
@@ -803,6 +803,7 @@ google_services.txt|www.google.com
 google_services.txt|www.googleapis.com
 google_services.txt|www.gstatic.com
 google_services.txt|youtubei.googleapis.com
+google.com
 googleapis.com
 googleapis.l.google.com
 googletagmanager.com
@@ -914,8 +915,6 @@ mesu.apple.com
 meta.com
 metrics.icloud.com
 micloud.xiaomi.net
-microsoft.com
-microsoft365.com
 microsoft_onedrive.txt|*.aria.microsoft.com
 microsoft_onedrive.txt|*.docs.live.net
 microsoft_onedrive.txt|*.files.1drv.com
@@ -981,6 +980,8 @@ microsoft_updates.txt|update.microsoft.com
 microsoft_updates.txt|windowsupdate.microsoft.com
 microsoft_updates.txt|www.msftconnecttest.com
 microsoft_updates.txt|www.msftncsi.com
+microsoft.com
+microsoft365.com
 microsoftonline.com
 microsoftteams.com
 mikrotik.com
@@ -1077,6 +1078,7 @@ pg-bootstrap.itunes.apple.com
 photos.live.com
 pinterest.com
 platform.openai.com
+play-fe.googleapis.com
 play-lh.googleusercontent.com
 play.googleapis.com
 play.itunes.apple.com
@@ -1108,6 +1110,7 @@ prom.ua
 prometheus.org.ua
 promote.telegram.org
 prozorro.gov.ua
+pubsub.googleapis.com
 pumb.ua
 push.apple.com
 push.services.mozilla.com
@@ -1139,6 +1142,7 @@ rupload.facebook.com
 s.gateway.messenger.live.com
 s.mzstatic.com
 s.youtube.com
+s{1..5}.symcb.com
 s3.creality.com
 sa.symcb.com
 safebrowsing.google.com
@@ -1225,7 +1229,6 @@ swdownload.apple.com
 swscan.apple.com
 sylvan.apple.com
 synology.com
-s{1..5}.symcb.com
 t.me
 t0.ssl.ak.dynamic.tiles.virtualearth.net
 t0.ssl.ak.tiles.virtualearth.net

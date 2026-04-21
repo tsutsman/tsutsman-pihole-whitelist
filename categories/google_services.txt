@@ -48,8 +48,12 @@ redirector.gvt2.com           # завантаження Chrome/Android чере
 reminders-pa.googleapis.com
 safebrowsing.google.com
 safebrowsing.googleapis.com
+android.apis.google.com
 fcm.googleapis.com
+firebaseinstallations.googleapis.com
 notifications.googleapis.com
+play-fe.googleapis.com
+pubsub.googleapis.com
 storage.googleapis.com        # публічні об’єкти Google Cloud Storage
 time.google.com
 play-lh.googleusercontent.com # іконки та медіа Google Play
