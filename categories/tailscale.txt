@@ -1,0 +1,40 @@
+# @description: Tailscale - координаційні, relay та службові домени
+# @author: Команда проєкту whitelist
+# @last_review: 2026-04-23
+
+api.tailscale.com             # 2026-04-23 API Tailscale для керування tailnet
+console.tailscale.com         # 2026-04-23 адмінконсоль Tailscale
+controlplane.tailscale.com    # 2026-04-23 координаційний сервер для автентифікації та обміну ключами
+login.tailscale.com           # 2026-04-23 вхід у Tailscale та отримання мапи DERP
+log.tailscale.com             # 2026-04-23 журналювання клієнта Tailscale
+pkgs.tailscale.com            # 2026-04-23 пакети та оновлення клієнта Tailscale
+status.tailscale.com          # 2026-04-23 сторінка стану сервісу Tailscale
+tailscale.com                 # 2026-04-23 основний сайт, документація та інсталяція
+derp1-all.tailscale.com       # 2026-04-23 DERP relay 1 за офіційною схемою іменування
+derp2-all.tailscale.com       # 2026-04-23 DERP relay 2 за офіційною схемою іменування
+derp3-all.tailscale.com       # 2026-04-23 DERP relay 3 за офіційною схемою іменування
+derp4-all.tailscale.com       # 2026-04-23 DERP relay 4 за офіційною схемою іменування
+derp5-all.tailscale.com       # 2026-04-23 DERP relay 5 за офіційною схемою іменування
+derp6-all.tailscale.com       # 2026-04-23 DERP relay 6 за офіційною схемою іменування
+derp7-all.tailscale.com       # 2026-04-23 DERP relay 7 за офіційною схемою іменування
+derp8-all.tailscale.com       # 2026-04-23 DERP relay 8 за офіційною схемою іменування
+derp9-all.tailscale.com       # 2026-04-23 DERP relay 9 за офіційною схемою іменування
+derp10-all.tailscale.com      # 2026-04-23 DERP relay 10 за офіційною схемою іменування
+derp11-all.tailscale.com      # 2026-04-23 DERP relay 11 за офіційною схемою іменування
+derp12-all.tailscale.com      # 2026-04-23 DERP relay 12 за офіційною схемою іменування
+derp13-all.tailscale.com      # 2026-04-23 DERP relay 13 за офіційною схемою іменування
+derp14-all.tailscale.com      # 2026-04-23 DERP relay 14 за офіційною схемою іменування
+derp15-all.tailscale.com      # 2026-04-23 DERP relay 15 за офіційною схемою іменування
+derp16-all.tailscale.com      # 2026-04-23 DERP relay 16 за офіційною схемою іменування
+derp17-all.tailscale.com      # 2026-04-23 DERP relay 17 за офіційною схемою іменування
+derp18-all.tailscale.com      # 2026-04-23 DERP relay 18 за офіційною схемою іменування
+derp19-all.tailscale.com      # 2026-04-23 DERP relay 19 за офіційною схемою іменування
+derp20-all.tailscale.com      # 2026-04-23 DERP relay 20 за офіційною схемою іменування
+derp21-all.tailscale.com      # 2026-04-23 DERP relay 21 за офіційною схемою іменування
+derp22-all.tailscale.com      # 2026-04-23 DERP relay 22 за офіційною схемою іменування
+derp23-all.tailscale.com      # 2026-04-23 DERP relay 23 за офіційною схемою іменування
+derp24-all.tailscale.com      # 2026-04-23 DERP relay 24 за офіційною схемою іменування
+derp25-all.tailscale.com      # 2026-04-23 DERP relay 25 за офіційною схемою іменування
+derp26-all.tailscale.com      # 2026-04-23 DERP relay 26 за офіційною схемою іменування
+derp27-all.tailscale.com      # 2026-04-23 DERP relay 27 за офіційною схемою іменування
+derp28-all.tailscale.com      # 2026-04-23 DERP relay 28 за офіційною схемою іменування
