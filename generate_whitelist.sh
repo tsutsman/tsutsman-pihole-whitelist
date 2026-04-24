@@ -97,6 +97,14 @@ if [ "$INCLUDE_EXTERNAL_SOURCES" = "1" ] && [ -f "$SOURCES_COMBINED" ]; then
   files+=("$SOURCES_COMBINED")
 fi
 
+# Виключити службові файли категорій
+filtered_files=()
+for f in "${files[@]}"; do
+  [ "$(basename "$f")" = "comment_allowlist.txt" ] && continue
+  filtered_files+=("$f")
+done
+files=("${filtered_files[@]}")
+
 if [ "${#files[@]}" -eq 0 ]; then
   echo "Не знайдено жодного вхідного файлу" >&2
   exit 1

@@ -12,6 +12,8 @@ domains = set()
 
 files = sorted(glob.glob(os.path.join(categories_dir, "*.txt")))
 for filepath in files:
+    if os.path.basename(filepath) == "comment_allowlist.txt":
+        continue
     with open(filepath, "r", encoding="utf-8") as f:
         for line in f:
             line = line.strip()

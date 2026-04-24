@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash generate_whitelist.sh -o /tmp/whitelist_test.txt)",
+      "Read(//tmp/**)",
+      "Bash(bash *)",
+      "Bash(python3 regenerate_whitelist.py)"
+    ]
+  }
+}
