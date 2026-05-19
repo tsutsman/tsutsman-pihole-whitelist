@@ -374,7 +374,6 @@ external-lhr7-1.xx.fbcdn.net
 external-lhr8-1.xx.fbcdn.net
 external-lhr9-1.xx.fbcdn.net
 external-ort2-1.xx.fbcdn.net
-external.example
 eyecon-app.com
 fabric.io
 facebook.com
@@ -696,7 +695,12 @@ rupload.facebook.com
 s.gateway.messenger.live.com
 s.mzstatic.com
 s.youtube.com
+s1.symcb.com
+s2.symcb.com
 s3.creality.com
+s3.symcb.com
+s4.symcb.com
+s5.symcb.com
 sa.symcb.com
 safebrowsing.google.com
 safebrowsing.googleapis.com
@@ -783,7 +787,6 @@ swdownload.apple.com
 swscan.apple.com
 sylvan.apple.com
 synology.com
-s{1..5}.symcb.com
 t.me
 t0.ssl.ak.dynamic.tiles.virtualearth.net
 t0.ssl.ak.tiles.virtualearth.net
