@@ -200,6 +200,7 @@ cdn.oaistatic.com
 cdn.office.net
 cdn.openai.com
 cdn.signal.org
+cdn.tailwindcss.com
 cdn.telegram.org
 cdn.wargaming.net
 cdn.whatsapp.net
