@@ -28,6 +28,24 @@ rm -f whitelist.txt
 grep -q '^example.com' whitelist.txt
 rm -r categories/_tmpdir
 
+# Перевірка виключення службових файлів категорій
+mkdir -p categories/_tmp_service
+echo "included.example" > categories/_tmp_service/regular.txt
+echo "deprecated.example # category:regular.txt" > categories/_tmp_service/deprecated.txt
+rm -f whitelist.txt
+./generate_whitelist.sh categories/_tmp_service >/dev/null
+if ! grep -q '^included.example$' whitelist.txt; then
+  echo "Звичайний файл категорії не потрапив до whitelist" >&2
+  rm -r categories/_tmp_service
+  exit 1
+fi
+if grep -q '^deprecated.example$' whitelist.txt; then
+  echo "Службовий deprecated.txt не повинен потрапляти до whitelist" >&2
+  rm -r categories/_tmp_service
+  exit 1
+fi
+rm -r categories/_tmp_service
+
 # Перевірка видалення коментарів та дублювання доменів
 cat <<'EOF' > categories/_tmp_comments.txt
 example.com # перший
