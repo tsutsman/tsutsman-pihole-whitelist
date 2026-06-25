@@ -10,6 +10,19 @@ case "${SKIP_DNS_CHECK:-0}" in
     ;;
 esac
 
+is_service_category_file() {
+  local name
+  name="$(basename "$1")"
+  case "$name" in
+    comment_allowlist.txt|deprecated.txt)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
 if (( ! skip_dns_check )); then
   if command -v host >/dev/null 2>&1; then
     lookup_cmd=(host -W1)
@@ -28,6 +41,11 @@ check_file() {
     return 1
   fi
 
+  if is_service_category_file "$file"; then
+    echo "Службовий файл пропущено: $file"
+    return 0
+  fi
+
   local dup
   local invalid=0
   # Видаляємо коментарі, щоб дублікати шукалися лише за доменами
@@ -35,6 +53,7 @@ check_file() {
     | sed '/^\s*$/d' \
     | cut -d '#' -f1 \
     | awk '{print $1}' \
+    | sed '/^$/d' \
     | sort \
     | uniq -d)
   if [ -n "$dup" ]; then
@@ -52,13 +71,15 @@ check_file() {
         echo "Недоступний домен: $host" >&2
         invalid=1
       fi
-    done < <(grep -v '^\s*#' "$file" | sed '/^\s*$/d' | awk '{print $1}' | sed 's/^\*\.//')
+    done < <(grep -v '^\s*#' "$file" | sed '/^\s*$/d' | cut -d '#' -f1 | awk '{print $1}' | sed 's/^\*\.//' | sed '/^$/d')
   fi
 
   if (( invalid )); then
     return 1
   fi
 }
+
+shopt -s nullglob
 
 if [ "$#" -eq 0 ]; then
   set -- whitelist.txt categories/*.txt
