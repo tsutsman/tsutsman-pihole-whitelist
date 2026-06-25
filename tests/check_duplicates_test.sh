@@ -57,6 +57,21 @@ if ! SKIP_DNS_CHECK=yes ./check_duplicates.sh "$tmpdir/list.txt" >/dev/null 2>&1
   exit 1
 fi
 
+mkdir -p "$tmpdir/categories"
+echo 'bad.invalid # category:test.txt' > "$tmpdir/categories/deprecated.txt"
+echo 'test.txt|bad.invalid' > "$tmpdir/categories/comment_allowlist.txt"
+: > "$HOST_LOG"
+
+if ! ./check_duplicates.sh "$tmpdir/categories" >/dev/null 2>&1; then
+  echo "Службові файли категорій не повинні спричиняти помилку перевірки" >&2
+  exit 1
+fi
+
+if [[ -s "$HOST_LOG" ]]; then
+  echo "DNS перевірка не повинна запускатись для службових файлів" >&2
+  exit 1
+fi
+
 empty_file="$tmpdir/empty.txt"
 : > "$empty_file"
 

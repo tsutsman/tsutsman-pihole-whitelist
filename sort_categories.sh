@@ -6,8 +6,23 @@ set -euo pipefail
 dir=${1:-categories}
 shopt -s nullglob
 
+is_service_category_file() {
+  local name
+  name="$(basename "$1")"
+  case "$name" in
+    comment_allowlist.txt|deprecated.txt)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
 for file in "$dir"/*.txt; do
-  [ "$(basename "$file")" = "deprecated.txt" ] && continue
+  if is_service_category_file "$file"; then
+    continue
+  fi
 
   mapfile -t lines < "$file"
   header=()

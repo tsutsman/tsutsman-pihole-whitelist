@@ -28,6 +28,19 @@ all files inside categories/ will be processed.
 EOF
 }
 
+is_service_category_file() {
+  local name
+  name="$(basename "$1")"
+  case "$name" in
+    comment_allowlist.txt|deprecated.txt)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
 args=()
 
 while [ "$#" -gt 0 ]; do
@@ -97,10 +110,12 @@ if [ "$INCLUDE_EXTERNAL_SOURCES" = "1" ] && [ -f "$SOURCES_COMBINED" ]; then
   files+=("$SOURCES_COMBINED")
 fi
 
-# Виключити службові файли категорій
+# Виключити службові файли категорій, які не є джерелами доменів для whitelist.
 filtered_files=()
 for f in "${files[@]}"; do
-  [ "$(basename "$f")" = "comment_allowlist.txt" ] && continue
+  if is_service_category_file "$f"; then
+    continue
+  fi
   filtered_files+=("$f")
 done
 files=("${filtered_files[@]}")

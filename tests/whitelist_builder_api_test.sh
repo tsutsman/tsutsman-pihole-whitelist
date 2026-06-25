@@ -64,8 +64,13 @@ import json, os
 payload = json.loads(os.environ["CATEGORIES_PAYLOAD"])
 if payload.get("status") != "ok":
     raise SystemExit("Некоректна відповідь /api/categories")
-if not payload.get("categories"):
+categories = payload.get("categories") or []
+if not categories:
     raise SystemExit("Перелік категорій порожній")
+names = {item.get("name") for item in categories}
+for service_name in {"comment_allowlist.txt", "deprecated.txt"}:
+    if service_name in names:
+        raise SystemExit(f"Службовий файл {service_name} не повинен повертатись як категорія")
 PY
 
 response=$(curl -fs -X POST "http://127.0.0.1:$port/api/build" \
@@ -95,6 +100,14 @@ file_path="$tmpdir/output/$file_name"
 
 if [[ ! -s "$file_path" ]]; then
   echo "Згенерований файл не знайдено" >&2
+  exit 1
+fi
+
+if curl -fs -X POST "http://127.0.0.1:$port/api/build" \
+  -H "Authorization: Bearer $api_token" \
+  -H 'Content-Type: application/json' \
+  -d '{"categories":["comment_allowlist.txt"],"include_external":false}' >/dev/null; then
+  echo "Службовий comment_allowlist.txt не повинен прийматись як категорія" >&2
   exit 1
 fi
 
