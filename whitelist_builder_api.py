@@ -26,6 +26,7 @@ class CategoryInfo:
 
 
 ROOT = pathlib.Path(__file__).resolve().parent
+SERVICE_CATEGORY_FILES = {"comment_allowlist.txt", "deprecated.txt"}
 
 
 def _read_json(handler: BaseHTTPRequestHandler) -> Any:
@@ -50,6 +51,10 @@ def _safe_join(base: pathlib.Path, *parts: str) -> pathlib.Path:
     return candidate
 
 
+def _is_service_category_file(path: pathlib.Path) -> bool:
+    return path.name in SERVICE_CATEGORY_FILES
+
+
 def _count_domains(path: pathlib.Path) -> int:
     count = 0
     with path.open("r", encoding="utf-8") as fh:
@@ -67,7 +72,6 @@ def _append_log(path: pathlib.Path, message: str) -> None:
         fh.write(f"{timestamp}\t{message}\n")
 
 
-
 class BuilderConfig:
     """Налаштування сервера."""
 
@@ -76,7 +80,7 @@ class BuilderConfig:
         if not self.categories_dir.exists():
             return items
         for path in sorted(self.categories_dir.glob("*.txt")):
-            if path.name == "deprecated.txt":
+            if _is_service_category_file(path):
                 continue
             count = _count_domains(path)
             description = self._extract_description(path)
@@ -132,6 +136,8 @@ class BuilderConfig:
             candidate = _safe_join(self.categories_dir, value)
         if not candidate.exists():
             raise ValueError(f"Категорію {value} не знайдено")
+        if candidate.parent == self.categories_dir and _is_service_category_file(candidate):
+            raise ValueError(f"Службовий файл {candidate.name} не можна використовувати як категорію")
         return candidate
 
     def resolve_extra(self, value: str) -> pathlib.Path:
@@ -143,7 +149,6 @@ class BuilderConfig:
             if not allowed:
                 raise ValueError("Шлях не входить до списку дозволених extra-path")
         return candidate
-
 
 
 class BuilderHTTPServer(ThreadingHTTPServer):
