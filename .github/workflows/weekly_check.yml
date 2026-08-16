@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: '0 3 * * 0'
 
+permissions:
+  contents: read
+  issues: write
+
 jobs:
   scheduled:
     runs-on: ubuntu-latest
@@ -13,11 +17,22 @@ jobs:
         id: duplicates
         run: |
           chmod +x ./check_duplicates.sh
+          set +e
           output=$(./check_duplicates.sh 2>&1)
+          status=$?
+          set -e
           echo "$output"
           echo "result<<EOF" >> "$GITHUB_OUTPUT"
           echo "$output" >> "$GITHUB_OUTPUT"
           echo "EOF" >> "$GITHUB_OUTPUT"
+
+          if (( status != 0 )) && grep -q 'Знайдені дублікати' <<< "$output"; then
+            exit "$status"
+          fi
+          if (( status != 0 )) && ! grep -q 'Недоступний домен:' <<< "$output"; then
+            exit "$status"
+          fi
+
       - name: Створити або оновити issue для недоступних доменів
         if: contains(steps.duplicates.outputs.result, 'Недоступний домен:')
         env:
