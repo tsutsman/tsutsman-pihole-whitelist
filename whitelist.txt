@@ -9,6 +9,7 @@
 *.aria.microsoft.com
 *.auto.ria.com
 *.business.apple.com
+*.chatgpt.com
 *.crashlytics.com
 *.demdex.net
 *.docs.live.net
@@ -36,10 +37,13 @@
 *.microsoft.com
 *.microsoftteams.com
 *.mzstatic.com
+*.oaistatic.com
+*.oaiusercontent.com
 *.office.com
 *.officeapps.live.com
 *.omtrdc.net
 *.onedrive.com
+*.openai.com
 *.pinimg.com
 *.policies.live.net
 *.push.apple.com
@@ -47,10 +51,14 @@
 *.school.apple.com
 *.servicebus.windows.net
 *.settings.live.net
+*.sharepoint.com
+*.sharepointonline.com
 *.slack.com
 *.smoot.apple.com
 *.storage.live.com
+*.svc.ms
 *.vertexsmb.com
+*.wns.windows.com
 *.zoom.us
 0-edge-chat.facebook.com
 0.client-channel.google.com
@@ -75,7 +83,7 @@ acskidd.gov.ua
 activity.windows.com
 adguard-dns.com
 adguard.com
-ads.telegram.org
+admin.onedrive.com
 agro.ria.com
 aistudio.google.com
 ajax.googleapis.com
@@ -90,7 +98,6 @@ analytica.sytes.net
 android.apis.google.com
 android.clients.google.com
 anthropic.com
-api-analytics-de.zepp.com
 api-business.apple.com
 api-mifit-de2.zepp.com
 api-mifit.huami.com
@@ -132,7 +139,6 @@ api.telegram.org
 api.twitter.com
 api.xiaoyi.com
 apis.live.net
-app-analytics-de.zepp.com
 app-site-association.cdn-apple.com
 app-site-association.networking.apple
 app.diia.gov.ua
@@ -199,16 +205,19 @@ cdn.jsdelivr.net
 cdn.oaistatic.com
 cdn.office.net
 cdn.openai.com
+cdn.openaimerge.com
 cdn.signal.org
 cdn.tailwindcss.com
 cdn.telegram.org
 cdn.wargaming.net
 cdn.whatsapp.net
+cdn.workos.com
 cdninstagram.com
 cdnjs.cloudflare.com
 cert.mgt.xboxlive.com
 certs.apple.com
 cf-v4.cloudflare.com
+challenges.cloudflare.com
 chat.openai.com
 chat.ria.com
 chat.signal.org
@@ -400,6 +409,7 @@ fonts.gstatic.com
 forms.novapost.world
 forum.dietpi.com
 forum.mikrotik.com
+forwarder.workos.com
 fragment.com
 freepik.com
 g.live.com
@@ -463,6 +473,7 @@ idmsa.apple.com
 idv-prod1.apple.com
 idv.cdn-apple.com
 ig.apple.com
+images.workoscdn.com
 img-cdn.huami.com
 img-cdn.zepp.com
 index.docker.io
@@ -529,7 +540,6 @@ mega.co.nz
 mega.nz
 messenger.com
 mesu.apple.com
-meta.com
 metrics.icloud.com
 micloud.xiaomi.net
 microsoft.com
@@ -662,7 +672,6 @@ production.cloudflare.docker.com
 products.office.com
 prom.ua
 prometheus.org.ua
-promote.telegram.org
 prozorro.gov.ua
 pubsub.googleapis.com
 pumb.ua
@@ -720,6 +729,7 @@ services.ukrposhta.ua
 settings-win.data.microsoft.com
 settings.live.net
 setup.icloud.com
+setup.workos.com
 shopify.com
 signal.org
 site-assets.novapost.com
@@ -917,6 +927,7 @@ windowsupdate.com
 windowsupdate.microsoft.com
 wise.com
 wkms-public.apple.com
+workos.imgix.net
 wotblitz.com
 wotblitz.eu
 ws-ee-maidsvc.icloud.com
