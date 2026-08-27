@@ -28,7 +28,6 @@ login.windows.net
 *.svc.ms                     # службові Microsoft 365 endpoints для OneDrive/SharePoint
 *.wns.windows.com            # Windows Push Notification Services для клієнта OneDrive
 admin.onedrive.com           # керування та службові запити OneDrive
-client.office.com            # Microsoft 365 client services
 officeclient.microsoft.com   # клієнтські служби Office/OneDrive
 
 # Live-додатки
