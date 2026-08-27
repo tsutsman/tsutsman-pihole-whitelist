@@ -1,0 +1,51 @@
+name: One-shot regeneration
+
+on:
+  push:
+    branches:
+      - codex/audit-whitelist-2026-08-27
+    paths:
+      - '.github/workflows/one_shot_regen.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: codex/audit-whitelist-2026-08-27
+          fetch-depth: 0
+
+      - name: Patch documentation
+        run: python3 scripts/one_shot_maintenance.py
+
+      - name: Regenerate artifacts
+        shell: bash
+        run: |
+          chmod +x ./generate_whitelist.sh ./analyze_domains.py ./generate_stats_report.sh
+          ./generate_whitelist.sh
+          ./generate_whitelist.sh --exact-only -o whitelist-exact.txt
+          ./analyze_domains.py
+          REPORT_TIMESTAMP_MODE=keep \
+          DASHBOARD_TIMESTAMP_MODE=keep \
+          REPORT_FOOTER_TIMESTAMP_MODE=keep \
+          HISTORY_TIMESTAMP_MODE=keep \
+          ./generate_stats_report.sh
+
+      - name: Commit generated changes
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md README.en.md whitelist.txt whitelist-exact.txt \
+            docs/domain_analysis.md docs/domain_analysis.json \
+            docs/data_stats.md docs/data_stats.en.md docs/dashboard.html docs/data_history.json
+          if git diff --cached --quiet; then
+            echo 'No generated changes.'
+            exit 0
+          fi
+          git commit -m 'chore: regenerate audited whitelist artifacts and docs'
+          git push origin HEAD:codex/audit-whitelist-2026-08-27
