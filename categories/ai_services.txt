@@ -1,6 +1,6 @@
 # @description: AI-сервіси — платформи для роботи з ШІ
 # @author: Команда проєкту whitelist
-# @last_review: 2026-04-20
+# @last_review: 2026-08-27
 
 aistudio.google.com      # інтерфейс Google AI Studio
 anthropic.com            # інформація та документація Anthropic
@@ -38,3 +38,16 @@ replicate.com            # запуск AI-моделей
 stability.ai             # розробник Stable Diffusion
 www.ollama.com           # вебсайт Ollama (www)
 x.ai                     # головна сторінка xAI
+
+# ChatGPT/OpenAI: актуальні функціональні хости з офіційних network recommendations
+*.chatgpt.com             # веб- та службові піддомени ChatGPT
+*.oaistatic.com           # статичні ресурси ChatGPT
+*.oaiusercontent.com      # файли, вкладення та користувацький контент ChatGPT
+*.openai.com              # авторизація, API, desktop/mobile та службові піддомени OpenAI
+cdn.openaimerge.com       # CDN ресурсів ChatGPT/OpenAI
+cdn.workos.com            # ресурси WorkOS для авторизації ChatGPT
+forwarder.workos.com      # redirect/forwarder WorkOS під час авторизації
+images.workoscdn.com      # зображення та ресурси WorkOS
+setup.workos.com          # налаштування й завершення auth-flow WorkOS
+workos.imgix.net          # CDN зображень WorkOS
+challenges.cloudflare.com # Cloudflare challenge для входу та захисту ChatGPT
