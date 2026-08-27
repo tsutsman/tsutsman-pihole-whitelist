@@ -1,0 +1,121 @@
+#!/usr/bin/env python3
+from pathlib import Path
+import re
+
+
+def replace_once(text: str, old: str, new: str, label: str) -> str:
+    if old not in text:
+        raise SystemExit(f"Missing replacement fragment: {label}")
+    return text.replace(old, new, 1)
+
+
+def regex_once(text: str, pattern: str, replacement: str, label: str) -> str:
+    updated, count = re.subn(pattern, replacement, text, count=1, flags=re.S)
+    if count != 1:
+        raise SystemExit(f"Expected one regex replacement for {label}, got {count}")
+    return updated
+
+
+ua_path = Path("README.md")
+ua = ua_path.read_text(encoding="utf-8")
+ua = replace_once(
+    ua,
+    "- `comfort_pack.txt` — CDN (Akamai, CloudFront, Fastly) та мультимедіа Facebook/WhatsApp/Instagram для комфортного серфінгу з агресивними блоклистами.",
+    "- `comfort_pack.txt` — **опційний** широкий набір CDN/мультимедіа для агресивних блоклистів; до стандартного `whitelist.txt` не входить і додається лише явно.",
+    "UA comfort_pack",
+)
+ua = replace_once(
+    ua,
+    "Якщо у файлі категорії з'являється новий домен без коментаря, перевірка завершиться помилкою і підкаже, який рядок потрібно доповнити. Коли для старих записів коментар ще не додано, зберігайте причину у `comment_allowlist.txt`. Після того як пояснення з'явиться безпосередньо у файлі категорії, відповідний рядок зі списку винятків слід вилучити.",
+    "У strict-режимі скрипт вимагає коментар для кожного домену або явний запис у `comment_allowlist.txt`. У CI використовується `COMMENT_BASE_REF`: старий технічний борг без коментарів допускається як baseline, але **кожен новий uncommented domain блокує PR**. Після додавання пояснення тимчасовий запис із `comment_allowlist.txt` слід вилучити.",
+    "UA comments policy",
+)
+ua = regex_once(
+    ua,
+    r"- \*\*Через командний рядок Linux:\*\*\n  - Pi-hole v5:\n    ```bash\n    xargs -a categories/apple\.txt -L1 sudo pihole -w\n    ```\n  - Pi-hole v6:\n    ```bash\n    sudo pihole-FTL whitelist add \$\(cat categories/apple\.txt\)\n    ```",
+    "- **Через командний рядок Linux (Pi-hole v5/v6):**\n  ```bash\n  sudo ./apply_whitelist.sh categories/apple.txt\n  ```\n  Скрипт сам визначає версію Pi-hole, ігнорує коментарі та коректно обробляє `*.domain` як wildcard allowlist.",
+    "UA selective CLI",
+)
+ua = replace_once(
+    ua,
+    "./generate_whitelist.sh              # всі категорії\n./generate_whitelist.sh categories/cloud_storage.txt extra_dir/  # вибіркові файли чи каталоги\n./generate_whitelist.sh -o exports/custom.txt                   # запис у довільний файл\nOUTFILE=exports/custom.txt ./generate_whitelist.sh              # альтернатива через змінну середовища",
+    "./generate_whitelist.sh                                   # стандартні категорії, без comfort_pack\n./generate_whitelist.sh categories/comfort_pack.txt             # явно згенерувати опційний comfort pack\n./generate_whitelist.sh categories/cloud_storage.txt extra_dir/ # вибіркові файли чи каталоги\n./generate_whitelist.sh --exact-only -o whitelist-exact.txt     # exact-only для Pi-hole v6 subscribed allowlist\nOUTFILE=exports/custom.txt ./generate_whitelist.sh               # власний шлях через змінну середовища",
+    "UA generation examples",
+)
+ua = regex_once(
+    ua,
+    r"4\. Для автоматичного додавання можна скористатися API pihole\..*?див\. розділ \[«Автоматичне оновлення білого списку»\]\(#автоматичне-оновлення-білого-списку\)\)\.",
+    "4. Для Pi-hole v6 можна підписатися на exact-only список `whitelist-exact.txt`. У керуванні subscribed lists додайте raw URL цього файла та **обов’язково виберіть тип Allowlist (antigravity), а не Blocklist**. Після цього запустіть оновлення Gravity. Wildcard-записи з повного `whitelist.txt` застосовуйте через `apply_whitelist.sh`.",
+    "UA usage API/adlist",
+)
+ua = regex_once(
+    ua,
+    r"### Приклади для Pi-hole v5 та v6\n\n- \*\*Pi-hole v5\*\*:.*?sudo pihole-FTL whitelist add \$\(cat whitelist\.txt\)\n  ```",
+    "### Приклад для Pi-hole v5 та v6\n\n```bash\nsudo ./apply_whitelist.sh whitelist.txt\n```\n\n`apply_whitelist.sh` використовує `pihole -w` для v5 та актуальні `pihole allow` / `pihole --allow-wild` для v6.",
+    "UA version examples",
+)
+ua = regex_once(
+    ua,
+    r"1\. \*\*Додавання URL до Adlists\*\*.*?Під час кожного запуску `pihole updateGravity` \(зазвичай через вбудований cron\) Pi-hole завантажуватиме свіжу версію списку\.",
+    "1. **Subscribed allowlist у Pi-hole v6**  \n   Використовуйте raw URL `whitelist-exact.txt` і додайте його у керуванні списками саме як **Allowlist / antigravity**. Не додавайте whitelist як стандартний blocklist. Після зміни виконайте `sudo pihole updateGravity`. Exact-only артефакт навмисно не містить `*.domain`; wildcard-и застосовуються через `apply_whitelist.sh`.",
+    "UA auto update",
+)
+ua = replace_once(
+    ua,
+    "Скрипт повідомить про дублікати та недоступні домени. Якщо потрібно пропустити DNS-перевірку (наприклад, у середовищі без доступу до мережі), встановіть змінну `SKIP_DNS_CHECK=1`.\n\nТу саму перевірку виконує GitHub Actions при кожному Pull Request, тож\nякщо дублікати з'являться, перевірка завершиться помилкою.\nКрім того, щотижня запускається окрема перевірка, що повідомляє про можливі проблеми у списках.",
+    "Скрипт повідомляє про дублікати та DNS-недоступність exact-domain записів; wildcard-бази навмисно не resolve’яться, бо це дає false-positive. `SKIP_DNS_CHECK=1` залишає лише детерміновану перевірку дублікатів.\n\nУ Pull Request **blocking** є дублікати та неактуальні generated-файли; зовнішня DNS-доступність не блокує merge. Окремий щотижневий workflow виконує advisory DNS-скан і створює/оновлює issue для підозрілих exact-domain endpoints.",
+    "UA checks policy",
+)
+ua = replace_once(
+    ua,
+    "3. Запустіть `./check_duplicates.sh` без параметрів, щоб переконатися у відсутності дублювань та недоступних доменів.\n4. Згенеруйте оновлений `whitelist.txt` через `./generate_whitelist.sh`.\n5. Створіть Pull Request з коротким описом змін.",
+    "3. Запустіть `SKIP_DNS_CHECK=1 ./check_duplicates.sh`, щоб детерміновано перевірити дублікати.\n4. Згенеруйте `whitelist.txt` і `whitelist-exact.txt`; CI перевірить їхню синхронність.\n5. Створіть Pull Request з коротким описом змін; DNS-доступність exact endpoints перевіряється окремим щотижневим моніторингом.",
+    "UA contributing",
+)
+ua_path.write_text(ua, encoding="utf-8")
+
+en_path = Path("README.en.md")
+en = en_path.read_text(encoding="utf-8")
+en = replace_once(
+    en,
+    "- `international_banks.txt` — international payment services.",
+    "- `international_banks.txt` — international payment services.\n- `comfort_pack.txt` — **optional** broad CDN/media compatibility pack; excluded from the default `whitelist.txt` unless explicitly selected.",
+    "EN comfort_pack",
+)
+en = regex_once(
+    en,
+    r"- \*\*From the Linux command line:\*\*\n  - Pi-hole v5:\n    ```bash\n    xargs -a categories/apple\.txt -L1 sudo pihole -w\n    ```\n  - Pi-hole v6:\n    ```bash\n    sudo pihole-FTL whitelist add \$\(cat categories/apple\.txt\)\n    ```",
+    "- **From the Linux command line (Pi-hole v5/v6):**\n  ```bash\n  sudo ./apply_whitelist.sh categories/apple.txt\n  ```\n  The script detects the Pi-hole version, ignores comments, and applies `*.domain` entries as wildcard allowlist rules.",
+    "EN selective CLI",
+)
+en = replace_once(
+    en,
+    "./generate_whitelist.sh              # all categories\n./generate_whitelist.sh categories/cloud_storage.txt extra_dir/  # specific files or folders\n./generate_whitelist.sh -o exports/custom.txt                   # save to a custom file\nOUTFILE=exports/custom.txt ./generate_whitelist.sh              # alternative via environment variable",
+    "./generate_whitelist.sh                                   # standard categories, excluding comfort_pack\n./generate_whitelist.sh categories/comfort_pack.txt             # explicitly build the optional comfort pack\n./generate_whitelist.sh categories/cloud_storage.txt extra_dir/ # selected files or folders\n./generate_whitelist.sh --exact-only -o whitelist-exact.txt     # exact-only Pi-hole v6 subscribed allowlist\nOUTFILE=exports/custom.txt ./generate_whitelist.sh               # custom path through the environment",
+    "EN generation examples",
+)
+en = regex_once(
+    en,
+    r"4\. For automatic addition you can use pihole's API\..*?so pihole can automatically fetch updates\.",
+    "4. Pi-hole v6 can subscribe to the exact-only `whitelist-exact.txt`. Add its raw URL as a subscribed **Allowlist / antigravity**, not as a blocklist, then update Gravity. Use `apply_whitelist.sh` for the full `whitelist.txt`, because it contains wildcard rules.",
+    "EN usage API/adlist",
+)
+en = regex_once(
+    en,
+    r"1\. \*\*Add the URL to Adlists\*\*.*?Each `pihole updateGravity` run \(usually via cron\) will fetch the latest list\.",
+    "1. **Pi-hole v6 subscribed allowlist**\n   Use the raw `whitelist-exact.txt` URL and configure it as an **Allowlist / antigravity** subscribed list. Do not add a whitelist URL as a normal blocklist. Run `sudo pihole updateGravity` after changing the subscription. The exact-only artifact intentionally excludes `*.domain`; apply wildcard rules with `apply_whitelist.sh`.",
+    "EN auto update",
+)
+en = replace_once(
+    en,
+    "The script reports duplicates and unreachable domains. If you need to skip DNS checks (for example, in an offline environment), set `SKIP_DNS_CHECK=1`.\nGitHub Actions performs the same check on each Pull Request, so failures will block the merge.\nA weekly workflow also scans the lists and reports potential issues.",
+    "The script reports duplicates and DNS availability for exact-domain entries. Wildcard base domains are intentionally not resolved because that produces false positives. Set `SKIP_DNS_CHECK=1` for the deterministic duplicate-only check.\nPull Requests block on duplicates and stale generated artifacts, while external DNS availability is advisory. A weekly workflow performs the DNS scan and opens/updates an issue for suspicious exact-domain endpoints.",
+    "EN checks policy",
+)
+en = replace_once(
+    en,
+    "3. Run `./check_duplicates.sh` with no parameters to ensure there are no duplicates or unreachable hosts.\n4. Regenerate `whitelist.txt` via `./generate_whitelist.sh`.\n5. Open a Pull Request summarizing your changes.",
+    "3. Run `SKIP_DNS_CHECK=1 ./check_duplicates.sh` for the deterministic duplicate check.\n4. Regenerate both `whitelist.txt` and `whitelist-exact.txt`; CI verifies that generated artifacts are current.\n5. Open a Pull Request summarizing your changes; exact-domain DNS availability is monitored separately by the weekly workflow.",
+    "EN contributing",
+)
+en_path.write_text(en, encoding="utf-8")
