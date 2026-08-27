@@ -10,6 +10,7 @@ set -euo pipefail
 OUTFILE=${OUTFILE:-"whitelist.txt"}
 SOURCES_COMBINED=${SOURCES_COMBINED:-"sources/generated/all_sources.txt"}
 INCLUDE_EXTERNAL_SOURCES=${INCLUDE_EXTERNAL_SOURCES:-1}
+EXACT_ONLY=0
 
 print_usage() {
   cat <<'EOF'
@@ -18,6 +19,8 @@ Usage:      ./generate_whitelist.sh [options] [files_or_directories]
 
   -o, --output Файл для збереження результату (за замовчуванням whitelist.txt або значення змінної OUTFILE)
   -o, --output Path to save the combined whitelist (defaults to whitelist.txt or the OUTFILE env var)
+      --exact-only Виключити wildcard-записи (*.domain); зручно для Pi-hole v6 subscribed allowlist
+      --exact-only Exclude wildcard entries (*.domain); useful for Pi-hole v6 subscribed allowlists
   -h, --help   Показати цю довідку
   -h, --help   Show this help message
 
@@ -67,6 +70,10 @@ while [ "$#" -gt 0 ]; do
       fi
       OUTFILE="$2"
       shift 2
+      ;;
+    --exact-only)
+      EXACT_ONLY=1
+      shift
       ;;
     -h|--help)
       print_usage
@@ -145,11 +152,12 @@ if [ "${#files[@]}" -eq 0 ]; then
   exit 1
 fi
 
-# Збираємо рядки, обрізаємо коментарі та усуваємо дублікати
+# Збираємо рядки, обрізаємо коментарі, за потреби вилучаємо wildcard і усуваємо дублікати.
 cat "${files[@]}" \
   | sed 's/#.*//' \
   | sed 's/^[ \t]*//;s/[ \t]*$//' \
   | sed '/^$/d' \
+  | awk -v exact_only="$EXACT_ONLY" '!(exact_only == 1 && $0 ~ /^\*\./)' \
   | LC_ALL=C sort -u >> "$OUTFILE"
 
 echo "Файл $OUTFILE згенеровано"
