@@ -52,7 +52,7 @@ while IFS= read -r line; do
     if [ "$PIHOLE_VER" -ge 6 ]; then
       pihole --allow-wild "$base_domain"
     else
-      escaped_domain="${base_domain//./\\\\.}"
+      escaped_domain="${base_domain//./\\.}"
       pihole --white-regex "(^|\\.)${escaped_domain}$"
     fi
   elif [ "$PIHOLE_VER" -ge 6 ]; then
