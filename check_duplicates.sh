@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Скрипт перевіряє списки на дублікати та доступність доменів.
+# Скрипт перевіряє списки на дублікати та доступність точних доменів.
+# Wildcard-записи (*.example.com) не DNS-resolve'яться: відсутність запису в apex не означає,
+# що wildcard endpoint недійсний.
 # Використання: ./check_duplicates.sh [файли або каталоги]
 set -euo pipefail
 
@@ -66,12 +68,15 @@ check_file() {
 
   if (( ! skip_dns_check )); then
     while read -r host; do
+      [[ -z "$host" ]] && continue
+      # Для wildcard не перевіряємо apex/base domain: такий тест дає систематичні false-positive.
+      [[ "$host" == \*.* ]] && continue
       if ! "${lookup_cmd[@]}" "$host" 2>&1 |
         grep -Eq '([0-9]{1,3}\.){3}[0-9]{1,3}|([0-9a-fA-F]{1,4}:){1,7}[0-9a-fA-F]{1,4}'; then
         echo "Недоступний домен: $host" >&2
         invalid=1
       fi
-    done < <(grep -v '^\s*#' "$file" | sed '/^\s*$/d' | cut -d '#' -f1 | awk '{print $1}' | sed 's/^\*\.//' | sed '/^$/d')
+    done < <(grep -v '^\s*#' "$file" | sed '/^\s*$/d' | cut -d '#' -f1 | awk '{print $1}' | sed '/^$/d')
   fi
 
   if (( invalid )); then
