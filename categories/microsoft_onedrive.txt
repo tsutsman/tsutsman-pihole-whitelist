@@ -1,7 +1,6 @@
 # @description: Microsoft OneDrive — домени хмарного сховища Microsoft
 # @author: Команда проєкту whitelist
-# @last_review: 2024-05-01
-
+# @last_review: 2026-08-27
 
 # Основні
 *.files.1drv.com
@@ -23,6 +22,15 @@ login.windows.net
 *.office.com
 *.officeapps.live.com
 
+# OneDrive for Business / SharePoint Online — актуальні Microsoft 365 endpoints
+*.sharepoint.com             # сайти та файли SharePoint Online / OneDrive for Business
+*.sharepointonline.com       # службові endpoints SharePoint Online
+*.svc.ms                     # службові Microsoft 365 endpoints для OneDrive/SharePoint
+*.wns.windows.com            # Windows Push Notification Services для клієнта OneDrive
+admin.onedrive.com           # керування та службові запити OneDrive
+client.office.com            # Microsoft 365 client services
+officeclient.microsoft.com   # клієнтські служби Office/OneDrive
+
 # Live-додатки
 api.live.net
 apis.live.net
@@ -41,9 +49,9 @@ skyapi.live.net
 skydrive.live.com
 snapi.live.net
 
-# CDN / телеметрія
+# CDN / телеметрія — залишено для максимальної сумісності з офіційним переліком OneDrive Consumer
 *.crashlytics.com       # Crashlytics API
-fabric.io
+fabric.io               # Crashlytics/Fabric для діагностики клієнта
 *.mesh.com
 oneclient.sfx.ms
 p.sfx.ms
@@ -59,9 +67,9 @@ token.cp.microsoft.com                       # видача токенів Micro
 tokensit.cp.microsoft-tst.com                # тестова видача токенів
 vas.samsungapps.com                          # магазин Samsung
 
-# Старі / додаткові
-*.demdex.net         # аналітика Adobe
+# Старі / додаткові — залишено для сумісності зі старими клієнтами
+*.demdex.net         # аналітика Adobe; присутня в офіційному переліку OneDrive Consumer
 *.gfx.ms             # ресурси Microsoft
 *.livefilestore.com  # старий сервіс зберігання Microsoft
-*.omtrdc.net         # аналітика Adobe
+*.omtrdc.net         # аналітика Adobe; присутня в офіційному переліку OneDrive Consumer
 skydrive.com         # попередня назва OneDrive
