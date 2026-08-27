@@ -49,6 +49,8 @@ REMOVAL_HISTORY_LIMIT=10 \
 
 grep -q 'Активних доменів у категоріях: 2' "$tmpdir/docs/report.md"
 grep -q 'Sample source' "$tmpdir/docs/report.md"
+grep -q '| sample.txt | 2 | 2 | 66.7% | 2024-05-01 |' "$tmpdir/docs/report.md"
+grep -q '| sample.txt | 2 | 2 | 66.7% | 2024-05-01 |' "$tmpdir/docs/report.en.md"
 
 if [[ ! -s "$tmpdir/docs/dashboard.html" ]]; then
   echo "HTML-звіт не створено" >&2
@@ -57,6 +59,7 @@ fi
 
 grep -q 'Моніторинг білого списку Pi-hole' "$tmpdir/docs/dashboard.html"
 grep -q 'Журнал видалень' "$tmpdir/docs/dashboard.html"
+grep -q '<td>2024-05-01</td>' "$tmpdir/docs/dashboard.html"
 
 if [[ ! -s "$tmpdir/docs/history.json" ]]; then
   echo "Історію не збережено" >&2
