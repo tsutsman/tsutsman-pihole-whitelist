@@ -4,17 +4,30 @@ on:
   schedule:
     - cron: '0 3 * * 0'
 
+permissions:
+  contents: read
+  issues: write
+
 jobs:
   scheduled:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
+      - name: Встановити залежності
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y dnsutils jq
       - name: Запустити перевірку списків
         id: duplicates
+        shell: bash
         run: |
           chmod +x ./check_duplicates.sh
-          output=$(./check_duplicates.sh 2>&1)
+          set +e
+          output=$(./check_duplicates.sh categories 2>&1)
+          status=$?
+          set -e
           echo "$output"
+          echo "status=$status" >> "$GITHUB_OUTPUT"
           echo "result<<EOF" >> "$GITHUB_OUTPUT"
           echo "$output" >> "$GITHUB_OUTPUT"
           echo "EOF" >> "$GITHUB_OUTPUT"
@@ -23,12 +36,17 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          domains=$(echo "${{ steps.duplicates.outputs.result }}" | grep 'Недоступний домен:' | sed 's/.*Недоступний домен: //')
-          body=$(printf '%s\n' "$domains")
-          existing_issue=$(curl -s -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/${{ github.repository }}/issues?state=open&per_page=100" | jq -r '[.[] | select(.title | startswith("Недоступні домени"))][0].number')
+          domains=$(echo "${{ steps.duplicates.outputs.result }}" | grep 'Недоступний домен:' | sed 's/.*Недоступний домен: //' | sort -u)
+          body=$(printf 'Автоматична DNS-перевірка виявила такі exact-domain endpoints:\n\n%s\n\n> Wildcard-записи навмисно не перевіряються через DNS, щоб уникати false-positive.' "$domains")
+          existing_issue=$(curl -s -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/${{ github.repository }}/issues?state=open&per_page=100" | jq -r '[.[] | select(.title | startswith("Недоступні домени"))][0].number // empty')
           if [ -n "$existing_issue" ]; then
             curl -s -H "Authorization: Bearer $GH_TOKEN" -X POST -d "$(jq -nc --arg body "$body" '{body:$body}')" "https://api.github.com/repos/${{ github.repository }}/issues/$existing_issue/comments"
           else
             title="Недоступні домени $(date +'%Y-%m-%d')"
             curl -s -H "Authorization: Bearer $GH_TOKEN" -X POST -d "$(jq -nc --arg title "$title" --arg body "$body" '{title:$title, body:$body}')" "https://api.github.com/repos/${{ github.repository }}/issues"
           fi
+      - name: Заблокувати workflow лише при дублюваннях
+        if: contains(steps.duplicates.outputs.result, 'Знайдені дублікати у')
+        run: |
+          echo 'Виявлено дублікати у категоріях.' >&2
+          exit 1
