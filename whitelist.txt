@@ -10,6 +10,7 @@
 *.auto.ria.com
 *.business.apple.com
 *.chatgpt.com
+*.cloud.microsoft
 *.crashlytics.com
 *.demdex.net
 *.docs.live.net
@@ -55,8 +56,10 @@
 *.sharepointonline.com
 *.slack.com
 *.smoot.apple.com
+*.static.microsoft
 *.storage.live.com
 *.svc.ms
+*.usercontent.microsoft
 *.vertexsmb.com
 *.wns.windows.com
 *.zoom.us
