@@ -7,6 +7,7 @@ trap 'rm -rf "$tmpdir"' EXIT
 cat <<'LIST' > "$tmpdir/list.txt"
 good.com
 bad.invalid
+*.wild.invalid
 LIST
 
 HOST_LOG="$tmpdir/host_calls.log"
@@ -37,6 +38,11 @@ fi
 
 if ! grep -q 'good.com' "$HOST_LOG"; then
   echo "DNS перевірка не викликала host" >&2
+  exit 1
+fi
+
+if grep -q 'wild.invalid' "$HOST_LOG"; then
+  echo "Wildcard base domain не повинен DNS-resolve'итись" >&2
   exit 1
 fi
 
