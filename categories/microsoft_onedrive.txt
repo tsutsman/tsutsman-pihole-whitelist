@@ -22,6 +22,11 @@ login.windows.net
 *.office.com
 *.officeapps.live.com
 
+# Microsoft 365 Unified Domains — Required у поточному endpoint catalog Microsoft 365
+*.cloud.microsoft           # автентифіковані Microsoft SaaS experiences
+*.static.microsoft          # статичний контент Microsoft 365 через CDN
+*.usercontent.microsoft     # ізольований користувацький контент Microsoft 365
+
 # OneDrive for Business / SharePoint Online — актуальні Microsoft 365 endpoints
 *.sharepoint.com             # сайти та файли SharePoint Online / OneDrive for Business
 *.sharepointonline.com       # службові endpoints SharePoint Online
