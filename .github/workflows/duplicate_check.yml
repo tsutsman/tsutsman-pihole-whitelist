@@ -20,11 +20,12 @@ jobs:
         run: |
           chmod +x ./check_duplicates.sh
           SKIP_DNS_CHECK=1 ./check_duplicates.sh
-      - name: Перевірити актуальність whitelist.txt
+      - name: Перевірити актуальність whitelist-артефактів
         run: |
           chmod +x ./generate_whitelist.sh
           ./generate_whitelist.sh
-          if ! git diff --quiet --exit-code whitelist.txt; then
-            echo 'whitelist.txt не актуальний, запустіть generate_whitelist.sh' >&2
+          ./generate_whitelist.sh --exact-only -o whitelist-exact.txt
+          if ! git diff --quiet --exit-code whitelist.txt whitelist-exact.txt; then
+            echo 'whitelist-артефакти не актуальні, запустіть generate_whitelist.sh' >&2
             exit 1
           fi
