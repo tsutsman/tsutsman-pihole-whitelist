@@ -120,4 +120,9 @@ if ! grep -q '^google.com' tmp_output/alt_whitelist.txt; then
 fi
 rm -rf tmp_output
 
+# Повернути робочий whitelist у стандартний стан, щоб наступні CI-кроки
+# (зокрема статистика) не бачили дані з тестових сценаріїв.
+rm -f whitelist.txt
+./generate_whitelist.sh >/dev/null
+
 echo "Інтеграційний тест успішно пройдено"
