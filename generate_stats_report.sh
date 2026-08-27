@@ -212,9 +212,12 @@ for file in "${categories_list[@]}"; do
   denom=$((active_count + removed))
   share=$(format_percent "$problematic" "$denom")
   last_check='невідомо'
-  if [[ -f "$file" ]]; then
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git ls-files --error-unmatch "$file" >/dev/null 2>&1; then
+    last_check=$(git log -1 --format='%ci' -- "$file" 2>/dev/null || true)
+  elif [[ -f "$file" ]]; then
     last_check=$(date -r "$file" '+%F %T' 2>/dev/null || echo 'невідомо')
   fi
+  [[ -n "$last_check" ]] || last_check='невідомо'
   printf '| %s | %d | %d | %s | %s |\n' "$category_name" "$active_count" "$problematic" "$share" "$last_check" >> "$report_tmp"
   categories_rows+=("$category_name|$active_count|$problematic|$share|$last_check")
   categories_html+=$'\n<tr>'
@@ -231,7 +234,7 @@ done
 
 printf '\n### Пояснення\n' >> "$report_tmp"
 printf '* "Проблемні" = домени, що мають невдалий стан перевірки або були перенесені до `deprecated.txt`.\n' >> "$report_tmp"
-printf '* Дати визначаються за часом останньої модифікації файлу категорії.\n\n' >> "$report_tmp"
+printf '* Для tracked-файлів дата визначається за останнім Git-комітом; для untracked-файлів використовується filesystem mtime.\n\n' >> "$report_tmp"
 
 printf '## Зовнішні джерела\n' >> "$report_tmp"
 printf '| Джерело | URL | Доменів | Проблемні | Частка недоступних | Останнє оновлення |\n' >> "$report_tmp"
@@ -307,7 +310,7 @@ done
 
 printf '\n### Notes\n' >> "$report_en_tmp"
 printf '* “Problematic” = domains that failed verification or were moved to `deprecated.txt`.\n' >> "$report_en_tmp"
-printf '* Dates are derived from the last modified timestamp of each category file.\n\n' >> "$report_en_tmp"
+printf '* Tracked files use the last Git commit time; untracked files fall back to filesystem mtime.\n\n' >> "$report_en_tmp"
 
 printf '## External sources\n' >> "$report_en_tmp"
 printf '| Source | URL | Domains | Problematic | Unavailable share | Last update |\n' >> "$report_en_tmp"
