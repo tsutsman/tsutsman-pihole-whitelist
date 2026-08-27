@@ -50,7 +50,7 @@
 - `educational_resources.txt` — корисні освітні портали.
 - `news_media.txt` — популярні новинні ресурси.
 - `international_banks.txt` — міжнародні платіжні сервіси.
-- `comfort_pack.txt` — CDN (Akamai, CloudFront, Fastly) та мультимедіа Facebook/WhatsApp/Instagram для комфортного серфінгу з агресивними блоклистами.
+- `comfort_pack.txt` — **опційний** широкий набір CDN/мультимедіа для агресивних блоклистів; до стандартного `whitelist.txt` не входить і додається лише явно.
 
 #### Автоматична перевірка коментарів у категоріях
 
@@ -60,22 +60,18 @@
 ./check_category_comments.sh
 ```
 
-Якщо у файлі категорії з'являється новий домен без коментаря, перевірка завершиться помилкою і підкаже, який рядок потрібно доповнити. Коли для старих записів коментар ще не додано, зберігайте причину у `comment_allowlist.txt`. Після того як пояснення з'явиться безпосередньо у файлі категорії, відповідний рядок зі списку винятків слід вилучити.
+У strict-режимі скрипт вимагає коментар для кожного домену або явний запис у `comment_allowlist.txt`. У CI використовується `COMMENT_BASE_REF`: старий технічний борг без коментарів допускається як baseline, але **кожен новий uncommented domain блокує PR**. Після додавання пояснення тимчасовий запис із `comment_allowlist.txt` слід вилучити.
 
 ### Вибірковий імпорт та генерація
 
 Кожен файл із каталогу `categories/` можна застосовувати окремо.
 
 - **Через веб-інтерфейс:** у розділі **Whitelist** натисніть **Import** і завантажте потрібний файл, наприклад `categories/apple.txt`.
-- **Через командний рядок Linux:**
-  - Pi-hole v5:
-    ```bash
-    xargs -a categories/apple.txt -L1 sudo pihole -w
-    ```
-  - Pi-hole v6:
-    ```bash
-    sudo pihole-FTL whitelist add $(cat categories/apple.txt)
-    ```
+- **Через командний рядок Linux (Pi-hole v5/v6):**
+  ```bash
+  sudo ./apply_whitelist.sh categories/apple.txt
+  ```
+  Скрипт сам визначає версію Pi-hole, ігнорує коментарі та коректно обробляє `*.domain` як wildcard allowlist.
 
 Щоб зібрати власний `whitelist.txt` лише з вибраних файлів чи каталогів, передайте їх до скрипту. Коментарі та дублікати будуть автоматично видалені:
 
@@ -92,10 +88,11 @@
 прибирає коментарі та порожні рядки, після чого усуває дублікати.
 
 ```bash
-./generate_whitelist.sh              # всі категорії
-./generate_whitelist.sh categories/cloud_storage.txt extra_dir/  # вибіркові файли чи каталоги
-./generate_whitelist.sh -o exports/custom.txt                   # запис у довільний файл
-OUTFILE=exports/custom.txt ./generate_whitelist.sh              # альтернатива через змінну середовища
+./generate_whitelist.sh                                   # стандартні категорії, без comfort_pack
+./generate_whitelist.sh categories/comfort_pack.txt             # явно згенерувати опційний comfort pack
+./generate_whitelist.sh categories/cloud_storage.txt extra_dir/ # вибіркові файли чи каталоги
+./generate_whitelist.sh --exact-only -o whitelist-exact.txt     # exact-only для Pi-hole v6 subscribed allowlist
+OUTFILE=exports/custom.txt ./generate_whitelist.sh               # власний шлях через змінну середовища
 ```
 
 Сформований файл одразу готовий до імпорту в pihole. Якщо вказати шлях із підкаталогами, вони будуть створені автоматично.
@@ -188,26 +185,15 @@ SOURCES_COMBINED=custom.txt ./generate_whitelist.sh
    ./apply_whitelist.sh
    ./apply_whitelist.sh custom.txt  # інший файл
    ```
-4. Для автоматичного додавання можна скористатися API pihole.
-   Приклад запиту:
-   ```bash
-   curl -X POST "http://pi.hole/admin/scripts/pi-hole/php/whitelist.php" \
-     -d "addfqdn=example.com" -d "token=ВАШ_ТОКЕН"
-   ```
-5. У розділі **Adlists** можна додати посилання на сирий файл:
-   https://raw.githubusercontent.com/tsutsman/tsutsman-pihole-whitelist/main/whitelist.txt
-   Це дозволить pihole автоматично завантажувати оновлення білого списку (див. розділ [«Автоматичне оновлення білого списку»](#автоматичне-оновлення-білого-списку)).
+4. Для Pi-hole v6 можна підписатися на exact-only список `whitelist-exact.txt`. У керуванні subscribed lists додайте raw URL цього файла та **обов’язково виберіть тип Allowlist (antigravity), а не Blocklist**. Після цього запустіть оновлення Gravity. Wildcard-записи з повного `whitelist.txt` застосовуйте через `apply_whitelist.sh`.
 
-### Приклади для Pi-hole v5 та v6
+### Приклад для Pi-hole v5 та v6
 
-- **Pi-hole v5**:
-  ```bash
-  xargs -a whitelist.txt -L1 sudo pihole -w
-  ```
-- **Pi-hole v6**:
-  ```bash
-  sudo pihole-FTL whitelist add $(cat whitelist.txt)
-  ```
+```bash
+sudo ./apply_whitelist.sh whitelist.txt
+```
+
+`apply_whitelist.sh` використовує `pihole -w` для v5 та актуальні `pihole allow` / `pihole --allow-wild` для v6.
 
 ### Інтеграція з Docker-контейнером Pi-hole
 
@@ -250,13 +236,8 @@ SOURCES_COMBINED=custom.txt ./generate_whitelist.sh
 
 Список можна підтримувати актуальним двома способами.
 
-1. **Додавання URL до Adlists**  
-   Додайте посилання на сирий `whitelist.txt` у розділ **Adlists** веб-інтерфейсу або виконайте команду:
-   ```bash
-   sudo pihole -a adlist add https://raw.githubusercontent.com/tsutsman/tsutsman-pihole-whitelist/main/whitelist.txt "tsutsman whitelist"
-   sudo pihole updateGravity
-   ```
-   Під час кожного запуску `pihole updateGravity` (зазвичай через вбудований cron) Pi-hole завантажуватиме свіжу версію списку.
+1. **Subscribed allowlist у Pi-hole v6**  
+   Використовуйте raw URL `whitelist-exact.txt` і додайте його у керуванні списками саме як **Allowlist / antigravity**. Не додавайте whitelist як стандартний blocklist. Після зміни виконайте `sudo pihole updateGravity`. Exact-only артефакт навмисно не містить `*.domain`; wildcard-и застосовуються через `apply_whitelist.sh`.
 
 2. **Власне cron-завдання**
    За потреби можна налаштувати окремий cron, що періодично запускає `update_and_apply.sh`:
@@ -279,11 +260,9 @@ SOURCES_COMBINED=custom.txt ./generate_whitelist.sh
 ./check_duplicates.sh                   # перевірити всі списки
 ```
 
-Скрипт повідомить про дублікати та недоступні домени. Якщо потрібно пропустити DNS-перевірку (наприклад, у середовищі без доступу до мережі), встановіть змінну `SKIP_DNS_CHECK=1`.
+Скрипт повідомляє про дублікати та DNS-недоступність exact-domain записів; wildcard-бази навмисно не resolve’яться, бо це дає false-positive. `SKIP_DNS_CHECK=1` залишає лише детерміновану перевірку дублікатів.
 
-Ту саму перевірку виконує GitHub Actions при кожному Pull Request, тож
-якщо дублікати з'являться, перевірка завершиться помилкою.
-Крім того, щотижня запускається окрема перевірка, що повідомляє про можливі проблеми у списках.
+У Pull Request **blocking** є дублікати та неактуальні generated-файли; зовнішня DNS-доступність не блокує merge. Окремий щотижневий workflow виконує advisory DNS-скан і створює/оновлює issue для підозрілих exact-domain endpoints.
 
 ## Очищення недоступних доменів
 
@@ -369,9 +348,9 @@ pfBlockerNG, автоматично пропускає коментарі та �
 
 1. Форкніть репозиторій та створіть окрему гілку.
 2. Додайте домени до відповідного файлу у `categories/` і вкажіть дату та причину у коментарі.
-3. Запустіть `./check_duplicates.sh` без параметрів, щоб переконатися у відсутності дублювань та недоступних доменів.
-4. Згенеруйте оновлений `whitelist.txt` через `./generate_whitelist.sh`.
-5. Створіть Pull Request з коротким описом змін.
+3. Запустіть `SKIP_DNS_CHECK=1 ./check_duplicates.sh`, щоб детерміновано перевірити дублікати.
+4. Згенеруйте `whitelist.txt` і `whitelist-exact.txt`; CI перевірить їхню синхронність.
+5. Створіть Pull Request з коротким описом змін; DNS-доступність exact endpoints перевіряється окремим щотижневим моніторингом.
 
 ## Ліцензія
 
