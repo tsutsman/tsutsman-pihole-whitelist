@@ -8,6 +8,7 @@ echo "# коментар" > "$tmpdir/whitelist.txt"
 echo "example.com # пояснення" >> "$tmpdir/whitelist.txt"
 echo "  inline.test   # зайві пробіли" >> "$tmpdir/whitelist.txt"
 echo "test.org" >> "$tmpdir/whitelist.txt"
+echo "*.wild.example # wildcard має застосовуватися окремою командою" >> "$tmpdir/whitelist.txt"
 
 # Функція створення мок-команд
 create_mock() {
@@ -21,13 +22,6 @@ else
 fi
 MOCK
   chmod +x "$tmpdir/pihole"
-  if [[ $version -ge 6 ]]; then
-    cat <<FTL > "$tmpdir/pihole-FTL"
-#!/usr/bin/env bash
-echo "\$@" >> "\$PIHOLE_CALLS_LOG"
-FTL
-    chmod +x "$tmpdir/pihole-FTL"
-  fi
 }
 
 export PATH="$tmpdir:$PATH"
@@ -53,6 +47,7 @@ create_mock 5
 grep -Fxq -- "-w example.com" "$PIHOLE_CALLS_LOG"
 grep -Fxq -- "-w inline.test" "$PIHOLE_CALLS_LOG"
 grep -Fxq -- "-w test.org" "$PIHOLE_CALLS_LOG"
+grep -Fxq -- '--white-regex (^|\.)wild\.example$' "$PIHOLE_CALLS_LOG"
 ! grep -q '#' "$PIHOLE_CALLS_LOG"
 grep -q "sendMessage" "$tmpdir/telegram_calls.log"
 
@@ -60,9 +55,10 @@ grep -q "sendMessage" "$tmpdir/telegram_calls.log"
 : > "$PIHOLE_CALLS_LOG"
 create_mock 6
 ./apply_whitelist.sh "$tmpdir/whitelist.txt" >/dev/null
-grep -Fxq -- "whitelist add example.com" "$PIHOLE_CALLS_LOG"
-grep -Fxq -- "whitelist add inline.test" "$PIHOLE_CALLS_LOG"
-grep -Fxq -- "whitelist add test.org" "$PIHOLE_CALLS_LOG"
+grep -Fxq -- "allow example.com" "$PIHOLE_CALLS_LOG"
+grep -Fxq -- "allow inline.test" "$PIHOLE_CALLS_LOG"
+grep -Fxq -- "allow test.org" "$PIHOLE_CALLS_LOG"
+grep -Fxq -- "--allow-wild wild.example" "$PIHOLE_CALLS_LOG"
 ! grep -q '#' "$PIHOLE_CALLS_LOG"
 grep -q "sendMessage" "$tmpdir/telegram_calls.log"
 

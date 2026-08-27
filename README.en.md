@@ -39,21 +39,18 @@ Available files include:
 - `educational_resources.txt` — useful learning portals.
 - `news_media.txt` — popular news websites.
 - `international_banks.txt` — international payment services.
+- `comfort_pack.txt` — **optional** broad CDN/media compatibility pack; excluded from the default `whitelist.txt` unless explicitly selected.
 
 ### Selective import and generation
 
 Each file in `categories/` can be applied separately.
 
 - **Through the web interface:** open **Whitelist**, choose **Import**, and upload the desired file, e.g. `categories/apple.txt`.
-- **From the Linux command line:**
-  - Pi-hole v5:
-    ```bash
-    xargs -a categories/apple.txt -L1 sudo pihole -w
-    ```
-  - Pi-hole v6:
-    ```bash
-    sudo pihole-FTL whitelist add $(cat categories/apple.txt)
-    ```
+- **From the Linux command line (Pi-hole v5/v6):**
+  ```bash
+  sudo ./apply_whitelist.sh categories/apple.txt
+  ```
+  The script detects the Pi-hole version, ignores comments, and applies `*.domain` entries as wildcard allowlist rules.
 
 To create a custom `whitelist.txt` from selected files or directories, pass them to the script. Comments and duplicates are removed automatically:
 
@@ -68,10 +65,11 @@ The generated file can be imported by any of the methods above. If you prefer no
 The `generate_whitelist.sh` script creates `whitelist.txt` from all files in `categories/` or from provided arguments. It removes comments and blank lines, then deduplicates entries.
 
 ```bash
-./generate_whitelist.sh              # all categories
-./generate_whitelist.sh categories/cloud_storage.txt extra_dir/  # specific files or folders
-./generate_whitelist.sh -o exports/custom.txt                   # save to a custom file
-OUTFILE=exports/custom.txt ./generate_whitelist.sh              # alternative via environment variable
+./generate_whitelist.sh                                   # standard categories, excluding comfort_pack
+./generate_whitelist.sh categories/comfort_pack.txt             # explicitly build the optional comfort pack
+./generate_whitelist.sh categories/cloud_storage.txt extra_dir/ # selected files or folders
+./generate_whitelist.sh --exact-only -o whitelist-exact.txt     # exact-only Pi-hole v6 subscribed allowlist
+OUTFILE=exports/custom.txt ./generate_whitelist.sh               # custom path through the environment
 ```
 
 The resulting file is ready for import into pihole. If you specify a path with nested folders, they will be created automatically.
@@ -137,15 +135,7 @@ pipelines or dashboards.
    ./apply_whitelist.sh
    ./apply_whitelist.sh custom.txt  # another file
    ```
-4. For automatic addition you can use pihole's API.
-   Example request:
-   ```bash
-   curl -X POST "http://pi.hole/admin/scripts/pi-hole/php/whitelist.php" \
-     -d "addfqdn=example.com" -d "token=YOUR_TOKEN"
-   ```
-5. Under **Adlists** you may add the raw file URL:
-   https://raw.githubusercontent.com/tsutsman/tsutsman-pihole-whitelist/main/whitelist.txt
-   so pihole can automatically fetch updates.
+4. Pi-hole v6 can subscribe to the exact-only `whitelist-exact.txt`. Add its raw URL as a subscribed **Allowlist / antigravity**, not as a blocklist, then update Gravity. Use `apply_whitelist.sh` for the full `whitelist.txt`, because it contains wildcard rules.
 
 ### Running alongside Dockerized Pi-hole
 
@@ -188,13 +178,8 @@ If Pi-hole runs inside Docker, you can reuse the same scripts without leaving th
 
 The list can stay up to date in two ways.
 
-1. **Add the URL to Adlists**
-   Add the raw `whitelist.txt` URL in the **Adlists** section of the web interface or run:
-   ```bash
-   sudo pihole -a adlist add https://raw.githubusercontent.com/tsutsman/tsutsman-pihole-whitelist/main/whitelist.txt "tsutsman whitelist"
-   sudo pihole updateGravity
-   ```
-   Each `pihole updateGravity` run (usually via cron) will fetch the latest list.
+1. **Pi-hole v6 subscribed allowlist**
+   Use the raw `whitelist-exact.txt` URL and configure it as an **Allowlist / antigravity** subscribed list. Do not add a whitelist URL as a normal blocklist. Run `sudo pihole updateGravity` after changing the subscription. The exact-only artifact intentionally excludes `*.domain`; apply wildcard rules with `apply_whitelist.sh`.
 
 2. **Custom cron job**
    If needed, schedule `update_and_apply.sh` to run periodically:
@@ -216,9 +201,8 @@ You may pass specific files or directories, or nothing to process all lists.
 ./check_duplicates.sh                   # check everything
 ```
 
-The script reports duplicates and unreachable domains. If you need to skip DNS checks (for example, in an offline environment), set `SKIP_DNS_CHECK=1`.
-GitHub Actions performs the same check on each Pull Request, so failures will block the merge.
-A weekly workflow also scans the lists and reports potential issues.
+The script reports duplicates and DNS availability for exact-domain entries. Wildcard base domains are intentionally not resolved because that produces false positives. Set `SKIP_DNS_CHECK=1` for the deterministic duplicate-only check.
+Pull Requests block on duplicates and stale generated artifacts, while external DNS availability is advisory. A weekly workflow performs the DNS scan and opens/updates an issue for suspicious exact-domain endpoints.
 
 ## Cleaning unreachable domains
 
@@ -239,9 +223,9 @@ THRESHOLD=2 ./cleanup_whitelist.sh
 
 1. Fork the repository and create a dedicated branch.
 2. Add domains to the appropriate file under `categories/` with a comment containing the date and reason.
-3. Run `./check_duplicates.sh` with no parameters to ensure there are no duplicates or unreachable hosts.
-4. Regenerate `whitelist.txt` via `./generate_whitelist.sh`.
-5. Open a Pull Request summarizing your changes.
+3. Run `SKIP_DNS_CHECK=1 ./check_duplicates.sh` for the deterministic duplicate check.
+4. Regenerate both `whitelist.txt` and `whitelist-exact.txt`; CI verifies that generated artifacts are current.
+5. Open a Pull Request summarizing your changes; exact-domain DNS availability is monitored separately by the weekly workflow.
 
 ## License
 

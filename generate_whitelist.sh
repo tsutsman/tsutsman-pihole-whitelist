@@ -10,6 +10,7 @@ set -euo pipefail
 OUTFILE=${OUTFILE:-"whitelist.txt"}
 SOURCES_COMBINED=${SOURCES_COMBINED:-"sources/generated/all_sources.txt"}
 INCLUDE_EXTERNAL_SOURCES=${INCLUDE_EXTERNAL_SOURCES:-1}
+EXACT_ONLY=0
 
 print_usage() {
   cat <<'EOF'
@@ -18,13 +19,17 @@ Usage:      ./generate_whitelist.sh [options] [files_or_directories]
 
   -o, --output Файл для збереження результату (за замовчуванням whitelist.txt або значення змінної OUTFILE)
   -o, --output Path to save the combined whitelist (defaults to whitelist.txt or the OUTFILE env var)
+      --exact-only Виключити wildcard-записи (*.domain); зручно для Pi-hole v6 subscribed allowlist
+      --exact-only Exclude wildcard entries (*.domain); useful for Pi-hole v6 subscribed allowlists
   -h, --help   Показати цю довідку
   -h, --help   Show this help message
 
 Можна передавати як окремі файли, так і каталоги з файлами .txt. Якщо аргументи відсутні,
-будуть використані всі файли у каталозі categories/.
+будуть використані всі стандартні файли у каталозі categories/. Опційний comfort_pack.txt
+до загального whitelist не входить і додається лише при явному зазначенні.
 You can pass individual files or directories that contain .txt files. When no arguments are provided,
-all files inside categories/ will be processed.
+all standard files inside categories/ will be processed. The optional comfort_pack.txt is excluded from
+the default whitelist and is included only when explicitly requested.
 EOF
 }
 
@@ -33,6 +38,19 @@ is_service_category_file() {
   name="$(basename "$1")"
   case "$name" in
     comment_allowlist.txt|deprecated.txt)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
+is_optional_default_category_file() {
+  local name
+  name="$(basename "$1")"
+  case "$name" in
+    comfort_pack.txt)
       return 0
       ;;
     *)
@@ -52,6 +70,10 @@ while [ "$#" -gt 0 ]; do
       fi
       OUTFILE="$2"
       shift 2
+      ;;
+    --exact-only)
+      EXACT_ONLY=1
+      shift
       ;;
     -h|--help)
       print_usage
@@ -90,9 +112,11 @@ echo "# Автоматично згенеровано скриптом generate_
 
 shopt -s nullglob
 files=()
+default_selection=0
 
 if [ "$#" -eq 0 ]; then
   files=(categories/*.txt)
+  default_selection=1
 else
   for item in "$@"; do
     if [ -d "$item" ]; then
@@ -110,10 +134,13 @@ if [ "$INCLUDE_EXTERNAL_SOURCES" = "1" ] && [ -f "$SOURCES_COMBINED" ]; then
   files+=("$SOURCES_COMBINED")
 fi
 
-# Виключити службові файли категорій, які не є джерелами доменів для whitelist.
+# Виключити службові файли, а для стандартної генерації — також опційні категорії.
 filtered_files=()
 for f in "${files[@]}"; do
   if is_service_category_file "$f"; then
+    continue
+  fi
+  if (( default_selection )) && is_optional_default_category_file "$f"; then
     continue
   fi
   filtered_files+=("$f")
@@ -125,11 +152,12 @@ if [ "${#files[@]}" -eq 0 ]; then
   exit 1
 fi
 
-# Збираємо рядки, обрізаємо коментарі та усуваємо дублікати
+# Збираємо рядки, обрізаємо коментарі, за потреби вилучаємо wildcard і усуваємо дублікати.
 cat "${files[@]}" \
   | sed 's/#.*//' \
   | sed 's/^[ \t]*//;s/[ \t]*$//' \
   | sed '/^$/d' \
+  | awk -v exact_only="$EXACT_ONLY" '!(exact_only == 1 && $0 ~ /^\*\./)' \
   | LC_ALL=C sort -u >> "$OUTFILE"
 
 echo "Файл $OUTFILE згенеровано"

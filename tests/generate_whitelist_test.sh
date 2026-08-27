@@ -6,6 +6,22 @@ rm -f whitelist.txt
 
 grep -q '^google.com' whitelist.txt
 
+# comfort_pack є opt-in і не має послаблювати default whitelist широкими CDN.
+if grep -q '^akamaihd.net$' whitelist.txt; then
+  echo "Опційний comfort_pack потрапив до default whitelist" >&2
+  exit 1
+fi
+
+rm -f whitelist.txt
+./generate_whitelist.sh categories/comfort_pack.txt >/dev/null
+if ! grep -q '^akamaihd.net$' whitelist.txt; then
+  echo "Явно вибраний comfort_pack не потрапив до whitelist" >&2
+  exit 1
+fi
+
+rm -f whitelist.txt
+./generate_whitelist.sh >/dev/null
+
 if [ "$(tail -n +2 whitelist.txt | sort -u)" != "$(tail -n +2 whitelist.txt)" ]; then
   echo "whitelist.txt не відсортовано або містить дублікати" >&2
   exit 1
@@ -103,5 +119,10 @@ if ! grep -q '^google.com' tmp_output/alt_whitelist.txt; then
   exit 1
 fi
 rm -rf tmp_output
+
+# Повернути робочий whitelist у стандартний стан, щоб наступні CI-кроки
+# (зокрема статистика) не бачили дані з тестових сценаріїв.
+rm -f whitelist.txt
+./generate_whitelist.sh >/dev/null
 
 echo "Інтеграційний тест успішно пройдено"

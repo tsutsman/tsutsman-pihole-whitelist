@@ -1,6 +1,6 @@
-# @description: Розумні годинники Amazfit та екосистема Zepp (оновлено 2026-03-08)
+# @description: Розумні годинники Amazfit та екосистема Zepp (оновлено 2026-08-27)
 # @author: Команда проєкту whitelist
-# @last_review: 2026-03-08
+# @last_review: 2026-08-27
 
 amazfit.com            # 2025-12-26: офіційний сайт та сервіс акаунтів Amazfit/Zepp
 api.amazfit.com        # 2025-12-26: API Zepp для синхронізації пристроїв і завантаження карт
@@ -10,13 +10,11 @@ zepp.com               # 2025-12-26: бренд Zepp — мобільний за
 account.huami.com      # 2025-12-26: облікові записи виробника Huami/Amazfit
 api-mifit.huami.com    # 2025-12-26: API Huami для синхронізації даних та картографії Amazfit
 
-# Zepp / Huami CDN та API
-api-analytics-de.zepp.com  # 2026-03-08: аналітика застосунку Zepp (DE-кластер)
+# Zepp / Huami CDN та API, потрібні для синхронізації, контенту й прошивок
 api-mifit-de2.zepp.com     # 2026-03-08: регіональний API MiFit/Zepp (DE2)
 api-mifit.zepp.com         # 2026-03-08: основний API MiFit/Zepp
 api-user.zepp.com          # 2026-03-08: API профілю користувача Zepp
 api-watch-de2.zepp.com     # 2026-03-08: API годинників Zepp (DE2)
-app-analytics-de.zepp.com  # 2026-03-08: аналітика мобільного застосунку Zepp
 aura.zepp.com              # 2026-03-08: сервіс Zepp Aura
 auth-de2.zepp.com          # 2026-03-08: авторизація Zepp (DE2)
 bundle.zepp.com            # 2026-03-08: видача бандлів/контенту Zepp
@@ -38,7 +36,3 @@ upload-cdn.zepp.com        # 2026-03-08: CDN завантаження файлі
 user.huami.com             # 2026-03-08: кабінет користувача Huami
 user.zepp.com              # 2026-03-08: кабінет користувача Zepp
 webapp.zepp.com            # 2026-03-08: вебзастосунок Zepp
-
-# Суміжні домени авторизації/інтеграцій застосунку Zepp
-google.com                 # 2026-03-08: SSO/інтеграції через Google
-meta.com                   # 2026-03-08: інтеграції/ідентифікація через Meta

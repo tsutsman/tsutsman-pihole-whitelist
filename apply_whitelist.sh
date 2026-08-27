@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Скрипт додає домени з whitelist.txt до білого списку Pi-hole.
-# Коментарі й порожні рядки ігноруються.
+# Коментарі й порожні рядки ігноруються; записи *.domain обробляються як wildcard allowlist.
 # Використання: ./apply_whitelist.sh [шлях_до_файла]
 set -euo pipefail
 
@@ -32,24 +32,34 @@ fi
 
 tg_log "$(date '+%Y-%m-%d %H:%M:%S') Початок застосування whitelist: $FILE"
 
-# Визначення основної команди для додавання доменів залежно від версії Pi-hole
+# У Pi-hole v6 для allowlist використовуються `pihole allow` та `pihole --allow-wild`.
+# Для v5 зберігаємо сумісність через `pihole -w` і legacy regex-whitelist.
 PIHOLE_VER=$(pihole -v -p 2>/dev/null | grep -oE '[0-9]+' | head -1 || echo 5)
-if [ "$PIHOLE_VER" -ge 6 ] && command -v pihole-FTL >/dev/null 2>&1; then
-  add_cmd=(pihole-FTL whitelist add)
-else
-  add_cmd=(pihole -w)
-fi
 
 while IFS= read -r line; do
   if [[ "$line" =~ ^[[:space:]]*# ]]; then
     continue
   fi
+
   domain="${line%%#*}"
   domain="$(trim "$domain")"
   if [[ -z "$domain" ]]; then
     continue
   fi
-  "${add_cmd[@]}" "$domain"
+
+  if [[ "$domain" == \*.* ]]; then
+    base_domain="${domain#*.}"
+    if [ "$PIHOLE_VER" -ge 6 ]; then
+      pihole --allow-wild "$base_domain"
+    else
+      escaped_domain="${base_domain//./\\.}"
+      pihole --white-regex "(^|\\.)${escaped_domain}$"
+    fi
+  elif [ "$PIHOLE_VER" -ge 6 ]; then
+    pihole allow "$domain"
+  else
+    pihole -w "$domain"
+  fi
 done < "$FILE"
 
 echo "Доменів з $FILE додано до білого списку"

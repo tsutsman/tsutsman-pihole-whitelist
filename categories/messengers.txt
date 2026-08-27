@@ -1,9 +1,8 @@
 # @description: Месенджери — сервіси для обміну повідомленнями
 # @author: Команда проєкту whitelist
-# @last_review: 2026-03-24
+# @last_review: 2026-08-27
 
 api.telegram.org            # API Telegram
-ads.telegram.org            # рекламна платформа Telegram
 bugs.telegram.org           # багтрекер та зворотний зв'язок Telegram
 cdn.telegram.org            # CDN Telegram
 contest.com                # офіційні конкурси та промо Telegram
@@ -23,7 +22,6 @@ themes.telegram.org         # каталог тем Telegram
 translations.telegram.org   # платформа перекладів Telegram
 web.telegram.org            # вебклієнт Telegram
 web.t.me                    # альтернативний вебклієнт Telegram
-promote.telegram.org        # промосторінки та рекламні інструменти Telegram
 suggestions.telegram.org    # портал пропозицій Telegram
 telegra.ph                  # платформа статей Telegraph від Telegram
 telegram.dog                # альтернативні короткі посилання Telegram
