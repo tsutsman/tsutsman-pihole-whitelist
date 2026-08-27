@@ -211,12 +211,10 @@ for file in "${categories_list[@]}"; do
   problematic=$((pending + removed))
   denom=$((active_count + removed))
   share=$(format_percent "$problematic" "$denom")
-  last_check='невідомо'
-  if git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git ls-files --error-unmatch "$file" >/dev/null 2>&1; then
-    last_check=$(git log -1 --format='%ci' -- "$file" 2>/dev/null || true)
-  elif [[ -f "$file" ]]; then
-    last_check=$(date -r "$file" '+%F %T' 2>/dev/null || echo 'невідомо')
-  fi
+  # Category metadata is content-stable across checkout/rebase/squash merges.
+  # validate_category_metadata.sh requires @last_review for category files.
+  last_check=$(grep -m1 '^# @last_review:' "$file" 2>/dev/null | sed 's/^# @last_review:[[:space:]]*//' || true)
+  last_check=$(trim "$last_check")
   [[ -n "$last_check" ]] || last_check='невідомо'
   printf '| %s | %d | %d | %s | %s |\n' "$category_name" "$active_count" "$problematic" "$share" "$last_check" >> "$report_tmp"
   categories_rows+=("$category_name|$active_count|$problematic|$share|$last_check")
@@ -234,7 +232,7 @@ done
 
 printf '\n### Пояснення\n' >> "$report_tmp"
 printf '* "Проблемні" = домени, що мають невдалий стан перевірки або були перенесені до `deprecated.txt`.\n' >> "$report_tmp"
-printf '* Для tracked-файлів дата визначається за останнім Git-комітом; для untracked-файлів використовується filesystem mtime.\n\n' >> "$report_tmp"
+printf '* Дата останньої перевірки категорії береться з метаданих `@last_review`, тому не залежить від checkout/rebase/squash merge.\n\n' >> "$report_tmp"
 
 printf '## Зовнішні джерела\n' >> "$report_tmp"
 printf '| Джерело | URL | Доменів | Проблемні | Частка недоступних | Останнє оновлення |\n' >> "$report_tmp"
@@ -310,7 +308,7 @@ done
 
 printf '\n### Notes\n' >> "$report_en_tmp"
 printf '* “Problematic” = domains that failed verification or were moved to `deprecated.txt`.\n' >> "$report_en_tmp"
-printf '* Tracked files use the last Git commit time; untracked files fall back to filesystem mtime.\n\n' >> "$report_en_tmp"
+printf '* Category last-check dates come from `@last_review` metadata, so they are stable across checkout/rebase/squash merges.\n\n' >> "$report_en_tmp"
 
 printf '## External sources\n' >> "$report_en_tmp"
 printf '| Source | URL | Domains | Problematic | Unavailable share | Last update |\n' >> "$report_en_tmp"
