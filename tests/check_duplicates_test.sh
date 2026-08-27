@@ -11,19 +11,36 @@ bad.invalid
 LIST
 
 HOST_LOG="$tmpdir/host_calls.log"
-export HOST_LOG
+BARRIER_DIR="$tmpdir/barrier"
+export HOST_LOG BARRIER_DIR
 
 cat <<'HOST' > "$tmpdir/host"
 #!/usr/bin/env bash
 echo "$@" >> "$HOST_LOG"
 domain="${@: -1}"
-if [[ "$domain" == "good.com" ]]; then
-  echo "good.com has address 1.2.3.4"
-  exit 0
-else
-  echo "Host $domain not found" >&2
-  exit 1
-fi
+case "$domain" in
+  good.com)
+    echo "good.com has address 1.2.3.4"
+    exit 0
+    ;;
+  parallel1.example|parallel2.example)
+    mkdir -p "$BARRIER_DIR"
+    touch "$BARRIER_DIR/$domain"
+    for _ in $(seq 1 20); do
+      if [[ -f "$BARRIER_DIR/parallel1.example" && -f "$BARRIER_DIR/parallel2.example" ]]; then
+        echo "$domain has address 1.2.3.4"
+        exit 0
+      fi
+      sleep 0.05
+    done
+    echo "Host $domain timed out waiting for concurrent lookup" >&2
+    exit 1
+    ;;
+  *)
+    echo "Host $domain not found" >&2
+    exit 1
+    ;;
+esac
 HOST
 chmod +x "$tmpdir/host"
 
@@ -60,6 +77,18 @@ fi
 
 if ! SKIP_DNS_CHECK=yes ./check_duplicates.sh "$tmpdir/list.txt" >/dev/null 2>&1; then
   echo "Скрипт має приймати значення yes у SKIP_DNS_CHECK" >&2
+  exit 1
+fi
+
+cat <<'PARALLEL' > "$tmpdir/parallel.txt"
+parallel1.example
+parallel2.example
+PARALLEL
+rm -rf "$BARRIER_DIR"
+mkdir -p "$BARRIER_DIR"
+
+if ! DNS_PARALLELISM=2 ./check_duplicates.sh "$tmpdir/parallel.txt" >/dev/null 2>&1; then
+  echo "DNS перевірки мають виконуватись паралельно при DNS_PARALLELISM=2" >&2
   exit 1
 fi
 
