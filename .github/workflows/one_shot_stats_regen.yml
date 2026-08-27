@@ -1,0 +1,42 @@
+name: One-shot stats regeneration
+
+on:
+  push:
+    branches:
+      - codex/audit-whitelist-2026-08-27
+    paths:
+      - '.github/workflows/one_shot_stats_regen.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: codex/audit-whitelist-2026-08-27
+          fetch-depth: 0
+
+      - name: Patch stats generator
+        run: python3 scripts/patch_stats_timestamp.py
+
+      - name: Regenerate reports
+        shell: bash
+        run: |
+          chmod +x ./generate_stats_report.sh
+          REPORT_TIMESTAMP_MODE=keep \
+          DASHBOARD_TIMESTAMP_MODE=keep \
+          REPORT_FOOTER_TIMESTAMP_MODE=keep \
+          HISTORY_TIMESTAMP_MODE=keep \
+          ./generate_stats_report.sh
+
+      - name: Commit source and reports
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add generate_stats_report.sh docs/data_stats.md docs/data_stats.en.md docs/dashboard.html docs/data_history.json
+          git commit -m 'fix: make stats report timestamps deterministic'
+          git push origin HEAD:codex/audit-whitelist-2026-08-27
