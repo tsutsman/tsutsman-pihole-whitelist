@@ -1,6 +1,7 @@
 # @description: Комфортний набір — широкі wildcard-правила для CDN і допоміжних хостів, які часто блокуються динамічними списками
 # @author: Команда проєкту whitelist
-# @last_review: 2026-09-04
+# @last_review: 2025-02-05
+# @updated: 2026-09-04 — wildcard-покриття динамічних CDN та exact fallback для selective/exact-only build
 
 *.akamaihd.net                   # CDN Akamai: медіа, Steam та завантаження застосунків; wildcard покриває динамічні edge-хости
 *.akamaized.net                  # CDN Akamai для потокового відео та мобільних сервісів
@@ -14,3 +15,5 @@
 *.googleusercontent.com          # контент Google Play/Drive та інші динамічні content-hosts Google
 *.gvt1.com                       # завантаження й оновлення Google/Chrome/Android через динамічні хости GVT1
 *.gvt2.com                       # завантаження й оновлення Google/Chrome/Android через динамічні хости GVT2
+play-lh.googleusercontent.com    # exact fallback для Google Play у selective/exact-only збірках
+redirector.gvt2.com              # exact fallback для Google updates у selective/exact-only збірках
