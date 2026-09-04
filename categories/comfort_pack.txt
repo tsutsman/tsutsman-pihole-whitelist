@@ -1,18 +1,19 @@
-# @description: Комфортний набір — CDN і допоміжні хости, які часто блокуються динамічними списками
+# @description: Комфортний набір — широкі wildcard-правила для CDN і допоміжних хостів, які часто блокуються динамічними списками
 # @author: Команда проєкту whitelist
 # @last_review: 2025-02-05
+# @updated: 2026-09-04 — wildcard-покриття динамічних CDN та exact fallback для selective/exact-only build
 
-akamaihd.net                     # CDN для медіа Facebook, Steam та завантажень застосунків
-akamaized.net                    # CDN Akamai для потокового відео та мобільних сервісів
-cloudfront.net                   # CDN AWS CloudFront для статичних ресурсів сайтів
-edgekey.net                      # CNAME Akamai, що використовується вебсайтами та стрімінгами
-edgesuite.net                    # CDN Akamai для роздачі контенту
-fastly.net                       # CDN Fastly для вебдодатків і оновлень
-fbcdn.net                        # мультимедійні ресурси Facebook та Instagram
-static.xx.fbcdn.net              # статичні файли Facebook і Messenger
-scontent.xx.fbcdn.net            # медіафайли Facebook та Instagram
-whatsapp.net                     # доставка медіа у WhatsApp
-cdn.whatsapp.net                 # статичні файли клієнтів WhatsApp
-storage.googleapis.com           # сховища Google Cloud Storage для завантажень і бекапів
-play-lh.googleusercontent.com    # іконки та медіа з Google Play
-redirector.gvt2.com              # завантаження та оновлення Google Chrome/Android
+*.akamaihd.net                   # CDN Akamai: медіа, Steam та завантаження застосунків; wildcard покриває динамічні edge-хости
+*.akamaized.net                  # CDN Akamai для потокового відео та мобільних сервісів
+*.cloudfront.net                 # AWS CloudFront: динамічні CDN-хости для статичних ресурсів і завантажень
+*.edgekey.net                    # CNAME-зона Akamai, яку використовують вебсайти та стрімінги
+*.edgesuite.net                  # CDN Akamai для роздачі контенту
+*.fastly.net                     # CDN Fastly для вебдодатків, API та оновлень
+*.fbcdn.net                      # мультимедійні ресурси Facebook, Messenger та Instagram
+*.whatsapp.net                   # доставка медіа й допоміжні хости WhatsApp
+*.storage.googleapis.com         # Google Cloud Storage, включно з bucket-hosted піддоменами
+*.googleusercontent.com          # контент Google Play/Drive та інші динамічні content-hosts Google
+*.gvt1.com                       # завантаження й оновлення Google/Chrome/Android через динамічні хости GVT1
+*.gvt2.com                       # завантаження й оновлення Google/Chrome/Android через динамічні хости GVT2
+play-lh.googleusercontent.com    # exact fallback для Google Play у selective/exact-only збірках
+redirector.gvt2.com              # exact fallback для Google updates у selective/exact-only збірках

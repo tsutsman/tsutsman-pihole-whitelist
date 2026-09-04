@@ -1,4 +1,6 @@
 # Автоматично згенеровано скриптом generate_whitelist.sh
+*.akamaihd.net
+*.akamaized.net
 *.appattest.apple.com
 *.apple-cloudkit.com
 *.apple-livephotoskit.com
@@ -11,15 +13,23 @@
 *.business.apple.com
 *.chatgpt.com
 *.cloud.microsoft
+*.cloudfront.net
 *.crashlytics.com
 *.demdex.net
 *.docs.live.net
 *.dropbox.com
+*.edgekey.net
+*.edgesuite.net
+*.fastly.net
+*.fbcdn.net
 *.files.1drv.com
 *.gc.apple.com
 *.gfx.ms
+*.googleusercontent.com
 *.groups.office.live.com
 *.groups.photos.live.com
+*.gvt1.com
+*.gvt2.com
 *.hotline.finance
 *.hotline.ua
 *.ibytedtos.com
@@ -57,10 +67,12 @@
 *.slack.com
 *.smoot.apple.com
 *.static.microsoft
+*.storage.googleapis.com
 *.storage.live.com
 *.svc.ms
 *.usercontent.microsoft
 *.vertexsmb.com
+*.whatsapp.net
 *.wns.windows.com
 *.zoom.us
 0-edge-chat.facebook.com
