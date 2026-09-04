@@ -6,18 +6,28 @@ rm -f whitelist.txt
 
 grep -q '^google.com' whitelist.txt
 
-# comfort_pack є opt-in і не має послаблювати default whitelist широкими CDN.
-if grep -q '^akamaihd.net$' whitelist.txt; then
-  echo "Опційний comfort_pack потрапив до default whitelist" >&2
+# Default whitelist має включати comfort_pack для максимальної сумісності.
+if ! grep -q '^\*\.akamaihd\.net$' whitelist.txt; then
+  echo "comfort_pack не потрапив до default whitelist" >&2
   exit 1
 fi
 
 rm -f whitelist.txt
 ./generate_whitelist.sh categories/comfort_pack.txt >/dev/null
-if ! grep -q '^akamaihd.net$' whitelist.txt; then
+if ! grep -q '^\*\.akamaihd\.net$' whitelist.txt; then
   echo "Явно вибраний comfort_pack не потрапив до whitelist" >&2
   exit 1
 fi
+
+# exact-only артефакт не повинен містити wildcard-правила.
+rm -f whitelist-exact-test.txt
+./generate_whitelist.sh --exact-only -o whitelist-exact-test.txt >/dev/null
+if grep -q '^\*\.' whitelist-exact-test.txt; then
+  echo "До exact-only whitelist потрапили wildcard-записи" >&2
+  rm -f whitelist-exact-test.txt
+  exit 1
+fi
+rm -f whitelist-exact-test.txt
 
 rm -f whitelist.txt
 ./generate_whitelist.sh >/dev/null
